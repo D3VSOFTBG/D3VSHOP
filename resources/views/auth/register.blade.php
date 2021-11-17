@@ -4,7 +4,7 @@
 
 <!-- =====================================
 	    	==== Start breadcrumb -->
-<div class="breadcrumb section-bg" style="background-image:url(assets/images/bg_breadcrumb.jpg)">
+<div class="breadcrumb section-bg" style="background-image:url(/assets/images/bg_breadcrumb.jpg)">
     <!-- container -->
     <div class="container">
         <div class="row">

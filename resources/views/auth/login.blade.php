@@ -4,7 +4,7 @@
 
 <!-- =====================================
 	    	==== Start breadcrumb -->
-<div class="breadcrumb section-bg" style="background-image:url(assets/images/bg_breadcrumb.jpg)">
+<div class="breadcrumb section-bg" style="background-image:url(/assets/images/bg_breadcrumb.jpg)">
     <!-- container -->
     <div class="container">
         <div class="row">
@@ -71,7 +71,7 @@
                                                     <label>Remember me</label>
                                                 </div>
                                                 <div class="forgot">
-                                                    <a href="/password/reset">Forgot Password?</a>
+                                                    <a href="{{ route('password.update') }}">Forgot Password?</a>
                                                 </div>
                                             </div>
                                             <button type="submit"

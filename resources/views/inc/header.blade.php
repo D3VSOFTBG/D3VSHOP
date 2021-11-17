@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="robots" content="noindex, follow" />
 
     <title>{{env('APP_NAME')}}</title>
 
@@ -67,7 +66,7 @@
                 </div>
             </div>
 
-            <div class="header_container" style="background:url(assets/images/bg_header.jpg) repeat">
+            <div class="header_container" style="background:url(/assets/images/bg_header.jpg) repeat">
 
                 <!-- header-desktop -->
                 <div class="header-menu  header-desktop">
@@ -75,7 +74,7 @@
                         <div class="row">
                             <div class="col-md-2 d-flex align-items-center justify-content-center">
                                 <a class="logo" href="{{route('home')}}">
-                                    <img src="assets/images/logo.png" alt="">
+                                    <img src="/assets/images/logo.png" alt="">
                                 </a>
                             </div>
                             <div class="col-md-10 header-menu-main">
@@ -96,7 +95,7 @@
                                     <div class="site-header__icon  d-flex justify-content-between align-items-center">
                                         <div class="features_icon">
                                             <div class="features_icon__images">
-                                                <img src="assets/images/icon_1.png" alt="">
+                                                <img src="/assets/images/icon_1.png" alt="">
                                             </div>
                                             <div class="features_icon__description">
                                                 <h4>CUSTOMER SUPPORT</h4>
@@ -107,7 +106,7 @@
                                         </div>
                                         <div class="features_icon">
                                             <div class="features_icon__images">
-                                                <img src="assets/images/icon_2.png" alt="">
+                                                <img src="/assets/images/icon_2.png" alt="">
                                             </div>
                                             <div class="features_icon__description">
                                                 <h4>CONTACT US</h4>
@@ -119,7 +118,7 @@
                                         <div class="site-header__cart item-dropdown">
                                             <div class="features_icon">
                                                 <div class="features_icon__images">
-                                                    <img src="assets/images/icon_3.png" alt="">
+                                                    <img src="/assets/images/icon_3.png" alt="">
                                                 </div>
                                                 <div class="features_icon__description">
                                                     <h4>MY CART <span class="cartcount">3(ITEMS)</span></h4>
@@ -129,11 +128,11 @@
                                                 </div>
                                             </div>
                                             <div class="widget_shopping_cart_content  content-dropdown">
-                                                <div class="cart_list ">
+                                                <div class="cart_list">
                                                     <div class="media widget-product">
                                                         <div class="media-left">
                                                             <a href="product_single.html" class="image pull-left">
-                                                                <img src="assets/images/product/product_1.jpg" alt="">
+                                                                <img src="/assets/images/product/product_1.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="cart-main-content media-body">
@@ -153,7 +152,7 @@
                                                     <div class="media widget-product">
                                                         <div class="media-left">
                                                             <a href="product_single.html" class="image pull-left">
-                                                                <img src="assets/images/product/product_2.jpg" alt="">
+                                                                <img src="/assets/images/product/product_2.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="cart-main-content media-body">
@@ -173,7 +172,7 @@
                                                     <div class="media widget-product">
                                                         <div class="media-left">
                                                             <a href="product_single.html" class="image pull-left">
-                                                                <img src="assets/images/product/product_3.jpg" alt="">
+                                                                <img src="/assets/images/product/product_3.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="cart-main-content media-body">

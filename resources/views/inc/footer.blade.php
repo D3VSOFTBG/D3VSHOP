@@ -36,7 +36,7 @@
                     <aside class="widget-text">
                         <div class="footer__logo">
                             <a href="#">
-                                <img src="assets/images/logo.png" alt="">
+                                <img src="/assets/images/logo.png" alt="">
                             </a>
                         </div>
                         <div class="footer__info">
@@ -100,7 +100,7 @@
                         Copyright © 2021 <a href="#">{{env('APP_NAME')}}</a>. All rights reserved
                     </div>
                     <div class="payment">
-                        <img src="assets/images/payment.png" alt="">
+                        <img src="/assets/images/payment.png" alt="">
                     </div>
                 </div>
             </div>
