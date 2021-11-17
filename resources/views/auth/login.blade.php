@@ -35,11 +35,15 @@
                         <div class="tab-content">
                             <div class="account-form-container login-form">
                                 <div class="account-form">
-                                    <form action="#" method="post">
-                                        <input type="text" name="user-name" class="form-control"
-                                            placeholder="Username">
+                                    <form action="{{route('login')}}" method="post">
+                                        @csrf
+
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email" class="form-control"
+                                            placeholder="Email" required>
+                                        <label for="password">Password</label>
                                         <input type="password" name="user-password" class="form-control"
-                                            placeholder="Password">
+                                            placeholder="Password" required>
                                         <div class="button-box">
                                             <div class="login-toggle-btn d-flex justify-content-between">
                                                 <div class="remember d-flex">
@@ -48,7 +52,6 @@
                                                 </div>
                                                 <div class="forgot">
                                                     <a href="#">Forgot Password?</a>
-
                                                 </div>
                                             </div>
                                             <button type="submit"
