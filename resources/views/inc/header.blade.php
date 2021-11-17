@@ -35,7 +35,7 @@
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 </head>
 
-<body class="home">
+<body @if (Route::current()->getName() == 'home') class="home" @endif>
     <div class="site-wrapper">
 
         <!-- =====================================
@@ -59,9 +59,9 @@
                             </ul>
                         </div>
                         <div class="header-account">
-                            <a href="account.html">LOGIN</a>
+                            <a href="{{route('login')}}">LOGIN</a>
                             OR
-                            <a href="account.html">REGISTER</a>
+                            <a href="{{route('register')}}">REGISTER</a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-2 d-flex align-items-center justify-content-center">
-                                <a class="logo" href="index.html">
+                                <a class="logo" href="{{route('home')}}">
                                     <img src="assets/images/logo.png" alt="">
                                 </a>
                             </div>
@@ -214,10 +214,10 @@
                                                 <!--  Main navigation  -->
                                                 <ul class="main-nav nav navbar-nav navbar-right">
                                                     <li class="dropdown active">
-                                                        <a href="index.html">Home</a>
+                                                        <a href="{{route('home')}}">Home</a>
                                                         <b class="caret"></b>
                                                         <ul class="dropdown-menu">
-                                                            <li><a href="../v_white/index.html">Home White</a>
+                                                            <li><a href="../v_white/{{route('home')}}">Home White</a>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -302,7 +302,7 @@
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                     </button>
-                                    <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png"
+                                    <a class="navbar-brand" href="{{route('home')}}"><img src="assets/images/logo.png"
                                             alt=""></a>
                                 </div>
                                 <!-- search -->
@@ -333,9 +333,9 @@
                                     <button class="close-navbar"><i class="fa fa-close"></i></button>
                                     <ul class="nav navbar-nav small-nav">
                                         <li class="menu-item-has-children">
-                                            <a href="index.html">Home <b class="caret"></b></a>
+                                            <a href="{{route('home')}}">Home <b class="caret"></b></a>
                                             <ul class="sub-menu">
-                                                <li><a href="../v_white/index.html">Home White</a></li>
+                                                <li><a href="../v_white/{{route('home')}}">Home White</a></li>
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children">

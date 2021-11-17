@@ -97,7 +97,7 @@
             <div class="row">
                 <div class="col-md-12  d-flex justify-content-between align-items-center">
                     <div class="copyright">
-                        Copyright © 2018 <a href="#">Punibor.</a>. All rights reserved
+                        Copyright © 2021 <a href="#">{{env('APP_NAME')}}</a>. All rights reserved
                     </div>
                     <div class="payment">
                         <img src="assets/images/payment.png" alt="">
