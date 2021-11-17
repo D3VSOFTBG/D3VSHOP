@@ -201,7 +201,7 @@ a {
 }
 
 a:hover {
-    color: #ffbc12;
+    color: #1dc681;
 }
 
 a:not([href]):not([tabindex]) {
@@ -12114,7 +12114,6 @@ body:not(.home) .main-content {
     color: #666;
     font-size: 14px;
     height: 50px;
-    margin-bottom: 30px;
     padding: 0 15px;
 }
 

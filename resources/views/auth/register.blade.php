@@ -35,14 +35,17 @@
                         <div class="tab-content">
                             <div class="account-form-container register-form">
                                 <div class="account-form">
-                                    <form action="{{route('login')}}" method="post">
-                                        <input type="text" name="first-name" class="form-control"
-                                            placeholder="First Name">
-                                        <input type="text" name="last-name" class="form-control"
-                                            placeholder="Last Name">
-                                        <input name="user-email" type="email" class="form-control"
-                                            placeholder="Email">
-                                        <input type="password" class="form-control" placeholder="Password">
+                                    <form action="{{route('register')}}" method="post">
+                                        <label for="name">Name</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Name">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" class="form-control" placeholder="Email">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" class="form-control"
+                                            placeholder="Password">
+                                        <label for="password">Password Confirmation</label>
+                                        <input type="password" name="password_confirmation" class="form-control"
+                                            placeholder="Confirm Password">
                                         <div class="button-box">
                                             <button type="submit"
                                                 class="btn btn-default btn-normal"><span>Register</span></button>

@@ -38,12 +38,32 @@
                                     <form action="{{route('login')}}" method="post">
                                         @csrf
 
-                                        <label for="email">Email</label>
-                                        <input type="email" name="email" id="email" class="form-control"
-                                            placeholder="Email" required>
-                                        <label for="password">Password</label>
-                                        <input type="password" name="user-password" class="form-control"
-                                            placeholder="Password" required>
+                                        <div class="mb-3">
+                                            <label for="email">Email</label>
+                                            <input type="email" name="email" id="email"
+                                                class="form-control @error('email') is-invalid @enderror"
+                                                placeholder="Email" required>
+
+                                            @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="password">Password</label>
+                                            <input type="password" name="password" id="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                placeholder="Password" required>
+
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+
                                         <div class="button-box">
                                             <div class="login-toggle-btn d-flex justify-content-between">
                                                 <div class="remember d-flex">
@@ -60,28 +80,6 @@
                                     </form>
                                 </div>
                             </div>
-                            {{-- <div id="login" class="tab-pane fade show active">
-
-                            </div>
-                            <div id="register" class="tab-pane fade">
-                                <div class="account-form-container register-form">
-                                    <div class="account-form">
-                                        <form action="#" method="post">
-                                            <input type="text" name="first-name" class="form-control"
-                                                placeholder="First Name">
-                                            <input type="text" name="last-name" class="form-control"
-                                                placeholder="Last Name">
-                                            <input name="user-email" type="email" class="form-control"
-                                                placeholder="Email">
-                                            <input type="password" class="form-control" placeholder="Password">
-                                            <div class="button-box">
-                                                <button type="submit"
-                                                    class="btn btn-default btn-normal"><span>Register</span></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
