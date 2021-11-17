@@ -71,7 +71,7 @@
                                                     <label>Remember me</label>
                                                 </div>
                                                 <div class="forgot">
-                                                    <a href="#">Forgot Password?</a>
+                                                    <a href="/password/reset">Forgot Password?</a>
                                                 </div>
                                             </div>
                                             <button type="submit"
