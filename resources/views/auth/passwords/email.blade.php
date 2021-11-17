@@ -1,4 +1,4 @@
-@section('page_name'){{ 'Login' }}@endsection
+@section('page_name'){{ 'Forgot Password' }}@endsection
 
 @include('inc.header')
 
@@ -35,7 +35,7 @@
                         <div class="tab-content">
                             <div class="account-form-container login-form">
                                 <div class="account-form">
-                                    <form action="{{route('login')}}" method="post">
+                                    <form action="{{ route('password.email') }}" method="post">
                                         @csrf
 
                                         <div class="mb-3">
@@ -51,31 +51,9 @@
                                             @enderror
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label for="password">Password</label>
-                                            <input type="password" name="password" id="password"
-                                                class="form-control @error('password') is-invalid @enderror"
-                                                placeholder="Password" required>
-
-                                            @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
-                                        </div>
-
                                         <div class="button-box">
-                                            <div class="login-toggle-btn d-flex justify-content-between">
-                                                <div class="remember d-flex">
-                                                    <input type="checkbox">
-                                                    <label>Remember me</label>
-                                                </div>
-                                                <div class="forgot">
-                                                    <a href="{{ route('password.update') }}">Forgot Password?</a>
-                                                </div>
-                                            </div>
                                             <button type="submit"
-                                                class="btn btn-default btn-normal"><span>Login</span></button>
+                                                class="btn btn-default btn-normal"><span>Submit</span></button>
                                         </div>
                                     </form>
                                 </div>
