@@ -38,6 +38,12 @@
                                     <form action="{{ route('password.email') }}" method="post">
                                         @csrf
 
+                                        @if (session('status'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{ session('status') }}
+                                        </div>
+                                        @endif
+
                                         <div class="mb-3">
                                             <label for="email">Email</label>
                                             <input type="email" name="email" id="email"
