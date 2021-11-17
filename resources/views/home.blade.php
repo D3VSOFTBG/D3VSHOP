@@ -33,7 +33,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 </head>
 
-<body class="home">
+<body>
 	<div class="site-wrapper">
 
 		<!-- =====================================
