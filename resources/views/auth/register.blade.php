@@ -36,16 +36,26 @@
                             <div class="account-form-container register-form">
                                 <div class="account-form">
                                     <form action="{{route('register')}}" method="post">
-                                        <label for="name">Name</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Name">
-                                        <label for="email">Email</label>
-                                        <input type="email" name="email" class="form-control" placeholder="Email">
-                                        <label for="password">Password</label>
-                                        <input type="password" name="password" class="form-control"
-                                            placeholder="Password">
-                                        <label for="password">Password Confirmation</label>
-                                        <input type="password" name="password_confirmation" class="form-control"
-                                            placeholder="Confirm Password">
+                                        @csrf
+
+                                        <div class="mb-3">
+                                            <label for="name">Name</label>
+                                            <input type="text" name="name" class="form-control" placeholder="Name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email">Email</label>
+                                            <input type="email" name="email" class="form-control" placeholder="Email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password">Password</label>
+                                            <input type="password" name="password" class="form-control"
+                                                placeholder="Password">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password">Password Confirmation</label>
+                                            <input type="password" name="password_confirmation" class="form-control"
+                                                placeholder="Confirm Password">
+                                        </div>
                                         <div class="button-box">
                                             <button type="submit"
                                                 class="btn btn-default btn-normal"><span>Register</span></button>
