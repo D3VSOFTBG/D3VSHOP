@@ -40,7 +40,12 @@
 
                                         <div class="mb-3">
                                             <label for="name">Name</label>
-                                            <input type="text" name="name" class="form-control" placeholder="Name">
+                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Name">
+                                            @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label for="email">Email</label>
