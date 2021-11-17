@@ -1,14 +1,14 @@
 /*-----------------------------------------------------------------------------------
-    
+
     Template Name: Punibor  eCommerce Template
     Version: 1.0
-    
+
 -----------------------------------------------------------------------------------
-    [Table of contents] 
+    [Table of contents]
     1. Utilities
     2. Base
     2. Layout
-    4. Page 
+    4. Page
     5. Widget
     6. Widget product
     7. Menu
@@ -3855,7 +3855,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -3875,7 +3875,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -3892,7 +3892,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -3921,7 +3921,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -6052,7 +6052,7 @@ a.text-dark:hover, a.text-dark:focus {
  */
 /** elements mixins **/
 /**
-* Transition-timing-function property@mixin 
+* Transition-timing-function property@mixin
 */
 /*background RGBA
 ============================================*/
@@ -6063,7 +6063,7 @@ a.text-dark:hover, a.text-dark:focus {
 /****/
 /** elements mixins **/
 /**
-* Transition-timing-function property@mixin 
+* Transition-timing-function property@mixin
 */
 /*background RGBA
 ============================================*/
@@ -6139,7 +6139,7 @@ input.btn {
 
 /* 3. Layout */
 /*************************
-         Margin 
+         Margin
 *************************/
 .mt-0 {
   margin-top: 0; }
@@ -6736,7 +6736,7 @@ input.btn {
   padding-left: 195px; }
 
 /***************************
-    Page section padding 
+    Page section padding
 ****************************/
 .ptb-0 {
   padding: 0; }
@@ -6829,7 +6829,7 @@ input.btn {
   padding: 310px 0; }
 
 /***************************
-    Page section margin 
+    Page section margin
 ****************************/
 .mtb-0 {
   margin: 0; }
@@ -6977,7 +6977,7 @@ input.btn {
   padding-right: 12px; }
 
 /*-----------------------------
-   owl-carousel 
+   owl-carousel
  -------------------------------*/
 .owl-carousel.owl-theme {
   margin-left: -15px;
@@ -7155,7 +7155,7 @@ a[aria-expanded="true"] {
   color: #1dc681; }
 
 /*-----------------------------
-        slick-prev 
+        slick-prev
  -------------------------------*/
 .slick-slider .slick-arrow {
   line-height: 0;

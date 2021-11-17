@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +33,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 </head>
 
-<body class="home layout-boxed section-bg" style="background-image:url(assets/images/bg_home.jpg)">
+<body class="home">
 	<div class="site-wrapper">
 
 		<!-- =====================================
