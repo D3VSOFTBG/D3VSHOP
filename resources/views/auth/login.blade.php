@@ -71,7 +71,7 @@
                                                     <label>Remember me</label>
                                                 </div>
                                                 <div class="forgot">
-                                                    <a href="{{ route('password.update') }}">Forgot Password?</a>
+                                                    <a href="{{ route('password.request') }}">Forgot Password?</a>
                                                 </div>
                                             </div>
                                             <button type="submit"
