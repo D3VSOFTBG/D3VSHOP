@@ -33,7 +33,7 @@
                 <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                     <div class="account-wrapper">
                         <div class="tab-content">
-                            <div class="account-form-container register-form">
+                            <div class="account-form-container">
                                 <div class="account-form">
                                     <form action="{{route('register')}}" method="post">
                                         @csrf

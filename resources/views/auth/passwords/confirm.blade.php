@@ -1,49 +1,73 @@
-@extends('layouts.app')
+@section('page_name'){{ 'Confirm Password' }}@endsection
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Confirm Password') }}</div>
+@include('inc.header')
 
-                <div class="card-body">
-                    {{ __('Please confirm your password before continuing.') }}
-
-                    <form method="POST" action="{{ route('password.confirm') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Confirm Password') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<!-- =====================================
+	    	==== Start breadcrumb -->
+<div class="breadcrumb section-bg" style="background-image:url(/assets/images/bg_breadcrumb.jpg)">
+    <!-- container -->
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12">
+                <h1>@yield('page_name')</h1>
+                <ol class="item-breadcrumb">
+                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><span aria-hidden="true">›</span></li>
+                    <li>@yield('page_name')</li>
+                </ol>
             </div>
         </div>
     </div>
+    <!-- /container -->
 </div>
-@endsection
+<!-- =====================================
+             ==== End breadcrumb -->
+
+<!-- =====================================
+             ==== Start account -->
+<div class="main-content">
+    <div class="page-account">
+        <!-- container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="account-wrapper">
+                        <div class="tab-content">
+                            <div class="account-form-container">
+                                <div class="account-form">
+                                    <form action="{{route('password.confirm')}}" method="post">
+                                        @csrf
+
+                                        <div class="mb-3">
+                                            <label for="password">Password</label>
+                                            <input type="password" name="password" id="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                placeholder="Password" required>
+
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="button-box">
+                                            <button type="submit"
+                                                class="btn btn-default btn-normal"><span>Submit</span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+</div>
+<!-- =====================================
+             ==== End account -->
+
+
+@include('inc.footer')
