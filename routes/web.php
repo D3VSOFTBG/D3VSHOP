@@ -19,4 +19,4 @@ Route::get('/', function () {
 })->name('home');
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);

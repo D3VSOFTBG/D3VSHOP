@@ -58,9 +58,17 @@
                             </ul>
                         </div>
                         <div class="header-account">
+                            @if (Auth::check())
+                            {{Auth::user()->name}} <small><a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">(LOGOUT)</a></small>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            @else
                             <a href="{{route('login')}}">LOGIN</a>
                             OR
                             <a href="{{route('register')}}">REGISTER</a>
+                            @endif
                         </div>
                     </div>
                 </div>
