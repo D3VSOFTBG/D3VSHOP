@@ -222,14 +222,9 @@
                                                 <ul class="main-nav nav navbar-nav navbar-right">
                                                     <li class="dropdown active">
                                                         <a href="{{route('home')}}">Home</a>
-                                                        <b class="caret"></b>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="../v_white/{{route('home')}}">Home White</a>
-                                                            </li>
-                                                        </ul>
                                                     </li>
                                                     <li class="dropdown">
-                                                        <a href="product_grid.html">Product</a>
+                                                        <a href="product_grid.html">Admin</a>
                                                         <b class="caret"></b>
                                                         <ul class="dropdown-menu">
                                                             <li><a href="product_grid.html">Product grid sidebar
@@ -309,7 +304,7 @@
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                     </button>
-                                    <a class="navbar-brand" href="{{route('home')}}"><img src="assets/images/logo.png"
+                                    <a class="navbar-brand" href="{{route('home')}}"><img src="/assets/images/logo.png"
                                             alt=""></a>
                                 </div>
                                 <!-- search -->
