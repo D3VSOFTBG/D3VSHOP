@@ -42,7 +42,7 @@
                                             <label for="name">Name</label>
                                             <input type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror"
-                                                placeholder="Name">
+                                                placeholder="Name" required>
                                             @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -53,7 +53,7 @@
                                             <label for="email">Email</label>
                                             <input type="email" name="email"
                                                 class="form-control @error('email') is-invalid @enderror"
-                                                placeholder="Email">
+                                                placeholder="Email" required>
                                             @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -64,7 +64,7 @@
                                             <label for="password">Password</label>
                                             <input type="password" name="password"
                                                 class="form-control @error('password') is-invalid @enderror"
-                                                placeholder="Password">
+                                                placeholder="Password" required>
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -74,7 +74,7 @@
                                         <div class="mb-3">
                                             <label for="password">Password Confirmation</label>
                                             <input type="password" name="password_confirmation" class="form-control"
-                                                placeholder="Confirm Password">
+                                                placeholder="Confirm Password" required>
                                         </div>
                                         <div class="button-box">
                                             <button type="submit"
