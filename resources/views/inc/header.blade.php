@@ -225,21 +225,6 @@
                                                     </li>
                                                     <li class="dropdown">
                                                         <a href="{{route('admin')}}">Admin</a>
-                                                        <b class="caret"></b>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="product_grid.html">Product grid sidebar
-                                                                    right</a></li>
-                                                            <li><a href="product_grid_sidebar_left.html">Product grid
-                                                                    sidebar left</a></li>
-                                                            <li><a href="product_list.html">Product list sidebar
-                                                                    right</a></li>
-                                                            <li><a href="product_list_sidebar_left.html">Product list
-                                                                    sidebar left</a></li>
-                                                            <li><a href="product_single.html">Product single </a></li>
-                                                            <li><a href="product_single2.html">Product single2</a></li>
-                                                            <li><a href="product_single_no_sidebar.html">Product single
-                                                                    Full</a></li>
-                                                        </ul>
                                                     </li>
                                                     <li class="dropdown"><a href="about.html">About</a></li>
                                                     <li class="dropdown">
