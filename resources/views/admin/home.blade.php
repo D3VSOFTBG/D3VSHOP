@@ -1,3 +1,5 @@
+@section('page_name'){{ 'Home' }}@endsection
+
 @include('admin.inc.header')
 
 <!-- Content Wrapper. Contains page content -->
