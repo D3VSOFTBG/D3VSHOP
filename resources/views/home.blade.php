@@ -1,3 +1,5 @@
+@section('page_name'){{ 'Home' }}@endsection
+
 @include('inc.header')
 
 		<!-- =====================================
