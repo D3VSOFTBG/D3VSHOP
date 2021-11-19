@@ -18,8 +18,12 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/admin', function () {
-    return view('admin.home');
-})->name('admin');
+Route::middleware(['auth', 'admin'])->group(function ()
+{
+    Route::get('/admin', function () {
+        return view('admin.home');
+    })->name('admin');
+});
+
 
 Auth::routes(['verify' => true]);
