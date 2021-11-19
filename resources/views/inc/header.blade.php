@@ -224,7 +224,7 @@
                                                         <a href="{{route('home')}}">Home</a>
                                                     </li>
                                                     <li class="dropdown">
-                                                        <a href="product_grid.html">Admin</a>
+                                                        <a href="{{route('admin')}}">Admin</a>
                                                         <b class="caret"></b>
                                                         <ul class="dropdown-menu">
                                                             <li><a href="product_grid.html">Product grid sidebar
