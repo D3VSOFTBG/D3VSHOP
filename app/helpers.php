@@ -8,5 +8,5 @@ function user_count()
 }
 function gravatar($email)
 {
-
+    return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) );
 }
