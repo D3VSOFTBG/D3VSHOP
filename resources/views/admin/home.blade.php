@@ -57,7 +57,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Users</span>
-                <span class="info-box-number">{{Auth::user()->id}}</span>
+                <span class="info-box-number">{{user_count()}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
