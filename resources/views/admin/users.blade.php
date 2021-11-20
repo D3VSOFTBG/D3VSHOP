@@ -64,7 +64,7 @@
                                             <td class="align-middle">
                                                 <form action="{{route('admin.users.delete')}}" method="post"
                                                     class="d-inline"
-                                                    onclick="if(!confirm('Delete {{$user->name}}.')){return false;}">
+                                                    onclick="if(!confirm('Delete ({{$user->name}}).')){return false;}">
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{$user->id}}">
                                                     <button class="btn btn-danger" data-toggle="tooltip"
