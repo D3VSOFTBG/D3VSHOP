@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,6 +24,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::get('/admin', function () {
         return view('admin.home');
     })->name('admin');
+    Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users');
 });
 
 
