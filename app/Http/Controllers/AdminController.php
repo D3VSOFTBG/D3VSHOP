@@ -19,5 +19,11 @@ class AdminController extends Controller
     function user_delete(Request $request)
     {
         User::find($request->id)->delete();
+        return back();
+    }
+    function user_edit(Request $request)
+    {
+        User::find($request->id)->delete();
+        return back();
     }
 }

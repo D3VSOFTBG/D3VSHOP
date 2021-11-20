@@ -63,11 +63,12 @@
                                             </td>
                                             <td class="align-middle">
                                                 <form action="{{route('admin.users.delete')}}" method="post" class="d-inline" onclick="if(!confirm('Delete')){return false;}">
+                                                    @csrf
                                                     <input type="hidden" name="id" value="{{$user->id}}">
                                                     <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></button>
                                                 </form>
                                                 <form action="" method="post" class="d-inline">
-                                                    <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></button>
+                                                    <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
