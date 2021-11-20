@@ -49,4 +49,30 @@ class AdminController extends Controller
 
         return back();
     }
+    function user_create(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'role' => 'required',
+        ]);
+
+        $users = new User();
+
+        $users->name = $request->name;
+        $users->email = $request->email;
+
+        if($request->role == 'NULL')
+        {
+            $users->role = NULL;
+        }
+        else
+        {
+            $users->role = $request->role;
+        }
+
+        $users->save();
+
+        return back();
+    }
 }
