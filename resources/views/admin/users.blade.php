@@ -63,7 +63,8 @@
                                             </td>
                                             <td class="align-middle">
                                                 <form action="{{route('admin.users.delete')}}" method="post"
-                                                    class="d-inline" onclick="if(!confirm('Delete {{$user->name}}.')){return false;}">
+                                                    class="d-inline"
+                                                    onclick="if(!confirm('Delete {{$user->name}}.')){return false;}">
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{$user->id}}">
                                                     <button class="btn btn-danger" data-toggle="tooltip"
@@ -71,6 +72,7 @@
                                                         <i class="fas fa-trash"></i></button>
                                                 </form>
                                                 <form action="" method="post" class="d-inline">
+                                                    @csrf
                                                     <a data-toggle="modal" data-target="#edit_user_{{$user->id}}">
                                                         <button type="button" class="btn btn-success"
                                                             data-toggle="tooltip" data-placement="top" title="Edit">
@@ -80,23 +82,57 @@
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="edit_user_{{$user->id}}" tabindex="-1"
                                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
+                                                        <div class="modal-dialog modal-dialog-centered">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Edit {}</h5>
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Edit
+                                                                        {{$user->name}}.</h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    ...
+                                                                    <div class="mb-3">
+                                                                        <div class="form-group">
+                                                                            <label for="name">
+                                                                                <span class="text-danger">*</span>
+                                                                                Name</label>
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Name"
+                                                                                value="{{$user->name}}" required>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <div class="form-group">
+                                                                            <label for="email">
+                                                                                <span class="text-danger">*</span>
+                                                                                Email</label>
+                                                                            <input type="email" class="form-control"
+                                                                                placeholder="Email"
+                                                                                value="{{$user->email}}" required>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div>
+                                                                        <div class="form-group">
+                                                                            <label>
+                                                                                <span class="text-danger">*</span>
+                                                                                Role</label>
+                                                                            <select class="custom-select">
+                                                                                @foreach ($roles as $role)
+                                                                                <option value="{{$role->id}}" @if ($user->role == $role->id) selected @endif>
+                                                                                    {{$role->name}}
+                                                                                </option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
                                                                         data-dismiss="modal">Close</button>
-                                                                    <button type="button" class="btn btn-primary">Save
-                                                                        changes</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">Submit</button>
                                                                 </div>
                                                             </div>
                                                         </div>

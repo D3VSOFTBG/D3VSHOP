@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\RoleModel;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class AdminController extends Controller
     function users()
     {
         $users = User::orderBy('id', 'DESC')->get();
-        return view('admin.users', ['users' => $users]);
+        $roles = RoleModel::all();
+        return view('admin.users', ['users' => $users, 'roles' => $roles]);
     }
     function user_delete(Request $request)
     {
