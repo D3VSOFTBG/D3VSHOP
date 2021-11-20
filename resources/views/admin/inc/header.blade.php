@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="/dist/css/adminlte.min.css">
     <!-- Admin Style -->
     <link rel="stylesheet" href="/assets/css/admin.css">
+
+    @if ($errors->any())
+    <script>
+        alert('{{ implode(' ', $errors->all(':message')) }}');
+    </script>
+    @endif
+
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">

@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    function home()
+    function dashboard()
     {
-        return view('admin.home');
+        return view('admin.dashboard');
     }
     function users()
     {
@@ -28,7 +28,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:users',
             'role' => 'required',
         ]);
 
@@ -52,6 +52,14 @@ class AdminController extends Controller
             {
                 $users->password = Hash::make($request->password);
             }
+            else
+            {
+                return back()->withErrors('The passwords do not match.');
+            }
+        }
+        else
+        {
+            return back()->withErrors('Password fields are empty.');
         }
 
         $users->save();
@@ -62,7 +70,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email|unique:users',
             'role' => 'required',
             'password' => 'required',
             'password_confirmation' => 'required',
@@ -85,6 +93,10 @@ class AdminController extends Controller
         if($request->password == $request->password_confirmation)
         {
             $users->password = Hash::make($request->password);
+        }
+        else
+        {
+            return back()->withErrors('The passwords do not match.');
         }
 
         $users->save();
