@@ -37,32 +37,33 @@
                                             <th>Verified</th>
                                             <th>Role</th>
                                             <th>Registered</th>
-                                            <th>Operation</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($users as $user)
                                         <tr>
-                                            <td>
+                                            <td class="align-middle">
                                                 {{$user->id}}
                                             </td>
-                                            <td>
+                                            <td class="align-middle">
                                                 {{$user->name}}
                                             </td>
-                                            <td>
+                                            <td class="align-middle">
                                                 {{$user->email}}
                                             </td>
-                                            <td>
+                                            <td class="align-middle">
                                                 {{email_verified_at($user->email_verified_at)}}
                                             </td>
-                                            <td>
+                                            <td class="align-middle">
                                                 {{role_name($user->role)}}
                                             </td>
-                                            <td>
+                                            <td class="align-middle">
                                                 {{$user->created_at}}
                                             </td>
-                                            <td>
-                                                Soon
+                                            <td class="align-middle">
+                                                <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></button>
+                                                <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></button>
                                             </td>
                                         </tr>
                                         @endforeach

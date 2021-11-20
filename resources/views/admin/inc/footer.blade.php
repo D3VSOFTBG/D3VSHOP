@@ -13,6 +13,12 @@
 <script src="/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Tooltips -->
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 <!-- overlayScrollbars -->
 <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
