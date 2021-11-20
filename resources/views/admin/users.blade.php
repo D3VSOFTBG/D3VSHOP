@@ -49,7 +49,7 @@
                                                 <span class="text-danger">*</span>
                                                 Role</label>
                                             <select name="role" class="custom-select">
-                                                <option value="NULL">
+                                                <option value="NULL" selected>
                                                 Customer
                                                 </option>
                                                 @foreach ($roles as $role)
