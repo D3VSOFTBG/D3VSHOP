@@ -9,7 +9,55 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1 class="m-0">@yield('page_name')</h1>
+                    <h1 class="m-0">@yield('page_name')
+                        <a data-toggle="modal" data-target="#create_user">
+                            <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
+                                title="Create">
+                                <i class="fas fa-user-plus"></i>
+                            </button>
+                        </a>
+                    </h1>
+                    <form action="" method="post" class="d-inline">
+                        <!-- Modal -->
+                        <div class="modal fade" id="create_user" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Create user.</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <div class="form-group">
+                                                <label for="name">
+                                                    <span class="text-danger">*</span>
+                                                    Name</label>
+                                                <input name="name" type="text" class="form-control"
+                                                    placeholder="Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-group">
+                                                <label for="email">
+                                                    <span class="text-danger">*</span>
+                                                    Email</label>
+                                                <input name="email" type="email" class="form-control"
+                                                    placeholder="Email" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -76,7 +124,7 @@
                                                     <a data-toggle="modal" data-target="#edit_user_{{$user->id}}">
                                                         <button type="button" class="btn btn-success"
                                                             data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="fas fa-edit"></i></button>
+                                                            <i class="fas fa-user-edit"></i></button>
                                                     </a>
 
                                                     <!-- Modal -->
@@ -94,42 +142,36 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <input type="hidden" name="id" value="{{$user->id}}">
-                                                                    <div class="mb-3">
-                                                                        <div class="form-group">
-                                                                            <label for="name">
-                                                                                <span class="text-danger">*</span>
-                                                                                Name</label>
-                                                                            <input name="name" type="text" class="form-control"
-                                                                                placeholder="Name"
-                                                                                value="{{$user->name}}" required>
-                                                                        </div>
+                                                                    <div class="form-group">
+                                                                        <label for="name">
+                                                                            <span class="text-danger">*</span>
+                                                                            Name</label>
+                                                                        <input name="name" type="text" class="form-control"
+                                                                            placeholder="Name"
+                                                                            value="{{$user->name}}" required>
                                                                     </div>
-                                                                    <div class="mb-3">
-                                                                        <div class="form-group">
-                                                                            <label for="email">
-                                                                                <span class="text-danger">*</span>
-                                                                                Email</label>
-                                                                            <input name="email" type="email" class="form-control"
-                                                                                placeholder="Email"
-                                                                                value="{{$user->email}}" required>
-                                                                        </div>
+                                                                    <div class="form-group">
+                                                                        <label for="email">
+                                                                            <span class="text-danger">*</span>
+                                                                            Email</label>
+                                                                        <input name="email" type="email" class="form-control"
+                                                                            placeholder="Email"
+                                                                            value="{{$user->email}}" required>
                                                                     </div>
-                                                                    <div>
-                                                                        <div class="form-group">
-                                                                            <label>
-                                                                                <span class="text-danger">*</span>
-                                                                                Role</label>
-                                                                            <select name="role" class="custom-select">
-                                                                                <option value="NULL" @if ($user->role == NULL) selected @endif>
-                                                                                Customer
-                                                                                </option>
-                                                                                @foreach ($roles as $role)
-                                                                                <option value="{{$role->id}}" @if ($user->role == $role->id) selected @endif>
-                                                                                    {{$role->name}}
-                                                                                </option>
-                                                                                @endforeach
-                                                                            </select>
-                                                                        </div>
+                                                                    <div class="form-group">
+                                                                        <label>
+                                                                            <span class="text-danger">*</span>
+                                                                            Role</label>
+                                                                        <select name="role" class="custom-select">
+                                                                            <option value="NULL" @if ($user->role == NULL) selected @endif>
+                                                                            Customer
+                                                                            </option>
+                                                                            @foreach ($roles as $role)
+                                                                            <option value="{{$role->id}}" @if ($user->role == $role->id) selected @endif>
+                                                                                {{$role->name}}
+                                                                            </option>
+                                                                            @endforeach
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">
