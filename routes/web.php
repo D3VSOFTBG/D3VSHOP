@@ -21,10 +21,14 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'admin'])->group(function ()
 {
+    // GET
     Route::get('/admin', function () {
         return view('admin.home');
     })->name('admin');
     Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users');
+
+    // POST
+    Route::post('/admin/users/delete', [AdminController::class, 'user_delete'])->name('admin.users.delete');
 });
 
 
