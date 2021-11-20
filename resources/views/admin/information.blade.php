@@ -41,8 +41,6 @@
                                 <br/>
                                 <strong>Broadcast Driver:</strong> {{env('BROADCAST_DRIVER')}}
                                 <br/>
-                                <strong>Broadcast Driver:</strong> {{env('BROADCAST_DRIVER')}}
-                                <br/>
                                 <strong>Mail Driver:</strong> {{env('MAIL_DRIVER')}}
                                 <br/>
                                 <strong>Mail Host:</strong> {{env('MAIL_HOST')}}
