@@ -65,14 +65,14 @@
                                                 <span class="text-danger">*</span>
                                                 Password</label>
                                             <input name="password" type="password" class="form-control"
-                                                placeholder="Password">
+                                                placeholder="Password" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="password_confirmation">
                                                 <span class="text-danger">*</span>
                                                 Password Confirmation</label>
                                             <input name="password_confirmation" type="password" class="form-control"
-                                                placeholder="Password Confirmation">
+                                                placeholder="Password Confirmation" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
