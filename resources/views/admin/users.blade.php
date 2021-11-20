@@ -60,6 +60,20 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="password">
+                                                <span class="text-danger">*</span>
+                                                Password</label>
+                                            <input name="password" type="password" class="form-control"
+                                                placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password_confirmation">
+                                                <span class="text-danger">*</span>
+                                                Password Confirmation</label>
+                                            <input name="password_confirmation" type="password" class="form-control"
+                                                placeholder="Password Confirmation">
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -184,6 +198,18 @@
                                                                             </option>
                                                                             @endforeach
                                                                         </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="password">
+                                                                            Password</label>
+                                                                        <input name="password" type="password" class="form-control"
+                                                                            placeholder="Password">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="password_confirmation">
+                                                                            Password Confirmation</label>
+                                                                        <input name="password_confirmation" type="password" class="form-control"
+                                                                            placeholder="Password Confirmation">
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">

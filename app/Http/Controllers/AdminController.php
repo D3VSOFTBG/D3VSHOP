@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\RoleModel;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -45,6 +46,14 @@ class AdminController extends Controller
             $users->role = $request->role;
         }
 
+        if(!empty($request->password) && !empty($request->password_confirmation))
+        {
+            if($request->password == $request->password_confirmation)
+            {
+                $users->password = Hash::make($request->password);
+            }
+        }
+
         $users->save();
 
         return back();
@@ -55,6 +64,8 @@ class AdminController extends Controller
             'name' => 'required',
             'email' => 'required',
             'role' => 'required',
+            'password' => 'required',
+            'password_confirmation' => 'required',
         ]);
 
         $users = new User();
@@ -69,6 +80,11 @@ class AdminController extends Controller
         else
         {
             $users->role = $request->role;
+        }
+
+        if($request->password == $request->password_confirmation)
+        {
+            $users->password = Hash::make($request->password);
         }
 
         $users->save();
