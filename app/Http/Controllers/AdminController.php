@@ -16,4 +16,8 @@ class AdminController extends Controller
         $users = User::orderBy('id', 'DESC')->get();
         return view('admin.users', ['users' => $users]);
     }
+    function user_delete(Request $request)
+    {
+        User::find($request->id)->delete();
+    }
 }
