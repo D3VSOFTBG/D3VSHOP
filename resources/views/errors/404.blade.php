@@ -26,11 +26,11 @@
 
                     <p class="text-center">We could not find the page you were looking for. Meanwhile, you may
                         @if (str_contains(Request::url(), 'admin'))
-                        <a href="{{route('admin')}}">return to dashboard</a>
+                        <a href="{{route('admin')}}">return to dashboard</a>.
                         @else
-                        <a href="{{route('home')}}">return to home</a>
+                        <a href="{{route('home')}}">return to home</a>.
                         @endif
-                        .</p>
+                        </p>
                 </section>
                 <!-- /.content -->
             </td>

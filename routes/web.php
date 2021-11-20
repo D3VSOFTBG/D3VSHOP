@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/500', function () {
+    return view('errors.500');
+})->name('500');
+
 Route::middleware(['auth', 'admin'])->group(function ()
 {
     // GET
