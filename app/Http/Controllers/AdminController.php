@@ -33,6 +33,8 @@ class AdminController extends Controller
             'role' => 'required',
         ]);
 
+        $users->name = $request->name;
+
         if($request->email != $users->email)
         {
             $request->validate([
@@ -40,8 +42,6 @@ class AdminController extends Controller
             ]);
             $users->email = $request->email;
         }
-
-        $users->name = $request->name;
 
         if($request->role == 'NULL')
         {
