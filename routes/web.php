@@ -23,7 +23,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
 {
     // GET
     Route::get('/admin', function () {
-        return view('admin.home');
+        return view('admin.dashboard');
     })->name('admin');
     Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users');
 

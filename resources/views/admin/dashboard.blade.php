@@ -1,4 +1,4 @@
-@section('page_name'){{ 'Home' }}@endsection
+@section('page_name'){{ 'Dashboard' }}@endsection
 
 @include('admin.inc.header')
 

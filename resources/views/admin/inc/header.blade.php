@@ -188,7 +188,7 @@
                             <a href="{{route('admin')}}" class="nav-link @if (Route::currentRouteName() == 'admin') active @endif">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Home
+                                    Dashboard
                                 </p>
                             </a>
                         </li>
