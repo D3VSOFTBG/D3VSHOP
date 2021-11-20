@@ -71,7 +71,7 @@
                                                         data-placement="top" title="Delete">
                                                         <i class="fas fa-trash"></i></button>
                                                 </form>
-                                                <form action="" method="post" class="d-inline">
+                                                <form action="{{route('admin.users.edit')}}" method="post" class="d-inline">
                                                     @csrf
                                                     <a data-toggle="modal" data-target="#edit_user_{{$user->id}}">
                                                         <button type="button" class="btn btn-success"
@@ -93,12 +93,13 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
+                                                                    <input type="hidden" name="id" value="{{$user->id}}">
                                                                     <div class="mb-3">
                                                                         <div class="form-group">
                                                                             <label for="name">
                                                                                 <span class="text-danger">*</span>
                                                                                 Name</label>
-                                                                            <input type="text" class="form-control"
+                                                                            <input name="name" type="text" class="form-control"
                                                                                 placeholder="Name"
                                                                                 value="{{$user->name}}" required>
                                                                         </div>
@@ -108,7 +109,7 @@
                                                                             <label for="email">
                                                                                 <span class="text-danger">*</span>
                                                                                 Email</label>
-                                                                            <input type="email" class="form-control"
+                                                                            <input name="email" type="email" class="form-control"
                                                                                 placeholder="Email"
                                                                                 value="{{$user->email}}" required>
                                                                         </div>
@@ -118,7 +119,7 @@
                                                                             <label>
                                                                                 <span class="text-danger">*</span>
                                                                                 Role</label>
-                                                                            <select class="custom-select">
+                                                                            <select name="role" class="custom-select">
                                                                                 <option value="NULL" @if ($user->role == NULL) selected @endif>
                                                                                 Customer
                                                                                 </option>

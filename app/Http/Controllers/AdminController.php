@@ -25,7 +25,28 @@ class AdminController extends Controller
     }
     function user_edit(Request $request)
     {
-        User::find($request->id)->delete();
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'role' => 'required',
+        ]);
+
+        $users = User::find($request->id);
+
+        $users->name = $request->name;
+        $users->email = $request->email;
+
+        if($request->role == 'NULL')
+        {
+            $users->role = NULL;
+        }
+        else
+        {
+            $users->role = $request->role;
+        }
+
+        $users->save();
+
         return back();
     }
 }

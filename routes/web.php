@@ -28,7 +28,8 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users');
 
     // POST
-    Route::post('/admin/users', [AdminController::class, 'user_delete'])->name('admin.users.delete');
+    Route::post('/admin/users/delete', [AdminController::class, 'user_delete'])->name('admin.users.delete');
+    Route::post('/admin/users/edit', [AdminController::class, 'user_edit'])->name('admin.users.edit');
 });
 
 
