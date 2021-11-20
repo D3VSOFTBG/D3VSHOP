@@ -86,7 +86,7 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="exampleModalLabel">Edit
-                                                                        {{$user->name}}.</h5>
+                                                                        <strong>{{$user->name}}</strong>.</h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
@@ -119,6 +119,9 @@
                                                                                 <span class="text-danger">*</span>
                                                                                 Role</label>
                                                                             <select class="custom-select">
+                                                                                <option value="NULL" @if ($user->role == NULL) selected @endif>
+                                                                                Customer
+                                                                                </option>
                                                                                 @foreach ($roles as $role)
                                                                                 <option value="{{$role->id}}" @if ($user->role == $role->id) selected @endif>
                                                                                     {{$role->name}}
