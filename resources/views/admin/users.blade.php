@@ -62,8 +62,12 @@
                                                 {{$user->created_at}}
                                             </td>
                                             <td class="align-middle">
-                                                <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></button>
-                                                <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></button>
+                                                <form action="" method="post" class="d-inline" onclick="if(!confirm('Delete')){return false;}">
+                                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></button>
+                                                </form>
+                                                <form action="" method="post" class="d-inline">
+                                                    <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                         @endforeach
