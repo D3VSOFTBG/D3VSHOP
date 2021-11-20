@@ -27,46 +27,48 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 0;">#</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Verified</th>
-                                        <th>Role</th>
-                                        <th>Registered</th>
-                                        <th>Operation</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($users as $user)
-                                    <tr>
-                                        <td>
-                                            {{$user->id}}
-                                        </td>
-                                        <td>
-                                            {{$user->name}}
-                                        </td>
-                                        <td>
-                                            {{$user->email}}
-                                        </td>
-                                        <td>
-                                            {{email_verified_at($user->email_verified_at)}}
-                                        </td>
-                                        <td>
-                                            {{role_name($user->role)}}
-                                        </td>
-                                        <td>
-                                            {{$user->created_at}}
-                                        </td>
-                                        <td>
-                                            Soon
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-bordered m-0">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 0;">#</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Verified</th>
+                                            <th>Role</th>
+                                            <th>Registered</th>
+                                            <th>Operation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($users as $user)
+                                        <tr>
+                                            <td>
+                                                {{$user->id}}
+                                            </td>
+                                            <td>
+                                                {{$user->name}}
+                                            </td>
+                                            <td>
+                                                {{$user->email}}
+                                            </td>
+                                            <td>
+                                                {{email_verified_at($user->email_verified_at)}}
+                                            </td>
+                                            <td>
+                                                {{role_name($user->role)}}
+                                            </td>
+                                            <td>
+                                                {{$user->created_at}}
+                                            </td>
+                                            <td>
+                                                Soon
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer clearfix">
