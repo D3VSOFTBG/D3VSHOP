@@ -26,16 +26,22 @@ class AdminController extends Controller
     }
     function user_edit(Request $request)
     {
+        $users = User::find($request->id);
+
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users',
             'role' => 'required',
         ]);
 
-        $users = User::find($request->id);
+        if($request->email != $users->email)
+        {
+            $request->validate([
+                'email' => 'required|email|unique:users',
+            ]);
+            $users->email = $request->email;
+        }
 
         $users->name = $request->name;
-        $users->email = $request->email;
 
         if($request->role == 'NULL')
         {
@@ -56,10 +62,6 @@ class AdminController extends Controller
             {
                 return back()->withErrors('The passwords do not match.');
             }
-        }
-        else
-        {
-            return back()->withErrors('Password fields are empty.');
         }
 
         $users->save();
