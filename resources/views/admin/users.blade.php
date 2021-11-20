@@ -17,7 +17,8 @@
                             </button>
                         </a>
                     </h1>
-                    <form action="" method="post" class="d-inline">
+                    <form action="{{route('admin.users.create')}}" method="post" class="d-inline">
+                        @csrf
                         <!-- Modal -->
                         <div class="modal fade" id="create_user" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">

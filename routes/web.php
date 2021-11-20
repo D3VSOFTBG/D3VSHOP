@@ -30,6 +30,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     // POST
     Route::post('/admin/users/delete', [AdminController::class, 'user_delete'])->name('admin.users.delete');
     Route::post('/admin/users/edit', [AdminController::class, 'user_edit'])->name('admin.users.edit');
+    Route::post('/admin/users/create', [AdminController::class, 'user_create'])->name('admin.users.create');
 });
 
 
