@@ -62,13 +62,46 @@
                                                 {{$user->created_at}}
                                             </td>
                                             <td class="align-middle">
-                                                <form action="{{route('admin.users.delete')}}" method="post" class="d-inline" onclick="if(!confirm('Delete')){return false;}">
+                                                <form action="{{route('admin.users.delete')}}" method="post"
+                                                    class="d-inline" onclick="if(!confirm('Delete')){return false;}">
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{$user->id}}">
-                                                    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></button>
+                                                    <button class="btn btn-danger" data-toggle="tooltip"
+                                                        data-placement="top" title="Delete"><i
+                                                            class="fas fa-trash"></i></button>
                                                 </form>
                                                 <form action="" method="post" class="d-inline">
-                                                    <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></button>
+                                                    <a data-toggle="modal" data-target="#edit_user_{{$user->id}}">
+                                                        <button type="button" class="btn btn-success"
+                                                            data-toggle="tooltip" data-placement="top" title="Edit"><i
+                                                                class="fas fa-edit"></i></button>
+                                                    </a>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="edit_user_{{$user->id}}" tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Modal
+                                                                        title</h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    ...
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary">Save
+                                                                        changes</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </form>
                                             </td>
                                         </tr>
