@@ -63,18 +63,18 @@
                                             </td>
                                             <td class="align-middle">
                                                 <form action="{{route('admin.users.delete')}}" method="post"
-                                                    class="d-inline" onclick="if(!confirm('Delete')){return false;}">
+                                                    class="d-inline" onclick="if(!confirm('Delete {{$user->name}}.')){return false;}">
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{$user->id}}">
                                                     <button class="btn btn-danger" data-toggle="tooltip"
-                                                        data-placement="top" title="Delete"><i
-                                                            class="fas fa-trash"></i></button>
+                                                        data-placement="top" title="Delete">
+                                                        <i class="fas fa-trash"></i></button>
                                                 </form>
                                                 <form action="" method="post" class="d-inline">
                                                     <a data-toggle="modal" data-target="#edit_user_{{$user->id}}">
                                                         <button type="button" class="btn btn-success"
-                                                            data-toggle="tooltip" data-placement="top" title="Edit"><i
-                                                                class="fas fa-edit"></i></button>
+                                                            data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <i class="fas fa-edit"></i></button>
                                                     </a>
 
                                                     <!-- Modal -->
@@ -83,8 +83,7 @@
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Modal
-                                                                        title</h5>
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Edit {}</h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
