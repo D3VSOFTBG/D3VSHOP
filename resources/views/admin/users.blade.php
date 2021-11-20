@@ -1,4 +1,4 @@
-@section('page_name'){{ 'Home' }}@endsection
+@section('page_name'){{ 'Users' }}@endsection
 
 @include('admin.inc.header')
 
@@ -19,79 +19,81 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <!-- Info boxes -->
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Soon</span>
-                            <span class="info-box-number">
-                                N/A
-                            </span>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Bordered Table</h3>
                         </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Soon</span>
-                            <span class="info-box-number">
-                                N/A
-                            </span>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th>Task</th>
+                                        <th>Progress</th>
+                                        <th style="width: 40px">Label</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>Update software</td>
+                                        <td>
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-danger">55%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2.</td>
+                                        <td>Clean database</td>
+                                        <td>
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-warning">70%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.</td>
+                                        <td>Cron job running</td>
+                                        <td>
+                                            <div class="progress progress-xs progress-striped active">
+                                                <div class="progress-bar bg-primary" style="width: 30%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-primary">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4.</td>
+                                        <td>Fix and squish bugs</td>
+                                        <td>
+                                            <div class="progress progress-xs progress-striped active">
+                                                <div class="progress-bar bg-success" style="width: 90%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-success">90%</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-
-                <!-- fix for small devices only -->
-                <div class="clearfix hidden-md-up"></div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Soon</span>
-                            <span class="info-box-number">
-                                N/A
-                            </span>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            <ul class="pagination pagination-sm m-0 float-right">
+                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                            </ul>
                         </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
+                    </div><!-- /.container-fluid -->
                 </div>
-                <!-- /.col -->
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-                        <div class="info-box-content">
-                            <span class="info-box-text">Users</span>
-                            <span class="info-box-number">
-                                {{user_count()}}
-                            </span>
-                        </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
             </div>
-            <!-- /.row -->
-
-
-
         </div>
-        <!--/. container-fluid -->
     </section>
     <!-- /.content -->
 </div>
