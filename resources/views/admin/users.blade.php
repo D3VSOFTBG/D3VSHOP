@@ -20,7 +20,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Bordered Table</h3>
