@@ -30,23 +30,34 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="mb-3">
-                                            <div class="form-group">
-                                                <label for="name">
-                                                    <span class="text-danger">*</span>
-                                                    Name</label>
-                                                <input name="name" type="text" class="form-control"
-                                                    placeholder="Name" required>
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="name">
+                                                <span class="text-danger">*</span>
+                                                Name</label>
+                                            <input name="name" type="text" class="form-control"
+                                                placeholder="Name" required>
                                         </div>
-                                        <div class="mb-3">
-                                            <div class="form-group">
-                                                <label for="email">
-                                                    <span class="text-danger">*</span>
-                                                    Email</label>
-                                                <input name="email" type="email" class="form-control"
-                                                    placeholder="Email" required>
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="email">
+                                                <span class="text-danger">*</span>
+                                                Email</label>
+                                            <input name="email" type="email" class="form-control"
+                                                placeholder="Email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <span class="text-danger">*</span>
+                                                Role</label>
+                                            <select name="role" class="custom-select">
+                                                <option value="NULL">
+                                                Customer
+                                                </option>
+                                                @foreach ($roles as $role)
+                                                <option value="{{$role->id}}">
+                                                    {{$role->name}}
+                                                </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
