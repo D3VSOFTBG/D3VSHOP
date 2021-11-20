@@ -63,6 +63,7 @@
                                             </td>
                                             <td class="align-middle">
                                                 <form action="" method="post" class="d-inline" onclick="if(!confirm('Delete')){return false;}">
+                                                    <input type="hidden" name="id" value="{{$user->id}}">
                                                     <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash"></i></button>
                                                 </form>
                                                 <form action="" method="post" class="d-inline">
