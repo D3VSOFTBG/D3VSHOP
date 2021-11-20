@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,6 +13,7 @@ class AdminController extends Controller
     }
     function users()
     {
-        return view('admin.users');
+        $users = User::orderBy('id', 'DESC')->get();
+        return view('admin.users', ['users' => $users]);
     }
 }

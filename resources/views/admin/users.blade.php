@@ -23,60 +23,48 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Bordered Table</h3>
+                            <h3 class="card-title">There are {{count($users)}} users.</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th style="width: 10px">#</th>
-                                        <th>Task</th>
-                                        <th>Progress</th>
-                                        <th style="width: 40px">Label</th>
+                                        <th style="width: 0;">#</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Verified</th>
+                                        <th>Role</th>
+                                        <th>Registered</th>
+                                        <th>Operation</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($users as $user)
                                     <tr>
-                                        <td>1.</td>
-                                        <td>Update software</td>
                                         <td>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                            </div>
+                                            {{$user->id}}
                                         </td>
-                                        <td><span class="badge bg-danger">55%</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2.</td>
-                                        <td>Clean database</td>
                                         <td>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-warning" style="width: 70%"></div>
-                                            </div>
+                                            {{$user->name}}
                                         </td>
-                                        <td><span class="badge bg-warning">70%</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3.</td>
-                                        <td>Cron job running</td>
                                         <td>
-                                            <div class="progress progress-xs progress-striped active">
-                                                <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                            </div>
+                                            {{$user->email}}
                                         </td>
-                                        <td><span class="badge bg-primary">30%</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4.</td>
-                                        <td>Fix and squish bugs</td>
                                         <td>
-                                            <div class="progress progress-xs progress-striped active">
-                                                <div class="progress-bar bg-success" style="width: 90%"></div>
-                                            </div>
+                                            {{email_verified_at($user->email_verified_at)}}
                                         </td>
-                                        <td><span class="badge bg-success">90%</span></td>
+                                        <td>
+                                            {{role_name($user->role)}}
+                                        </td>
+                                        <td>
+                                            {{$user->created_at}}
+                                        </td>
+                                        <td>
+                                            Soon
+                                        </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
