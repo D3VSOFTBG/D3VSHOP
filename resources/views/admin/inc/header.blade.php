@@ -207,6 +207,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item menu-open">
+                            <a href="{{route('admin.information')}}" class="nav-link @if (Route::currentRouteName() == 'admin.information') active @endif">
+                                <i class="nav-icon fas fa-info"></i>
+                                <p>
+                                    Information
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

@@ -24,6 +24,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     // GET
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin');
     Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users');
+    Route::get('/admin/information', [AdminController::class, 'information'])->name('admin.information');
 
     // POST
     Route::post('/admin/users/delete', [AdminController::class, 'user_delete'])->name('admin.users.delete');

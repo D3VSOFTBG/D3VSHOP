@@ -19,6 +19,10 @@ class AdminController extends Controller
         $roles = RoleModel::all();
         return view('admin.users', ['users' => $users, 'roles' => $roles]);
     }
+    function information()
+    {
+        return view('admin.information');
+    }
     function user_delete(Request $request)
     {
         User::find($request->id)->delete();
