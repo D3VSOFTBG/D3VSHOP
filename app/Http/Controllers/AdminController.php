@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProductModel;
 use App\RoleModel;
 use App\User;
 use Illuminate\Http\Request;
@@ -17,7 +18,13 @@ class AdminController extends Controller
     {
         $users = User::orderBy('id', 'DESC')->get();
         $roles = RoleModel::all();
-        return view('admin.users', ['users' => $users, 'roles' => $roles]);
+
+        $data = [
+            'users' => $users,
+            'roles' => $roles,
+        ];
+
+        return view('admin.users', $data);
     }
     function information()
     {
@@ -25,7 +32,13 @@ class AdminController extends Controller
     }
     function products()
     {
-        return view('admin.shop.products');
+        $products = ProductModel::orderBy('id', 'DESC')->get();
+
+        $data = [
+            'products' => $products,
+        ];
+
+        return view('admin.shop.products', $data);
     }
     function user_delete(Request $request)
     {
