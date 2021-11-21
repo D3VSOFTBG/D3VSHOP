@@ -23,6 +23,10 @@ class AdminController extends Controller
     {
         return view('admin.information');
     }
+    function products()
+    {
+        return view('admin.shop.products');
+    }
     function user_delete(Request $request)
     {
         User::find($request->id)->delete();

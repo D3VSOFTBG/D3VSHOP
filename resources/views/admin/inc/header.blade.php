@@ -20,7 +20,8 @@
 
     @if ($errors->any())
     <script>
-        alert('{{ implode(' ', $errors->all(':message')) }}');
+        alert('{{ implode('
+            ', $errors->all(': message ')) }}');
     </script>
     @endif
 
@@ -89,7 +90,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user3-128x128.jpg" alt="User Avatar"
+                                <img src="/dist/img/user3-128x128.jpg" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -165,24 +166,8 @@
                         <img src="{{gravatar(Auth::user()->email)}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        {{Auth::user()->name}}
+                        {{Auth::user()->name}} (<small>{{role_name(Auth::user()->role)}}</small>)
                     </div>
-                </div>
-
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open">
-                            <a class="nav-link m-0">
-                                <i class="nav-icon fas fa-user-tag"></i>
-                                <p>
-                                    {{role_name(Auth::user()->role)}}
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
 
                 <!-- Sidebar Menu -->
@@ -191,24 +176,44 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open">
-                            <a href="{{route('admin')}}" class="nav-link @if (Route::currentRouteName() == 'admin') active @endif">
+                        <li class="nav-item">
+                            <a href="{{route('admin')}}"
+                                class="nav-link @if (Route::currentRouteName() == 'admin') active @endif">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item menu-open">
-                            <a href="{{route('admin.users')}}" class="nav-link @if (Route::currentRouteName() == 'admin.users') active @endif">
+                        <li class="nav-item @if (str_contains(Request::url(), 'shop')) menu-open @endif">
+                            <a href="#" class="nav-link @if (str_contains(Request::url(), 'shop')) active @endif">
+                                <i class="nav-icon fas fa-store"></i>
+                                <p>
+                                    Shop
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.shop.products')}}" class="nav-link @if (Route::currentRouteName() == 'admin.shop.products') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Products</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.users')}}"
+                                class="nav-link @if (Route::currentRouteName() == 'admin.users') active @endif">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Users
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item menu-open">
-                            <a href="{{route('admin.information')}}" class="nav-link @if (Route::currentRouteName() == 'admin.information') active @endif">
+                        <li class="nav-item">
+                            <a href="{{route('admin.information')}}"
+                                class="nav-link @if (Route::currentRouteName() == 'admin.information') active @endif">
                                 <i class="nav-icon fas fa-info"></i>
                                 <p>
                                     Information
