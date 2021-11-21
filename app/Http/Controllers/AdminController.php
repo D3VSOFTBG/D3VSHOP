@@ -40,7 +40,17 @@ class AdminController extends Controller
 
         return view('admin.shop.products', $data);
     }
-    function settings()
+    function settings_get()
+    {
+        $products = ProductModel::orderBy('id', 'DESC')->get();
+
+        $data = [
+            'products' => $products,
+        ];
+
+        return view('admin.settings', $data);
+    }
+    function settings_post()
     {
         $products = ProductModel::orderBy('id', 'DESC')->get();
 
