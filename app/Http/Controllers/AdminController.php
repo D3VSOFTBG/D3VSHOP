@@ -51,15 +51,23 @@ class AdminController extends Controller
 
         return view('admin.settings', $data);
     }
-    function settings_post()
+    function settings_post(Request $request)
     {
-        $products = ProductModel::orderBy('id', 'DESC')->get();
+        $request->validate([
+            'shop_name' => 'required',
+            'title_seperator' => 'required',
+            'default_currency' => 'required',
+        ]);
 
-        $data = [
-            'products' => $products,
-        ];
+        $settings = new SettingModel();
 
-        return view('admin.settings', $data);
+        $settings->shop_name = $request->shop_name;
+        $settings->title_seperator = $request->title_seperator;
+        $settings->default_currency = $request->default_currency;
+
+        $settings->save();
+
+        return back();
     }
     function user_delete(Request $request)
     {
