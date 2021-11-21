@@ -40,6 +40,16 @@ class AdminController extends Controller
 
         return view('admin.shop.products', $data);
     }
+    function settings()
+    {
+        $products = ProductModel::orderBy('id', 'DESC')->get();
+
+        $data = [
+            'products' => $products,
+        ];
+
+        return view('admin.settings', $data);
+    }
     function user_delete(Request $request)
     {
         User::find($request->id)->delete();

@@ -25,6 +25,8 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin');
     Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users');
     Route::get('/admin/information', [AdminController::class, 'information'])->name('admin.information');
+    Route::get('/admin/settings', [AdminController::class, 'settings'])->name('admin.settings');
+
     // SHOP
     Route::get('/admin/shop/products', [AdminController::class, 'products'])->name('admin.shop.products');
 
