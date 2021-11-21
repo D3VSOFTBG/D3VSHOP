@@ -15,14 +15,17 @@ class SettingSeeder extends Seeder
         DB::table('settings')->insert(
         [
             [
+                'id' => 1,
                 'name' => 'shop_name',
                 'value' => 'D3V.SHOP',
             ],
             [
+                'id' => 2,
                 'name' => 'title_seperator',
                 'value' => '-',
             ],
             [
+                'id' => 3,
                 'name' => 'default_currency',
                 'value' => 'EUR',
             ],
