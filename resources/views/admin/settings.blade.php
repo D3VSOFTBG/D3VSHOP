@@ -54,8 +54,8 @@
                                     <label>
                                         Default Currency</label>
                                     <select name="default_currency" class="custom-select">
-                                        <option value="EUR">EUR (€)</option>
-                                        <option value="USD">USD ($)</option>
+                                        <option value="EUR" @if($settings[2]['value'] == 'EUR') selected @endif>EUR (€)</option>
+                                        <option value="USD" @if($settings[2]['value'] == 'USD') selected @endif>USD ($)</option>
                                     </select>
                                 </div>
                             </div>
