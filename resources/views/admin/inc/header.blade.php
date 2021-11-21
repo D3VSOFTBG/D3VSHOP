@@ -212,6 +212,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{route('admin.settings')}}"
+                                class="nav-link @if (Route::currentRouteName() == 'admin.settings') active @endif">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>
+                                    Settings
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('admin.information')}}"
                                 class="nav-link @if (Route::currentRouteName() == 'admin.information') active @endif">
                                 <i class="nav-icon fas fa-info"></i>
