@@ -8,6 +8,7 @@ use App\SettingModel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -61,9 +62,14 @@ class AdminController extends Controller
 
         $settings = new SettingModel();
 
-        $settings->shop_name = $request->shop_name;
-        $settings->title_seperator = $request->title_seperator;
-        $settings->default_currency = $request->default_currency;
+        // ТРЯБВА ДА ВКАРАМЕ ДАННИТЕ
+
+        //$settings->value[0] = $request->shop_name;
+
+        DB::update('update settings set value = "test" where name = "shop_name"', [$request->shop_name, 'shop_name']);
+
+        // $settings->title_seperator = $request->title_seperator;
+        // $settings->default_currency = $request->default_currency;
 
         $settings->save();
 

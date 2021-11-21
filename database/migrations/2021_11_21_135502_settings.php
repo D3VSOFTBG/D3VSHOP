@@ -17,6 +17,7 @@ class Settings extends Migration
             $table->bigIncrements('id');
             $table->string('name')->unique();
             $table->string('value');
+            $table->timestamps();
         });
     }
 
