@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ProductModel;
 use App\RoleModel;
+use App\SettingModel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -42,10 +43,10 @@ class AdminController extends Controller
     }
     function settings_get()
     {
-        $products = ProductModel::orderBy('id', 'DESC')->get();
+        $settings = SettingModel::all();
 
         $data = [
-            'products' => $products,
+            'settings' => $settings,
         ];
 
         return view('admin.settings', $data);
