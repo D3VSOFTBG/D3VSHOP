@@ -15,7 +15,6 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert(
             [
                 [
-                    'id' => 1,
                     'slug' => 'product1',
                     'image' => 'https://www.prestashop.com/sites/default/files/choose_your_design_optimized_4_0.svg',
                     'name' => 'Product 1',
@@ -25,7 +24,6 @@ class ProductSeeder extends Seeder
                     'updated_at' => now(),
                 ],
                 [
-                    'id' => 2,
                     'slug' => 'product2',
                     'image' => 'https://www.prestashop.com/sites/default/files/choose_your_design_optimized_4_0.svg',
                     'name' => 'Product 2',
