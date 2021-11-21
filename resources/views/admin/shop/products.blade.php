@@ -23,7 +23,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">There are * products.</h3>
+                            <h3 class="card-title">There are {{count($products)}} products.</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -42,24 +42,34 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($products as $product)
                                         <tr>
                                             <td class="align-middle">
+                                                {{$product->id}}
                                             </td>
                                             <td class="align-middle">
+                                                <img src="{{$product->image}}" alt="">
                                             </td>
                                             <td class="align-middle">
+                                                {{$product->name}}
                                             </td>
                                             <td class="align-middle">
+                                                {{$product->price}}
                                             </td>
                                             <td class="align-middle">
+                                                {{$product->quantity}}
                                             </td>
                                             <td class="align-middle">
+                                                {{$product->created_at}}
                                             </td>
                                             <td class="align-middle">
+                                                {{$product->updated_at}}
                                             </td>
                                             <td class="align-middle">
+                                                Soon
                                             </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
