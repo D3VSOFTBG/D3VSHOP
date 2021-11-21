@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1 class="m-0">@yield('page_name')</h1>
+                    <h1 class="m-0">Shop › @yield('page_name')</h1>
                 </div>
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -31,17 +31,20 @@
                                 <table class="table table-bordered m-0">
                                     <thead>
                                         <tr>
-                                            <th style="width: 0;">#</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Verified</th>
-                                            <th>Role</th>
-                                            <th>Registered</th>
-                                            <th>Actions</th>
+                                            <th class="align-middle" style="width: 0;">#</th>
+                                            <th class="align-middle" style="width: 0;">Image</th>
+                                            <th class="align-middle">Name</th>
+                                            <th class="align-middle">Price</th>
+                                            <th class="align-middle">Quantity</th>
+                                            <th class="align-middle">Created</th>
+                                            <th class="align-middle">Updated</th>
+                                            <th class="align-middle">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td class="align-middle">
+                                            </td>
                                             <td class="align-middle">
                                             </td>
                                             <td class="align-middle">

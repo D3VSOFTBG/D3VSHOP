@@ -105,13 +105,13 @@
                                 <table class="table table-bordered m-0">
                                     <thead>
                                         <tr>
-                                            <th style="width: 0;">#</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Verified</th>
-                                            <th>Role</th>
-                                            <th>Registered</th>
-                                            <th>Actions</th>
+                                            <th class="align-middle" style="width: 0;">#</th>
+                                            <th class="align-middle">Name</th>
+                                            <th class="align-middle">Email</th>
+                                            <th class="align-middle">Verified</th>
+                                            <th class="align-middle">Role</th>
+                                            <th class="align-middle">Registered</th>
+                                            <th class="align-middle">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
