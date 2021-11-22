@@ -60,18 +60,10 @@ class AdminController extends Controller
             'default_currency' => 'required',
         ]);
 
-        $settings = new SettingModel();
-
-        // ТРЯБВА ДА ВКАРАМЕ ДАННИТЕ
-
-        //$settings->value[0] = $request->shop_name;
-
-        DB::update('update settings set value = "test" where name = "shop_name"', [$request->shop_name, 'shop_name']);
-
-        // $settings->title_seperator = $request->title_seperator;
-        // $settings->default_currency = $request->default_currency;
-
-        $settings->save();
+        DB::update(
+            "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? END WHERE ID IN (1, 2)",
+            [$request->shop_name, $request->title_seperator]
+        );
 
         return back();
     }
