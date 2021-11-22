@@ -54,7 +54,7 @@
                                                 {{$product->name}}
                                             </td>
                                             <td class="align-middle">
-                                                {{$product->price}}
+                                                {{$product->price}} <strong>{{Cache::get('default_currency')}}</strong>
                                             </td>
                                             <td class="align-middle">
                                                 {{$product->quantity}}
