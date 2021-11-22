@@ -61,8 +61,8 @@ class AdminController extends Controller
         ]);
 
         DB::update(
-            "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? END WHERE ID IN (1, 2)",
-            [$request->shop_name, $request->title_seperator]
+            "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? WHEN id = 3 THEN ? END WHERE ID IN (1, 2, 3)",
+            [$request->shop_name, $request->title_seperator, $request->default_currency]
         );
 
         return back();

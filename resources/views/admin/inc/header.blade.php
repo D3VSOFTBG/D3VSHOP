@@ -21,7 +21,7 @@
     @if ($errors->any())
     <script>
         alert('{{ implode('
-            ', $errors->all(': message ')) }}');
+            ', $errors->all(':message')) }}');
     </script>
     @endif
 
