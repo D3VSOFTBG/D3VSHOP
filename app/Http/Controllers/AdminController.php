@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 class AdminController extends Controller
 {
@@ -64,6 +65,9 @@ class AdminController extends Controller
             "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? WHEN id = 3 THEN ? END WHERE ID IN (1, 2, 3)",
             [$request->shop_name, $request->title_seperator, $request->default_currency]
         );
+
+        // Delete all cache
+        Cache::flush();
 
         return back();
     }

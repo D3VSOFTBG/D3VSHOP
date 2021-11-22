@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
+
 return [
 
     /*
@@ -13,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'D3V.SHOP'),
+    'name' => Cache::get('shop_name'),
 
     /*
     |--------------------------------------------------------------------------

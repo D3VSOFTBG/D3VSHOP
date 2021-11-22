@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{$settings[0]['value']}} {{$settings[1]['value']}} @yield('page_name')</title>
+    <title>{{Cache::get('shop_name')}} {{Cache::get('title_seperator')}} @yield('page_name')</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"

@@ -4,8 +4,11 @@ namespace App\Providers;
 
 use App\SettingModel;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\View;
+// use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\View;
+// use Illuminate\Contracts\Cache\Factory;
+// use Illuminate\Contracts\Cache\Repository;
+use Illuminate\Support\Facades\Cache;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,8 +29,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $settings = SettingModel::all();
-
-        View::share('settings', $settings);
+        if(!Cache::has('shop_name') || !Cache::has('title_seperator') || !Cache::has('default_currency'))
+        {
+            $settings = SettingModel::all();
+            Cache::forever('shop_name', $settings[0]['value']);
+            Cache::forever('title_seperator', $settings[1]['value']);
+            Cache::forever('default_currency', $settings[2]['value']);
+        }
     }
 }
