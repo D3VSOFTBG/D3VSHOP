@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>{{env('APP_NAME')}} - @yield('page_name')</title>
+    <title>{{$settings[0]['value']}} {{$settings[1]['value']}} @yield('page_name')</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
