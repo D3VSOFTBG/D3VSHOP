@@ -29,12 +29,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if(!Cache::has('shop_name') || !Cache::has('title_seperator') || !Cache::has('default_currency'))
+        if(!Cache::has('shop_name'))
         {
             $settings = SettingModel::all();
             Cache::forever('shop_name', $settings[0]['value']);
             Cache::forever('title_seperator', $settings[1]['value']);
             Cache::forever('default_currency', $settings[2]['value']);
+            Cache::forever('theme_name', $settings[3]['value']);
         }
     }
 }

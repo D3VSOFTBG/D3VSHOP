@@ -10,23 +10,23 @@
     <title>{{Cache::get('shop_name')}} {{Cache::get('title_seperator')}} @yield('page_name')</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/themes/{{Cache::get('theme_name')}}/assets/images/favicon.ico">
 
     <!-- font-awesome CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/themes/{{Cache::get('theme_name')}}/assets/css/font-awesome.css">
 
     <!-- animate CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/themes/{{Cache::get('theme_name')}}/assets/css/animate.css">
 
     <!-- slick CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="/themes/{{Cache::get('theme_name')}}/assets/css/slick.css">
 
     <!--magnific-popup CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="/themes/{{Cache::get('theme_name')}}/assets/css/magnific-popup.css">
 
 
     <!-- main CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/themes/{{Cache::get('theme_name')}}/assets/css/style.css">
 
     <!-- google font CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i"
@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-            <div class="header_container" style="background:url(/assets/images/bg_header.jpg) repeat">
+            <div class="header_container" style="background:url(/themes/{{Cache::get('theme_name')}}/assets/images/bg_header.jpg) repeat">
 
                 <!-- header-desktop -->
                 <div class="header-menu  header-desktop">
@@ -82,7 +82,7 @@
                         <div class="row">
                             <div class="col-md-2 d-flex align-items-center justify-content-center">
                                 <a class="logo" href="{{route('home')}}">
-                                    <img src="/assets/images/logo.png" alt="">
+                                    <img src="/themes/{{Cache::get('theme_name')}}/assets/images/logo.png" alt="">
                                 </a>
                             </div>
                             <div class="col-md-10 header-menu-main">
@@ -103,7 +103,7 @@
                                     <div class="site-header__icon  d-flex justify-content-between align-items-center">
                                         <div class="features_icon">
                                             <div class="features_icon__images">
-                                                <img src="/assets/images/icon_1.png" alt="">
+                                                <img src="/themes/{{Cache::get('theme_name')}}/assets/images/icon_1.png" alt="">
                                             </div>
                                             <div class="features_icon__description">
                                                 <h4>CUSTOMER SUPPORT</h4>
@@ -114,7 +114,7 @@
                                         </div>
                                         <div class="features_icon">
                                             <div class="features_icon__images">
-                                                <img src="/assets/images/icon_2.png" alt="">
+                                                <img src="/themes/{{Cache::get('theme_name')}}/assets/images/icon_2.png" alt="">
                                             </div>
                                             <div class="features_icon__description">
                                                 <h4>CONTACT US</h4>
@@ -126,7 +126,7 @@
                                         <div class="site-header__cart item-dropdown">
                                             <div class="features_icon">
                                                 <div class="features_icon__images">
-                                                    <img src="/assets/images/icon_3.png" alt="">
+                                                    <img src="/themes/{{Cache::get('theme_name')}}/assets/images/icon_3.png" alt="">
                                                 </div>
                                                 <div class="features_icon__description">
                                                     <h4>MY CART <span class="cartcount">3(ITEMS)</span></h4>
@@ -140,7 +140,7 @@
                                                     <div class="media widget-product">
                                                         <div class="media-left">
                                                             <a href="product_single.html" class="image pull-left">
-                                                                <img src="/assets/images/product/product_1.jpg" alt="">
+                                                                <img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_1.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="cart-main-content media-body">
@@ -160,7 +160,7 @@
                                                     <div class="media widget-product">
                                                         <div class="media-left">
                                                             <a href="product_single.html" class="image pull-left">
-                                                                <img src="/assets/images/product/product_2.jpg" alt="">
+                                                                <img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_2.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="cart-main-content media-body">
@@ -180,7 +180,7 @@
                                                     <div class="media widget-product">
                                                         <div class="media-left">
                                                             <a href="product_single.html" class="image pull-left">
-                                                                <img src="/assets/images/product/product_3.jpg" alt="">
+                                                                <img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_3.jpg" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="cart-main-content media-body">
@@ -289,7 +289,7 @@
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                     </button>
-                                    <a class="navbar-brand" href="{{route('home')}}"><img src="/assets/images/logo.png"
+                                    <a class="navbar-brand" href="{{route('home')}}"><img src="/themes/{{Cache::get('theme_name')}}/assets/images/logo.png"
                                             alt=""></a>
                                 </div>
                                 <!-- search -->

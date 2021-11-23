@@ -41,6 +41,12 @@
                                     <input name="title_seperator" id="title_seperator" type="text" class="form-control"
                                         placeholder="Title Seperator" value="{{$settings[1]['value']}}" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="theme_name">
+                                        Theme Name</label>
+                                    <input name="theme_name" id="theme_name" type="text" class="form-control"
+                                        placeholder="Theme Name" value="{{$settings[3]['value']}}" required>
+                                </div>
                             </div>
                         </div>
                     </div>

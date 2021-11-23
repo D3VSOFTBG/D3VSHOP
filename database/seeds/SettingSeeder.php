@@ -29,6 +29,11 @@ class SettingSeeder extends Seeder
                 'name' => 'default_currency',
                 'value' => 'EUR',
             ],
+            [
+                'id' => 4,
+                'name' => 'theme_name',
+                'value' => 'default',
+            ],
         ]);
     }
 }

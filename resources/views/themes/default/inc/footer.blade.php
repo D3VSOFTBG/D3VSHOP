@@ -36,7 +36,7 @@
                     <aside class="widget-text">
                         <div class="footer__logo">
                             <a href="#">
-                                <img src="/assets/images/logo.png" alt="">
+                                <img src="/themes/{{Cache::get('theme_name')}}/assets/images/logo.png" alt="">
                             </a>
                         </div>
                         <div class="footer__info">
@@ -100,7 +100,7 @@
                         Copyright © 2021 <a href="#">{{env('APP_NAME')}}</a>. All rights reserved
                     </div>
                     <div class="payment">
-                        <img src="/assets/images/payment.png" alt="">
+                        <img src="/themes/{{Cache::get('theme_name')}}/assets/images/payment.png" alt="">
                     </div>
                 </div>
             </div>
@@ -121,36 +121,36 @@
             ====Start all js here -->
 
 <!-- jquery js-->
-<script src="/assets/js/jquery.min.js"></script>
+<script src="/themes/{{Cache::get('theme_name')}}/assets/js/jquery.min.js"></script>
 
 <!-- bootstrap js-->
-<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/themes/{{Cache::get('theme_name')}}/assets/js/bootstrap.min.js"></script>
 
 <!-- slick js-->
-<script src="/assets/js/slick.min.js"></script>
+<script src="/themes/{{Cache::get('theme_name')}}/assets/js/slick.min.js"></script>
 
 <!-- slick animation js-->
-<script src="/assets/js/slick-animation.min.js"></script>
+<script src="/themes/{{Cache::get('theme_name')}}/assets/js/slick-animation.min.js"></script>
 
 <!-- spritespin js-->
-<script src="/assets/js/jquery-ui.min.js"></script>
+<script src="/themes/{{Cache::get('theme_name')}}/assets/js/jquery-ui.min.js"></script>
 
 <!-- waypoints js-->
-<script src="/assets/js/jquery.waypoints.js"></script>
+<script src="/themes/{{Cache::get('theme_name')}}/assets/js/jquery.waypoints.js"></script>
 
 <!-- counterup js-->
-<script src="/assets/js/jquery.counterup.min.js"></script>
+<script src="/themes/{{Cache::get('theme_name')}}/assets/js/jquery.counterup.min.js"></script>
 
 <!-- Magnific js-->
-<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="/themes/{{Cache::get('theme_name')}}/assets/js/jquery.magnific-popup.min.js"></script>
 
 
 <!-- Magnific js-->
-<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="/themes/{{Cache::get('theme_name')}}/assets/js/jquery.magnific-popup.min.js"></script>
 
 
 <!-- custom js-->
-<script src="/assets/js/custom.js"></script>
+<script src="/themes/{{Cache::get('theme_name')}}/assets/js/custom.js"></script>
 <!-- =====================================
             ==== End all js herej -->
 

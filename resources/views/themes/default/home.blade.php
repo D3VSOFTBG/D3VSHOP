@@ -1,14 +1,14 @@
 @section('page_name'){{ 'Home' }}@endsection
 
-@include('inc.header')
+@include('themes.default.inc.header')
 
 		<!-- =====================================
 	    	==== Start slider -->
 		<div class="slider slider_slick stick-dots">
 		 	<!--  slide1 -->
 		    <div class="slide">
-		      <div class="slide__img section-bg" style="background-image:url(assets/images/slider/home3_slider1.jpg)">
-		        <img src="" alt="" data-lazy="assets/images/slider/home3_slider1.jpg" class="full-image animated" data-animation-in="zoomInImage"/>
+		      <div class="slide__img section-bg" style="background-image:url(/themes/{{Cache::get('theme_name')}}/assets/images/slider/home3_slider1.jpg)">
+		        <img src="" alt="" data-lazy="/themes/{{Cache::get('theme_name')}}/assets/images/slider/home3_slider1.jpg" class="full-image animated" data-animation-in="zoomInImage"/>
 		      </div>
 		      <div class="slide__content">
 		      	<div class="slide__content--subheadings bg-text animated" data-animation-in="fadeInUp">layStorerim</div>
@@ -25,8 +25,8 @@
 		    </div>
 		    <!--  slide2 -->
 		    <div class="slide">
-		      <div class="slide__img section-bg" style="background-image:url(assets/images/slider/home3_slider2.jpg)">
-		        <img src="" alt="" data-lazy="assets/images/slider/home3_slider2.jpg" class="full-image animated" data-animation-in="zoomInImage"/>
+		      <div class="slide__img section-bg" style="background-image:url(/themes/{{Cache::get('theme_name')}}/assets/images/slider/home3_slider2.jpg)">
+		        <img src="" alt="" data-lazy="/themes/{{Cache::get('theme_name')}}/assets/images/slider/home3_slider2.jpg" class="full-image animated" data-animation-in="zoomInImage"/>
 		      </div>
 		      <div class="slide__content">
 		      	<div class="slide__content--subheadings bg-text animated" data-animation-in="fadeInUp">layStorerim</div>
@@ -43,8 +43,8 @@
 		    </div>
 		     <!--  slide3 -->
 		    <div class="slide">
-		      <div class="slide__img section-bg" style="background-image:url(assets/images/slider/home3_slider3.jpg)">
-		        <img src="" alt="" data-lazy="assets/images/slider/home3_slider3.jpg" class="full-image animated" data-animation-in="zoomInImage"/>
+		      <div class="slide__img section-bg" style="background-image:url(/themes/{{Cache::get('theme_name')}}/assets/images/slider/home3_slider3.jpg)">
+		        <img src="" alt="" data-lazy="/themes/{{Cache::get('theme_name')}}/assets/images/slider/home3_slider3.jpg" class="full-image animated" data-animation-in="zoomInImage"/>
 		      </div>
 		      <div class="slide__content">
 		      	<div class="slide__content--subheadings bg-text animated" data-animation-in="fadeInUp">layStorerim</div>
@@ -72,7 +72,7 @@
 				<div class="row">
 		    		<div class="features_list col-md-4">
 						<div class="features-images">
-							<img src="assets/images/feature/icon_feature_1.png" alt="">
+							<img src="/themes/{{Cache::get('theme_name')}}/assets/images/feature/icon_feature_1.png" alt="">
 						</div>
 						<div class="features-description">
 							<h4>Free Pickup in store</h4>
@@ -84,7 +84,7 @@
 					</div>
 					<div class="features_list col-md-4">
 						<div class="features-images">
-							<img src="assets/images/feature/icon_feature_2.png" alt="">
+							<img src="/themes/{{Cache::get('theme_name')}}/assets/images/feature/icon_feature_2.png" alt="">
 						</div>
 						<div class="features-description">
 							<h4>Free Shipping</h4>
@@ -95,7 +95,7 @@
 					</div>
 					<div class="features_list col-md-4">
 						<div class="features-images">
-							<img src="assets/images/feature/icon_feature_3.png" alt="">
+							<img src="/themes/{{Cache::get('theme_name')}}/assets/images/feature/icon_feature_3.png" alt="">
 						</div>
 						<div class="features-description">
 							<h4>Bonus Points Offers</h4>
@@ -124,7 +124,7 @@
 							<div class="product-image ">
 								<div class="product-thumbnail">
 									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="assets/images/product/product_1.jpg" alt="">
+										<img class="product-featured-image" src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_1.jpg" alt="">
 									</a>
 								</div>
 								<div class="product-actions">
@@ -164,7 +164,7 @@
 							<div class="product-image ">
 								<div class="product-thumbnail">
 									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="assets/images/product/product_3.jpg" alt="">
+										<img class="product-featured-image" src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_3.jpg" alt="">
 									</a>
 								</div>
 								<div class="product-actions">
@@ -203,7 +203,7 @@
 							<div class="product-image ">
 								<div class="product-thumbnail">
 									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="assets/images/product/product_4.jpg" alt="">
+										<img class="product-featured-image" src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_4.jpg" alt="">
 									</a>
 								</div>
 								<div class="product-actions">
@@ -242,7 +242,7 @@
 							<div class="product-image ">
 								<div class="product-thumbnail">
 									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="assets/images/product/product_5.jpg" alt="">
+										<img class="product-featured-image" src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_5.jpg" alt="">
 									</a>
 								</div>
 								<div class="product-actions">
@@ -281,7 +281,7 @@
 							<div class="product-image ">
 								<div class="product-thumbnail">
 									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="assets/images/product/product_6.jpg" alt="">
+										<img class="product-featured-image" src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_6.jpg" alt="">
 									</a>
 								</div>
 								<div class="product-actions">
@@ -320,7 +320,7 @@
 							<div class="product-image ">
 								<div class="product-thumbnail">
 									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="assets/images/product/product_2.jpg" alt="">
+										<img class="product-featured-image" src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_2.jpg" alt="">
 									</a>
 								</div>
 								<div class="product-actions">
@@ -368,7 +368,7 @@
         			<div class="col-md-6">
 						<div class="banner-image">
 							<div class="banner-image-inner">
-							   <img  src="assets/images/banner_1.jpg" alt="">
+							   <img src="/themes/{{Cache::get('theme_name')}}/assets/images/banner_1.jpg" alt="">
 							</div>
 							<div class="banner-meta text-white">
 								<h3 class="banner-meta__heading text-uppercase text-white">Sale off 50%</h3>
@@ -380,7 +380,7 @@
 					<div class="col-md-6">
 						<div class="banner-image">
 							<div class="banner-image-inner">
-							   <img  src="assets/images/banner_2.jpg" alt="">
+							   <img  src="/themes/{{Cache::get('theme_name')}}/assets/images/banner_2.jpg" alt="">
 							</div>
 							<div class="banner-meta text-white">
 								<h3 class="banner-meta__heading text-uppercase text-white">Sale off</h3>
@@ -409,7 +409,7 @@
 							<div class="product-image ">
 								<div class="product-thumbnail">
 									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="assets/images/product/product_1.jpg" alt="">
+										<img class="product-featured-image" src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_1.jpg" alt="">
 									</a>
 								</div>
 								<div class="product-actions">
@@ -449,7 +449,7 @@
 							<div class="product-image ">
 								<div class="product-thumbnail">
 									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="assets/images/product/product_3.jpg" alt="">
+										<img class="product-featured-image" src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_3.jpg" alt="">
 									</a>
 								</div>
 								<div class="product-actions">
@@ -488,7 +488,7 @@
 							<div class="product-image ">
 								<div class="product-thumbnail">
 									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="assets/images/product/product_4.jpg" alt="">
+										<img class="product-featured-image" src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_4.jpg" alt="">
 									</a>
 								</div>
 								<div class="product-actions">
@@ -527,7 +527,7 @@
 							<div class="product-image ">
 								<div class="product-thumbnail">
 									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="assets/images/product/product_5.jpg" alt="">
+										<img class="product-featured-image" src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_5.jpg" alt="">
 									</a>
 								</div>
 								<div class="product-actions">
@@ -584,7 +584,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_4.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_4.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -602,7 +602,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_2.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_2.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -623,7 +623,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_1.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_1.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -643,7 +643,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_2.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_2.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -664,7 +664,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_1.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_1.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -682,7 +682,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_3.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_3.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -714,7 +714,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_8.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_8.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -735,7 +735,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_7.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_7.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -754,7 +754,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_3.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_3.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -777,7 +777,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_1.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_1.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -795,7 +795,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_8.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_8.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -816,7 +816,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_4.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_4.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -846,7 +846,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_5.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_5.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -867,7 +867,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_4.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_4.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -888,7 +888,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_2.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_2.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -909,7 +909,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_4.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_4.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -928,7 +928,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_3.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_3.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -947,7 +947,7 @@
 									<div class="product-list__item">
 										<div class="inner">
 											<a class="product-thumbnail" href="product_single.html">
-												<img src="assets/images/product/product_2.jpg" alt="">
+												<img src="/themes/{{Cache::get('theme_name')}}/assets/images/product/product_2.jpg" alt="">
 											</a>
 											<div class="product-content">
 												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
@@ -977,7 +977,7 @@
 
 		 <!-- =====================================
 	    	==== Start testimonials  -->
-		<section class="testimonials section-bg clearfix" style="background-image:url(assets/images/bg_testimonial.jpg)">
+		<section class="testimonials section-bg clearfix" style="background-image:url(/themes/{{Cache::get('theme_name')}}/assets/images/bg_testimonial.jpg)">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-5 col-md-12"></div>
@@ -1018,4 +1018,4 @@
 		<!-- =====================================
 	    	==== End testimonials  -->
 
-@include('inc.footer')
+@include('themes.default.inc.footer')
