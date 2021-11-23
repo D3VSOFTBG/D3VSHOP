@@ -11,7 +11,7 @@
         <div class="card-body">
             <p class="login-box-msg">@yield('page_name')</p>
 
-            <form class="mb-3" action="{{route('password.email')}}" method="post">
+            <form class="mb-3" action="{{ route('password.email') }}" method="post">
                 @csrf
 
                 @if (session('status'))
