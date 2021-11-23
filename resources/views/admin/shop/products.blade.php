@@ -55,8 +55,13 @@
                                             <label for="price">
                                                 <span class="text-danger">*</span>
                                                 Price</label>
-                                            <input name="price" id="price" type="text" class="form-control"
-                                                placeholder="Price" required>
+                                            <div class="input-group">
+                                                <input name="price" id="price" type="text"
+                                                    class="form-control" placeholder="Price" required>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">{{Cache::get('default_currency')}}</span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="quantity">
@@ -193,9 +198,14 @@
                                                                         <label for="price">
                                                                             <span class="text-danger">*</span>
                                                                             Price</label>
-                                                                        <input name="price" id="price" type="text" class="form-control"
-                                                                            placeholder="Price"
-                                                                            value="{{$product->price}}" required>
+                                                                        <div class="input-group">
+                                                                            <input name="price" id="price" type="text"
+                                                                                class="form-control" placeholder="Price"
+                                                                                value="{{$product->price}}" required>
+                                                                            <div class="input-group-append">
+                                                                                <span class="input-group-text">{{Cache::get('default_currency')}}</span>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="quantity">
