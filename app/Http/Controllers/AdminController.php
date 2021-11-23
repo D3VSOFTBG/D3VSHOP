@@ -77,7 +77,7 @@ class AdminController extends Controller
 
         $products = ProductModel::find($request->id);
 
-        if($products->slug != $request->slug)
+        if($products->name != $request->name)
         {
             $products->slug = strtolower(trim(preg_replace('/\s+/', '-', $request->name))) . time();
         }

@@ -141,7 +141,7 @@
                                                         data-placement="top" title="Delete">
                                                         <i class="fas fa-trash"></i></button>
                                                 </form>
-                                                <form action="{{route('admin.users.edit')}}" method="post" class="d-inline">
+                                                <form action="{{route('admin.shop.products.edit')}}" method="post" class="d-inline">
                                                     @csrf
                                                     <a data-toggle="modal" data-target="#edit_product_{{$product->id}}">
                                                         <button type="button" class="btn btn-success"

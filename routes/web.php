@@ -33,6 +33,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     // POST
     Route::post('/admin/settings', [AdminController::class, 'settings_post'])->name('admin.settings');
     Route::post('/admin/shop/products/delete', [AdminController::class, 'product_delete'])->name('admin.shop.products.delete');
+    Route::post('/admin/shop/products/edit', [AdminController::class, 'product_edit'])->name('admin.shop.products.edit');
     Route::post('/admin/shop/products/create', [AdminController::class, 'product_create'])->name('admin.shop.products.create');
     Route::post('/admin/users/delete', [AdminController::class, 'user_delete'])->name('admin.users.delete');
     Route::post('/admin/users/edit', [AdminController::class, 'user_edit'])->name('admin.users.edit');
