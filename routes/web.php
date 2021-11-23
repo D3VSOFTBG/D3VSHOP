@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cache;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Cache;
 |
 */
 
-Route::get('/', function () {
-    return view('themes.'.Cache::get('theme_name').'.home');
-})->name('home');
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::middleware(['auth', 'admin'])->group(function ()
 {
