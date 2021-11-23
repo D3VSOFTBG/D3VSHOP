@@ -71,6 +71,11 @@ class AdminController extends Controller
 
         return back();
     }
+    function product_delete(Request $request)
+    {
+        ProductModel::find($request->id)->delete();
+        return back();
+    }
     function user_delete(Request $request)
     {
         User::find($request->id)->delete();

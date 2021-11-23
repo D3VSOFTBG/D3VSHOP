@@ -33,12 +33,12 @@
                                 <div class="form-group">
                                     <label for="shop_name">
                                         Shop Name</label>
-                                    <input name="shop_name" type="text" class="form-control" placeholder="Shop Name" value="{{$settings[0]['value']}}" required>
+                                    <input name="shop_name" id="shop_name" type="text" class="form-control" placeholder="Shop Name" value="{{$settings[0]['value']}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="title_seperator">
                                         Title Seperator</label>
-                                    <input name="title_seperator" type="text" class="form-control"
+                                    <input name="title_seperator" id="title_seperator" type="text" class="form-control"
                                         placeholder="Title Seperator" value="{{$settings[1]['value']}}" required>
                                 </div>
                             </div>

@@ -172,7 +172,7 @@
                                                                         <label for="name">
                                                                             <span class="text-danger">*</span>
                                                                             Name</label>
-                                                                        <input name="name" type="text" class="form-control"
+                                                                        <input name="name" id="name" type="text" class="form-control"
                                                                             placeholder="Name"
                                                                             value="{{$user->name}}" required>
                                                                     </div>
@@ -180,7 +180,7 @@
                                                                         <label for="email">
                                                                             <span class="text-danger">*</span>
                                                                             Email</label>
-                                                                        <input name="email" type="email" class="form-control"
+                                                                        <input name="email" id="email" type="email" class="form-control"
                                                                             placeholder="Email"
                                                                             value="{{$user->email}}" required>
                                                                     </div>
@@ -202,13 +202,13 @@
                                                                     <div class="form-group">
                                                                         <label for="password">
                                                                             Password</label>
-                                                                        <input name="password" type="password" class="form-control"
+                                                                        <input name="password" id="password" type="password" class="form-control"
                                                                             placeholder="Password">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="password_confirmation">
                                                                             Password Confirmation</label>
-                                                                        <input name="password_confirmation" type="password" class="form-control"
+                                                                        <input name="password_confirmation" id="password_confirmation" type="password" class="form-control"
                                                                             placeholder="Password Confirmation">
                                                                     </div>
                                                                 </div>
