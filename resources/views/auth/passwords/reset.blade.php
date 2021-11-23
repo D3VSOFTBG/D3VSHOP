@@ -1,4 +1,4 @@
-@section('page_name'){{ 'Login' }}@endsection
+@section('page_name'){{ 'Reset Password' }}@endsection
 
 @include('auth.inc.header')
 
@@ -9,12 +9,15 @@
             <a href="{{route('home')}}" class="h1">{{Cache::get('shop_name')}}</a>
         </div>
         <div class="card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">@yield('page_name')</p>
 
-            <form class="mb-3" action="{{route('login')}}" method="post">
+            <form class="mb-3" action="{{route('password.update')}}" method="post">
                 @csrf
+
+                <input type="hidden" name="token" value="{{ $token }}">
+
                 <div class="input-group mb-3">
-                    <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" required>
+                    <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="{{ $email ?? old('email') }}" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
@@ -39,21 +42,22 @@
                     </span>
                     @enderror
                 </div>
+                <div class="input-group mb-3">
+                    <input name="password_confirmation" type="password" class="form-control" placeholder="Password Confirmation" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <!-- /.col -->
                     <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block">Reset</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
-
-            <p class="mb-1">
-                <a href="{{ route('password.request') }}">I forgot my password</a>
-            </p>
-            <p class="mb-0">
-                <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
-            </p>
         </div>
         <!-- /.card-body -->
     </div>
