@@ -122,11 +122,12 @@ class AdminController extends Controller
             'shop_name' => 'required',
             'title_seperator' => 'required',
             'default_currency' => 'required',
+            'theme_name' => 'required',
         ]);
 
         DB::update(
-            "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? WHEN id = 3 THEN ? END WHERE ID IN (1, 2, 3)",
-            [$request->shop_name, $request->title_seperator, $request->default_currency]
+            "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? WHEN id = 3 THEN ? WHEN id = 4 THEN ? END WHERE ID IN (1, 2, 3, 4)",
+            [$request->shop_name, $request->title_seperator, $request->default_currency, $request->theme_name]
         );
 
         // Delete all cache
