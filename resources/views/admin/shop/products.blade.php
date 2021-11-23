@@ -39,7 +39,7 @@
                                                     Image</label>
                                                 <div class="card-body">
                                                     <input type="file" class="form-control-file" id="image"
-                                                        accept="image/*">
+                                                        accept="image/*" required>
                                                 </div>
                                             </div>
                                         </div>
