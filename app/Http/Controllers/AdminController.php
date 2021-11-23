@@ -46,17 +46,65 @@ class AdminController extends Controller
     function product_create(Request $request)
     {
         $request->validate([
-            'image' => 'required|image',
+            'image' => 'required|image|max:2048',
             'name' => 'required',
-            'price' => 'required|numberic',
+            'price' => 'required|numeric',
             'quantity' => 'required|integer'
         ]);
 
         $products = new ProductModel();
+        $products->slug = strtolower(trim(preg_replace('/\s+/', '-', $request->name))) . time();
+
+        // image
+        $new_image_name = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('/storage/img/products/'), $new_image_name);
+        $products->image = $new_image_name;
+
         $products->name = $request->name;
         $products->price = $request->price;
         $products->quantity = $request->quantity;
         $products->save();
+
+        return back();
+    }
+    function product_edit(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required|numeric',
+            'quantity' => 'required|integer'
+        ]);
+
+        $products = ProductModel::find($request->id);
+
+        if($products->slug != $request->slug)
+        {
+            $products->slug = strtolower(trim(preg_replace('/\s+/', '-', $request->name))) . time();
+        }
+
+        if(!empty($request->image))
+        {
+            $request->validate([
+                'image' => 'required|image|max:2048',
+            ]);
+
+            // image
+            $new_image_name = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/storage/img/products/'), $new_image_name);
+            $products->image = $new_image_name;
+        }
+
+        $products->name = $request->name;
+        $products->price = $request->price;
+        $products->quantity = $request->quantity;
+        $products->save();
+
+        return back();
+    }
+    function product_delete(Request $request)
+    {
+        ProductModel::find($request->id)->delete();
+        return back();
     }
     function settings_get()
     {
@@ -84,11 +132,6 @@ class AdminController extends Controller
         // Delete all cache
         Cache::flush();
 
-        return back();
-    }
-    function product_delete(Request $request)
-    {
-        ProductModel::find($request->id)->delete();
         return back();
     }
     function user_delete(Request $request)

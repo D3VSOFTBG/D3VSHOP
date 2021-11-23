@@ -17,7 +17,7 @@
                             </button>
                         </a>
                     </h1>
-                    <form action="{{route('admin.users.create')}}" method="post" class="d-inline">
+                    <form action="{{route('admin.shop.products.create')}}" method="post" class="d-inline" enctype="multipart/form-data">
                         @csrf
                         <!-- Modal -->
                         <div class="modal fade" id="create_product" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -38,7 +38,7 @@
                                                         class="text-danger">*</span>
                                                     Image</label>
                                                 <div class="card-body">
-                                                    <input type="file" class="form-control-file" id="image"
+                                                    <input name="image" type="file" class="form-control-file" id="image"
                                                         accept="image/*" required>
                                                 </div>
                                             </div>
@@ -114,7 +114,7 @@
                                                 {{$product->id}}
                                             </td>
                                             <td class="align-middle">
-                                                <img src="{{$product->image}}" alt="">
+                                                <img src="{{env('PRODUCTS_IMG_PATH')}}{{$product->image}}" alt="Image" width="50" height="50">
                                             </td>
                                             <td class="align-middle">
                                                 {{$product->name}}
@@ -132,7 +132,7 @@
                                                 {{$product->updated_at}}
                                             </td>
                                             <td class="align-middle">
-                                                <form action="{{route('admin.users.delete')}}" method="post"
+                                                <form action="{{route('admin.shop.products.delete')}}" method="post"
                                                     class="d-inline"
                                                     onclick="if(!confirm('Delete ({{$product->name}}).')){return false;}">
                                                     @csrf
