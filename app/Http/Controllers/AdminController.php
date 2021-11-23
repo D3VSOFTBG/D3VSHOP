@@ -51,6 +51,12 @@ class AdminController extends Controller
             'price' => 'required|numberic',
             'quantity' => 'required|integer'
         ]);
+
+        $products = new ProductModel();
+        $products->name = $request->name;
+        $products->price = $request->price;
+        $products->quantity = $request->quantity;
+        $products->save();
     }
     function settings_get()
     {
