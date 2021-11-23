@@ -119,7 +119,7 @@
                                                 {{$product->id}}
                                             </td>
                                             <td class="align-middle">
-                                                <img src="{{env('PRODUCTS_IMG_PATH')}}{{$product->image}}" alt="Image" width="50" height="50">
+                                                <img class="w-100 h-100" src="{{env('PRODUCTS_IMG_PATH')}}{{$product->image}}" alt="Image">
                                             </td>
                                             <td class="align-middle">
                                                 {{$product->name}}
@@ -177,7 +177,7 @@
                                                                                 Image</label>
                                                                             <div class="card-body">
                                                                                 <p class="card-text">
-                                                                                    <img src="https://www.prestashop.com/sites/default/files/choose_your_design_optimized_4_0.svg"
+                                                                                    <img class="w-100 h-100" src="{{env('PRODUCTS_IMG_PATH')}}{{$product->image}}"
                                                                                         alt="Image">
                                                                                 </p>
                                                                                 <input type="file" class="form-control-file" id="image"

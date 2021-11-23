@@ -27,7 +27,7 @@
                     <div class="col-lg-4">
                         <div class="card card-warning card-outline">
                             <div class="card-header">
-                                <h5 class="m-0">General - SOON</h5>
+                                <h5 class="m-0">General</h5>
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
