@@ -74,7 +74,7 @@
                 </div>
             </form>
 
-            <a href="{{route('login')}}" class="text-center">I already have a membership</a>
+            <a href="{{route('login')}}" class="text-center">Login?</a>
         </div>
         <!-- /.card-body -->
     </div>
