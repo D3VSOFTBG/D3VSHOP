@@ -1,74 +1,33 @@
 @section('page_name'){{ 'Verify' }}@endsection
 
-@include('inc.header')
+@include('auth.inc.header')
 
-<!-- =====================================
-	    	==== Start breadcrumb -->
-<div class="breadcrumb section-bg" style="background-image:url(/assets/images/bg_breadcrumb.jpg)">
-    <!-- container -->
-    <div class="container">
-        <div class="row">
-            <div class="col col-md-12">
-                <h1>@yield('page_name')</h1>
-                <ol class="item-breadcrumb">
-                    <li><a href="{{route('home')}}">Home</a></li>
-                    <li><span aria-hidden="true">›</span></li>
-                    <li>@yield('page_name')</li>
-                </ol>
-            </div>
+<div class="login-box">
+    <!-- /.login-logo -->
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a href="{{route('home')}}" class="h1">{{Cache::get('shop_name')}}</a>
         </div>
-    </div>
-    <!-- /container -->
-</div>
-<!-- =====================================
-             ==== End breadcrumb -->
-
-<!-- =====================================
-             ==== Start account -->
-<div class="main-content">
-    <div class="page-account">
-        <!-- container -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                    <div class="account-wrapper">
-                        <div class="tab-content">
-                            <div class="account-form-container">
-                                <div class="account-form">
-                                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                                        @csrf
-
-                                        @if (session('resent'))
-                                        <div class="alert alert-success" role="alert">
-                                            {{ __('A fresh verification link has been sent to your email address.') }}
-                                        </div>
-                                        @endif
-
-                                        <p>
-                                            <small>
-                                                {{ __('Before proceeding, please check your email for a verification link.') }}
-                                                <br />
-                                                {{ __('If you did not receive the email') }},
-                                            </small>
-                                        </p>
-
-                                        <div class="button-box">
-                                            <button type="submit"
-                                                class="btn btn-default btn-normal"><span>Submit</span></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="card-body">
+            @if (session('resent'))
+            <div class="alert alert-success m-0 text-center" role="alert">
+                {{ __('A fresh verification link has been sent to your email address.') }}
             </div>
+            @endif
+            <p class="login-box-msg">
+                {{ __('Before proceeding, please check your email for a verification link.') }}
+                <br/>
+                {{ __('If you did not receive the email') }},
+            </p>
+            <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                @csrf
+                <button type="submit" class="btn btn-primary w-100">Verify</button>
+            </form>
         </div>
-        <!-- /container -->
+        <!-- /.card-body -->
     </div>
+    <!-- /.card -->
 </div>
-<!-- =====================================
-             ==== End account -->
+<!-- /.login-box -->
 
-
-@include('inc.footer')
+@include('auth.inc.footer')
