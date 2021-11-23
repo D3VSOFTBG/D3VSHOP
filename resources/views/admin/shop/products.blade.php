@@ -32,20 +32,14 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="input-group">
+                                        <div class="form-group">
                                             <div class="card dark-mode w-100">
                                                 <label for="image" class="card-header"><span
                                                         class="text-danger">*</span>
                                                     Image</label>
                                                 <div class="card-body">
-                                                    <div class="custom-file">
-                                                        <input type="file"
-                                                            class="custom-file-input"
-                                                            id="image">
-                                                        <label class="custom-file-label"
-                                                            for="image">Choose
-                                                            file</label>
-                                                    </div>
+                                                    <input type="file" class="form-control-file" id="image"
+                                                        accept="image/*">
                                                 </div>
                                             </div>
                                         </div>
@@ -181,14 +175,8 @@
                                                                                     <img src="https://www.prestashop.com/sites/default/files/choose_your_design_optimized_4_0.svg"
                                                                                         alt="Image">
                                                                                 </p>
-                                                                                <div class="custom-file">
-                                                                                    <input type="file"
-                                                                                        class="custom-file-input"
-                                                                                        id="image">
-                                                                                    <label class="custom-file-label"
-                                                                                        for="image">Choose
-                                                                                        file</label>
-                                                                                </div>
+                                                                                <input type="file" class="form-control-file" id="image"
+                                                                                accept="image/*">
                                                                             </div>
                                                                         </div>
                                                                     </div>
