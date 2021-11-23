@@ -9,7 +9,79 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Shop › @yield('page_name')</h1>
+                    <h1 class="m-0">Shop › @yield('page_name')
+                        <a data-toggle="modal" data-target="#create_product">
+                            <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
+                                title="Create">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+                        </a>
+                    </h1>
+                    <form action="{{route('admin.users.create')}}" method="post" class="d-inline">
+                        @csrf
+                        <!-- Modal -->
+                        <div class="modal fade" id="create_product" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Create product.</h5>
+                                        <button type="button" class="close"
+                                            data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="input-group">
+                                            <div class="card dark-mode w-100">
+                                                <label for="image" class="card-header"><span
+                                                        class="text-danger">*</span>
+                                                    Image</label>
+                                                <div class="card-body">
+                                                    <div class="custom-file">
+                                                        <input type="file"
+                                                            class="custom-file-input"
+                                                            id="image">
+                                                        <label class="custom-file-label"
+                                                            for="image">Choose
+                                                            file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="name">
+                                                <span class="text-danger">*</span>
+                                                Name</label>
+                                            <input name="name" id="name" type="text" class="form-control"
+                                                placeholder="Name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="price">
+                                                <span class="text-danger">*</span>
+                                                Price</label>
+                                            <input name="price" id="price" type="text" class="form-control"
+                                                placeholder="Price" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="quantity">
+                                                <span class="text-danger">*</span>
+                                                Quantity</label>
+                                            <input name="quantity" id="quantity" type="text" class="form-control"
+                                                placeholder="Quantity" required>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="submit"
+                                            class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -86,7 +158,7 @@
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="edit_product_{{$product->id}}" tabindex="-1"
                                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="exampleModalLabel">Edit
@@ -97,25 +169,25 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <input type="hidden" name="id" value="">
+                                                                    <input type="hidden" name="id" value="{{$product->id}}">
+
                                                                     <div class="input-group">
-                                                                        <div class="card w-100">
+                                                                        <div class="card dark-mode w-100">
                                                                             <label for="image" class="card-header"><span
                                                                                     class="text-danger">*</span>
                                                                                 Image</label>
                                                                             <div class="card-body">
                                                                                 <p class="card-text">
-                                                                                    <img src="https://www.prestashop.com/sites/default/files/choose_your_design_optimized_4_0.svg" alt="Image">
+                                                                                    <img src="https://www.prestashop.com/sites/default/files/choose_your_design_optimized_4_0.svg"
+                                                                                        alt="Image">
                                                                                 </p>
-                                                                                <div class="form-group">
-                                                                                    <div class="custom-file">
-                                                                                        <input type="file"
-                                                                                            class="custom-file-input"
-                                                                                            id="image">
-                                                                                        <label class="custom-file-label"
-                                                                                            for="image">Choose
-                                                                                            file</label>
-                                                                                    </div>
+                                                                                <div class="custom-file">
+                                                                                    <input type="file"
+                                                                                        class="custom-file-input"
+                                                                                        id="image">
+                                                                                    <label class="custom-file-label"
+                                                                                        for="image">Choose
+                                                                                        file</label>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -127,7 +199,7 @@
                                                                             Name</label>
                                                                         <input name="name" id="name" type="text" class="form-control"
                                                                             placeholder="Name"
-                                                                            value="" required>
+                                                                            value="{{$product->name}}" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="price">
@@ -135,15 +207,15 @@
                                                                             Price</label>
                                                                         <input name="price" id="price" type="text" class="form-control"
                                                                             placeholder="Price"
-                                                                            value="" required>
+                                                                            value="{{$product->price}}" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="quantity">
                                                                             <span class="text-danger">*</span>
                                                                             Quantity</label>
                                                                         <input name="quantity" id="quantity" type="text" class="form-control"
-                                                                            placeholder="Price"
-                                                                            value="" required>
+                                                                            placeholder="Quantity"
+                                                                            value="{{$product->quantity}}" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">

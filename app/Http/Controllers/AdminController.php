@@ -43,6 +43,15 @@ class AdminController extends Controller
 
         return view('admin.shop.products', $data);
     }
+    function product_create(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image',
+            'name' => 'required',
+            'price' => 'required|numberic',
+            'quantity' => 'required|integer'
+        ]);
+    }
     function settings_get()
     {
         $settings = SettingModel::all();
