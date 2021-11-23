@@ -1,98 +1,85 @@
 @section('page_name'){{ 'Register' }}@endsection
 
-@include('inc.header')
+@include('auth.inc.header')
 
-<!-- =====================================
-	    	==== Start breadcrumb -->
-<div class="breadcrumb section-bg" style="background-image:url(/assets/images/bg_breadcrumb.jpg)">
-    <!-- container -->
-    <div class="container">
-        <div class="row">
-            <div class="col col-md-12">
-                <h1>@yield('page_name')</h1>
-                <ol class="item-breadcrumb">
-                    <li><a href="{{route('home')}}">Home</a></li>
-                    <li><span aria-hidden="true">›</span></li>
-                    <li>@yield('page_name')</li>
-                </ol>
-            </div>
+<div class="register-box">
+    <!-- /.login-logo -->
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a href="{{route('home')}}" class="h1">{{Cache::get('shop_name')}}</a>
         </div>
-    </div>
-    <!-- /container -->
-</div>
-<!-- =====================================
-             ==== End breadcrumb -->
+        <div class="card-body">
+            <p class="login-box-msg">Register a new membership</p>
 
-<!-- =====================================
-             ==== Start account -->
-<div class="main-content">
-    <div class="page-account">
-        <!-- container -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                    <div class="account-wrapper">
-                        <div class="tab-content">
-                            <div class="account-form-container">
-                                <div class="account-form">
-                                    <form action="{{route('register')}}" method="post">
-                                        @csrf
-
-                                        <div class="mb-3">
-                                            <label for="name">Name</label>
-                                            <input type="text" name="name"
-                                                class="form-control @error('name') is-invalid @enderror"
-                                                placeholder="Name" required>
-                                            @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="email">Email</label>
-                                            <input type="email" name="email"
-                                                class="form-control @error('email') is-invalid @enderror"
-                                                placeholder="Email" required>
-                                            @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="password">Password</label>
-                                            <input type="password" name="password"
-                                                class="form-control @error('password') is-invalid @enderror"
-                                                placeholder="Password" required>
-                                            @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="password">Password Confirmation</label>
-                                            <input type="password" name="password_confirmation" class="form-control"
-                                                placeholder="Confirm Password" required>
-                                        </div>
-                                        <div class="button-box">
-                                            <button type="submit"
-                                                class="btn btn-default btn-normal"><span>Register</span></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+            <form class="mb-3" action="{{route('register')}}" method="post">
+                @csrf
+                <div class="input-group mb-3">
+                    <input name="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                        placeholder="Full name" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                    @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <div class="input-group mb-3">
+                    <input name="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                        placeholder="Email" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <div class="input-group mb-3">
+                    <input name="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                        placeholder="Password" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+                <div class="input-group mb-3">
+                    <input name="password_confirmation" type="password" class="form-control"
+                        placeholder="Password Confirmation" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <a href="{{route('login')}}" class="text-center">I already have a membership</a>
         </div>
-        <!-- /container -->
+        <!-- /.card-body -->
     </div>
+    <!-- /.card -->
 </div>
-<!-- =====================================
-             ==== End account -->
+<!-- /.register-box -->
 
-
-@include('inc.footer')
+@include('auth.inc.footer')
