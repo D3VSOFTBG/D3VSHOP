@@ -1,10 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,cyrillic-ext);
 
 select {
-    width: 100px;
-    height: 32px;
-    border: 0;
-    outline: none;
+    padding: 5px;
+    /* border: 0;
+    outline: none; */
     color: #595279;
 }
 
