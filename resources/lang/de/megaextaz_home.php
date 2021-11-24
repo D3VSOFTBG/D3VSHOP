@@ -78,7 +78,7 @@ return [
     'upon receipt' => 'nach Erhalt',
     'Only today' => 'Nur heute',
     'Country' => 'Land',
-    'Full name' => 'Vollständiger Name',
+    'Full name' => 'Name',
     'Phone' => 'Telefon',
     'Order' => 'Befehl',
     'Price' => 'Preis',
