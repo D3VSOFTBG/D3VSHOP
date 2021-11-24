@@ -20,7 +20,7 @@ return [
     'enjoy' => 'наслаждаться',
     'passionate sex' => 'страстным сексом',
     'with a loved man!' => 'с любимым человеком!',
-    'not a drug' => 'не является лекарственным препаратом',
+    'Mega extaz is not a drug' => 'Мега екстаз не е наркотик',
     'made only from natural ingredients' => 'производится только из натуральных компонентов',
     'has a very fast and strong stimulating effect' => 'обладает очень быстрым и сильным возбуждающим эффектом',
     'begins to act through' => 'начинает действовать через',
