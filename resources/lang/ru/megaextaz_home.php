@@ -72,7 +72,7 @@ return [
     'How to order' => 'как заказать',
     'Fill the form' => 'Заполните форму',
     'order below' => 'заказа ниже',
-    'Wait for the call' => 'Дождитесь звонка',
+    'Wait for the call from' => 'Дождитесь звонка от',
     'operator' => 'оператора',
     'Pay for the parcel' => 'Оплатите посылку',
     'upon receipt' => 'при получении',

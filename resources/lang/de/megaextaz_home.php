@@ -72,7 +72,7 @@ return [
     'How to order' => 'Wie man bestellt',
     'Fill the form' => 'Fülle das Formular aus',
     'order below' => 'unten bestellen',
-    'Wait for the call' => 'Warte auf den Anruf',
+    'Wait for the call from' => 'Warte auf den Anruf von',
     'operator' => 'Operatorin',
     'Pay for the parcel' => 'Bezahle das Paket',
     'upon receipt' => 'nach Erhalt',

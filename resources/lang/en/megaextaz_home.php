@@ -72,7 +72,7 @@ return [
     'How to order' => 'How to order',
     'Fill the form' => 'Fill the form',
     'order below' => 'order below',
-    'Wait for the call' => 'Wait for the call',
+    'Wait for the call from' => 'Wait for the call from',
     'operator' => 'operator',
     'Pay for the parcel' => 'Pay for the parcel',
     'upon receipt' => 'upon receipt',
