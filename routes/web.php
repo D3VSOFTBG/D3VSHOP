@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/{locale}', [HomeController::class, 'locale']);
 
 Route::middleware(['auth', 'admin'])->group(function ()
 {
