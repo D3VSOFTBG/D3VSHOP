@@ -38,12 +38,9 @@ return [
     'Does your significant other constantly say no?' => 'Ваша вторая половинка постоянно говорит нет?',
     'Tired of excuses?' => 'Устали от отговорок?',
     "Are you having trouble relaxing and thinking about your partner" => 'У вас не получается расслабиться и думать о партнере',
-    "Time to try Mega Extaz chewing gum. It doesn't matter if you are a man or a woman. With this tool you will be able to liberate your partner, few will resist the action of Mega Extaz. Your partner will want you and you will forget what the word «NO» is" => 'Пора попробовать жевательную резинку Mega Extaz. Неважно, мужчина вы или женщина. С этим средством вы
-    сможете раскрепостить своего партнера, мало кто устоит перед действием Mega Extaz. Ваш партнер захочет
-    вас и вы забудете, что такое слово «НЕТ»',
+    "Time to try Mega Extaz chewing gum. It doesn't matter if you are a man or a woman. With this tool you will be able to liberate your partner, few will resist the action of Mega Extaz. Your partner will want you and you will forget what the word «NO» is" => 'Пора попробовать жевательную резинку Mega Extaz. Неважно, мужчина вы или женщина. С этим средством вы сможете раскрепостить своего партнера, мало кто устоит перед действием Mega Extaz. Ваш партнер захочет вас и вы забудете, что такое слово «НЕТ»',
     "Did you 'fail again'? Thinking about work and can't concentrate and have fun?" => 'У вас «снова не получилось»? Думаете о работе и не можете сосредоточиться и получить удовольствие?',
-    'Проблемы в постели и потенцией? Забудьте про все эти проблемы, они в прошлом. Жевательная резинка поможет
-    вам забыть про все проблемы и получить истинное удовольствие от своего партнера' => 'Problems in bed and potency? Forget all these problems, they are in the past. Chewing gum will help you forget about all the problems and get real pleasure from your partner.',
+    'Problems in bed and potency? Forget all these problems, they are in the past. Chewing gum will help you forget about all the problems and get real pleasure from your partner.' => 'Проблемы в постели и потенцией? Забудьте про все эти проблемы, они в прошлом. Жевательная резинка поможет вам забыть про все проблемы и получить истинное удовольствие от своего партнера',
     "Did you like a colleague but can't take the first step? Let her do it!" => 'Понравилась коллега, но не можете сделать первый шаг? Пусть сделает она!',
     'Mega Extaz will help the girl to be liberated, set her in the right mood and remove all her complexes.' => 'Mega Extaz поможет девушке раскрепоститься, настроит ее на нужный лад и уберет все ее комплексы.',
     'Chewing gum' => 'Жвачку',
