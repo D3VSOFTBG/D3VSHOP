@@ -27,4 +27,9 @@ class HomeController extends Controller
         $product = ProductModel::first();
         return view('themes.'.Cache::get('theme_name').'.home', ['product' => $product]);
     }
+    public function old()
+    {
+        $product = ProductModel::first();
+        return view('themes.'.Cache::get('theme_name').'.old', ['product' => $product]);
+    }
 }
