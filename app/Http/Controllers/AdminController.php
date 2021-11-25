@@ -44,7 +44,7 @@ class AdminController extends Controller
 
         return view('admin.shop.products', $data);
     }
-    function payments_stripe()
+    function payments_stripe_get()
     {
         $stripe = StripeModel::where('id', 1)->get();
 
@@ -53,6 +53,29 @@ class AdminController extends Controller
         ];
 
         return view('admin.payments.stripe', $data);
+    }
+    function payments_stripe_post(Request $request)
+    {
+        $request->validate([
+            'test_publishable_key' => 'required',
+            'test_secret_key' => 'required',
+            'live_publishable_key' => 'required',
+            'live_secret_key' => 'required',
+        ]);
+
+        $update_details = [
+            'test_publishable_key' => $request->test_publishable_key,
+            'test_secret_key' => $request->test_secret_key,
+            'live_publishable_key' => $request->live_publishable_key,
+            'live_secret_key' => $request->live_secret_key,
+        ];
+
+        DB::table('stripe')->where('id', 1)->update($update_details);
+
+        // Delete all cache
+        Cache::flush();
+
+        return back();
     }
     function product_create(Request $request)
     {

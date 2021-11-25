@@ -28,7 +28,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::get('/admin/information', [AdminController::class, 'information'])->name('admin.information');
     Route::get('/admin/settings', [AdminController::class, 'settings_get'])->name('admin.settings');
     Route::get('/admin/shop/products', [AdminController::class, 'shop_products'])->name('admin.shop.products');
-    Route::get('/admin/payments/stripe', [AdminController::class, 'payments_stripe'])->name('admin.payments.stripe');
+    Route::get('/admin/payments/stripe', [AdminController::class, 'payments_stripe_get'])->name('admin.payments.stripe');
 
     // POST
     Route::post('/admin/settings', [AdminController::class, 'settings_post'])->name('admin.settings');
@@ -38,6 +38,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::post('/admin/users/delete', [AdminController::class, 'user_delete'])->name('admin.users.delete');
     Route::post('/admin/users/edit', [AdminController::class, 'user_edit'])->name('admin.users.edit');
     Route::post('/admin/users/create', [AdminController::class, 'user_create'])->name('admin.users.create');
+    Route::post('/admin/payments/stripe', [AdminController::class, 'payments_stripe_post'])->name('admin.payments.stripe');
 });
 
 

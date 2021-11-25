@@ -34,30 +34,31 @@
                                     <label>
                                         Environment</label>
                                     <select name="environment" class="custom-select">
-                                        <option value="xx" selected="">Soon</option>
+                                        <option value="live" @if($stripe[0]['environment'] == 1) selected @endif>Live</option>
+                                        <option value="test" @if($stripe[0]['environment'] == 0) selected @endif>Test</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="test_publishable_key">
                                         Test Publishable Key</label>
-                                    <input name="test_publishable_key" id="test_publishable_key" type="text" class="form-control" placeholder="Test Publishable Key" value="{{$stripe_test[0]['publishable_key']}}" required>
+                                    <input name="test_publishable_key" id="test_publishable_key" type="text" class="form-control" placeholder="Test Publishable Key" value="{{$stripe[0]['test_publishable_key']}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="test_secret_key">
                                         Test Secret Key</label>
                                     <input name="test_secret_key" id="test_secret_key" type="text" class="form-control"
-                                        placeholder="Test Secret Key" value="{{$stripe_test[0]['secret_key']}}" required>
+                                        placeholder="Test Secret Key" value="{{$stripe[0]['test_secret_key']}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="live_publishable_key">
                                         Live Publishable Key</label>
-                                    <input name="live_publishable_key" id="live_publishable_key" type="text" class="form-control" placeholder="Live Publishable Key" value="{{$stripe_live[0]['publishable_key']}}" required>
+                                    <input name="live_publishable_key" id="live_publishable_key" type="text" class="form-control" placeholder="Live Publishable Key" value="{{$stripe[0]['live_publishable_key']}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="live_secret_key">
                                         Live Secret Key</label>
                                     <input name="live_secret_key" id="live_secret_key" type="text" class="form-control"
-                                        placeholder="Live Secret Key" value="{{$stripe_live[0]['secret_key']}}" required>
+                                        placeholder="Live Secret Key" value="{{$stripe[0]['live_secret_key']}}" required>
                                 </div>
                             </div>
                         </div>
