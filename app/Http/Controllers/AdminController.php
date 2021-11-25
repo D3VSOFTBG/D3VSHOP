@@ -86,9 +86,6 @@ class AdminController extends Controller
 
         DB::table('payment_methods')->where('id', 1)->update($update_details);
 
-        // Delete all cache
-        Cache::flush();
-
         return back();
     }
     function product_create(Request $request)
