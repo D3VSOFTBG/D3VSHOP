@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class StripeModel extends Model
+class Role extends Model
 {
-    protected $table = 'stripe';
+    protected $table = 'roles';
 }

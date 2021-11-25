@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\ProductModel;
-use App\RoleModel;
-use App\SettingModel;
-use App\StripeModel;
+use App\Product;
+use App\Setting;
+use App\Payment_Method;
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -21,7 +21,7 @@ class AdminController extends Controller
     function users()
     {
         $users = User::orderBy('id', 'DESC')->get();
-        $roles = RoleModel::all();
+        $roles = Role::all();
 
         $data = [
             'users' => $users,
@@ -36,7 +36,7 @@ class AdminController extends Controller
     }
     function shop_products()
     {
-        $products = ProductModel::orderBy('id', 'DESC')->get();
+        $products = Product::orderBy('id', 'DESC')->get();
 
         $data = [
             'products' => $products,
@@ -46,7 +46,7 @@ class AdminController extends Controller
     }
     function payments_stripe_get()
     {
-        $stripe = StripeModel::where('id', 1)->get();
+        $stripe = Payment_Method::where('id', 1)->get();
 
         $data = [
             'stripe' => $stripe,
@@ -58,9 +58,9 @@ class AdminController extends Controller
     {
         $request->validate([
             'environment' => 'required',
-            'test_publishable_key' => 'required',
+            'test_public_key' => 'required',
             'test_secret_key' => 'required',
-            'live_publishable_key' => 'required',
+            'live_public_key' => 'required',
             'live_secret_key' => 'required',
         ]);
 
@@ -78,9 +78,9 @@ class AdminController extends Controller
 
         $update_details = [
             'environment' => environment($request),
-            'test_publishable_key' => $request->test_publishable_key,
+            'test_public_key' => $request->test_public_key,
             'test_secret_key' => $request->test_secret_key,
-            'live_publishable_key' => $request->live_publishable_key,
+            'live_public_key' => $request->live_public_key,
             'live_secret_key' => $request->live_secret_key,
         ];
 
@@ -100,7 +100,7 @@ class AdminController extends Controller
             'quantity' => 'required|integer'
         ]);
 
-        $products = new ProductModel();
+        $products = new Product();
         $products->slug = strtolower(trim(preg_replace('/\s+/', '-', $request->name))) . time();
 
         // image
@@ -123,7 +123,7 @@ class AdminController extends Controller
             'quantity' => 'required|integer'
         ]);
 
-        $products = ProductModel::find($request->id);
+        $products = Product::find($request->id);
 
         if($products->name != $request->name)
         {
@@ -151,12 +151,12 @@ class AdminController extends Controller
     }
     function product_delete(Request $request)
     {
-        ProductModel::find($request->id)->delete();
+        Product::find($request->id)->delete();
         return back();
     }
     function settings_get()
     {
-        $settings = SettingModel::all();
+        $settings = Setting::all();
 
         $data = [
             'settings' => $settings,

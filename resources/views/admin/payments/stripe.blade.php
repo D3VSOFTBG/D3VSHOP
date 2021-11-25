@@ -39,9 +39,9 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="test_publishable_key">
-                                        Test Publishable Key</label>
-                                    <input name="test_publishable_key" id="test_publishable_key" type="text" class="form-control" placeholder="Test Publishable Key" value="{{$stripe[0]['test_publishable_key']}}" required>
+                                    <label for="test_public_key">
+                                        Test Public Key</label>
+                                    <input name="test_public_key" id="test_public_key" type="text" class="form-control" placeholder="Test Public Key" value="{{$stripe[0]['test_public_key']}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="test_secret_key">
@@ -50,9 +50,9 @@
                                         placeholder="Test Secret Key" value="{{$stripe[0]['test_secret_key']}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="live_publishable_key">
-                                        Live Publishable Key</label>
-                                    <input name="live_publishable_key" id="live_publishable_key" type="text" class="form-control" placeholder="Live Publishable Key" value="{{$stripe[0]['live_publishable_key']}}" required>
+                                    <label for="live_public_key">
+                                        Live Public Key</label>
+                                    <input name="live_public_key" id="live_public_key" type="text" class="form-control" placeholder="Live Public Key" value="{{$stripe[0]['live_public_key']}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="live_secret_key">

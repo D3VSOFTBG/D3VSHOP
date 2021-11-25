@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\SettingModel;
+use App\Setting;
 use Illuminate\Support\ServiceProvider;
 // use Illuminate\Support\Facades\DB;
 // use Illuminate\Support\Facades\View;
@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if(!Cache::has('shop_name'))
         {
-            $settings = SettingModel::all();
+            $settings = Setting::all();
             Cache::forever('shop_name', $settings[0]['value']);
             Cache::forever('title_seperator', $settings[1]['value']);
             Cache::forever('default_currency', $settings[2]['value']);
