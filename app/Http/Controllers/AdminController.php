@@ -84,7 +84,7 @@ class AdminController extends Controller
             'live_secret_key' => $request->live_secret_key,
         ];
 
-        DB::table('stripe')->where('id', 1)->update($update_details);
+        DB::table('payment_methods')->where('id', 1)->update($update_details);
 
         // Delete all cache
         Cache::flush();
