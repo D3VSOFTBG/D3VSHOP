@@ -80,7 +80,7 @@ class AdminController extends Controller
             'environment' => environment($request),
             'test_publishable_key' => $request->test_publishable_key,
             'test_secret_key' => $request->test_secret_key,
-            'live_publishable_key' => $request->live_public_key,
+            'live_publishable_key' => $request->live_publishable_key,
             'live_secret_key' => $request->live_secret_key,
         ];
 
