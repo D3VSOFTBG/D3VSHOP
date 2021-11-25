@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/{locale}', [HomeController::class, 'locale']);
+Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
 
 Route::middleware(['auth', 'admin'])->group(function ()
 {

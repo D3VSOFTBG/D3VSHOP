@@ -17,19 +17,9 @@ class HomeController extends Controller
     }
     public function locale($locale)
     {
-        if (!in_array($locale, ['en', 'ru', 'de']))
-        {
-            abort(404);
-        }
-
         App::setLocale($locale);
 
         $product = ProductModel::first();
         return view('themes.'.Cache::get('theme_name').'.home', ['product' => $product]);
-    }
-    public function old()
-    {
-        $product = ProductModel::first();
-        return view('themes.'.Cache::get('theme_name').'.old', ['product' => $product]);
     }
 }
