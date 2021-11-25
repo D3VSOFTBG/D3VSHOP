@@ -1,6 +1,6 @@
 <?php
 
-use App\RoleModel;
+use App\Role;
 use App\User;
 
 function user_count()
@@ -19,7 +19,7 @@ function role_name($id)
     }
     else
     {
-        return RoleModel::where('id', $id)->get('name')->pluck('name')->first();
+        return Role::where('id', $id)->get('name')->pluck('name')->first();
     }
 }
 function email_verified_at($date)
