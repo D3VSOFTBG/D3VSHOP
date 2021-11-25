@@ -4,7 +4,7 @@
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <form action="{{route('admin.settings')}}" method="post">
+    <form action="{{route('admin.payments.stripe')}}" method="post">
         @csrf
         <!-- Content Header (Page header) -->
         <div class="content-header">
