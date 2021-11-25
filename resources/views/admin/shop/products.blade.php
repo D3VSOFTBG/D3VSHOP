@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Shop › @yield('page_name')
+                    <h1 class="m-0">@yield('page_name')
                         <a data-toggle="modal" data-target="#create_product">
                             <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top"
                                 title="Create">

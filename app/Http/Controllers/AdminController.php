@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ProductModel;
 use App\RoleModel;
 use App\SettingModel;
+use App\StripeModel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -33,7 +34,7 @@ class AdminController extends Controller
     {
         return view('admin.information');
     }
-    function products()
+    function shop_products()
     {
         $products = ProductModel::orderBy('id', 'DESC')->get();
 
@@ -42,6 +43,16 @@ class AdminController extends Controller
         ];
 
         return view('admin.shop.products', $data);
+    }
+    function payments_stripe()
+    {
+        $stripe = StripeModel::where('id', 1)->get();
+
+        $data = [
+            'stripe' => $stripe,
+        ];
+
+        return view('admin.payments.stripe', $data);
     }
     function product_create(Request $request)
     {

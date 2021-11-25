@@ -202,6 +202,23 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item @if (str_contains(Request::url(), 'payments')) menu-open @endif">
+                            <a href="#" class="nav-link @if (str_contains(Request::url(), 'payments')) active @endif">
+                                <i class="nav-icon fas fa-credit-card"></i>
+                                <p>
+                                    Payments
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.payments.stripe')}}" class="nav-link @if (Route::currentRouteName() == 'admin.payments.stripe') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Stripe</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="{{route('admin.users')}}"
                                 class="nav-link @if (Route::currentRouteName() == 'admin.users') active @endif">
