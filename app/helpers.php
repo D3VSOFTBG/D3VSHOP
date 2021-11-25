@@ -37,5 +37,13 @@ function email_verified_at($date)
 function stripe_secret_key()
 {
     $stripe = Stripe::all();
-    return $stripe;
+
+    if($stripe[0]['environment'] == 1)
+    {
+        return $stripe[0]['live_secret_key'];
+    }
+    else
+    {
+        return $stripe[0]['test_secret_key'];
+    }
 }
