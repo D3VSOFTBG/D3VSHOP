@@ -23,16 +23,17 @@ class StripeController extends Controller
         Stripe\Stripe::setApiKey(stripe_secret_key());
 
         $session = \Stripe\Checkout\Session::create([
-            'line_items' => [[
-              'price_data' => [
-                'currency' => Cache::get('default_currency'),
-                'product_data' => [
-                  'name' => $request->name,
-                ],
-                'unit_amount' => $request->price*100,
-              ],
-              'quantity' => $request->quantity,
-            ]],
+            'line_items' => [
+                [
+                    'price_data' => [
+                        'currency' => Cache::get('default_currency'),
+                        'product_data' => [
+                            'name' => $request->name,
+                        ],
+                        'unit_amount' => $request->price*100,
+                    ],
+                    'quantity' => $request->quantity,
+                ]],
             'mode' => 'payment',
             'success_url' => route('success'),
             'cancel_url' => route('cancel'),
