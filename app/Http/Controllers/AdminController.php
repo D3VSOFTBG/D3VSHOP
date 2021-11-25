@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Setting;
-use App\Payment_Method;
+use App\Stripe;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -46,7 +46,7 @@ class AdminController extends Controller
     }
     function payments_stripe_get()
     {
-        $stripe = Payment_Method::where('id', 1)->get();
+        $stripe = Stripe::where('id', 1)->get();
 
         $data = [
             'stripe' => $stripe,
@@ -58,9 +58,9 @@ class AdminController extends Controller
     {
         $request->validate([
             'environment' => 'required',
-            'test_public_key' => 'required',
+            'test_publishable_key' => 'required',
             'test_secret_key' => 'required',
-            'live_public_key' => 'required',
+            'live_publishable_key' => 'required',
             'live_secret_key' => 'required',
         ]);
 
@@ -78,13 +78,13 @@ class AdminController extends Controller
 
         $update_details = [
             'environment' => environment($request),
-            'test_public_key' => $request->test_public_key,
+            'test_publishable_key' => $request->test_publishable_key,
             'test_secret_key' => $request->test_secret_key,
-            'live_public_key' => $request->live_public_key,
+            'live_publishable_key' => $request->live_public_key,
             'live_secret_key' => $request->live_secret_key,
         ];
 
-        DB::table('payment_methods')->where('id', 1)->update($update_details);
+        DB::table('stripe')->where('id', 1)->update($update_details);
 
         return back();
     }

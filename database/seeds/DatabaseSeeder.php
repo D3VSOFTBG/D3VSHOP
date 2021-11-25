@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Role_Seeder::class);
         $this->call(Product_Seeder::class);
         $this->call(Setting_Seeder::class);
-        $this->call(Payment_Method_Seeder::class);
+        $this->call(Stripe_Seeder::class);
     }
 }
