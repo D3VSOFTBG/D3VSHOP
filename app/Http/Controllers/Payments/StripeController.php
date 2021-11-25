@@ -12,6 +12,13 @@ class StripeController extends Controller
 {
     function post(Request $request)
     {
+        $request->validate([
+            'country' => 'required',
+            'address' => 'required',
+            'full_name' => 'required',
+            'phone' => 'required',
+            'quantity' => 'required|integer',
+        ]);
 
         Stripe\Stripe::setApiKey(stripe_secret_key());
 
@@ -22,9 +29,9 @@ class StripeController extends Controller
                 'product_data' => [
                   'name' => $request->name,
                 ],
-                'unit_amount' => Product::first()->price,
+                'unit_amount' => $request->price*100,
               ],
-              'quantity' => 1,
+              'quantity' => $request->quantity,
             ]],
             'mode' => 'payment',
             'success_url' => route('success'),
