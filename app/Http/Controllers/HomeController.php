@@ -24,7 +24,7 @@ class HomeController extends Controller
     }
     function success()
     {
-        return redirect(route('home'))->withSuccess('Thanks for your order!');
+        return redirect(route('home'))->with('success', 'Thanks for your order!');
     }
     function cancel()
     {

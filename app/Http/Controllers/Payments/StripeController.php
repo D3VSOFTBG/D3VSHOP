@@ -24,8 +24,8 @@ class StripeController extends Controller
               'quantity' => 1,
             ]],
             'mode' => 'payment',
-            'success_url' => request()->getSchemeAndHttpHost(),
-            'cancel_url' => request()->getSchemeAndHttpHost(),
+            'success_url' => route('success'),
+            'cancel_url' => route('cancel'),
           ]);
 
           return redirect($session->url)->withStatus(303);
