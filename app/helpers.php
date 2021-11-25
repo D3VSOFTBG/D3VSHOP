@@ -2,6 +2,7 @@
 
 use App\Role;
 use App\User;
+use App\Stripe;
 
 function user_count()
 {
@@ -32,4 +33,9 @@ function email_verified_at($date)
     {
         return 'Yes';
     }
+}
+function stripe_secret_key()
+{
+    $stripe = Stripe::all();
+    return $stripe;
 }
