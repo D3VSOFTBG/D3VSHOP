@@ -28,6 +28,6 @@ class HomeController extends Controller
     }
     function cancel()
     {
-        return redirect(route('home'))->withSuccess('Error!');
+        return redirect(route('home'))->withErrors('Error!');
     }
 }

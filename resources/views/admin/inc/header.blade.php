@@ -20,8 +20,7 @@
 
     @if ($errors->any())
     <script>
-        alert('{{ implode('
-            ', $errors->all(':message')) }}');
+        alert('{{ implode(' ', $errors->all(':message')) }}');
     </script>
     @endif
 
