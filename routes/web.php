@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalizationController;
+use App\Http\Controllers\Payments\StripeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
+Route::post('/stripe', [StripeController::class, 'post'])->name('stripe');
 
 Route::middleware(['auth', 'admin'])->group(function ()
 {
