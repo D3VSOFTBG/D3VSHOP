@@ -3,23 +3,26 @@
 namespace App\Http\Controllers\Payments;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
+use App\Product;
 use Stripe;
 
 class StripeController extends Controller
 {
-    function post()
+    function post(Request $request)
     {
-        Stripe\Stripe::setApiKey('sk_test_51IXyhNLDTUdeI5K5ug4g5xqDZi89oVrPCE8qoVE1mplriuCqhRYXRGdRtCma0JH8HmTcMqCyW3jcEEavpJ6COI1y00DzArcC4d');
+
+        Stripe\Stripe::setApiKey(stripe_secret_key());
 
         $session = \Stripe\Checkout\Session::create([
             'line_items' => [[
               'price_data' => [
-                'currency' => 'eur',
+                'currency' => Cache::get('default_currency'),
                 'product_data' => [
-                  'name' => 'T-shirt',
+                  'name' => $request->name,
                 ],
-                'unit_amount' => 5000,
+                'unit_amount' => Product::first()->price,
               ],
               'quantity' => 1,
             ]],

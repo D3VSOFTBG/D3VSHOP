@@ -1034,7 +1034,7 @@ header .dotted span:after {
 }
 
 .order_wrapp .headline {
-    margin-left: 75px;
+    margin-left: -550px;
     text-align: center;
     line-height: 1;
 }
@@ -1173,12 +1173,13 @@ header .dotted span:after {
 }
 
 .order_wrapp form {
+    height: 300px;
     width: 482px;
     padding: 15px;
     position: absolute;
     right: 30px;
-    top: 56px;
-    background: white url("../images/girl.jpg") left 111px no-repeat;
+    top: -14px;
+    background: white url(../images/girl.jpg) left 181px no-repeat;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
