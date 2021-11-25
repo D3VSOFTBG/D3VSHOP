@@ -22,4 +22,12 @@ class HomeController extends Controller
         $product = Product::first();
         return view('themes.'.Cache::get('theme_name').'.home', ['product' => $product]);
     }
+    function success()
+    {
+        return redirect(route('home'))->withSuccess('Thanks for your order!');
+    }
+    function cancel()
+    {
+        return redirect(route('home'))->withSuccess('Error!');
+    }
 }
