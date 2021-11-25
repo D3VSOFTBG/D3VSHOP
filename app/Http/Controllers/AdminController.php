@@ -57,13 +57,27 @@ class AdminController extends Controller
     function payments_stripe_post(Request $request)
     {
         $request->validate([
+            'environment' => 'required',
             'test_publishable_key' => 'required',
             'test_secret_key' => 'required',
             'live_publishable_key' => 'required',
             'live_secret_key' => 'required',
         ]);
 
+        function environment($request)
+        {
+            if($request->environment == 'live')
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         $update_details = [
+            'environment' => environment($request),
             'test_publishable_key' => $request->test_publishable_key,
             'test_secret_key' => $request->test_secret_key,
             'live_publishable_key' => $request->live_publishable_key,
