@@ -25,16 +25,18 @@ class StripeController extends Controller
 
         $customer = \Stripe\Customer::create([
             'phone' => $request->phone,
+            'name' => $request->full_name,
         ]);
 
         $session = \Stripe\Checkout\Session::create([
             'customer' => $customer['id'],
+
             'line_items' => [
                 [
                     'price_data' => [
                         'currency' => Cache::get('default_currency'),
                         'product_data' => [
-                            'name' => $request->name,
+                            'name' => $request->product_name,
                         ],
                         'unit_amount' => $request->price*100,
                     ],
