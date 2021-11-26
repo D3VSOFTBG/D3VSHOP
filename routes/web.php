@@ -49,4 +49,4 @@ Route::middleware(['auth', 'admin'])->group(function ()
 Auth::routes(['verify' => true]);
 
 // Webhooks
-Route::stripeWebhooks('stripe-webhook');
+Route::stripeWebhooks('stripe-webhook')->name('stripe-webhook');

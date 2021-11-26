@@ -56,7 +56,7 @@ class StripeController extends Controller
             'cancel_url' => route('cancel'),
           ]);
 
-          Log::info($session);
+          //Log::info($session);
 
           //Log::info($customer['id']);
 
