@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <label for="webhook_secret">
                                         Webhook Secret</label>
-                                    <input name="webhook_secret" id="webhook_secret" type="text" class="form-control" placeholder="Webhook Secret" value="{{$stripe[0]['webhook_secret']}}" readonly>
+                                    <input name="webhook_secret" id="webhook_secret" type="text" class="form-control" placeholder="Webhook Secret" value="{{env('STRIPE_WEBHOOK_SECRET')}}" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label for="test_publishable_key">

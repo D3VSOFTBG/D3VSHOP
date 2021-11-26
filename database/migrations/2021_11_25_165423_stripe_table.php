@@ -16,7 +16,6 @@ class StripeTable extends Migration
         Schema::create('stripe', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->boolean('environment');
-            $table->string('webhook_secret');
             $table->string('test_publishable_key');
             $table->string('test_secret_key');
             $table->string('live_publishable_key');

@@ -48,6 +48,9 @@ class AdminController extends Controller
     {
         $stripe = Stripe::where('id', 1)->get();
 
+        $stripe_webhook = Stripe::where('id', 1)->pluck('webhook_secret')->first();
+
+        echo $stripe_webhook;
         $data = [
             'stripe' => $stripe,
         ];
