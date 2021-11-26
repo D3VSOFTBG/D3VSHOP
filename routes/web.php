@@ -45,7 +45,6 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::post('/admin/payments/stripe', [AdminController::class, 'payments_stripe_post'])->name('admin.payments.stripe');
 });
 
-
 Auth::routes(['verify' => true]);
 
 // Webhooks

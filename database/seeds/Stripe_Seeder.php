@@ -16,8 +16,9 @@ class Stripe_Seeder extends Seeder
             [
                 'id' => 1,
                 'environment' => 0,
+                'webhook_secret' => 'webhook_secret',
                 'test_publishable_key' => 'test_publishable_key',
-                'test_secret_key' => 'test_secret_key',
+                'test_secret_key' => 'sk_test_51IXyhNLDTUdeI5K5ug4g5xqDZi89oVrPCE8qoVE1mplriuCqhRYXRGdRtCma0JH8HmTcMqCyW3jcEEavpJ6COI1y00DzArcC4d',
                 'live_publishable_key' => 'live_publishable_key',
                 'live_secret_key' => 'live_secret_key',
             ]
