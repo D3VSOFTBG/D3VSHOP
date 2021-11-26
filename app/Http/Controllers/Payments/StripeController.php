@@ -15,9 +15,9 @@ class StripeController extends Controller
     {
         $request->validate([
             'country' => 'required',
-            'address' => 'required',
             'full_name' => 'required',
             'phone' => 'required',
+            'email' => 'required|email',
             'quantity' => 'required|integer',
         ]);
 
@@ -26,7 +26,16 @@ class StripeController extends Controller
         $customer = \Stripe\Customer::create([
             'phone' => $request->phone,
             'name' => $request->full_name,
+            'email' => $request->email,
         ]);
+
+        // $setup_intent = \Stripe\SetupIntent::create([
+        //     'customer' => $customer['id'],
+
+        //     'billing_details' => [
+        //         ''
+        //     ]
+        // ]);
 
         $session = \Stripe\Checkout\Session::create([
             'customer' => $customer['id'],
