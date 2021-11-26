@@ -29,14 +29,6 @@ class StripeController extends Controller
             'email' => $request->email,
         ]);
 
-        // $setup_intent = \Stripe\SetupIntent::create([
-        //     'customer' => $customer['id'],
-
-        //     'billing_details' => [
-        //         ''
-        //     ]
-        // ]);
-
         $session = \Stripe\Checkout\Session::create([
             'customer' => $customer['id'],
 
