@@ -36,6 +36,15 @@ class StripeController extends Controller
                     'quantity' => $request->quantity,
                 ]
             ],
+
+            'phone' => $request->phone,
+
+            'billing_address_collection' => 'required',
+
+            'phone_number_collection' => [
+                'enabled' => true,
+            ],
+            'customer_email' => $request->email,
             'mode' => 'payment',
             'success_url' => route('success'),
             'cancel_url' => route('cancel'),
