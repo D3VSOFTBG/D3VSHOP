@@ -8,6 +8,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Spatie\WebhookClient\Models\WebhookCall;
+use Illuminate\Support\Facades\Log;
 
 class ChargeSucceeded implements ShouldQueue
 {
@@ -24,6 +25,9 @@ class ChargeSucceeded implements ShouldQueue
     public function handle()
     {
         $charge = $this->webhookCall->payload['data']['object'];
+
+        Log::info($charge);
+
         // do your work here
 
         // you can access the payload of the webhook call with `$this->webhookCall->payload`
