@@ -48,9 +48,6 @@ class AdminController extends Controller
     {
         $stripe = Stripe::where('id', 1)->get();
 
-        $stripe_webhook = Stripe::where('id', 1)->pluck('webhook_secret')->first();
-
-        echo $stripe_webhook;
         $data = [
             'stripe' => $stripe,
         ];
@@ -61,7 +58,6 @@ class AdminController extends Controller
     {
         $request->validate([
             'environment' => 'required',
-            'webhook_secret' => 'required',
             'test_publishable_key' => 'required',
             'test_secret_key' => 'required',
             'live_publishable_key' => 'required',
