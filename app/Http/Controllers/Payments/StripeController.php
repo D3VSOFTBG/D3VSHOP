@@ -23,6 +23,10 @@ class StripeController extends Controller
 
         Stripe\Stripe::setApiKey(stripe_secret_key());
 
+        \Stripe\Customer::create([
+            'email' => 'asd@gmail.com',
+        ]);
+
         $session = \Stripe\Checkout\Session::create([
             'line_items' => [
                 [
@@ -37,14 +41,13 @@ class StripeController extends Controller
                 ]
             ],
 
-            'phone' => $request->phone,
-
             'billing_address_collection' => 'required',
 
             'phone_number_collection' => [
                 'enabled' => true,
             ],
-            'customer_email' => $request->email,
+
+            'customer_email' => 'ad@gmail.com',
             'mode' => 'payment',
             'success_url' => route('success'),
             'cancel_url' => route('cancel'),
