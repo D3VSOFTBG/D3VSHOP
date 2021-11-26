@@ -31,6 +31,11 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
+                                    <label for="webhook_secret">
+                                        Webhook Secret</label>
+                                    <input name="webhook_secret" id="webhook_secret" type="text" class="form-control" placeholder="Webhook Secret" value="{{$stripe[0]['webhook_secret']}}" readonly>
+                                </div>
+                                <div class="form-group">
                                     <label for="test_publishable_key">
                                         Webhook</label>
                                     <input name="test_publishable_key" id="test_publishable_key" type="text" class="form-control" placeholder="Stripe Webhook" value="{{route('stripe-webhook')}}" readonly>
