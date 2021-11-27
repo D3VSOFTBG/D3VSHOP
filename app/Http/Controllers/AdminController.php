@@ -7,6 +7,7 @@ use App\Setting;
 use App\Stripe;
 use App\Role;
 use App\User;
+use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -46,10 +47,10 @@ class AdminController extends Controller
     }
     function shop_orders()
     {
-        $products = Product::orderBy('id', 'DESC')->get();
+        $orders = Order::orderBy('id', 'DESC')->get();
 
         $data = [
-            'products' => $products,
+            'orders' => $orders,
         ];
 
         return view('admin.shop.orders', $data);

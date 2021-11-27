@@ -15,24 +15,28 @@ class Order_Seeder extends Seeder
         DB::table('orders')->insert(
             [
                 [
-                    'user_name' => 'Alex Kirov',
+                    'customer' => 'Alex Kirov',
                     'phone' => '0876595156',
                     'email' => 'alex@d3vsoft.com',
                     'country' => 'BG',
                     'city' => 'Sofia',
                     'address_1' => '1',
                     'address_2' => '2',
-                    'postal_code' => '9000'
+                    'postal_code' => '9000',
+                    'created_at' => now(),
+                    'updated_at' => now(),
                 ],
                 [
-                    'user_name' => 'Spas Kirov',
+                    'customer' => 'Spas Kirov',
                     'phone' => '0876595156',
                     'email' => 'spas@d3vsoft.com',
                     'country' => 'BG',
                     'city' => 'Burgas',
                     'address_1' => '1',
                     'address_2' => '2',
-                    'postal_code' => '8000'
+                    'postal_code' => '8000',
+                    'created_at' => now(),
+                    'updated_at' => now(),
                 ]
             ]
         );

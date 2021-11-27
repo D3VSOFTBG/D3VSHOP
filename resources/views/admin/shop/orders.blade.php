@@ -94,7 +94,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">There are {{count($products)}} products.</h3>
+                            <h3 class="card-title">There are {{count($orders)}} orders.</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -103,40 +103,37 @@
                                     <thead>
                                         <tr>
                                             <th class="align-middle" style="width: 0;">#</th>
-                                            <th class="align-middle" style="width: 0;">Image</th>
-                                            <th class="align-middle">Name</th>
-                                            <th class="align-middle">Price</th>
-                                            <th class="align-middle">Quantity</th>
+                                            <th class="align-middle">Customer</th>
+                                            <th class="align-middle">Country</th>
                                             <th class="align-middle">Created</th>
                                             <th class="align-middle">Updated</th>
                                             <th class="align-middle">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($products as $product)
+                                        @foreach ($orders as $order)
                                         <tr>
                                             <td class="align-middle">
-                                                {{$product->id}}
+                                                {{$order->id}}
                                             </td>
                                             <td class="align-middle">
-                                                <img class="w-100 h-100" src="{{env('PRODUCTS_IMG_PATH')}}{{$product->image}}" alt="Image">
+                                                {{$order->customer}}
                                             </td>
                                             <td class="align-middle">
-                                                {{$product->name}}
+                                                {{$order->country}}
                                             </td>
                                             <td class="align-middle">
-                                                {{$product->price}} <strong>{{Cache::get('default_currency')}}</strong>
+                                                {{$order->created_at}}
                                             </td>
                                             <td class="align-middle">
-                                                {{$product->quantity}}
+                                                {{$order->updated_at}}
                                             </td>
                                             <td class="align-middle">
-                                                {{$product->created_at}}
+                                                <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Info">
+                                                    <i class="fas fa-info"></i>
+                                                </button>
                                             </td>
-                                            <td class="align-middle">
-                                                {{$product->updated_at}}
-                                            </td>
-                                            <td class="align-middle">
+                                            {{-- <td class="align-middle">
                                                 <form action="{{route('admin.shop.products.delete')}}" method="post"
                                                     class="d-inline"
                                                     onclick="if(!confirm('Delete ({{$product->name}}).')){return false;}">
@@ -226,7 +223,7 @@
                                                         </div>
                                                     </div>
                                                 </form>
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                         @endforeach
                                     </tbody>

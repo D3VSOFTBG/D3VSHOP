@@ -15,7 +15,7 @@ class Orders extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_name');
+            $table->string('customer');
             $table->string('phone');
             $table->string('email');
             $table->string('country');
@@ -23,6 +23,7 @@ class Orders extends Migration
             $table->string('address_1');
             $table->string('address_2');
             $table->string('postal_code');
+            $table->timestamps();
         });
     }
 
