@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Payments;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
-// use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Product;
 use Stripe;
@@ -45,6 +45,10 @@ class StripeController extends Controller
                 ]
             ],
 
+            'payment_intent_data' => [
+                'description' => $request->phone,
+            ],
+
             'billing_address_collection' => 'required',
 
             'phone_number_collection' => [
@@ -54,12 +58,12 @@ class StripeController extends Controller
             'mode' => 'payment',
             'success_url' => route('success'),
             'cancel_url' => route('cancel'),
-          ]);
+        ]);
 
-          //Log::info($session);
+        //Log::info($session);
 
-          //Log::info($customer['id']);
+        //Log::info($customer['id']);
 
-          return redirect($session->url)->withStatus(303);
+        return redirect($session->url)->withStatus(303);
     }
 }
