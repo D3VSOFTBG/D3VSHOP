@@ -24,6 +24,7 @@ Route::get('/cancel', [HomeController::class, 'cancel'])->name('cancel');
 Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
 Route::post('/stripe', [StripeController::class, 'post'])->name('stripe');
 
+
 Route::middleware(['auth', 'admin'])->group(function ()
 {
     // GET
@@ -44,6 +45,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::post('/admin/users/create', [AdminController::class, 'user_create'])->name('admin.users.create');
     Route::post('/admin/payments/stripe', [AdminController::class, 'payments_stripe_post'])->name('admin.payments.stripe');
 });
+
 
 Auth::routes(['verify' => true]);
 
