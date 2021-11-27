@@ -1,4 +1,4 @@
-@section('page_name'){{ 'Products' }}@endsection
+@section('page_name'){{ 'Orders' }}@endsection
 
 @include('admin.inc.header')
 

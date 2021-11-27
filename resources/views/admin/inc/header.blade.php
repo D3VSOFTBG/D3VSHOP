@@ -200,6 +200,14 @@
                                     </a>
                                 </li>
                             </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.shop.orders')}}" class="nav-link @if (Route::currentRouteName() == 'admin.shop.orders') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Orders</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item @if (str_contains(Request::url(), 'payments')) menu-open @endif">
                             <a href="#" class="nav-link @if (str_contains(Request::url(), 'payments')) active @endif">

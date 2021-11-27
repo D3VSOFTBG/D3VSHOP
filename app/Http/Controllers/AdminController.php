@@ -44,6 +44,16 @@ class AdminController extends Controller
 
         return view('admin.shop.products', $data);
     }
+    function shop_orders()
+    {
+        $products = Product::orderBy('id', 'DESC')->get();
+
+        $data = [
+            'products' => $products,
+        ];
+
+        return view('admin.shop.orders', $data);
+    }
     function payments_stripe_get()
     {
         $stripe = Stripe::where('id', 1)->get();
