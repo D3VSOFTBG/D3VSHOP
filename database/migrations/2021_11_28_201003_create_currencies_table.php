@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class StripeTable extends Migration
+class CreateCurrenciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class StripeTable extends Migration
      */
     public function up()
     {
-        Schema::create('stripe', function (Blueprint $table) {
+        Schema::create('currencies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('environment');
-            $table->string('test_publishable_key');
-            $table->string('test_secret_key');
-            $table->string('live_publishable_key');
-            $table->string('live_secret_key');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +26,6 @@ class StripeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stripe');
+        Schema::dropIfExists('currencies');
     }
 }

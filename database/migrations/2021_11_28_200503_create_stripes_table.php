@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Products extends Migration
+class CreateStripesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class Products extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('stripe', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('slug')->unique();
-            $table->string('image');
-            $table->string('name');
-            $table->double('price');
-            $table->integer('quantity');
-            $table->timestamps();
+            $table->boolean('environment');
+            $table->string('test_publishable_key');
+            $table->string('test_secret_key');
+            $table->string('live_publishable_key');
+            $table->string('live_secret_key');
         });
     }
 
@@ -31,6 +30,6 @@ class Products extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('stripe');
     }
 }

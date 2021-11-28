@@ -104,6 +104,7 @@
                                         <tr>
                                             <th class="align-middle" style="width: 0;">#</th>
                                             <th class="align-middle">Customer</th>
+                                            <th class="align-middle">Total</th>
                                             <th class="align-middle">Country</th>
                                             <th class="align-middle">Created</th>
                                             <th class="align-middle">Updated</th>
@@ -118,6 +119,9 @@
                                             </td>
                                             <td class="align-middle">
                                                 {{$order->customer}}
+                                            </td>
+                                            <td class="align-middle">
+                                                {{$order->total}} {{Cache::get('default_currency')}}
                                             </td>
                                             <td class="align-middle">
                                                 {{$order->country}}
@@ -167,18 +171,18 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <th>
-                                                                            Email
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->email}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
                                                                             Phone
                                                                         </th>
                                                                         <td>
                                                                             {{$order->phone}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Email
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->email}}
                                                                         </td>
                                                                     </tr>
                                                                     <tr>

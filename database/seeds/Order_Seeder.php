@@ -16,6 +16,7 @@ class Order_Seeder extends Seeder
             [
                 [
                     'customer' => 'Alex Kirov',
+                    'total' => 5,
                     'phone' => '0876595156',
                     'email' => 'alex@d3vsoft.com',
                     'country' => 'BG',
@@ -28,6 +29,7 @@ class Order_Seeder extends Seeder
                 ],
                 [
                     'customer' => 'Spas Kirov',
+                    'total' => 6,
                     'phone' => '0876595156',
                     'email' => 'spas@d3vsoft.com',
                     'country' => 'BG',
