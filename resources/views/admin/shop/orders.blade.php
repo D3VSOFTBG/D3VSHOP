@@ -129,101 +129,124 @@
                                                 {{$order->updated_at}}
                                             </td>
                                             <td class="align-middle">
-                                                <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Info">
-                                                    <i class="fas fa-info"></i>
-                                                </button>
-                                            </td>
-                                            {{-- <td class="align-middle">
-                                                <form action="{{route('admin.shop.products.delete')}}" method="post"
-                                                    class="d-inline"
-                                                    onclick="if(!confirm('Delete ({{$product->name}}).')){return false;}">
-                                                    @csrf
-                                                    <input type="hidden" name="id" value="{{$product->id}}">
-                                                    <button class="btn btn-danger" data-toggle="tooltip"
-                                                        data-placement="top" title="Delete">
-                                                        <i class="fas fa-trash"></i></button>
-                                                </form>
-                                                <form action="{{route('admin.shop.products.edit')}}" method="post" class="d-inline">
-                                                    @csrf
-                                                    <a data-toggle="modal" data-target="#edit_product_{{$product->id}}">
-                                                        <button type="button" class="btn btn-success"
-                                                            data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="fas fa-user-edit"></i></button>
-                                                    </a>
-
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="edit_product_{{$product->id}}" tabindex="-1"
-                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Edit
-                                                                        <strong>{{$product->name}}</strong>.</h5>
-                                                                    <button type="button" class="close"
-                                                                        data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <input type="hidden" name="id" value="{{$product->id}}">
-
-                                                                    <div class="input-group">
-                                                                        <div class="card dark-mode w-100">
-                                                                            <label for="image" class="card-header"><span
-                                                                                    class="text-danger">*</span>
-                                                                                Image</label>
-                                                                            <div class="card-body">
-                                                                                <p class="card-text">
-                                                                                    <img class="w-100 h-100" src="{{env('PRODUCTS_IMG_PATH')}}{{$product->image}}"
-                                                                                        alt="Image">
-                                                                                </p>
-                                                                                <input type="file" class="form-control-file" id="image"
-                                                                                accept="image/*">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="form-group">
-                                                                        <label for="name">
-                                                                            <span class="text-danger">*</span>
-                                                                            Name</label>
-                                                                        <input name="name" id="name" type="text" class="form-control"
-                                                                            placeholder="Name"
-                                                                            value="{{$product->name}}" required>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="price">
-                                                                            <span class="text-danger">*</span>
-                                                                            Price</label>
-                                                                        <div class="input-group">
-                                                                            <input name="price" id="price" type="text"
-                                                                                class="form-control" placeholder="Price"
-                                                                                value="{{$product->price}}" required>
-                                                                            <div class="input-group-append">
-                                                                                <span class="input-group-text">{{Cache::get('default_currency')}}</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="quantity">
-                                                                            <span class="text-danger">*</span>
-                                                                            Quantity</label>
-                                                                        <input name="quantity" id="quantity" type="text" class="form-control"
-                                                                            placeholder="Quantity"
-                                                                            value="{{$product->quantity}}" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-dismiss="modal">Close</button>
-                                                                    <button type="submit"
-                                                                        class="btn btn-primary">Submit</button>
-                                                                </div>
+                                                <a data-toggle="modal" data-target="#info">
+                                                    <button type="button" class="btn btn-primary" data-toggle="tooltip"
+                                                        data-placement="top" title="Info">
+                                                        <i class="fas fa-info"></i>
+                                                    </button>
+                                                </a>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="info" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Info for <strong>{{$order->id}}</strong></h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <table class="table m-0">
+                                                                    <tr>
+                                                                        <th>
+                                                                            #
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->id}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Customer
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->customer}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Email
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->email}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Phone
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->phone}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Country
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->country}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            City
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->city}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Address 1
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->address_1}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Address 2
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->address_2}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Postal code
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->postal_code}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Created
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->created_at}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Updated
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->updated_at}}
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </form>
-                                            </td> --}}
+                                                </div>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
