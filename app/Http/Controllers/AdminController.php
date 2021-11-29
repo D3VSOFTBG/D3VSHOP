@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Currency;
 use App\Product;
 use App\Setting;
 use App\Stripe;
@@ -48,9 +49,11 @@ class AdminController extends Controller
     function shop_orders()
     {
         $orders = Order::orderBy('id', 'DESC')->get();
+        $currencies = Currency::all();
 
         $data = [
             'orders' => $orders,
+            'currencies' => $currencies,
         ];
 
         return view('admin.shop.orders', $data);
@@ -167,8 +170,11 @@ class AdminController extends Controller
     {
         $settings = Setting::all();
 
+        $currencies = Currency::all();
+
         $data = [
             'settings' => $settings,
+            'currencies' => $currencies,
         ];
 
         return view('admin.settings', $data);
@@ -178,13 +184,13 @@ class AdminController extends Controller
         $request->validate([
             'shop_name' => 'required',
             'title_seperator' => 'required',
-            'default_currency' => 'required',
+            'default_currency_id' => 'required|integer',
             'theme_name' => 'required',
         ]);
 
         DB::update(
             "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? WHEN id = 3 THEN ? WHEN id = 4 THEN ? END WHERE ID IN (1, 2, 3, 4)",
-            [$request->shop_name, $request->title_seperator, $request->default_currency, $request->theme_name]
+            [$request->shop_name, $request->title_seperator, $request->default_currency_id, $request->theme_name]
         );
 
         // Delete all cache

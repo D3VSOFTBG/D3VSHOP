@@ -59,9 +59,10 @@
                                 <div class="form-group">
                                     <label>
                                         Default Currency</label>
-                                    <select name="default_currency" class="custom-select">
-                                        <option value="EUR" @if($settings[2]['value'] == 'EUR') selected @endif>EUR (€)</option>
-                                        <option value="USD" @if($settings[2]['value'] == 'USD') selected @endif>USD ($)</option>
+                                    <select name="default_currency_id" class="custom-select">
+                                        @foreach ($currencies as $currency)
+                                        <option value="{{$currency->id}}" @if($settings[2]['value'] == $currency->id) selected @endif>{{$currency->code}} ({{$currency->symbol}})</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

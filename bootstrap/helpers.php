@@ -3,6 +3,7 @@
 use App\Role;
 use App\User;
 use App\Stripe;
+use App\Currency;
 
 function user_count()
 {
@@ -49,7 +50,7 @@ function stripe_secret_key()
 }
 function get_currency($id)
 {
-    return Stripe::where('id', $id)->first();
+    return Currency::where('id', $id)->first();
 }
 // function webhook_secret()
 // {

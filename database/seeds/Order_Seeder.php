@@ -15,6 +15,7 @@ class Order_Seeder extends Seeder
         DB::table('orders')->insert(
             [
                 [
+                    'currency_id' => 1,
                     'customer' => 'Alex Kirov',
                     'total' => 5,
                     'phone' => '0876595156',
@@ -28,6 +29,7 @@ class Order_Seeder extends Seeder
                     'updated_at' => now(),
                 ],
                 [
+                    'currency_id' => 2,
                     'customer' => 'Spas Kirov',
                     'total' => 6,
                     'phone' => '0876595156',
