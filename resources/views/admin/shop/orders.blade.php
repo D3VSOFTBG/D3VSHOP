@@ -121,7 +121,7 @@
                                                 {{$order->customer}}
                                             </td>
                                             <td class="align-middle">
-                                                {{$order->total}} {{Cache::get('default_currency')}}
+                                                {{$order->total}} <strong>{{Cache::get('default_currency')}}</strong>
                                             </td>
                                             <td class="align-middle">
                                                 {{$order->country}}
@@ -167,6 +167,14 @@
                                                                         </th>
                                                                         <td>
                                                                             {{$order->customer}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Total
+                                                                        </th>
+                                                                        <td>
+                                                                            {{$order->total}} <strong>{{Cache::get('default_currency')}}</strong>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
