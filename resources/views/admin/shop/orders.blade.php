@@ -133,14 +133,14 @@
                                                 {{$order->updated_at}}
                                             </td>
                                             <td class="align-middle">
-                                                <a data-toggle="modal" data-target="#info">
+                                                <a data-toggle="modal" data-target="#info{{$order->id}}">
                                                     <button type="button" class="btn btn-primary" data-toggle="tooltip"
                                                         data-placement="top" title="Info">
                                                         <i class="fas fa-info"></i>
                                                     </button>
                                                 </a>
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="info" tabindex="-1"
+                                                <div class="modal fade" id="info{{$order->id}}" tabindex="-1"
                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered">
                                                         <div class="modal-content">
@@ -174,7 +174,7 @@
                                                                             Total
                                                                         </th>
                                                                         <td>
-                                                                            {{$order->total}} <strong>{{$currencies[0]['code']}}</strong>
+                                                                            {{$order->total}} <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
