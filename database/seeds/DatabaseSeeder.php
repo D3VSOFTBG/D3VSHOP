@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(Setting_Seeder::class);
         $this->call(Stripe_Seeder::class);
         $this->call(Order_Seeder::class);
+        $this->call(Currency_Seeder::class);
     }
 }

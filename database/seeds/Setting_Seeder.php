@@ -26,8 +26,8 @@ class Setting_Seeder extends Seeder
             ],
             [
                 'id' => 3,
-                'name' => 'default_currency',
-                'value' => 'EUR',
+                'name' => 'default_currency_id',
+                'value' => 1,
             ],
             [
                 'id' => 4,

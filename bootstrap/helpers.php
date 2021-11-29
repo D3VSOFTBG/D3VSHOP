@@ -47,6 +47,10 @@ function stripe_secret_key()
         return $stripe[0]['test_secret_key'];
     }
 }
+function get_currency($id)
+{
+    return Stripe::where('id', $id)->first();
+}
 // function webhook_secret()
 // {
 //     return Stripe::where('id', 1)->pluck('webhook_secret')->first();
