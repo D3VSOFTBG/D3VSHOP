@@ -84,4 +84,7 @@ return [
     'Price' => 'Price',
     'The product is certified, composition, method and indications for use are indicated on the package.' => 'The product is certified, composition, method and indications for use are indicated on the package.',
     'Delivery is included in the price, payment is made upon receipt (cash on delivery).' => 'Delivery is included in the price, payment is made upon receipt (cash on delivery).',
+    'Email' => 'Email',
+    'Quantity' => 'Quantity',
+
 ];

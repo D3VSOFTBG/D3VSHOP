@@ -18,7 +18,13 @@ class AdminController extends Controller
 {
     function dashboard()
     {
-        return view('admin.dashboard');
+        $orders = Order::all('id');
+
+        $data = [
+            'orders' => $orders,
+        ];
+
+        return view('admin.dashboard', $data);
     }
     function users()
     {

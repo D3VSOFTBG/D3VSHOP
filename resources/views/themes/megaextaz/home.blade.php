@@ -478,10 +478,6 @@
                         </select>
                     </div>
                     <div class="row clearfix">
-                        <label for="address">Address</label>
-                        <input id="address" type="text" name="address" required>
-                    </div>
-                    <div class="row clearfix">
                         <label for="full_name">{{__('megaextaz_home.Full name')}}</label>
                         <input id="full_name" type="text" name="full_name" required>
                     </div>
@@ -490,7 +486,11 @@
                         <input id="phone" type="text" name="phone" required>
                     </div>
                     <div class="row clearfix">
-                        <label for="quantity">Quantity</label>
+                        <label for="email">{{__('megaextaz_home.Email')}}</label>
+                        <input id="email" type="email" name="email" required>
+                    </div>
+                    <div class="row clearfix">
+                        <label for="quantity">{{__('megaextaz_home.Quantity')}}</label>
                         <input id="quantity" type="number" name="quantity" required>
                     </div>
                     <div class="row clearfix">

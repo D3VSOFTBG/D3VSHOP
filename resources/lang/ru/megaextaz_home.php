@@ -84,4 +84,7 @@ return [
     'Price' => 'Стоимость',
     'The product is certified, composition, method and indications for use are indicated on the package.' => 'Продукт сертифицирован, состав, способ и показания к применению указаны на упаковке.',
     'Delivery is included in the price, payment is made upon receipt (cash on delivery).' => 'Доставка включена в стоимость, оплата производится по факту получения (наложенный платеж).',
+    'Email' => 'Эл. адрес',
+    'Quantity' => 'Количество',
+
 ];
