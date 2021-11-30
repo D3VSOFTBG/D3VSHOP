@@ -36,7 +36,7 @@ class ChargeSucceeded implements ShouldQueue
                 'currency_id' => 1,
                 'customer' => $charge['billing_details']['name'],
                 'total' => $charge['amount'] / 100,
-                'phone' => '0876595156',
+                'phone' => $charge['description'],
                 'email' => $charge['billing_details']['email'],
                 'country' => $charge['billing_details']['address']['country'],
                 'city' => $charge['billing_details']['address']['city'],
