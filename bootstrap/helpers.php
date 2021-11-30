@@ -52,6 +52,10 @@ function get_currency($id)
 {
     return Currency::where('id', $id)->first();
 }
+function get_currency_id($code)
+{
+    return Currency::where('code', $code)->first()->pluck('code');
+}
 // function webhook_secret()
 // {
 //     return Stripe::where('id', 1)->pluck('webhook_secret')->first();
