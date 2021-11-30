@@ -27,7 +27,7 @@ class ChargeSucceeded implements ShouldQueue
     {
         $charge = $this->webhookCall->payload['data']['object'];
 
-        Log::info($charge);
+        //Log::info($charge);
 
         // do your work here
 
