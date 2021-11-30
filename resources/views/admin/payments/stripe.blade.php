@@ -31,14 +31,9 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="webhook_secret">
-                                        Webhook Secret</label>
-                                    <input name="webhook_secret" id="webhook_secret" type="text" class="form-control" placeholder="Webhook Secret" value="{{env('STRIPE_WEBHOOK_SECRET')}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="test_publishable_key">
+                                    <label for="webhook">
                                         Webhook</label>
-                                    <input name="test_publishable_key" id="test_publishable_key" type="text" class="form-control" placeholder="Stripe Webhook" value="{{route('stripe-webhook')}}" readonly>
+                                    <input name="webhook" id="webhook" type="text" class="form-control" placeholder="Stripe Webhook" value="{{route('stripe-webhook')}}" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -47,6 +42,11 @@
                                         <option value="live" @if($stripe[0]['environment'] == 1) selected @endif>Live</option>
                                         <option value="test" @if($stripe[0]['environment'] == 0) selected @endif>Test</option>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="test_webhook_secret">
+                                        Test Webhook Secret</label>
+                                    <input name="test_webhook_secret" id="test_webhook_secret" type="text" class="form-control" placeholder="Test Webhook Secret" value="{{$stripe[0]['test_webhook_secret']}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="test_publishable_key">
@@ -58,6 +58,11 @@
                                         Test Secret Key</label>
                                     <input name="test_secret_key" id="test_secret_key" type="text" class="form-control"
                                         placeholder="Test Secret Key" value="{{$stripe[0]['test_secret_key']}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="test_webhook_secret">
+                                        Live Webhook Secret</label>
+                                    <input name="live_webhook_secret" id="live_webhook_secret" type="text" class="form-control" placeholder="Live Webhook Secret" value="{{$stripe[0]['live_webhook_secret']}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="live_publishable_key">
