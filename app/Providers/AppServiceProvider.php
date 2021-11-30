@@ -8,7 +8,6 @@ namespace App\Providers;
 // use Illuminate\Contracts\Cache\Repository;
 use App\Setting;
 use App\Currency;
-use App\Stripe;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Cache;
 

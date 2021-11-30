@@ -1,6 +1,7 @@
 <?php
 
 use App\Jobs\StripeWebhooks\ChargeSucceeded;
+use Illuminate\Support\Facades\Cache;
 
 return [
 
