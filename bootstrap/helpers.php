@@ -50,15 +50,15 @@ function stripe_secret_key()
 }
 function stripe_webhook_secret()
 {
-    $stripe = Stripe::all();
+    $stripe = Stripe::where('id', 1)->get()->first();
 
-    if($stripe[0]['environment'] == 1)
+    if($stripe['environment'] == 1)
     {
-        return $stripe[0]['live_secret_key'];
+        return $stripe['live_webhook_secret'];
     }
     else
     {
-        return $stripe[0]['test_secret_key'];
+        return $stripe['test_webhook_secret'];
     }
 }
 function get_currency(int $id)
