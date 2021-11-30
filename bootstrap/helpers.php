@@ -48,13 +48,13 @@ function stripe_secret_key()
         return $stripe[0]['test_secret_key'];
     }
 }
-function get_currency($id)
+function get_currency(int $id)
 {
     return Currency::where('id', $id)->first();
 }
-function get_currency_id($code)
+function get_currency_id(string $code)
 {
-    return Currency::where('code', $code)->first()->pluck('code');
+    return Currency::where('code', $code)->pluck('id')->first();
 }
 // function webhook_secret()
 // {

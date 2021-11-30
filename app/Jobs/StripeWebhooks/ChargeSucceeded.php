@@ -33,7 +33,7 @@ class ChargeSucceeded implements ShouldQueue
 
         DB::table('orders')->insert(
             [
-                'currency_id' => 1,
+                'currency_id' => get_currency_id($charge['currency']),
                 'customer' => $charge['billing_details']['name'],
                 'total' => $charge['amount'] / 100,
                 'phone' => $charge['description'],
