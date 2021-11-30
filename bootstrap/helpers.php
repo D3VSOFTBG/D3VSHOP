@@ -69,7 +69,3 @@ function get_currency_id(string $code)
 {
     return Currency::where('code', $code)->pluck('id')->first();
 }
-// function webhook_secret()
-// {
-//     return Stripe::where('id', 1)->pluck('webhook_secret')->first();
-// }

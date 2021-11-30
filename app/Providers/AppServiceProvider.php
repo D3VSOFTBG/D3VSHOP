@@ -39,8 +39,7 @@ class AppServiceProvider extends ServiceProvider
             Cache::forever('title_seperator', $settings[1]['value']);
             Cache::forever('default_currency', $default_currency);
             Cache::forever('theme_name', $settings[3]['value']);
-
-            //if()
+            Cache::forever('webhook_secret', stripe_webhook_secret());
         }
     }
 }
