@@ -78,8 +78,10 @@ class AdminController extends Controller
     {
         $request->validate([
             'environment' => 'required',
+            'test_webhook_secret' => 'required',
             'test_publishable_key' => 'required',
             'test_secret_key' => 'required',
+            'live_webhook_secret' => 'required',
             'live_publishable_key' => 'required',
             'live_secret_key' => 'required',
         ]);
@@ -98,9 +100,10 @@ class AdminController extends Controller
 
         $update_details = [
             'environment' => environment($request),
-            'webhook_secret' => $request->webhook_secret,
+            'test_webhook_secret' => $request->test_webhook_secret,
             'test_publishable_key' => $request->test_publishable_key,
             'test_secret_key' => $request->test_secret_key,
+            'live_webhook_secret' => $request->live_webhook_secret,
             'live_publishable_key' => $request->live_publishable_key,
             'live_secret_key' => $request->live_secret_key,
         ];
