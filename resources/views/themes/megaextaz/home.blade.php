@@ -224,7 +224,7 @@
                 <form action="{{route('stripe')}}" method="post" id="order_form" class="cpa__order_form">
                     @csrf
 
-                    <input type="hidden" name="name" value="{{$product->name}}">
+                    <input type="hidden" name="product_name" value="{{$product->name}}">
                     <input type="hidden" name="price" value="{{$product->price}}">
                     <div class="row clearfix">
                         <label for="label0">{{__('megaextaz_home.Country')}}</label>
