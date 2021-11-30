@@ -8,6 +8,7 @@ namespace App\Providers;
 // use Illuminate\Contracts\Cache\Repository;
 use App\Setting;
 use App\Currency;
+use App\Stripe;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Cache;
 
@@ -38,6 +39,8 @@ class AppServiceProvider extends ServiceProvider
             Cache::forever('title_seperator', $settings[1]['value']);
             Cache::forever('default_currency', $default_currency);
             Cache::forever('theme_name', $settings[3]['value']);
+
+            //if()
         }
     }
 }
