@@ -38,28 +38,24 @@ function email_verified_at($date)
 }
 function stripe_secret_key()
 {
-    $stripe = Stripe::where('id', 1)->get()->first();
-
-    if($stripe['environment'] == 1)
+    if(env('STRIPE_ENVIRONMENT') == 1)
     {
-        return $stripe['live_secret_key'];
+        return env('STRIPE_LIVE_SECRET_KEY');
     }
     else
     {
-        return $stripe['test_secret_key'];
+        return env('STRIPE_TEST_SECRET_KEY');
     }
 }
 function stripe_webhook_secret()
 {
-    $stripe = Stripe::where('id', 1)->get()->first();
-
-    if($stripe['environment'] == 1)
+    if(env('STRIPE_ENVIRONMENT') == 1)
     {
-        return $stripe['live_webhook_secret'];
+        return env('STRIPE_LIVE_WEBHOOK_SECRET');
     }
     else
     {
-        return $stripe['test_webhook_secret'];
+        return env('STRIPE_TEST_WEBHOOK_SECRET');
     }
 }
 function get_currency(int $id)
