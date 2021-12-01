@@ -64,8 +64,11 @@
                             <i class="fas fa-user-tag"></i> &nbsp; {{role_name(Auth::user()->role)}}
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item">
                             <i class="fas fa-sign-out-alt"></i> &nbsp; Logout
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </a>
                     </div>
                 </li>

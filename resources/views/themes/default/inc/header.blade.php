@@ -43,7 +43,7 @@
             <div class="topbar">
                 <div class="container top-bar">
                     <div class="top-bar__left">
-                        WELCOME TO <a href="#">{{env('APP_NAME')}}</a>
+                        WELCOME TO <a href="#">{{env('SHOP_NAME')}}</a>
                     </div>
                     <div class="top-bar__right">
                         <div class="header-currency item-dropdown">
