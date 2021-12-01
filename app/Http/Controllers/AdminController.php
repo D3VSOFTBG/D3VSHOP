@@ -68,11 +68,7 @@ class AdminController extends Controller
     }
     function payments_stripe_get()
     {
-        $stripe = Stripe::where('id', 1)->get();
-
-        $data = [
-            'stripe' => $stripe,
-        ];
+        $data = [];
 
         return view('admin.payments.stripe', $data);
     }
@@ -198,12 +194,9 @@ class AdminController extends Controller
     }
     function settings_get()
     {
-        $settings = Setting::all();
-
         $currencies = Currency::all();
 
         $data = [
-            'settings' => $settings,
             'currencies' => $currencies,
         ];
 
