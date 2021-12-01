@@ -119,7 +119,7 @@ class AdminController extends Controller
 
         Artisan::call('cache:clear');
 
-        return redirect(request()->url());
+        return back();
 
         // $update_details = [
         //     'environment' => environment($request),
@@ -132,8 +132,6 @@ class AdminController extends Controller
         // ];
 
         // DB::table('stripe')->where('id', 1)->update($update_details);
-
-        return back();
     }
     function product_create(Request $request)
     {
@@ -239,7 +237,7 @@ class AdminController extends Controller
 
         Artisan::call('cache:clear');
 
-        return redirect(request()->url());
+        return back();
 
         // DB::update(
         //     "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? WHEN id = 3 THEN ? WHEN id = 4 THEN ? END WHERE ID IN (1, 2, 3, 4)",
