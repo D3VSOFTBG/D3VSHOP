@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Artisan;
+
 
 class AdminController extends Controller
 {
@@ -197,15 +199,34 @@ class AdminController extends Controller
             'theme_name' => 'required',
         ]);
 
-        DB::update(
-            "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? WHEN id = 3 THEN ? WHEN id = 4 THEN ? END WHERE ID IN (1, 2, 3, 4)",
-            [$request->shop_name, $request->title_seperator, $request->default_currency_id, $request->theme_name]
-        );
+        if($request->shop_name != env('SHOP_NAME'))
+        {
+            env_update('SHOP_NAME', $request->shop_name);
+        }
+        if($request->title_seperator != env('TITLE_SEPERATOR'))
+        {
+            env_update('TITLE_SEPERATOR', $request->title_seperator);
+        }
+        if($request->default_currency_id != env('DEFAULT_CURRENCY_ID'))
+        {
+            env_update('DEFAULT_CURRENCY_ID', $request->default_currency_id);
+        }
+        if($request->theme_name != env('THEME_NAME'))
+        {
+            env_update('THEME_NAME', $request->theme_name);
+        }
+
+        Artisan::call('cache:clear');
+
+        return redirect(request()->url());
+
+        // DB::update(
+        //     "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? WHEN id = 3 THEN ? WHEN id = 4 THEN ? END WHERE ID IN (1, 2, 3, 4)",
+        //     [$request->shop_name, $request->title_seperator, $request->default_currency_id, $request->theme_name]
+        // );
 
         // Delete all cache
-        Cache::flush();
-
-        return back();
+        //Cache::flush();
     }
     function user_delete(Request $request)
     {

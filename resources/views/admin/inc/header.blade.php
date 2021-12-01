@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{Cache::get('shop_name')}} {{Cache::get('title_seperator')}} @yield('page_name')</title>
+    <title>{{env('APP_NAME')}} {{env('TITLE_SEPERATOR')}} @yield('page_name')</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="/dist/css/adminlte.min.css">
     <!-- Admin Style -->
     <link rel="stylesheet" href="/assets/css/admin.css">
+
+    @if (session()->has('env_update'))
+    <script>
+        //alert(1);
+        window.location.reload();
+    </script>
+    @endif
 
     @if ($errors->any())
     <script>
@@ -89,7 +96,7 @@
                                 class="nav-link @if (Route::currentRouteName() == 'admin') active @endif">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Dashboard
+                                    Dashboard {{env('ebanie')}}
                                 </p>
                             </a>
                         </li>

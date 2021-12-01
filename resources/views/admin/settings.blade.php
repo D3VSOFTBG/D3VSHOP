@@ -33,19 +33,19 @@
                                 <div class="form-group">
                                     <label for="shop_name">
                                         Shop Name</label>
-                                    <input name="shop_name" id="shop_name" type="text" class="form-control" placeholder="Shop Name" value="{{$settings[0]['value']}}" required>
+                                    <input name="shop_name" id="shop_name" type="text" class="form-control" placeholder="Shop Name" value="{{env('SHOP_NAME')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="title_seperator">
                                         Title Seperator</label>
                                     <input name="title_seperator" id="title_seperator" type="text" class="form-control"
-                                        placeholder="Title Seperator" value="{{$settings[1]['value']}}" required>
+                                        placeholder="Title Seperator" value="{{env('TITLE_SEPERATOR')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="theme_name">
                                         Theme Name</label>
                                     <input name="theme_name" id="theme_name" type="text" class="form-control"
-                                        placeholder="Theme Name" value="{{$settings[3]['value']}}" required>
+                                        placeholder="Theme Name" value="{{env('THEME_NAME')}}" required>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                                         Default Currency</label>
                                     <select name="default_currency_id" class="custom-select">
                                         @foreach ($currencies as $currency)
-                                        <option value="{{$currency->id}}" @if($settings[2]['value'] == $currency->id) selected @endif>{{$currency->code}} ({{$currency->symbol}})</option>
+                                        <option value="{{$currency->id}}" @if(env('DEFAULT_CURRENCY_ID') == $currency->id) selected @endif>{{$currency->code}} ({{$currency->symbol}})</option>
                                         @endforeach
                                     </select>
                                 </div>
