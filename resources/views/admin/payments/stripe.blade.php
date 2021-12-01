@@ -39,8 +39,8 @@
                                     <label>
                                         Environment</label>
                                     <select name="stripe_environment" class="custom-select">
-                                        <option value="live" @if(env('STRIPE_ENVIRONMENT') == 1) selected @endif>Live</option>
-                                        <option value="test" @if(env('STRIPE_ENVIRONMENT') == 0) selected @endif>Test</option>
+                                        <option value="1" @if(env('STRIPE_ENVIRONMENT') == 1) selected @endif>Live</option>
+                                        <option value="0" @if(env('STRIPE_ENVIRONMENT') == 0) selected @endif>Test</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

@@ -88,33 +88,33 @@ class AdminController extends Controller
             'stripe_live_secret_key' => 'required',
         ]);
 
-        function environment($request)
+        if($request->stripe_environment != env('STRIPE_ENVIRONMENT'))
         {
-            if($request->environment == 'live')
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
+            env_update('STRIPE_ENVIRONMENT', $request->stripe_environment);
         }
-
-        if($request->environment != env('SHOP_NAME'))
+        if($request->stripe_test_webhook_secret != env('STRIPE_TEST_WEBHOOK_SECRET'))
         {
-            env_update('SHOP_NAME', $request->shop_name);
+            env_update('STRIPE_TEST_WEBHOOK_SECRET', $request->stripe_test_webhook_secret);
         }
-        if($request->title_seperator != env('TITLE_SEPERATOR'))
+        if($request->stripe_test_publishable_key != env('STRIPE_TEST_PUBLISHABLE_KEY'))
         {
-            env_update('TITLE_SEPERATOR', $request->title_seperator);
+            env_update('STRIPE_TEST_PUBLISHABLE_KEY', $request->stripe_test_publishable_key);
         }
-        if($request->default_currency_id != env('DEFAULT_CURRENCY_ID'))
+        if($request->stripe_test_secret_key != env('STRIPE_TEST_SECRET_KEY'))
         {
-            env_update('DEFAULT_CURRENCY_ID', $request->default_currency_id);
+            env_update('STRIPE_TEST_SECRET_KEY', $request->stripe_test_secret_key);
         }
-        if($request->theme_name != env('THEME_NAME'))
+        if($request->stripe_live_webhook_secret != env('STRIPE_LIVE_WEBHOOK_SECRET'))
         {
-            env_update('THEME_NAME', $request->theme_name);
+            env_update('STRIPE_LIVE_WEBHOOK_SECRET', $request->stripe_live_webhook_secret);
+        }
+        if($request->stripe_live_publishable_key != env('STRIPE_LIVE_PUBLISHABLE_KEY'))
+        {
+            env_update('STRIPE_LIVE_PUBLISHABLE_KEY', $request->stripe_live_publishable_key);
+        }
+        if($request->stripe_live_secret_key != env('STRIPE_LIVE_SECRET_KEY'))
+        {
+            env_update('STRIPE_LIVE_SECRET_KEY', $request->stripe_live_secret_key);
         }
 
         // $update_details = [
