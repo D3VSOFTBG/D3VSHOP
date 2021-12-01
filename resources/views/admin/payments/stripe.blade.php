@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <label for="webhook">
                                         Webhook</label>
-                                    <input name="webhook" id="webhook" type="text" class="form-control" placeholder="Stripe Webhook" value="{{route('stripe-webhook')}}" readonly>
+                                    <input id="webhook" type="text" class="form-control" placeholder="Stripe Webhook" value="{{route('stripe-webhook')}}" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -70,9 +70,9 @@
                                     <input name="stripe_live_publishable_key" id="stripe_live_publishable_key" type="text" class="form-control" placeholder="Live Publishable Key" value="{{env('STRIPE_LIVE_PUBLISHABLE_KEY')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="live_secret_key">
+                                    <label for="stripe_live_secret_key">
                                         Live Secret Key</label>
-                                    <input name="live_secret_key" id="live_secret_key" type="text" class="form-control"
+                                    <input name="stripe_live_secret_key" id="stripe_live_secret_key" type="text" class="form-control"
                                         placeholder="Live Secret Key" value="{{env('STRIPE_LIVE_SECRET_KEY')}}" required>
                                 </div>
                             </div>

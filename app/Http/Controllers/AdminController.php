@@ -79,13 +79,13 @@ class AdminController extends Controller
     function payments_stripe_post(Request $request)
     {
         $request->validate([
-            'environment' => 'required',
-            'test_webhook_secret' => 'required',
-            'test_publishable_key' => 'required',
-            'test_secret_key' => 'required',
-            'live_webhook_secret' => 'required',
-            'live_publishable_key' => 'required',
-            'live_secret_key' => 'required',
+            'stripe_environment' => 'required',
+            'stripe_test_webhook_secret' => 'required',
+            'stripe_test_publishable_key' => 'required',
+            'stripe_test_secret_key' => 'required',
+            'stripe_live_webhook_secret' => 'required',
+            'stripe_live_publishable_key' => 'required',
+            'stripe_live_secret_key' => 'required',
         ]);
 
         function environment($request)
@@ -100,17 +100,34 @@ class AdminController extends Controller
             }
         }
 
-        $update_details = [
-            'environment' => environment($request),
-            'test_webhook_secret' => $request->test_webhook_secret,
-            'test_publishable_key' => $request->test_publishable_key,
-            'test_secret_key' => $request->test_secret_key,
-            'live_webhook_secret' => $request->live_webhook_secret,
-            'live_publishable_key' => $request->live_publishable_key,
-            'live_secret_key' => $request->live_secret_key,
-        ];
+        if($request->environment != env('SHOP_NAME'))
+        {
+            env_update('SHOP_NAME', $request->shop_name);
+        }
+        if($request->title_seperator != env('TITLE_SEPERATOR'))
+        {
+            env_update('TITLE_SEPERATOR', $request->title_seperator);
+        }
+        if($request->default_currency_id != env('DEFAULT_CURRENCY_ID'))
+        {
+            env_update('DEFAULT_CURRENCY_ID', $request->default_currency_id);
+        }
+        if($request->theme_name != env('THEME_NAME'))
+        {
+            env_update('THEME_NAME', $request->theme_name);
+        }
 
-        DB::table('stripe')->where('id', 1)->update($update_details);
+        // $update_details = [
+        //     'environment' => environment($request),
+        //     'test_webhook_secret' => $request->test_webhook_secret,
+        //     'test_publishable_key' => $request->test_publishable_key,
+        //     'test_secret_key' => $request->test_secret_key,
+        //     'live_webhook_secret' => $request->live_webhook_secret,
+        //     'live_publishable_key' => $request->live_publishable_key,
+        //     'live_secret_key' => $request->live_secret_key,
+        // ];
+
+        // DB::table('stripe')->where('id', 1)->update($update_details);
 
         return back();
     }
