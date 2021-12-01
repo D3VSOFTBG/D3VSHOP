@@ -117,6 +117,10 @@ class AdminController extends Controller
             env_update('STRIPE_LIVE_SECRET_KEY', $request->stripe_live_secret_key);
         }
 
+        Artisan::call('cache:clear');
+
+        return redirect(request()->url());
+
         // $update_details = [
         //     'environment' => environment($request),
         //     'test_webhook_secret' => $request->test_webhook_secret,
