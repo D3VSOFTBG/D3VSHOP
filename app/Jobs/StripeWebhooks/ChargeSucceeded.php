@@ -29,7 +29,7 @@ class ChargeSucceeded implements ShouldQueue
 
         //Log::info($charge);
 
-        // do your work hereдобре, че тръгна
+        // do your work here
 
         DB::table('orders')->insert(
             [
