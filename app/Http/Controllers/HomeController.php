@@ -12,7 +12,6 @@ class HomeController extends Controller
 {
     public function home()
     {
-        //Log::info('wut?');
         $product = Product::first();
         return view('themes.'.env('THEME_NAME').'.home', ['product' => $product]);
     }
