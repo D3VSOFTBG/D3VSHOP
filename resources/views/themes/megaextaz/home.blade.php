@@ -6,21 +6,21 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>{{Cache::get('shop_name')}}</title>
+    <title>{{env('SHOP_NAME')}}</title>
 
-    <link rel="icon" href="/themes/{{Cache::get('theme_name')}}/favicon.ico" type="image/x-icon">
-    <script src="/themes/{{Cache::get('theme_name')}}/js/libs/jquery-1.11.1.js"></script>
-    <script src="/themes/{{Cache::get('theme_name')}}/js/libs/modernizr.js"></script>
-    <script type="text/javascript" src="/themes/{{Cache::get('theme_name')}}/js/libs/countdown/jquery.plugin.min.js">
+    <link rel="icon" href="/themes/{{env('THEME_NAME')}}/favicon.ico" type="image/x-icon">
+    <script src="/themes/{{env('THEME_NAME')}}/js/libs/jquery-1.11.1.js"></script>
+    <script src="/themes/{{env('THEME_NAME')}}/js/libs/modernizr.js"></script>
+    <script type="text/javascript" src="/themes/{{env('THEME_NAME')}}/js/libs/countdown/jquery.plugin.min.js">
     </script>
-    <script type="text/javascript" src="/themes/{{Cache::get('theme_name')}}/js/libs/countdown/jquery.countdown.js">
+    <script type="text/javascript" src="/themes/{{env('THEME_NAME')}}/js/libs/countdown/jquery.countdown.js">
     </script>
-    <script type="text/javascript" src="/themes/{{Cache::get('theme_name')}}/js/libs/jquery.jcarousel.min.js"></script>
-    <script type="text/javascript" src="/themes/{{Cache::get('theme_name')}}/js/libs/jquery.localScroll.min.js">
+    <script type="text/javascript" src="/themes/{{env('THEME_NAME')}}/js/libs/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="/themes/{{env('THEME_NAME')}}/js/libs/jquery.localScroll.min.js">
     </script>
-    <script type="text/javascript" src="/themes/{{Cache::get('theme_name')}}/js/libs/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="/themes/{{env('THEME_NAME')}}/js/libs/jquery.scrollTo.min.js"></script>
 
-    <link rel="stylesheet" href="/themes/{{Cache::get('theme_name')}}/css/style.css">
+    <link rel="stylesheet" href="/themes/{{env('THEME_NAME')}}/css/style.css">
 </head>
 
 <body onload="loaded();">
@@ -106,19 +106,19 @@
             <h3 class="headline"><span>{{__('megaextaz_home.Chewing gum')}}</span> {{__('megaextaz_home.recommend')}}</h3>
             <ul class="clearfix">
                 <li>
-                    <span class="image"><img src="/themes/{{Cache::get('theme_name')}}/images/magazine_1.jpg"
+                    <span class="image"><img src="/themes/{{env('THEME_NAME')}}/images/magazine_1.jpg"
                             alt=""></span>
                     Men’s health
                     <span class="date">{{__('megaextaz_home.June 2013')}}</span>
                 </li>
                 <li>
-                    <span class="image"><img src="/themes/{{Cache::get('theme_name')}}/images/magazine_2.jpg"
+                    <span class="image"><img src="/themes/{{env('THEME_NAME')}}/images/magazine_2.jpg"
                             alt=""></span>
                     Playboy
                     <span class="date">{{__('megaextaz_home.June 2013')}}</span>
                 </li>
                 <li>
-                    <span class="image"><img src="/themes/{{Cache::get('theme_name')}}/images/magazine_3.jpg"
+                    <span class="image"><img src="/themes/{{env('THEME_NAME')}}/images/magazine_3.jpg"
                             alt=""></span>
                     Cosmopolitan
                     <span class="date">{{__('megaextaz_home.June 2013')}}</span>
@@ -140,7 +140,7 @@
                     <p>{{__("megaextaz_home.He was always a modest and quiet guy. If it weren't for Mega Extaz, my friendship with my future wife would never have grown into closer ones. Chewing gum helped to relax and surrender to passion in full force. We were both delighted. We have been married for 3 years and our intimate life is at the highest level!")}}</p>
                 </div>
                 <ul>
-                    <li>{{__('megaextaz_home.Igor Belanov')}} <img src="/themes/{{Cache::get('theme_name')}}/images/reviews_1.png"></li>
+                    <li>{{__('megaextaz_home.Igor Belanov')}} <img src="/themes/{{env('THEME_NAME')}}/images/reviews_1.png"></li>
                     <li>{{__('megaextaz_home.23 years old')}}</li>
                 </ul>
             </div>
@@ -149,7 +149,7 @@
                     <p>{{__('megaextaz_home.After parting with a young man, for a long time she could not decide on a new relationship. A friend advised me to use Mega Extaz chewing gum. It was something! My new boyfriend did not expect such passion from me and was pleasantly surprised. Recently he proposed to me! The Mega Extaz gum really works.')}}</p>
                 </div>
                 <ul>
-                    <li>{{__('megaextaz_home.Irina Pirozhkova')}} <img src="/themes/{{Cache::get('theme_name')}}/images/reviews_2.png"></li>
+                    <li>{{__('megaextaz_home.Irina Pirozhkova')}} <img src="/themes/{{env('THEME_NAME')}}/images/reviews_2.png"></li>
                     <li>{{__('megaextaz_home.23 years old')}}</li>
                 </ul>
             </div>
@@ -158,7 +158,7 @@
                     <p>{{__('We have been married for 20 years. Over time, intimate life has become rather monotonous. I decided to somehow transform the relationship, my wife supported me. Both tried the Mega Extaz chewing gum and we were very pleased with the result. The effect is almost instantaneous. My wife relaxed, I felt a surge of strength and sexual energy.')}}</p>
                 </div>
                 <ul>
-                    <li>{{__('megaextaz_home.Albert Medvedev')}} <img src="/themes/{{Cache::get('theme_name')}}/images/reviews_3.png"></li>
+                    <li>{{__('megaextaz_home.Albert Medvedev')}} <img src="/themes/{{env('THEME_NAME')}}/images/reviews_3.png"></li>
                     <li>{{__('megaextaz_home.45 years')}}</li>
                 </ul>
             </div>

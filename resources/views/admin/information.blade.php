@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div class="card card-warning card-outline">
                         <div class="card-header">
-                            <h5 class="m-0">{{env('APP_NAME')}}</h5>
+                            <h5 class="m-0">{{env('SHOP_NAME')}}</h5>
                         </div>
                         <div class="card-body">
                             <p class="card-text">
