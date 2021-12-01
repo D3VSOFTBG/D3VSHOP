@@ -6,7 +6,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-            <a href="{{route('home')}}" class="h1">{{Cache::get('shop_name')}}</a>
+            <a href="{{route('home')}}" class="h1">{{env('SHOP_NAME')}}</a>
         </div>
         <div class="card-body">
             <p class="login-box-msg">Register a new membership</p>
