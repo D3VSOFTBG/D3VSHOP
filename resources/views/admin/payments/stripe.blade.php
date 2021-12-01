@@ -38,36 +38,36 @@
                                 <div class="form-group">
                                     <label>
                                         Environment</label>
-                                    <select name="environment" class="custom-select">
+                                    <select name="stripe_environment" class="custom-select">
                                         <option value="live" @if(env('STRIPE_ENVIRONMENT') == 1) selected @endif>Live</option>
                                         <option value="test" @if(env('STRIPE_ENVIRONMENT') == 0) selected @endif>Test</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="test_webhook_secret">
+                                    <label for="stripe_test_webhook_secret">
                                         Test Webhook Secret</label>
-                                    <input name="test_webhook_secret" id="test_webhook_secret" type="text" class="form-control" placeholder="Test Webhook Secret" value="{{env('STRIPE_TEST_WEBHOOK_SECRET')}}" required>
+                                    <input name="stripe_test_webhook_secret" id="stripe_test_webhook_secret" type="text" class="form-control" placeholder="Test Webhook Secret" value="{{env('STRIPE_TEST_WEBHOOK_SECRET')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="test_publishable_key">
+                                    <label for="stripe_test_publishable_key">
                                         Test Publishable Key</label>
-                                    <input name="test_publishable_key" id="test_publishable_key" type="text" class="form-control" placeholder="Test Publishable Key" value="{{env('STRIPE_TEST_PUBLISHABLE_KEY')}}" required>
+                                    <input name="stripe_test_publishable_key" id="stripe_test_publishable_key" type="text" class="form-control" placeholder="Test Publishable Key" value="{{env('STRIPE_TEST_PUBLISHABLE_KEY')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="test_secret_key">
+                                    <label for="stripe_test_secret_key">
                                         Test Secret Key</label>
-                                    <input name="test_secret_key" id="test_secret_key" type="text" class="form-control"
+                                    <input name="stripe_test_secret_key" id="stripe_test_secret_key" type="text" class="form-control"
                                         placeholder="Test Secret Key" value="{{env('STRIPE_TEST_SECRET_KEY')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="test_webhook_secret">
+                                    <label for="stripe_live_webhook_secret">
                                         Live Webhook Secret</label>
-                                    <input name="live_webhook_secret" id="live_webhook_secret" type="text" class="form-control" placeholder="Live Webhook Secret" value="{{env('STRIPE_LIVE_WEBHOOK_SECRET')}}" required>
+                                    <input name="stripe_live_webhook_secret" id="stripe_live_webhook_secret" type="text" class="form-control" placeholder="Live Webhook Secret" value="{{env('STRIPE_LIVE_WEBHOOK_SECRET')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="live_publishable_key">
+                                    <label for="stripe_live_publishable_key">
                                         Live Publishable Key</label>
-                                    <input name="live_publishable_key" id="live_publishable_key" type="text" class="form-control" placeholder="Live Publishable Key" value="{{env('STRIPE_LIVE_PUBLISHABLE_KEY')}}" required>
+                                    <input name="stripe_live_publishable_key" id="stripe_live_publishable_key" type="text" class="form-control" placeholder="Live Publishable Key" value="{{env('STRIPE_LIVE_PUBLISHABLE_KEY')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="live_secret_key">
