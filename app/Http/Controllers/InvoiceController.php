@@ -22,7 +22,7 @@ class InvoiceController extends Controller
 
         $item = (new InvoiceItem())->title('D3V1')->pricePerUnit(5);
 
-        $invoice = Invoice::make('receipt')
+        $invoice = Invoice::make("Invoice $id")
             ->series('BIG')
             ->sequence(667)
             ->serialNumberFormat('{SEQUENCE}/{SERIES}')
