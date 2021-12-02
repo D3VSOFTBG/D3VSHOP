@@ -4,7 +4,9 @@ use App\Role;
 use App\User;
 use App\Stripe;
 use App\Currency;
+use App\Ordered_Product;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 
 function user_count()
 {
@@ -76,4 +78,14 @@ function env_update($key, $value)
             $key . '=' . '"' . env($key) . '"', $key . '=' . '"' .$value. '"', file_get_contents($path)
         ));
     }
+}
+function ordered_products_total($order_id)
+{
+    return Ordered_Product::where('order_id', $order_id)->sum('price');
+
+    //old_1
+    // DB::table('ordered_products')->where('order_id', $order_id)->sum('price');
+    //old_2
+    // $json = json_encode(Ordered_Product::where('order_id', $order_id)->get('price')->pluck('price'));
+    // return array_sum(json_decode($json, true));
 }

@@ -58,12 +58,14 @@ class AdminController extends Controller
     function shop_orders()
     {
         $orders = Order::orderBy('id', 'DESC')->get();
-        $ordered_products = json_decode(json_encode(Ordered_Product::all()), true);
+        $ordered_products = Ordered_Product::all();
         $currencies = Currency::all();
+
+
 
         $data = [
             'orders' => $orders,
-            'ordered_products_total' => array_sum(array_column($ordered_products, 'price')),
+            'ordered_products' => $ordered_products,
             'currencies' => $currencies,
         ];
 
