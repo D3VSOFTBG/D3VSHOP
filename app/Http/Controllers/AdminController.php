@@ -9,6 +9,7 @@ use App\Stripe;
 use App\Role;
 use App\User;
 use App\Order;
+use App\Ordered_Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -57,10 +58,12 @@ class AdminController extends Controller
     function shop_orders()
     {
         $orders = Order::orderBy('id', 'DESC')->get();
+        $ordered_products = json_decode(json_encode(Ordered_Product::all()), true);
         $currencies = Currency::all();
 
         $data = [
             'orders' => $orders,
+            'ordered_products_total' => array_sum(array_column($ordered_products, 'price')),
             'currencies' => $currencies,
         ];
 
