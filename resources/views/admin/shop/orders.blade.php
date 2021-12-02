@@ -133,6 +133,8 @@
                                                 {{$order->updated_at}}
                                             </td>
                                             <td class="align-middle">
+
+                                                <!--INFO-->
                                                 <a data-toggle="modal" data-target="#info{{$order->id}}">
                                                     <button type="button" class="btn btn-primary" data-toggle="tooltip"
                                                         data-placement="top" title="Info">
@@ -249,6 +251,14 @@
                                                                             {{$order->updated_at}}
                                                                         </td>
                                                                     </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Invoice
+                                                                        </th>
+                                                                        <td>
+                                                                            <a href="/admin/shop/orders/invoice" download>Download</a>
+                                                                        </td>
+                                                                    </tr>
                                                                 </table>
                                                             </div>
                                                             <div class="modal-footer">
@@ -258,6 +268,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!--/INFO-->
+
                                             </td>
                                         </tr>
                                         @endforeach
