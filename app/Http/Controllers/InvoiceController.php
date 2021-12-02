@@ -23,7 +23,7 @@ class InvoiceController extends Controller
             ],
         ]);
 
-        $item = (new InvoiceItem())->title('D3V1')->pricePerUnit($order->total)->quantity(2);
+        $item = (new InvoiceItem())->title($order->total)->pricePerUnit($order->total)->quantity(2);
 
         $invoice = Invoice::make("Invoice $id")
             //->series('BIG')
