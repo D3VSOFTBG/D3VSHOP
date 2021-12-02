@@ -17,7 +17,6 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('currency_id');
             $table->string('customer');
-            $table->double('total');
             $table->string('phone');
             $table->string('email');
             $table->string('country');
