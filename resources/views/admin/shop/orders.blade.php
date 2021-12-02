@@ -256,7 +256,7 @@
                                                                             Invoice
                                                                         </th>
                                                                         <td>
-                                                                            <a href="/admin/shop/orders/invoice" download>Download</a>
+                                                                            <a href="{{route('admin.shop.orders.invoice')}}/{{$order->id}}" download>Download</a>
                                                                         </td>
                                                                     </tr>
                                                                 </table>
