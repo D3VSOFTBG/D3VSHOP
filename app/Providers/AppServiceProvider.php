@@ -6,8 +6,8 @@ namespace App\Providers;
 // use Illuminate\Support\Facades\View;
 // use Illuminate\Contracts\Cache\Factory;
 // use Illuminate\Contracts\Cache\Repository;
-use App\Setting;
-use App\Currency;
+//use App\Setting;
+//use App\Currency;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Cache;
 
