@@ -9,7 +9,7 @@ use LaravelDaily\Invoices\Classes\InvoiceItem;
 
 class InvoiceController extends Controller
 {
-    function download()
+    function download($id)
     {
         $customer = new Buyer([
             'name'          => 'D3VSOFT',

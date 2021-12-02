@@ -36,7 +36,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::get('/admin/shop/products', [AdminController::class, 'shop_products'])->name('admin.shop.products');
     Route::get('/admin/shop/orders', [AdminController::class, 'shop_orders'])->name('admin.shop.orders');
     Route::get('/admin/payments/stripe', [AdminController::class, 'payments_stripe_get'])->name('admin.payments.stripe');
-    Route::get('/admin/shop/orders/invoice', [InvoiceController::class, 'download'])->name('admin.shop.orders.invoice');
+    Route::get('/invoice/{id}', [InvoiceController::class, 'download']);
 
     // POST
     Route::post('/admin/settings', [AdminController::class, 'settings_post'])->name('admin.settings');
