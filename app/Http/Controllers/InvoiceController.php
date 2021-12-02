@@ -23,9 +23,9 @@ class InvoiceController extends Controller
         $item = (new InvoiceItem())->title('D3V1')->pricePerUnit(5);
 
         $invoice = Invoice::make("Invoice $id")
-            ->series('BIG')
-            ->sequence(667)
-            ->serialNumberFormat('{SEQUENCE}/{SERIES}')
+            //->series('BIG')
+            //->sequence(667)
+            //->serialNumberFormat('{SEQUENCE}/{SERIES}')
             ->buyer($customer)
             ->discountByPercent(0)
             ->taxRate(0)
