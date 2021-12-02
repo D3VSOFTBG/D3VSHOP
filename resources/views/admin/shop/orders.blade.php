@@ -144,7 +144,7 @@
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="info{{$order->id}}" tabindex="-1"
                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="exampleModalLabel">Info for <strong>{{$order->id}}</strong></h5>
@@ -154,112 +154,126 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <table class="table m-0">
-                                                                    <tr>
-                                                                        <th>
-                                                                            #
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->id}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Customer
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->customer}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Total
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->total}} <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Phone
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->phone}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Email
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->email}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Country
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->country}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            City
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->city}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Address 1
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->address_1}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Address 2
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->address_2}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Postal code
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->postal_code}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Created
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->created_at}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Updated
-                                                                        </th>
-                                                                        <td>
-                                                                            {{$order->updated_at}}
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            Invoice
-                                                                        </th>
-                                                                        <td>
-                                                                            <a href="{{url("invoice/$order->id")}}" download>Download</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
+                                                                <nav>
+                                                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                                      <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                                                                      <a class="nav-link" id="nav-product-tab" data-toggle="tab" href="#nav-product" role="tab" aria-controls="nav-product" aria-selected="false">Product</a>
+                                                                    </div>
+                                                                  </nav>
+                                                                  <div class="tab-content" id="nav-tabContent">
+                                                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                                        <table class="table m-0">
+                                                                            <tr>
+                                                                                <th>
+                                                                                    #
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->id}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Customer
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->customer}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Total
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->total}} <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Phone
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->phone}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Email
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->email}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Country
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->country}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    City
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->city}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Address 1
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->address_1}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Address 2
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->address_2}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Postal code
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->postal_code}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Created
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->created_at}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Updated
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->updated_at}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Invoice
+                                                                                </th>
+                                                                                <td>
+                                                                                    <a href="{{url("invoice/$order->id")}}" download>Download</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="tab-pane fade" id="nav-product" role="tabpanel" aria-labelledby="nav-product-tab">
+
+                                                                    </div>
+                                                                  </div>
+
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"
