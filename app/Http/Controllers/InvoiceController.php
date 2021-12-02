@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Currency;
 use App\Order;
 use Illuminate\Http\Request;
 use LaravelDaily\Invoices\Invoice;
@@ -13,6 +14,8 @@ class InvoiceController extends Controller
     function download($id)
     {
         $order = Order::where('id', $id)->first();
+        $currency = Currency::where('id', $order->currency_id)->first();
+
         $customer = new Buyer([
             'name'          => $order->customer,
             'custom_fields' => [
@@ -20,12 +23,14 @@ class InvoiceController extends Controller
             ],
         ]);
 
-        $item = (new InvoiceItem())->title('D3V1')->pricePerUnit($order->total);
+        $item = (new InvoiceItem())->title('D3V1')->pricePerUnit($order->total)->quantity(2);
 
         $invoice = Invoice::make("Invoice $id")
             //->series('BIG')
             //->sequence(667)
             //->serialNumberFormat('{SEQUENCE}/{SERIES}')
+            ->currencySymbol($currency->symbol)
+            ->currencyCode($currency->symbol)
             ->buyer($customer)
             ->discountByPercent(0)
             ->taxRate(0)
