@@ -18,13 +18,6 @@
     <!-- Admin Style -->
     <link rel="stylesheet" href="/assets/css/admin.css">
 
-    @if (session()->has('env_update'))
-    <script>
-        //alert(1);
-        window.location.reload();
-    </script>
-    @endif
-
     @if ($errors->any())
     <script>
         alert('{{ implode(' ', $errors->all(':message')) }}');
