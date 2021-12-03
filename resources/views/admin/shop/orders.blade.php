@@ -122,7 +122,7 @@
                                             </td>
                                             <td class="align-middle">
                                                 {{ordered_products_total($order->id)}}
-                                                 <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
+                                                <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
                                             </td>
                                             <td class="align-middle">
                                                 {{$order->country}}

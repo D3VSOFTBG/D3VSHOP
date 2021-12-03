@@ -84,7 +84,7 @@ function ordered_products_total($order_id)
     return Ordered_Product::where('order_id', $order_id)->sum('price');
 
     //old_1
-    // DB::table('ordered_products')->where('order_id', $order_id)->sum('price');
+    //DB::table('ordered_products')->where('order_id', $order_id)->sum('price');
     //old_2
     // $json = json_encode(Ordered_Product::where('order_id', $order_id)->get('price')->pluck('price'));
     // return array_sum(json_decode($json, true));
