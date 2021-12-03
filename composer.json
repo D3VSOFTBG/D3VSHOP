@@ -14,6 +14,7 @@
         "laravel/framework": "^6.20.26",
         "laravel/tinker": "^2.5",
         "laraveldaily/laravel-invoices": "^2.2",
+        "rexshijaku/sql-to-laravel-builder": "^1.0",
         "spatie/laravel-stripe-webhooks": "^2.3",
         "stripe/stripe-php": "^7.103"
     },
