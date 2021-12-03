@@ -18,15 +18,19 @@ class Ordered_Product_Seeder extends Seeder
                     'id' => 1,
                     'order_id' => 1,
                     'name' => 'Test product 1',
-                    'quantity' => 2,
                     'price' => 2.5,
+                    'tax_rate' => 2,
+                    'discount_by_percent' => 5,
+                    'quantity' => 2,
                 ],
                 [
                     'id' => 2,
                     'order_id' => 2,
                     'name' => 'Test product 2',
-                    'quantity' => 5,
                     'price' => 7,
+                    'tax_rate' => 5,
+                    'discount_by_percent' => 8,
+                    'quantity' => 5,
                 ]
             ]
         );
