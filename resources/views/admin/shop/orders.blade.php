@@ -126,10 +126,10 @@
                                                     $count = 0;
                                                 @endphp
 
-                                                @foreach ($ordered_products as $p)
-                                                    @if ($p->order_id == $order->id)
+                                                @foreach ($ordered_products as $op)
+                                                    @if ($op->order_id == $order->id)
                                                         @php
-                                                            $total += $p->price;
+                                                            $total += $op->price;
                                                             $count++;
                                                         @endphp
                                                     @endif
@@ -173,7 +173,7 @@
                                                                 <nav>
                                                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                                       <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                                                                      <a class="nav-link" id="nav-products-tab" data-toggle="tab" href="#nav-products" role="tab" aria-controls="nav-productss" aria-selected="false">Products (<small>{{$count}}</small>)</a>
+                                                                      <a class="nav-link" id="nav-products-tab" data-toggle="tab" href="#nav-products{{$order->id}}" role="tab" aria-controls="nav-products" aria-selected="false">Products (<small>{{$count}}</small>)</a>
                                                                     </div>
                                                                   </nav>
                                                                   <div class="tab-content" id="nav-tabContent">
@@ -286,17 +286,17 @@
                                                                             </tr>
                                                                         </table>
                                                                     </div>
-                                                                    <div class="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-products-tab">
+                                                                    <div class="tab-pane fade" id="nav-products{{$order->id}}" role="tabpanel" aria-labelledby="nav-products-tab">
 
-                                                                        @foreach ($ordered_products as $p)
-                                                                            @if ($p->order_id == $order->id)
+                                                                        @foreach ($ordered_products as $op)
+                                                                            @if ($op->order_id == $order->id)
                                                                                 <table class="table m-0">
                                                                                     <tr class="bg-primary">
                                                                                         <th>
                                                                                             #
                                                                                         </th>
                                                                                         <td>
-                                                                                            {{$p->id}}
+                                                                                            {{$op->id}}
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
@@ -304,7 +304,7 @@
                                                                                             Name
                                                                                         </th>
                                                                                         <td>
-                                                                                            {{$p->name}}
+                                                                                            {{$op->name}}
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
@@ -312,7 +312,7 @@
                                                                                             Quantity
                                                                                         </th>
                                                                                         <td>
-                                                                                            {{$p->quantity}}
+                                                                                            {{$op->quantity}}
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
@@ -320,7 +320,7 @@
                                                                                             Price
                                                                                         </th>
                                                                                         <td>
-                                                                                            {{$p->price}}
+                                                                                            {{$op->price}}
                                                                                             <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
                                                                                         </td>
                                                                                     </tr>
