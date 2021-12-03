@@ -121,7 +121,20 @@
                                                 {{$order->customer}}
                                             </td>
                                             <td class="align-middle">
-                                                {{ordered_products_total($order->id)}}
+                                                @php
+                                                    $total = 0;
+                                                @endphp
+
+                                                @foreach ($ordered_products as $p)
+                                                    @if ($p->order_id == $order->id)
+                                                        @php
+                                                            $total += $p->price
+                                                        @endphp
+                                                    @endif
+                                                @endforeach
+
+                                                {{$total}}
+
                                                 <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
                                             </td>
                                             <td class="align-middle">
@@ -185,7 +198,7 @@
                                                                                     Total
                                                                                 </th>
                                                                                 <td>
-                                                                                    {{ordered_products_total($order->id)}}
+                                                                                    {{$total}}
                                                                                     <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
                                                                                 </td>
                                                                             </tr>
@@ -273,6 +286,7 @@
                                                                     </div>
                                                                     <div class="tab-pane fade" id="nav-product" role="tabpanel" aria-labelledby="nav-product-tab">
 
+                                                                        {{$ordered_products}}
                                                                     </div>
                                                                   </div>
 

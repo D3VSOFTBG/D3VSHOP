@@ -20,8 +20,6 @@ class Ordered_Product_Seeder extends Seeder
                     'name' => 'Test product 1',
                     'quantity' => 2,
                     'price' => 2.5,
-                    'created_at' => now(),
-                    'updated_at' => now(),
                 ],
                 [
                     'id' => 2,
@@ -29,8 +27,6 @@ class Ordered_Product_Seeder extends Seeder
                     'name' => 'Test product 2',
                     'quantity' => 5,
                     'price' => 7,
-                    'created_at' => now(),
-                    'updated_at' => now(),
                 ]
             ]
         );

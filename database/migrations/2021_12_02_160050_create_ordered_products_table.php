@@ -20,7 +20,6 @@ class CreateOrderedProductsTable extends Migration
             $table->string('name');
             $table->bigInteger('quantity');
             $table->double('price');
-            $table->timestamps();
         });
     }
 

@@ -61,8 +61,6 @@ class AdminController extends Controller
         $ordered_products = Ordered_Product::all();
         $currencies = Currency::all();
 
-
-
         $data = [
             'orders' => $orders,
             'ordered_products' => $ordered_products,
