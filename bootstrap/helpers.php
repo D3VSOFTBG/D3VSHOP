@@ -64,6 +64,10 @@ function get_currency(int $id)
 {
     return Currency::where('id', $id)->first();
 }
+function get_currency_code(int $id)
+{
+    return Currency::where('id', $id)->pluck('code')->first();
+}
 function get_currency_id(string $code)
 {
     return Currency::where('code', $code)->pluck('id')->first();

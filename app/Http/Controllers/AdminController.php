@@ -48,9 +48,11 @@ class AdminController extends Controller
     function shop_products()
     {
         $products = Product::orderBy('id', 'DESC')->get();
+        $currencies = Currency::all();
 
         $data = [
             'products' => $products,
+            'currencies' => $currencies,
         ];
 
         return view('admin.shop.products', $data);

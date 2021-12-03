@@ -2,6 +2,10 @@
 
 @include('admin.inc.header')
 
+@php
+    $default_currency_code = get_currency_code(env('DEFAULT_CURRENCY_ID'));
+@endphp
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -59,7 +63,7 @@
                                                 <input name="price" id="price" type="text"
                                                     class="form-control" placeholder="Price" required>
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text">{{Cache::get('default_currency')}}</span>
+                                                    <span class="input-group-text"> {{$default_currency_code}} </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -125,7 +129,7 @@
                                                 {{$product->name}}
                                             </td>
                                             <td class="align-middle">
-                                                {{$product->price}} <strong>{{Cache::get('default_currency')}}</strong>
+                                                {{$product->price}} <strong>{{$default_currency_code}}</strong>
                                             </td>
                                             <td class="align-middle">
                                                 {{$product->quantity}}
@@ -203,7 +207,7 @@
                                                                                 class="form-control" placeholder="Price"
                                                                                 value="{{$product->price}}" required>
                                                                             <div class="input-group-append">
-                                                                                <span class="input-group-text">{{Cache::get('default_currency')}}</span>
+                                                                                <span class="input-group-text">{{$default_currency_code}}</span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
