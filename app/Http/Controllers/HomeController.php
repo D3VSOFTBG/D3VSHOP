@@ -25,15 +25,4 @@ class HomeController extends Controller
     {
         return redirect(route('home'))->withErrors('Error!');
     }
-    function c()
-    {
-
-        //require_once dirname(__FILE__) . './vendor/autoload.php';
-
-        $options = array('facade' => 'DB::');
-        $converter = new SQLToLaravelBuilder($options);
-
-        $sql = "SELECT orders.*, (SELECT IF(coalesce(sum(ordered_products.price), '') = '', '0', sum(ordered_products.price)) FROM ordered_products ordered_products WHERE ordered_products.order_id = orders.id) as total FROM orders";
-        echo $converter->convert($sql);
-    }
 }
