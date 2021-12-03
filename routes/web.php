@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/c', [HomeController::class, 'c'])->name('c');
 Route::get('/success', [HomeController::class, 'success'])->name('success');
 Route::get('/cancel', [HomeController::class, 'cancel'])->name('cancel');
 Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
