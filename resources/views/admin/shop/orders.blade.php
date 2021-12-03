@@ -121,22 +121,7 @@
                                                 {{$order->customer}}
                                             </td>
                                             <td class="align-middle">
-                                                @php
-                                                    $total = 0;
-                                                    $count = 0;
-                                                @endphp
-
-                                                @foreach ($ordered_products as $op)
-                                                    @if ($op->order_id == $order->id)
-                                                        @php
-                                                            $total += $op->price;
-                                                            $count++;
-                                                        @endphp
-                                                    @endif
-                                                @endforeach
-
-                                                {{$total}}
-
+                                                {{$order->total}}
                                                 <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
                                             </td>
                                             <td class="align-middle">
@@ -173,7 +158,7 @@
                                                                 <nav>
                                                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                                       <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home{{$order->id}}" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                                                                      <a class="nav-link" id="nav-products-tab" data-toggle="tab" href="#nav-products{{$order->id}}" role="tab" aria-controls="nav-products" aria-selected="false">Products (<small>{{$count}}</small>)</a>
+                                                                      <a class="nav-link" id="nav-products-tab" data-toggle="tab" href="#nav-products{{$order->id}}" role="tab" aria-controls="nav-products" aria-selected="false">Products (<small>X</small>)</a>
                                                                     </div>
                                                                 </nav>
                                                                 <div class="tab-content" id="nav-tabContent">
@@ -200,7 +185,7 @@
                                                                                     Total
                                                                                 </th>
                                                                                 <td>
-                                                                                    {{$total}}
+                                                                                    {{$order->total}}
                                                                                     <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
                                                                                 </td>
                                                                             </tr>
