@@ -123,12 +123,14 @@
                                             <td class="align-middle">
                                                 @php
                                                     $total = 0;
+                                                    $count = 0;
                                                 @endphp
 
                                                 @foreach ($ordered_products as $p)
                                                     @if ($p->order_id == $order->id)
                                                         @php
-                                                            $total += $p->price
+                                                            $total += $p->price;
+                                                            $count++;
                                                         @endphp
                                                     @endif
                                                 @endforeach
@@ -171,7 +173,7 @@
                                                                 <nav>
                                                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                                       <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                                                                      <a class="nav-link" id="nav-product-tab" data-toggle="tab" href="#nav-product" role="tab" aria-controls="nav-product" aria-selected="false">Product</a>
+                                                                      <a class="nav-link" id="nav-products-tab" data-toggle="tab" href="#nav-products" role="tab" aria-controls="nav-productss" aria-selected="false">Products (<small>{{$count}}</small>)</a>
                                                                     </div>
                                                                   </nav>
                                                                   <div class="tab-content" id="nav-tabContent">
@@ -284,9 +286,49 @@
                                                                             </tr>
                                                                         </table>
                                                                     </div>
-                                                                    <div class="tab-pane fade" id="nav-product" role="tabpanel" aria-labelledby="nav-product-tab">
+                                                                    <div class="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-products-tab">
 
-                                                                        {{$ordered_products}}
+                                                                        @foreach ($ordered_products as $p)
+                                                                            @if ($p->order_id == $order->id)
+                                                                                <table class="table m-0">
+                                                                                    <tr class="bg-primary">
+                                                                                        <th>
+                                                                                            #
+                                                                                        </th>
+                                                                                        <td>
+                                                                                            {{$p->id}}
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th>
+                                                                                            Name
+                                                                                        </th>
+                                                                                        <td>
+                                                                                            {{$p->name}}
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th>
+                                                                                            Quantity
+                                                                                        </th>
+                                                                                        <td>
+                                                                                            {{$p->quantity}}
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th>
+                                                                                            Price
+                                                                                        </th>
+                                                                                        <td>
+                                                                                            {{$p->price}}
+                                                                                            <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+
+                                                                            @endif
+                                                                        @endforeach
+
                                                                     </div>
                                                                   </div>
 
