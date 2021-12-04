@@ -33,7 +33,7 @@ class InvoiceController extends Controller
         //     array_push($items, (new InvoiceItem())->title($op->name)->pricePerUnit(71.96)->quantity(2));
         // }
 
-        (new InvoiceItem())->title($op->name)->pricePerUnit(71.96)->quantity(2);
+        (new InvoiceItem())->title($ordered_products)->pricePerUnit(71.96)->quantity(2);
 
         $invoice = Invoice::make("Invoice $id")
             //->series('BIG')
