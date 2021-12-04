@@ -35,7 +35,7 @@ class StripeController extends Controller
             'line_items' => [
                 [
                     'price_data' => [
-                        'currency' => Cache::get('default_currency'),
+                        'currency' => get_currency_code((int) env('DEFAULT_CURRENCY_ID')),
                         'product_data' => [
                             'name' => $request->product_name,
                         ],
