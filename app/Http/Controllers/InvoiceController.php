@@ -48,7 +48,7 @@ class InvoiceController extends Controller
             ->currencyCode($currency->symbol)
             ->buyer($customer)
             ->taxRate($order->tax_rate)
-            ->shipping(1)
+            ->shipping($order->shipping_price)
             ->addItems($items)
             ->logo(public_path('vendor/invoices/sample-logo.png'))
             ->filename('invoice_' . $id);
