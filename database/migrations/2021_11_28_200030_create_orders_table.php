@@ -25,6 +25,7 @@ class CreateOrdersTable extends Migration
             $table->string('address_2');
             $table->string('postal_code');
             $table->float('tax_rate');
+            $table->float('shipping');
             $table->timestamps();
         });
     }

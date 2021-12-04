@@ -33,7 +33,7 @@ class InvoiceController extends Controller
 
         foreach($ordered_products as $op)
         {
-            array_push($items, (new InvoiceItem())->title($op->name)->pricePerUnit($op->price)->quantity($op->quantity)->discountByPercent($order->discount_by_percent));
+            array_push($items, (new InvoiceItem())->title($op->name)->pricePerUnit($op->price)->quantity($op->quantity)->discountByPercent($op->discount_by_percent));
         }
 
         // $items = [
