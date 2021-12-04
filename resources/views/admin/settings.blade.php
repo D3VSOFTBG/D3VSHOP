@@ -73,19 +73,21 @@
                                     <label for="tax_rate">
                                         <span class="text-danger">*</span>
                                         Tax Rate</label>
-                                    <input name="tax_rate" id="tax_rate" type="text" class="form-control"
-                                        placeholder="Tax Rate" value="{{env('TAX_RATE')}}" required>
+                                    <div class="input-group">
+                                        <input name="tax_rate" id="tax_rate" type="text" class="form-control" placeholder="Tax Rate" value="{{env('TAX_RATE')}}" required>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"> % </span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="price">
                                         <span class="text-danger">*</span>
                                         Shipping Price</label>
                                     <div class="input-group">
-                                        <input name="shipping_price" id="shipping_price" type="text" class="form-control"
-                                        placeholder="Shipping Price" value="{{env('SHIPPING_PRICE')}}" required>                                        <div class="input-group-append">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text"> {{$default_currency_code}} </span>
-                                            </div>
+                                        <input name="shipping_price" id="shipping_price" type="text" class="form-control" placeholder="Shipping Price" value="{{env('SHIPPING_PRICE')}}" required>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"> {{$default_currency_code}} </span>
                                         </div>
                                     </div>
                                 </div>
