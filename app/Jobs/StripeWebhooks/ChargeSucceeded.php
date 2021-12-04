@@ -43,8 +43,8 @@ class ChargeSucceeded implements ShouldQueue
                 'address_1' => $charge['billing_details']['address']['line1'],
                 'address_2' => $charge['billing_details']['address']['line2'],
                 'postal_code' => $charge['billing_details']['address']['postal_code'],
-                'tax_rate' => env('TAX_RATE'),
-                'shipping_price' => env('SHIPPING_PRICE'),
+                'tax_rate' => (float) env('TAX_RATE'),
+                'shipping_price' => (float) env('SHIPPING_PRICE'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
