@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use LaravelDaily\Invoices\Invoice;
 use LaravelDaily\Invoices\Classes\Buyer;
 use LaravelDaily\Invoices\Classes\InvoiceItem;
+use Illuminate\Support\Facades\Log;
 
 class InvoiceController extends Controller
 {
@@ -24,16 +25,20 @@ class InvoiceController extends Controller
             ],
         ]);
 
-        $ordered_products = Ordered_Product::where('id', $id)->get();
+        $ordered_products = Ordered_Product::where('order_id', $id)->get();
 
-        // $items = array();
+        //Log::info($order);
 
-        // foreach($ordered_products as $op)
-        // {
-        //     array_push($items, (new InvoiceItem())->title($op->name)->pricePerUnit(71.96)->quantity(2));
-        // }
+        $items = array();
 
-        (new InvoiceItem())->title($ordered_products)->pricePerUnit(71.96)->quantity(2);
+        foreach($ordered_products as $op)
+        {
+            array_push($items, (new InvoiceItem())->title($op->name)->pricePerUnit($op->price)->quantity($op->quantity));
+        }
+
+        // $items = [
+        //     (new InvoiceItem())->title("$ordered_products")->pricePerUnit(71.96)->quantity(2),
+        // ];
 
         $invoice = Invoice::make("Invoice $id")
             //->series('BIG')
@@ -42,8 +47,8 @@ class InvoiceController extends Controller
             ->currencySymbol($currency->symbol)
             ->currencyCode($currency->symbol)
             ->buyer($customer)
-            ->discountByPercent(0)
-            ->taxRate(0)
+            ->discountByPercent($order->discount_by_percent)
+            ->taxRate($order->tax_rate)
             ->shipping(1)
             ->addItems($items)
             ->logo(public_path('vendor/invoices/sample-logo.png'))

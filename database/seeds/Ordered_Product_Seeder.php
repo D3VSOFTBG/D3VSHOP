@@ -19,8 +19,6 @@ class Ordered_Product_Seeder extends Seeder
                     'order_id' => 1,
                     'name' => 'Test product 1',
                     'price' => 2.5,
-                    'tax_rate' => 2,
-                    'discount_by_percent' => 5,
                     'quantity' => 2,
                 ],
                 [
@@ -28,9 +26,14 @@ class Ordered_Product_Seeder extends Seeder
                     'order_id' => 2,
                     'name' => 'Test product 2',
                     'price' => 7,
-                    'tax_rate' => 5,
-                    'discount_by_percent' => 8,
                     'quantity' => 5,
+                ],
+                [
+                    'id' => 3,
+                    'order_id' => 1,
+                    'name' => 'Test product 3',
+                    'price' => 5,
+                    'quantity' => 6,
                 ]
             ]
         );

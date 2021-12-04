@@ -25,6 +25,8 @@ class Order_Seeder extends Seeder
                     'address_1' => '1',
                     'address_2' => '2',
                     'postal_code' => '9000',
+                    'tax_rate' => 2,
+                    'discount_by_percent' => 1,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
@@ -39,6 +41,8 @@ class Order_Seeder extends Seeder
                     'address_1' => '1',
                     'address_2' => '2',
                     'postal_code' => '8000',
+                    'tax_rate' => 5,
+                    'discount_by_percent' => 2,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ]
