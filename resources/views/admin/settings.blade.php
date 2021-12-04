@@ -32,17 +32,20 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="shop_name">
+                                        <span class="text-danger">*</span>
                                         Shop Name</label>
                                     <input name="shop_name" id="shop_name" type="text" class="form-control" placeholder="Shop Name" value="{{env('SHOP_NAME')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="title_seperator">
+                                        <span class="text-danger">*</span>
                                         Title Seperator</label>
                                     <input name="title_seperator" id="title_seperator" type="text" class="form-control"
                                         placeholder="Title Seperator" value="{{env('TITLE_SEPERATOR')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="theme_name">
+                                        <span class="text-danger">*</span>
                                         Theme Name</label>
                                     <input name="theme_name" id="theme_name" type="text" class="form-control"
                                         placeholder="Theme Name" value="{{env('THEME_NAME')}}" required>
@@ -58,12 +61,33 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>
+                                        <span class="text-danger">*</span>
                                         Default Currency</label>
                                     <select name="default_currency_id" class="custom-select">
                                         @foreach ($currencies as $currency)
                                         <option value="{{$currency->id}}" @if(env('DEFAULT_CURRENCY_ID') == $currency->id) selected @endif>{{$currency->code}} ({{$currency->symbol}})</option>
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tax_rate">
+                                        <span class="text-danger">*</span>
+                                        Tax Rate</label>
+                                    <input name="tax_rate" id="tax_rate" type="text" class="form-control"
+                                        placeholder="Tax Rate" value="{{env('TAX_RATE')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">
+                                        <span class="text-danger">*</span>
+                                        Shipping Price</label>
+                                    <div class="input-group">
+                                        <input name="shipping_price" id="shipping_price" type="text" class="form-control"
+                                        placeholder="Shipping Price" value="{{env('SHIPPING_PRICE')}}" required>                                        <div class="input-group-append">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"> {{$default_currency_code}} </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

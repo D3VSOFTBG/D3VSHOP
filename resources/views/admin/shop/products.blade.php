@@ -2,10 +2,6 @@
 
 @include('admin.inc.header')
 
-@php
-    $default_currency_code = get_currency_code(env('DEFAULT_CURRENCY_ID'));
-@endphp
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

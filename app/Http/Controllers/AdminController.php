@@ -49,10 +49,12 @@ class AdminController extends Controller
     {
         $products = Product::orderBy('id', 'DESC')->get();
         $currencies = Currency::all();
+        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
         $data = [
             'products' => $products,
             'currencies' => $currencies,
+            'default_currency_code' => $default_currency_code,
         ];
 
         return view('admin.shop.products', $data);
@@ -201,8 +203,11 @@ class AdminController extends Controller
     {
         $currencies = Currency::all();
 
+        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
+
         $data = [
             'currencies' => $currencies,
+            'default_currency_code' => $default_currency_code,
         ];
 
         return view('admin.settings', $data);
