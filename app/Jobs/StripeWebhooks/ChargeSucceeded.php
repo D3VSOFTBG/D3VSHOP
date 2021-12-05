@@ -40,33 +40,33 @@ class ChargeSucceeded implements ShouldQueue
 
         $stripe = new \Stripe\StripeClient(stripe_secret_key());
         $customer = $stripe->customers->retrieve($charge['customer']);
-        // $invoices = $stripe->invoices->all([
-        //     'customer' => $customer->id,
-        //     'limit' => 1,
-        // ]);
+        $invoices = $stripe->invoices->all([
+            'customer' => $customer->id,
+            'limit' => 1,
+        ]);
 
         // // Last record required!
         // // $session_id = Stripe_Logs::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('session_id')->first();
 
-        Log::info($customer->id . 'ok');
+        Log::info($invoices);
 
         // // do your work here
 
-        // $order = new Order();
+        $order = new Order();
 
-        // $order->currency_id = get_currency_id($charge['currency']);
-        // $order->customer = $charge['billing_details']['name'];
-        // // $order->phone = $customer->phone;
-        // $order->phone = '0878641617';
-        // $order->email = $charge['billing_details']['email'];
-        // $order->country = $charge['billing_details']['address']['country'];
-        // $order->city = $charge['billing_details']['address']['city'];
-        // $order->address_1 = $charge['billing_details']['address']['line1'];
-        // $order->address_2 = $charge['billing_details']['address']['line2'];
-        // $order->postal_code = $charge['billing_details']['address']['postal_code'];
-        // $order->tax_rate = ((float) env('TAX_RATE'));
-        // $order->shipping_price = ((float) env('SHIPPING_PRICE'));
+        $order->currency_id = get_currency_id($charge['currency']);
+        $order->customer = $charge['billing_details']['name'];
+        // $order->phone = $customer->phone;
+        $order->phone = '0878641617';
+        $order->email = $charge['billing_details']['email'];
+        $order->country = $charge['billing_details']['address']['country'];
+        $order->city = $charge['billing_details']['address']['city'];
+        $order->address_1 = $charge['billing_details']['address']['line1'];
+        $order->address_2 = $charge['billing_details']['address']['line2'];
+        $order->postal_code = $charge['billing_details']['address']['postal_code'];
+        $order->tax_rate = ((float) env('TAX_RATE'));
+        $order->shipping_price = ((float) env('SHIPPING_PRICE'));
 
-        // $order->save();
+        $order->save();
     }
 }
