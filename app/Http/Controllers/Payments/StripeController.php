@@ -60,10 +60,29 @@ class StripeController extends Controller
             'cancel_url' => route('cancel'),
         ]);
 
-        $stripe_sessions = new Stripe_Logs();
-        $stripe_sessions->customer_id = $customer['id'];
-        //currency_id
-        $stripe_sessions->save();
+        // // create invoice items
+        // \Stripe\InvoiceItem::create(
+        //     array(
+        //     "customer" => $customer->id,
+        //     "amount" => $request->price*100,
+        //     "currency" => "usd",
+        //     "description" => "One-time fee"
+        //     )
+        // );
+
+        // // pulls in invoice items
+        // $invoice = \Stripe\Invoice::create(array(
+        //     "customer" => $customer->id
+        // ));
+
+        $stripe = new \Stripe\StripeClient(stripe_secret_key());
+        $invoice = $stripe->invoiceItems->all(['customer' => 'cus_Kieve5no1Liwga'], ['limit' => 1]);
+
+
+        // $stripe_sessions = new Stripe_Logs();
+        // $stripe_sessions->customer_id = $customer['id'];
+        // //currency_id
+        // $stripe_sessions->save();
 
         // $payment_intents = \Stripe\PaymentIntent::create([
         //     'customer' => $customer['id'],
@@ -78,7 +97,7 @@ class StripeController extends Controller
         //     'currency' => get_currency_code(env('DEFAULT_CURRENCY_ID')),
         //   ]);
 
-        // Log::info($payment_intents);
+        Log::info($invoice);
 
         return redirect($session->url)->withStatus(303);
     }
