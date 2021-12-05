@@ -4,6 +4,7 @@ namespace App\Jobs\StripeWebhooks;
 
 use App\Order;
 use App\Stripe_Logs;
+use App\Stripe_Sessions;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -44,9 +45,9 @@ class ChargeSucceeded implements ShouldQueue
         $customer = $stripe->customers->retrieve($charge['customer']);
 
         // Last record required!
-        $session_id = Stripe_Logs::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('session_id')->first();
+        $session_id = Stripe_Sessions::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('session_id')->first();
 
-        Log::info($session);
+        Log::info($session_id);
 
         // do your work here
 
