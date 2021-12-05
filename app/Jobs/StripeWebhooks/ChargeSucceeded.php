@@ -46,8 +46,6 @@ class ChargeSucceeded implements ShouldQueue
         // Last record required!
         $session_id = Stripe_Logs::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('session_id')->first();
 
-        $session = $stripe->checkout->sessions->retrieve($session_id);
-
         Log::info($session);
 
         // do your work here

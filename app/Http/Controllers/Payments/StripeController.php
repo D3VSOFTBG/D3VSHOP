@@ -59,9 +59,10 @@ class StripeController extends Controller
             'cancel_url' => route('cancel'),
         ]);
 
-        // $stripe_logs = new Stripe_Logs();
-        // $stripe_logs->customer_id = $customer['id'];
-        // $stripe_logs->save();
+        $stripe_logs = new Stripe_Logs();
+        $stripe_logs->customer_id = $customer['id'];
+        //currency_id
+        $stripe_logs->save();
 
         // $payment_intents = \Stripe\PaymentIntent::create([
         //     'customer' => $customer['id'],

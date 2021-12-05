@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStripeLogsTable extends Migration
+class CreateStripeSessionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,20 @@ class CreateStripeLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('stripe_logs', function (Blueprint $table) {
+        Schema::create('stripe_sessions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('customer_id');
-            $table->string('payment_intents_id');
+            $table->unsignedBigInteger('currency_id');
+            $table->string('customer');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('country');
+            $table->string('city');
+            $table->string('address_1');
+            $table->string('address_2');
+            $table->string('postal_code');
+            $table->float('tax_rate');
+            $table->float('shipping_price');
         });
     }
 
@@ -27,6 +37,6 @@ class CreateStripeLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stripe_logs');
+        Schema::dropIfExists('stripe_sessions');
     }
 }
