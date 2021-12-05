@@ -43,11 +43,13 @@ class ChargeSucceeded implements ShouldQueue
 
         $stripe = new \Stripe\StripeClient(stripe_secret_key());
         $customer = $stripe->customers->retrieve($charge['customer']);
+        $invoice = $stripe->invoiceItems->all(['customer' => $customer['id']], ['limit' => 1]);
 
         // Last record required!
-        $session_id = Stripe_Logs::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('session_id')->first();
+        // $session_id = Stripe_Logs::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('session_id')->first();
 
-        Log::info($session_id);
+
+        // Log::info($session_id);
 
         // do your work here
 

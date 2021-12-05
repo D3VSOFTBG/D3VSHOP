@@ -97,7 +97,7 @@ class StripeController extends Controller
         //     'currency' => get_currency_code(env('DEFAULT_CURRENCY_ID')),
         //   ]);
 
-        Log::info($invoice);
+        // Log::info($invoice);
 
         return redirect($session->url)->withStatus(303);
     }
