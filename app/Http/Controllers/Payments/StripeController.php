@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Stripe_Model;
 use Stripe;
 
 class StripeController extends Controller
@@ -57,6 +58,13 @@ class StripeController extends Controller
             'success_url' => route('success'),
             'cancel_url' => route('cancel'),
         ]);
+
+        $stripe = new Stripe_Model();
+
+        $stripe->customer_id = $customer['id'];
+        $stripe->session_id = $session['id'];
+
+        $stripe->save();
 
         // $payment_intends = \Stripe\PaymentIntent::create([
         //     'customer' => $customer['id'],

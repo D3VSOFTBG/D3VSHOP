@@ -15,7 +15,8 @@ class CreateStripeTable extends Migration
     {
         Schema::create('stripe', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->string('customer_id');
+            $table->string('session_id');
         });
     }
 
