@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Product;
-use App\Stripe_Model;
+use App\Stripe_Logs;
 use Stripe;
 
 class StripeController extends Controller
@@ -59,16 +59,12 @@ class StripeController extends Controller
             'cancel_url' => route('cancel'),
         ]);
 
-        $stripe = new Stripe_Model();
+        // $stripe_logs = new Stripe_Logs();
+        // $stripe_logs->customer_id = $customer['id'];
+        // $stripe_logs->save();
 
-        $stripe->customer_id = $customer['id'];
-        $stripe->session_id = $session['id'];
-
-        $stripe->save();
-
-        // $payment_intends = \Stripe\PaymentIntent::create([
+        // $payment_intents = \Stripe\PaymentIntent::create([
         //     'customer' => $customer['id'],
-        //     'description' => $session->id,
         //     'amount' => $request->price*100,
         //     'currency' => strtolower(get_currency_code(env('DEFAULT_CURRENCY_ID'))),
         // ]);
@@ -76,12 +72,11 @@ class StripeController extends Controller
         // $stripe = new \Stripe\StripeClient(stripe_secret_key());
 
         // $stripe->paymentIntents->create([
-        //     'description' => $session->id,
         //     'amount' => $request->price*100,
         //     'currency' => get_currency_code(env('DEFAULT_CURRENCY_ID')),
         //   ]);
 
-        // Log::info($payment_intends);
+        // Log::info($payment_intents);
 
         return redirect($session->url)->withStatus(303);
     }
