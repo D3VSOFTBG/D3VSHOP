@@ -46,7 +46,17 @@ class StripeController extends Controller
                         'unit_amount' => $request->price*100,
                     ],
                     'quantity' => $request->quantity,
-                ]
+                ],
+                [
+                    'price_data' => [
+                        'currency' => get_currency_code((int) env('DEFAULT_CURRENCY_ID')),
+                        'product_data' => [
+                            'name' => $request->product_name,
+                        ],
+                        'unit_amount' => $request->price*100,
+                    ],
+                    'quantity' => $request->quantity,
+                ],
             ],
 
             'billing_address_collection' => 'required',
@@ -60,44 +70,27 @@ class StripeController extends Controller
             'cancel_url' => route('cancel'),
         ]);
 
-        // // create invoice items
-        // \Stripe\InvoiceItem::create(
-        //     array(
-        //     "customer" => $customer->id,
-        //     "amount" => $request->price*100,
-        //     "currency" => "usd",
-        //     "description" => "One-time fee"
-        //     )
-        // );
+        foreach($session['line_items']['data'] as $item){
+            // create invoice items
+            \Stripe\InvoiceItem::create(
+                array(
+                    "customer" => $customer['id'],
+                    "amount" => $item['amount_total'],
+                    "currency" => $item['currency'],
+                    "description" => $item['description'],
+                )
+            );
+        }
 
-        // // pulls in invoice items
-        // $invoice = \Stripe\Invoice::create(array(
-        //     "customer" => $customer->id
-        // ));
+        // pulls in invoice items
+        $invoice = \Stripe\Invoice::create(array(
+            "customer" => $customer['id'],
+        ));
 
-        $stripe = new \Stripe\StripeClient(stripe_secret_key());
-        $invoice = $stripe->invoiceItems->all(['customer' => 'cus_Kieve5no1Liwga'], ['limit' => 1]);
-
-
-        // $stripe_sessions = new Stripe_Logs();
-        // $stripe_sessions->customer_id = $customer['id'];
-        // //currency_id
-        // $stripe_sessions->save();
-
-        // $payment_intents = \Stripe\PaymentIntent::create([
-        //     'customer' => $customer['id'],
-        //     'amount' => $request->price*100,
-        //     'currency' => strtolower(get_currency_code(env('DEFAULT_CURRENCY_ID'))),
-        // ]);
-
-        // $stripe = new \Stripe\StripeClient(stripe_secret_key());
-
-        // $stripe->paymentIntents->create([
-        //     'amount' => $request->price*100,
-        //     'currency' => get_currency_code(env('DEFAULT_CURRENCY_ID')),
-        //   ]);
-
-        // Log::info($invoice);
+        $stripe_logs = new Stripe_Logs();
+        $stripe_logs->customer_id = $customer['id'];
+        $stripe_logs->invoice_id = $invoice['id'];
+        $stripe_logs->save();
 
         return redirect($session->url)->withStatus(303);
     }
