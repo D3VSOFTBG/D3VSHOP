@@ -32,6 +32,8 @@ class StripeController extends Controller
         $session = \Stripe\Checkout\Session::create([
             'customer' => $customer['id'],
 
+            ['expand' => ['line_items']],
+
             'line_items' => [
                 [
                     'price_data' => [
@@ -45,10 +47,6 @@ class StripeController extends Controller
                 ]
             ],
 
-            'payment_intent_data' => [
-                'description' => $request->phone,
-            ],
-
             'billing_address_collection' => 'required',
 
             'phone_number_collection' => [
@@ -60,9 +58,22 @@ class StripeController extends Controller
             'cancel_url' => route('cancel'),
         ]);
 
-        //Log::info($session);
+        // $payment_intends = \Stripe\PaymentIntent::create([
+        //     'customer' => $customer['id'],
+        //     'description' => $session->id,
+        //     'amount' => $request->price*100,
+        //     'currency' => strtolower(get_currency_code(env('DEFAULT_CURRENCY_ID'))),
+        // ]);
 
-        //Log::info($customer['id']);
+        // $stripe = new \Stripe\StripeClient(stripe_secret_key());
+
+        // $stripe->paymentIntents->create([
+        //     'description' => $session->id,
+        //     'amount' => $request->price*100,
+        //     'currency' => get_currency_code(env('DEFAULT_CURRENCY_ID')),
+        //   ]);
+
+        // Log::info($payment_intends);
 
         return redirect($session->url)->withStatus(303);
     }

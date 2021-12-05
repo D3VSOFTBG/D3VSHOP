@@ -26,18 +26,31 @@ class ChargeSucceeded implements ShouldQueue
 
     public function handle()
     {
+        // $stripe_client = new \Stripe\StripeClient(stripe_secret_key());
+
+        // $stripe_client->invoices->create([
+        //     'customer' => $customer['id'],
+        // ]);
+
+
+        //$line_items = $stripe->checkout->sessions->allLineItems('cs_test_a117qWLL1q5hH2xMYvCtoQ3S7qKHJicAnBcAMCgEGtWb1lGEuwolIatiIJ');
+
         $charge = $this->webhookCall->payload['data']['object'];
 
-        // Log::info($charge);
+        // $full = $this->webhookCall->payload;
 
+        $stripe = new \Stripe\StripeClient(stripe_secret_key());
+        // $payment_intent = $stripe->paymentIntents->retrieve($charge['payment_intent']);
+        $customer = $stripe->customers->retrieve($charge['customer']);
+
+        //Log::info($payment_intent);
         // do your work here
-
 
         $order = new Order();
 
         $order->currency_id = get_currency_id($charge['currency']);
         $order->customer = $charge['billing_details']['name'];
-        $order->phone = $charge['description'];
+        $order->phone = $customer->phone;
         $order->email = $charge['billing_details']['email'];
         $order->country = $charge['billing_details']['address']['country'];
         $order->city = $charge['billing_details']['address']['city'];
