@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Stripe_Sessions extends Model
+class Stripe_Logs extends Model
 {
-    protected $table = 'stripe_sessions';
+    protected $table = 'stripe_logs';
     public $timestamps = false;
 }

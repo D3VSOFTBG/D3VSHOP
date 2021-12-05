@@ -60,7 +60,7 @@ class StripeController extends Controller
             'cancel_url' => route('cancel'),
         ]);
 
-        $stripe_sessions = new Stripe_Sessions();
+        $stripe_sessions = new Stripe_Logs();
         $stripe_sessions->customer_id = $customer['id'];
         //currency_id
         $stripe_sessions->save();
