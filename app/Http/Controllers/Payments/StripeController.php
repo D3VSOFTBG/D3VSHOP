@@ -74,6 +74,7 @@ class StripeController extends Controller
                     "amount" => $item['amount_total'],
                     "currency" => $item['currency'],
                     "description" => $item['description'],
+                    "metadata" => ["discount_by_percent" => 0]
                 )
             );
         }
