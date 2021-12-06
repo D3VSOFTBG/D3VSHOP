@@ -34,8 +34,6 @@ class ChargeSucceeded implements ShouldQueue
         $customer = $stripe->customers->retrieve(
             $charge['customer'],
         );
-        // Get order id
-        $order_id = (int) Order::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('id')->first();
         $invoices = $stripe->invoices->all([
             'customer' => $customer->id,
             'limit' => 1,
@@ -43,19 +41,6 @@ class ChargeSucceeded implements ShouldQueue
         $invoice_items = $stripe->invoiceItems->all([
             'customer' => $customer->id,
         ]);
-
-        $ii_array = array();
-
-        foreach($invoice_items['data'] as $invoice_item)
-        {
-            array_push($ii_array, [
-                'order_id' => $order_id,
-                'name' => $invoice_item['description'],
-                'price' => $invoice_item['amount'] / 100,
-                'discount_by_percent' => 0,
-                'quantity' => $invoice_item['quantity'],
-            ]);
-        }
 
         // // Last record required!
         // // $session_id = Stripe_Logs::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('session_id')->first();
@@ -76,19 +61,23 @@ class ChargeSucceeded implements ShouldQueue
         $order->shipping_price = ((float) env('SHIPPING_PRICE'));
         $order->save();
 
-        // $data = [
-        //     [
-        //         'order_id' => $order_id,
-        //         'name' => 'P-1',
-        //         'price' => 1,
-        //         'discount_by_percent' => 5,
-        //         'quantity' => 4,
-        //      ],
-        // ];
+        // Get order id
+        $order_id = (int) Order::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('id')->first();
 
-        // Ordered_Product::insert($data);
+        $ii_array = array();
 
+        foreach($invoice_items['data'] as $invoice_item)
+        {
+            array_push($ii_array, [
+                'order_id' => $order_id,
+                'name' => $invoice_item['description'],
+                'price' => $invoice_item['amount'] / 100,
+                'discount_by_percent' => 0,
+                'quantity' => $invoice_item['quantity'],
+            ]);
+        }
 
+        Ordered_Product::insert($ii_array);
 
         Log::info($ii_array);
 
