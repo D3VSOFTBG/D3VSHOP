@@ -55,8 +55,8 @@
                 <br>{{__('megaextaz_home.at a super price')}}
             </div>
             <div class="price">
-                <div class="new"><b class="price_main">{{$product->price}} {{Cache::get('default_currency')}}</b></div>
-                <div class="old"><b class="price_old">{{$product->price * 2}} {{Cache::get('default_currency')}}</b>
+                <div class="new"><b class="price_main">{{$product->price}} {{$default_currency_code}}</b></div>
+                <div class="old"><b class="price_old">{{$product->price * 2}} {{$default_currency_code}}</b>
                 </div>
             </div>
             <ul class="clearfix garant">
@@ -211,9 +211,9 @@
                     <h4 style="font-size: 25px;">{{__('megaextaz_home.Only today')}} <span>-50%</span></h4>
                     <div class="price clearfix">
                         <div class="new"><b class="price_main">{{$product->price}}
-                                {{Cache::get('default_currency')}}</b></div>
+                                {{$default_currency_code}}</b></div>
                         <div class="old"><b class="price_old">{{$product->price * 2}}
-                                {{Cache::get('default_currency')}}</b></div>
+                                {{$default_currency_code}}</b></div>
                     </div>
                     <!--
                     <div class="countdown_wrapp">
@@ -496,7 +496,7 @@
                     <div class="row clearfix">
                         <button class="button" type="submit">{{__('megaextaz_home.Order')}}</button>
                         <p>{{__('megaextaz_home.Price')}}: <span class="last_price price_main">1 = {{$product->price}}
-                                {{Cache::get('default_currency')}}.</span></p>
+                                {{$default_currency_code}}.</span></p>
                     </div>
                 </form>
             </div>
