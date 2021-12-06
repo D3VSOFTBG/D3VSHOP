@@ -30,7 +30,7 @@ class StripeController extends Controller
         $session = \Stripe\Checkout\Session::create([
             'customer' => $customer['id'],
 
-            ['expand' => ['line_items']],
+            ['expand' => ['line_items', 'line_items.data.price.product']],
 
             'line_items' => [
                 [
@@ -38,6 +38,7 @@ class StripeController extends Controller
                         'currency' => get_currency_code((int) env('DEFAULT_CURRENCY_ID')),
                         'product_data' => [
                             'name' => $request->product_name,
+                            "metadata" => ['lesh' => 666, 'lesh1' => 6656],
                         ],
                         'unit_amount' => $request->price*100,
                     ],
@@ -48,6 +49,7 @@ class StripeController extends Controller
                         'currency' => get_currency_code((int) env('DEFAULT_CURRENCY_ID')),
                         'product_data' => [
                             'name' => $request->product_name,
+                            "metadata" => ['lesh' => 666],
                         ],
                         'unit_amount' => $request->price*100,
                     ],
@@ -74,7 +76,8 @@ class StripeController extends Controller
                     "amount" => $item['amount_total'],
                     "currency" => $item['currency'],
                     "description" => $item['description'],
-                    "metadata" => ["discount" => 0]
+                    // "metadata" => ['lesh' => 666, 'lesh1' => 6656],
+                    "metadata" => json_decode(json_encode($item['price']->product['metadata']), true),
                 )
             );
         }
@@ -84,7 +87,11 @@ class StripeController extends Controller
             "customer" => $customer['id'],
         ));
 
-        // Log::info($customer['id']);
+        Log::info($session);
+
+        // Log::info($session['line_items']['data'][0]['price']->product['metadata']);
+
+        // Log::info(json_decode(json_encode($session['line_items']['data'][0]['price']->product['metadata']), true));
 
         return redirect($session->url)->withStatus(303);
     }

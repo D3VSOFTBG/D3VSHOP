@@ -64,18 +64,36 @@ class ChargeSucceeded implements ShouldQueue
 
         $ii_array = array();
 
-        foreach($invoice_items['data'] as $invoice_item)
-        {
-            array_push($ii_array, [
-                'order_id' => $order_id,
-                'name' => $invoice_item['description'],
-                'price' => $invoice_item['amount'] / 100,
-                'discount' => 0,
-                'quantity' => $invoice_item['quantity'],
-            ]);
-        }
+        // foreach($invoice_items['data'] as $invoice_item)
+        // {
+        //     array_push($ii_array, [
+        //         'order_id' => $order_id,
+        //         'name' => $invoice_item['description'],
+        //         'price' => $invoice_item['amount'] / 100,
+        //         'discount' => 0,
+        //         'quantity' => $invoice_item['quantity'],
+        //     ]);
+        // }
+
+        // foreach($charge['data']['line_items'] as $charge)
+        // {
+        //     array_push($ii_array, [
+        //         'order_id' => $order_id,
+        //         'name' => $invoice_item['description'],
+        //         'price' => $invoice_item['amount'] / 100,
+        //         'discount' => 0,
+        //         'quantity' => $invoice_item['quantity'],
+        //     ]);
+        // }
 
         Ordered_Product::insert($ii_array);
+
+
+        $product = $stripe->products->retrieve($invoice_items->data[0]['price']->product);
+
+        // Log::info($invoice_items->data[0]['price']);
+
+        Log::info($invoice_items['data']);
 
         $stripe->invoices->delete($invoices['data'][0]['id']);
     }
