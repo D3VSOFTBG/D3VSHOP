@@ -3,6 +3,7 @@
 namespace App\Jobs\StripeWebhooks;
 
 use App\Order;
+use App\Ordered_Product;
 use App\Stripe_Logs;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -27,29 +28,37 @@ class ChargeSucceeded implements ShouldQueue
 
     public function handle()
     {
-        // $stripe_client = new \Stripe\StripeClient(stripe_secret_key());
-
-        // $stripe_client->invoices->create([
-        //     'customer' => $customer['id'],
-        // ]);
-
-
-        // $line_items = $stripe->checkout->sessions->allLineItems('cs_test_a117qWLL1q5hH2xMYvCtoQ3S7qKHJicAnBcAMCgEGtWb1lGEuwolIatiIJ');
-
         $charge = $this->webhookCall->payload['data']['object'];
 
         $stripe = new \Stripe\StripeClient(stripe_secret_key());
-        $customer = $stripe->customers->retrieve($charge['customer']);
+        $customer = $stripe->customers->retrieve(
+            $charge['customer'],
+        );
+        // Get order id
+        $order_id = (int) Order::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('id')->first();
         $invoices = $stripe->invoices->all([
             'customer' => $customer->id,
             'limit' => 1,
         ]);
+        $invoice_items = $stripe->invoiceItems->all([
+            'customer' => $customer->id,
+        ]);
+
+        $ii_array = array();
+
+        foreach($invoice_items['data'] as $invoice_item)
+        {
+            array_push($ii_array, [
+                'order_id' => $order_id,
+                'name' => $invoice_item['description'],
+                'price' => $invoice_item['amount'] / 100,
+                'discount_by_percent' => 0,
+                'quantity' => $invoice_item['quantity'],
+            ]);
+        }
 
         // // Last record required!
         // // $session_id = Stripe_Logs::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('session_id')->first();
-
-        Log::info($invoices);
-
         // // do your work here
 
         $order = new Order();
@@ -66,5 +75,24 @@ class ChargeSucceeded implements ShouldQueue
         $order->tax_rate = ((float) env('TAX_RATE'));
         $order->shipping_price = ((float) env('SHIPPING_PRICE'));
         $order->save();
+
+        // $data = [
+        //     [
+        //         'order_id' => $order_id,
+        //         'name' => 'P-1',
+        //         'price' => 1,
+        //         'discount_by_percent' => 5,
+        //         'quantity' => 4,
+        //      ],
+        // ];
+
+        // Ordered_Product::insert($data);
+
+
+
+        Log::info($ii_array);
+
+
+
     }
 }
