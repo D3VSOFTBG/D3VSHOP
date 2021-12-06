@@ -81,7 +81,5 @@ class ChargeSucceeded implements ShouldQueue
 
         Log::info($ii_array);
 
-
-
     }
 }
