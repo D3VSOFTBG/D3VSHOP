@@ -8,6 +8,10 @@
 
     <title>{{env('SHOP_NAME')}}</title>
 
+    <meta name="description" content="{{env('SHOP_NAME')}}">
+    <meta name="keywords" content="{{env('SHOP_NAME')}}">
+    <meta name="author" content="{{env('SHOP_NAME')}}">
+
     <link rel="icon" href="/themes/{{env('THEME_NAME')}}/favicon.ico" type="image/x-icon">
     <script src="/themes/{{env('THEME_NAME')}}/js/libs/jquery-1.11.1.js"></script>
     <script src="/themes/{{env('THEME_NAME')}}/js/libs/modernizr.js"></script>
