@@ -29,7 +29,6 @@ class ChargeSucceeded implements ShouldQueue
     public function handle()
     {
         $charge = $this->webhookCall->payload['data']['object'];
-
         $stripe = new \Stripe\StripeClient(stripe_secret_key());
         $customer = $stripe->customers->retrieve(
             $charge['customer'],
@@ -79,7 +78,6 @@ class ChargeSucceeded implements ShouldQueue
 
         Ordered_Product::insert($ii_array);
 
-        Log::info($ii_array);
-
+        $stripe->invoices->delete($invoices['data'][0]['id']);
     }
 }

@@ -92,7 +92,7 @@ class StripeController extends Controller
         $stripe_logs->invoice_id = $invoice['id'];
         $stripe_logs->save();
 
-        Log::info($customer['id']);
+        // Log::info($customer['id']);
 
         return redirect($session->url)->withStatus(303);
     }
