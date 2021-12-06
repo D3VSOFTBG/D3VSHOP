@@ -19,7 +19,7 @@ class CreateOrderedProductsTable extends Migration
             $table->foreign('order_id')->references('id')->on('orders');
             $table->string('name');
             $table->float('price');
-            $table->float('discount_by_percent');
+            $table->float('discount_by_percent')->nullable();
             $table->unsignedBigInteger('quantity');
         });
     }

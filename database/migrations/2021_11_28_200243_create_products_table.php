@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('image');
             $table->string('name');
             $table->float('price');
-            $table->float('discount_by_percent');
+            $table->float('discount_by_percent')->nullable();
             $table->integer('quantity');
             $table->timestamps();
         });
