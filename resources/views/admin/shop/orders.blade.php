@@ -59,7 +59,7 @@
                                                 <input name="price" id="price" type="text"
                                                     class="form-control" placeholder="Price" required>
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text">{{Cache::get('default_currency')}}</span>
+                                                    <span class="input-group-text"> ??? </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -158,7 +158,7 @@
                                                                 <nav>
                                                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                                       <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home{{$order->id}}" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                                                                      <a class="nav-link" id="nav-products-tab" data-toggle="tab" href="#nav-products{{$order->id}}" role="tab" aria-controls="nav-products" aria-selected="false">Products7</a>
+                                                                      <a class="nav-link" id="nav-products-tab" data-toggle="tab" href="#nav-products{{$order->id}}" role="tab" aria-controls="nav-products" aria-selected="false">Products</a>
                                                                     </div>
                                                                 </nav>
                                                                 <div class="tab-content" id="nav-tabContent">
@@ -170,6 +170,14 @@
                                                                                 </th>
                                                                                 <td>
                                                                                     {{$order->id}}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Invoice
+                                                                                </th>
+                                                                                <td>
+                                                                                    <a href="{{url("invoice/$order->id")}}" download>Download</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -259,14 +267,6 @@
                                                                                 </th>
                                                                                 <td>
                                                                                     {{$order->updated_at}}
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <th>
-                                                                                    Invoice
-                                                                                </th>
-                                                                                <td>
-                                                                                    <a href="{{url("invoice/$order->id")}}" download>Download</a>
                                                                                 </td>
                                                                             </tr>
                                                                         </table>
