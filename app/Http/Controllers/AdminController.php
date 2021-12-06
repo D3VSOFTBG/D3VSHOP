@@ -142,7 +142,7 @@ class AdminController extends Controller
             'image' => 'required|image|max:2048',
             'name' => 'required',
             'price' => 'required|numeric',
-            'quantity' => 'required|integer'
+            'quantity' => 'required|integer',
         ]);
 
         $products = new Product();

@@ -64,6 +64,17 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label for="discount">
+                                                Discount <small>(Optional)</small></label>
+                                            <div class="input-group">
+                                                <input name="discount" id="discount" type="text"
+                                                    class="form-control" placeholder="Discount" required>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"> % </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="quantity">
                                                 <span class="text-danger">*</span>
                                                 Quantity</label>
@@ -204,6 +215,17 @@
                                                                                 value="{{$product->price}}" required>
                                                                             <div class="input-group-append">
                                                                                 <span class="input-group-text">{{$default_currency_code}}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="discount">
+                                                                            Discount <small>(Optional)</small></label>
+                                                                        <div class="input-group">
+                                                                            <input name="discount" id="discount" type="text"
+                                                                                class="form-control" placeholder="Discount" required>
+                                                                            <div class="input-group-append">
+                                                                                <span class="input-group-text"> % </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
