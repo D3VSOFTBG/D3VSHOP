@@ -3,12 +3,8 @@
 namespace App\Http\Controllers\Payments;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
-use App\Product;
-use App\Stripe_Logs;
-use App\Stripe_Sessions;
 use Stripe;
 
 class StripeController extends Controller
@@ -83,14 +79,9 @@ class StripeController extends Controller
         }
 
         // pulls in invoice items
-        $invoice = \Stripe\Invoice::create(array(
+        \Stripe\Invoice::create(array(
             "customer" => $customer['id'],
         ));
-
-        $stripe_logs = new Stripe_Logs();
-        $stripe_logs->customer_id = $customer['id'];
-        $stripe_logs->invoice_id = $invoice['id'];
-        $stripe_logs->save();
 
         // Log::info($customer['id']);
 

@@ -4,7 +4,6 @@ namespace App\Jobs\StripeWebhooks;
 
 use App\Order;
 use App\Ordered_Product;
-use App\Stripe_Logs;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
