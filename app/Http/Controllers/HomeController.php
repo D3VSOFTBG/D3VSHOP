@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Currency;
 use App\Product;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Log;
@@ -12,7 +13,14 @@ class HomeController extends Controller
     public function home()
     {
         $product = Product::first();
-        return view('themes.'.env('THEME_NAME').'.home', ['product' => $product]);
+        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
+
+        $data = [
+            'product' => $product,
+            'default_currency_code' => $default_currency_code,
+        ];
+
+        return view('themes.'.env('THEME_NAME').'.home', $data);
     }
     function success()
     {
