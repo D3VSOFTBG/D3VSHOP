@@ -190,6 +190,7 @@ class AdminController extends Controller
 
         $products->name = $request->name;
         $products->price = $request->price;
+        $products->discount = $request->discount;
         $products->quantity = $request->quantity;
         $products->save();
 
