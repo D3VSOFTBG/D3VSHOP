@@ -67,8 +67,8 @@
                                             <label for="discount">
                                                 Discount <small>(Optional)</small></label>
                                             <div class="input-group">
-                                                <input name="discount" id="discount" type="text"
-                                                    class="form-control" placeholder="Discount">
+                                                <input name="discount" id="discount" type="number"
+                                                    class="form-control" placeholder="Discount" min="0" max="100">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"> % </span>
                                                 </div>
@@ -232,8 +232,8 @@
                                                                         <label for="discount">
                                                                             Discount <small>(Optional)</small></label>
                                                                         <div class="input-group">
-                                                                            <input name="discount" id="discount" type="text"
-                                                                                class="form-control" placeholder="Discount" value="{{$product->discount}}">
+                                                                            <input name="discount" id="discount" type="number"
+                                                                                class="form-control" placeholder="Discount" value="{{$product->discount}}" min="0" max="100">
                                                                             <div class="input-group-append">
                                                                                 <span class="input-group-text"> % </span>
                                                                             </div>
