@@ -318,6 +318,22 @@
                                                                                             {{$op->quantity}}
                                                                                         </td>
                                                                                     </tr>
+                                                                                    <tr>
+                                                                                        <th>
+                                                                                            Series
+                                                                                        </th>
+                                                                                        <td>
+                                                                                            {{$op->series}}
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th>
+                                                                                            SKU
+                                                                                        </th>
+                                                                                        <td>
+                                                                                            {{$op->sku}}
+                                                                                        </td>
+                                                                                    </tr>
                                                                                 </table>
 
                                                                             @endif
