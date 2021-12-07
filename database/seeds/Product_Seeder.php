@@ -21,6 +21,8 @@ class Product_Seeder extends Seeder
                     'price' => 1.2,
                     'discount' => 2,
                     'quantity' => 3,
+                    'series' => 'A',
+                    'sku' => 100,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
@@ -31,6 +33,8 @@ class Product_Seeder extends Seeder
                     'price' => 1.5,
                     'discount' => 3,
                     'quantity' => 8,
+                    'series' => 'A',
+                    'sku' => 223,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ]
