@@ -117,6 +117,7 @@
                                             <th class="align-middle" style="width: 0;">Image</th>
                                             <th class="align-middle">Name</th>
                                             <th class="align-middle">Price</th>
+                                            <th class="align-middle">Discount</th>
                                             <th class="align-middle">Quantity</th>
                                             <th class="align-middle">Created</th>
                                             <th class="align-middle">Updated</th>
@@ -137,6 +138,9 @@
                                             </td>
                                             <td class="align-middle">
                                                 {{$product->price}} <strong>{{$default_currency_code}}</strong>
+                                            </td>
+                                            <td class="align-middle">
+                                                {{if_null($product->discount)}} <strong>%</strong>
                                             </td>
                                             <td class="align-middle">
                                                 {{$product->quantity}}

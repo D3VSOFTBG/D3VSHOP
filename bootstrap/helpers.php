@@ -83,3 +83,14 @@ function env_update($key, $value)
         ));
     }
 }
+function if_null($var)
+{
+    if($var == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        return $var;
+    }
+}
