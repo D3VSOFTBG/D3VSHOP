@@ -105,7 +105,7 @@ function if_discounted($discount)
         return false;
     }
 }
-function calculate_discount($price, $discount)
+function discounted_price($price, $discount)
 {
     return round($price - (($price / 100) * $discount), 2);
 }

@@ -59,7 +59,7 @@
                 <br>{{__('megaextaz_home.at a super price')}}
             </div>
             <div class="price">
-                <div class="new"><b class="price_main">{{calculate_discount($product->price, $product->discount)}} {{$default_currency_code}}</b></div>
+                <div class="new"><b class="price_main">{{discounted_price($product->price, $product->discount)}} {{$default_currency_code}}</b></div>
                 <div class="old"><b class="price_old">{{$product->price}} {{$default_currency_code}}</b>
                 </div>
             </div>
@@ -212,9 +212,9 @@
             <div class="cnt_wrapp">
                 <h3 id="order_header" class="headline">{{__('megaextaz_home.Order')}}</h3>
                 <div class="left_side">
-                    <h4 style="font-size: 25px;">{{__('megaextaz_home.Only today')}} <span>-50%</span></h4>
+                    <h4 style="font-size: 25px;">{{__('megaextaz_home.Only today')}} <span>-{{$product->discount}}%</span></h4>
                     <div class="price clearfix">
-                        <div class="new"><b class="price_main">{{calculate_discount($product->price, $product->discount)}}
+                        <div class="new"><b class="price_main">{{discounted_price($product->price, $product->discount)}}
                                 {{$default_currency_code}}</b></div>
                         <div class="old"><b class="price_old">{{$product->price}}
                                 {{$default_currency_code}}</b></div>
@@ -498,7 +498,7 @@
                     </div>
                     <div class="row clearfix">
                         <button class="button" type="submit">{{__('megaextaz_home.Order')}}</button>
-                        <p>{{__('megaextaz_home.Price')}}: <span class="last_price price_main">1 = {{calculate_discount($product->price, $product->discount)}}
+                        <p>{{__('megaextaz_home.Price')}}: <span class="last_price price_main">1 = {{discounted_price($product->price, $product->discount)}}
                                 {{$default_currency_code}}.</span></p>
                     </div>
                 </form>

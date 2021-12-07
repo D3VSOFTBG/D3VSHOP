@@ -139,7 +139,7 @@
                                             <td class="align-middle">
                                                 @if (if_discounted($product->discount))
                                                 <del>{{$product->price}}</del>
-                                                ({{calculate_discount($product->price, $product->discount)}})
+                                                ({{discounted_price($product->price, $product->discount)}})
                                                 @else
                                                 {{$product->price}}
                                                 @endif
