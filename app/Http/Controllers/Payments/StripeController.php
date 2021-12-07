@@ -28,7 +28,7 @@ class StripeController extends Controller
             'email' => $request->email,
         ]);
 
-        // $product = Product::where('id', $request->id)->get();
+        $product = Product::where('id', $request->product_id)->first();
 
         $session = \Stripe\Checkout\Session::create([
             'customer' => $customer['id'],
@@ -40,12 +40,12 @@ class StripeController extends Controller
                     'price_data' => [
                         'currency' => get_currency_code((int) env('DEFAULT_CURRENCY_ID')),
                         'product_data' => [
-                            'name' => $request->product_name,
-                            "metadata" => ['product_id' => $request->product_id, 'discount' => 123],
+                            'name' => $product->name,
+                            "metadata" => ['product_id' => $product->id, 'discount' => $product->discount],
                         ],
-                        'unit_amount' => $request->price*100,
+                        'unit_amount' => $product->price*100,
                     ],
-                    'quantity' => $request->quantity,
+                    'quantity' => $product->quantity,
                 ],
             ],
 
@@ -78,7 +78,7 @@ class StripeController extends Controller
             "customer" => $customer['id'],
         ));
 
-        Log::info($session);
+        Log::info($product);
 
         // Log::info($session['line_items']['data'][0]['price']->product['metadata']);
 
