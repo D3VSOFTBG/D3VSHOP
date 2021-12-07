@@ -229,8 +229,6 @@
                     @csrf
 
                     <input type="hidden" name="product_id" value="{{$product->id}}">
-                    <input type="hidden" name="product_name" value="{{$product->name}}">
-                    <input type="hidden" name="price" value="{{$product->price}}">
                     <div class="row clearfix">
                         <label for="label0">{{__('megaextaz_home.Country')}}</label>
                         <select id="country" name="country" required>
