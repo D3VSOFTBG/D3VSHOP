@@ -59,8 +59,8 @@
                 <br>{{__('megaextaz_home.at a super price')}}
             </div>
             <div class="price">
-                <div class="new"><b class="price_main">{{$product->price}} {{$default_currency_code}}</b></div>
-                <div class="old"><b class="price_old">{{$product->price * 2}} {{$default_currency_code}}</b>
+                <div class="new"><b class="price_main">{{calculate_discount($product->price, $product->discount)}} {{$default_currency_code}}</b></div>
+                <div class="old"><b class="price_old">{{$product->price}} {{$default_currency_code}}</b>
                 </div>
             </div>
             <ul class="clearfix garant">
@@ -214,9 +214,9 @@
                 <div class="left_side">
                     <h4 style="font-size: 25px;">{{__('megaextaz_home.Only today')}} <span>-50%</span></h4>
                     <div class="price clearfix">
-                        <div class="new"><b class="price_main">{{$product->price}}
+                        <div class="new"><b class="price_main">{{calculate_discount($product->price, $product->discount)}}
                                 {{$default_currency_code}}</b></div>
-                        <div class="old"><b class="price_old">{{$product->price * 2}}
+                        <div class="old"><b class="price_old">{{$product->price}}
                                 {{$default_currency_code}}</b></div>
                     </div>
                     <!--
@@ -498,7 +498,7 @@
                     </div>
                     <div class="row clearfix">
                         <button class="button" type="submit">{{__('megaextaz_home.Order')}}</button>
-                        <p>{{__('megaextaz_home.Price')}}: <span class="last_price price_main">1 = {{$product->price}}
+                        <p>{{__('megaextaz_home.Price')}}: <span class="last_price price_main">1 = {{calculate_discount($product->price, $product->discount)}}
                                 {{$default_currency_code}}.</span></p>
                     </div>
                 </form>
