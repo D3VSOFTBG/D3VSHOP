@@ -43,7 +43,7 @@ class StripeController extends Controller
                             'name' => $product->name,
                             "metadata" => ['product_id' => $product->id, 'discount' => $product->discount],
                         ],
-                        'unit_amount' => $product->price*100,
+                        'unit_amount' => discounted_price($product->price, $product->discount)*100,
                     ],
                     'quantity' => $product->quantity,
                 ],
