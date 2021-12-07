@@ -78,7 +78,7 @@ return [
          * Default attributes for Seller::class
          */
         'attributes' => [
-            'name'          => env('NAME'),
+            'name'          => env('SHOP_NAME'),
             'address'       => env('ADDRESS'),
             'code'          => env('CODE'),
             'vat'           => env('VAT'),
