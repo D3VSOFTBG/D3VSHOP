@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Payments;
 
 use App\Http\Controllers\Controller;
+use App\Product;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use Stripe;
@@ -27,6 +28,8 @@ class StripeController extends Controller
             'email' => $request->email,
         ]);
 
+        // $product = Product::where('id', $request->id)->get();
+
         $session = \Stripe\Checkout\Session::create([
             'customer' => $customer['id'],
 
@@ -38,18 +41,7 @@ class StripeController extends Controller
                         'currency' => get_currency_code((int) env('DEFAULT_CURRENCY_ID')),
                         'product_data' => [
                             'name' => $request->product_name,
-                            "metadata" => ['lesh' => 666, 'lesh1' => 6656],
-                        ],
-                        'unit_amount' => $request->price*100,
-                    ],
-                    'quantity' => $request->quantity,
-                ],
-                [
-                    'price_data' => [
-                        'currency' => get_currency_code((int) env('DEFAULT_CURRENCY_ID')),
-                        'product_data' => [
-                            'name' => $request->product_name,
-                            "metadata" => ['lesh' => 666],
+                            "metadata" => ['product_id' => $request->product_id, 'discount' => 123],
                         ],
                         'unit_amount' => $request->price*100,
                     ],
@@ -87,7 +79,7 @@ class StripeController extends Controller
             "customer" => $customer['id'],
         ));
 
-        Log::info($session);
+        // Log::info($session);
 
         // Log::info($session['line_items']['data'][0]['price']->product['metadata']);
 
