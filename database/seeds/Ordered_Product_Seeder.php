@@ -22,7 +22,7 @@ class Ordered_Product_Seeder extends Seeder
                     'discount' => 5,
                     'quantity' => 2,
                     'series' => 'B',
-                    'SKU' => '213DDFG23',
+                    'sku' => '213DDFG23',
                 ],
                 [
                     'id' => 2,
@@ -32,7 +32,7 @@ class Ordered_Product_Seeder extends Seeder
                     'discount' => 6,
                     'quantity' => 5,
                     'series' => 'A',
-                    'SKU' => '513DDFG23',
+                    'sku' => '513DDFG23',
                 ],
                 [
                     'id' => 3,
@@ -42,7 +42,7 @@ class Ordered_Product_Seeder extends Seeder
                     'discount' => 1,
                     'quantity' => 6,
                     'series' => 'C',
-                    'SKU' => '913DDFG23',
+                    'sku' => '913DDFG23',
                 ]
             ]
         );
