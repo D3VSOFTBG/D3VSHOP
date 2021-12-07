@@ -167,6 +167,8 @@ class AdminController extends Controller
         }
 
         $products->quantity = $request->quantity;
+        $products->series = $request->series;
+        $products->sku = $request->sku;
         $products->save();
 
         return back();
@@ -216,6 +218,8 @@ class AdminController extends Controller
         }
 
         $products->quantity = $request->quantity;
+        $products->series = $request->series;
+        $products->sku = $request->sku;
         $products->save();
 
         return back();
