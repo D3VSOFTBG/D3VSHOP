@@ -1,8 +1,8 @@
 <!-- Main Footer -->
 <footer class="main-footer">
-    <strong>Copyright &copy; 2021 {{env('APP_NAME')}}.</strong>
+    <strong>Copyright &copy; 2021 D3V.SHOP.</strong>
     <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 2021.11
+        <b>Version</b> 2021.12
     </div>
 </footer>
 </div>
