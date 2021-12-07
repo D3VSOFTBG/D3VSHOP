@@ -64,11 +64,12 @@ class StripeController extends Controller
             // create invoice items
             \Stripe\InvoiceItem::create(
                 array(
-                    "customer" => $customer['id'],
-                    "amount" => $item['amount_total'],
-                    "currency" => $item['currency'],
-                    "description" => $item['description'],
-                    "metadata" => json_decode(json_encode($item['price']->product['metadata']), true),
+                    'customer' => $customer['id'],
+                    'unit_amount' => $item['amount_total'],
+                    'currency' => $item['currency'],
+                    'description' => $item['description'],
+                    'metadata' => json_decode(json_encode($item['price']->product['metadata']), true),
+                    'quantity' => $item['quantity'],
                 )
             );
         }
@@ -78,7 +79,7 @@ class StripeController extends Controller
             "customer" => $customer['id'],
         ));
 
-        Log::info($product);
+        // Log::info($session);
 
         // Log::info($session['line_items']['data'][0]['price']->product['metadata']);
 

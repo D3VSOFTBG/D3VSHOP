@@ -68,7 +68,7 @@ class ChargeSucceeded implements ShouldQueue
             array_push($ii_array, [
                 'order_id' => $order_id,
                 'name' => $invoice_item['description'],
-                'price' => $invoice_item['amount'] / 100,
+                'price' => $invoice_item['unit_amount'] / 100,
                 'discount' => $invoice_item['metadata']->discount,
                 'quantity' => $invoice_item['quantity'],
             ]);
@@ -91,7 +91,7 @@ class ChargeSucceeded implements ShouldQueue
 
         // Log::info($invoice_items->data[0]['price']);
 
-        Log::info($invoice_items);
+        Log::info($invoice_items['data']);
 
         $stripe->invoices->delete($invoices['data'][0]['id']);
     }
