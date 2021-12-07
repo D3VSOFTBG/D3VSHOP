@@ -52,6 +52,62 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card card-warning card-outline">
+                            <div class="card-header">
+                                <h5 class="m-0">Mail</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="mail_driver">
+                                        <span class="text-danger">*</span>
+                                        Mail Driver</label>
+                                    <input name="mail_driver" id="mail_driver" type="text" class="form-control"
+                                        placeholder="Mail Driver" value="{{env('MAIL_DRIVER')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mail_host">
+                                        <span class="text-danger">*</span>
+                                        Mail Host</label>
+                                    <input name="mail_host" id="mail_host" type="text" class="form-control"
+                                        placeholder="Mail Host" value="{{env('MAIL_HOST')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mail_port">
+                                        <span class="text-danger">*</span>
+                                        Mail Port</label>
+                                    <input name="mail_port" id="mail_port" type="text" class="form-control"
+                                        placeholder="Mail Port" value="{{env('MAIL_PORT')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mail_username">
+                                        <span class="text-danger">*</span>
+                                        Mail Username</label>
+                                    <input name="mail_username" id="mail_username" type="text" class="form-control"
+                                        placeholder="Mail Username" value="{{env('MAIL_USERNAME')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mail_password">
+                                        <span class="text-danger">*</span>
+                                        Mail Password</label>
+                                    <input name="mail_password" id="mail_password" type="text" class="form-control"
+                                        placeholder="Mail Password" value="{{env('MAIL_PASSWORD')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mail_encryption">
+                                        <span class="text-danger">*</span>
+                                        Mail Encryption</label>
+                                    <input name="mail_encryption" id="mail_encryption" type="text" class="form-control"
+                                        placeholder="Mail Encryption" value="{{env('MAIL_ENCRYPTION')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mail_from_address">
+                                        <span class="text-danger">*</span>
+                                        Mail From Address</label>
+                                    <input name="mail_from_address" id="mail_from_address" type="text" class="form-control"
+                                        placeholder="Mail From Address" value="{{env('MAIL_FROM_ADDRESS')}}" required>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="card card-warning card-outline">
