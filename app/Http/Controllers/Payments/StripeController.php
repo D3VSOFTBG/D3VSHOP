@@ -68,7 +68,6 @@ class StripeController extends Controller
                     "amount" => $item['amount_total'],
                     "currency" => $item['currency'],
                     "description" => $item['description'],
-                    // "metadata" => ['lesh' => 666, 'lesh1' => 6656],
                     "metadata" => json_decode(json_encode($item['price']->product['metadata']), true),
                 )
             );
@@ -79,7 +78,7 @@ class StripeController extends Controller
             "customer" => $customer['id'],
         ));
 
-        // Log::info($session);
+        Log::info($session);
 
         // Log::info($session['line_items']['data'][0]['price']->product['metadata']);
 
