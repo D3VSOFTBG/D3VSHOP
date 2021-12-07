@@ -137,7 +137,13 @@
                                                 {{$product->name}}
                                             </td>
                                             <td class="align-middle">
-                                                {{$product->price}} <strong>{{$default_currency_code}}</strong>
+                                                @if (if_discounted($product->discount))
+                                                <del>{{$product->price}}</del>
+                                                ({{calculate_discount($product->price, $product->discount)}})
+                                                @else
+                                                {{$product->price}}
+                                                @endif
+                                                <strong>{{$default_currency_code}}</strong>
                                             </td>
                                             <td class="align-middle">
                                                 {{if_null($product->discount)}} <strong>%</strong>

@@ -94,3 +94,18 @@ function if_null($var)
         return $var;
     }
 }
+function if_discounted($discount)
+{
+    if($discount > 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+function calculate_discount($price, $discount)
+{
+    return $price - (($price / 100) * $discount);
+}
