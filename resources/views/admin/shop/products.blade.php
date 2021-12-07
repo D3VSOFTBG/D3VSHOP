@@ -68,7 +68,7 @@
                                                 Discount <small>(Optional)</small></label>
                                             <div class="input-group">
                                                 <input name="discount" id="discount" type="text"
-                                                    class="form-control" placeholder="Discount" required>
+                                                    class="form-control" placeholder="Discount">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"> % </span>
                                                 </div>
@@ -223,7 +223,7 @@
                                                                             Discount <small>(Optional)</small></label>
                                                                         <div class="input-group">
                                                                             <input name="discount" id="discount" type="text"
-                                                                                class="form-control" placeholder="Discount" required>
+                                                                                class="form-control" placeholder="Discount" value="{{$product->discount}}">
                                                                             <div class="input-group-append">
                                                                                 <span class="input-group-text"> % </span>
                                                                             </div>
