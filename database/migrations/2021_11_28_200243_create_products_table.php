@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('discount')->nullable();
             $table->unsignedBigInteger('quantity');
             $table->string('series');
-            $table->unsignedBigInteger('sku');
+            $table->string('sku');
             $table->timestamps();
         });
     }

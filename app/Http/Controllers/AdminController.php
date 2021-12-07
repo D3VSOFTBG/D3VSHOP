@@ -143,6 +143,8 @@ class AdminController extends Controller
             'name' => 'required',
             'price' => 'required|numeric',
             'quantity' => 'required|integer',
+            'series' => 'required',
+            'sku' => 'required',
         ]);
 
         $products = new Product();
@@ -174,7 +176,9 @@ class AdminController extends Controller
         $request->validate([
             'name' => 'required',
             'price' => 'required|numeric',
-            'quantity' => 'required|integer'
+            'quantity' => 'required|integer',
+            'series' => 'required',
+            'sku' => 'required',
         ]);
 
         $products = Product::find($request->id);

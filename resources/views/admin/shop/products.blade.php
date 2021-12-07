@@ -81,6 +81,20 @@
                                             <input name="quantity" id="quantity" type="text" class="form-control"
                                                 placeholder="Quantity" required>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="series">
+                                                <span class="text-danger">*</span>
+                                                Series</label>
+                                            <input name="series" id="series" type="text" class="form-control"
+                                                placeholder="Series" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sku">
+                                                <span class="text-danger">*</span>
+                                                SKU</label>
+                                            <input name="sku" id="sku" type="text" class="form-control"
+                                                placeholder="SKU" required>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -246,6 +260,22 @@
                                                                         <input name="quantity" id="quantity" type="text" class="form-control"
                                                                             placeholder="Quantity"
                                                                             value="{{$product->quantity}}" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="series">
+                                                                            <span class="text-danger">*</span>
+                                                                            Series</label>
+                                                                        <input name="series" id="series" type="text" class="form-control"
+                                                                            placeholder="Series"
+                                                                            value="{{$product->series}}" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="sku">
+                                                                            <span class="text-danger">*</span>
+                                                                            SKU</label>
+                                                                        <input name="sku" id="sku" type="text" class="form-control"
+                                                                            placeholder="SKU"
+                                                                            value="{{$product->sku}}" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">
