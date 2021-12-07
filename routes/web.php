@@ -24,7 +24,9 @@ Route::get('/success', [HomeController::class, 'success'])->name('success');
 Route::get('/cancel', [HomeController::class, 'cancel'])->name('cancel');
 Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
 Route::post('/stripe', [StripeController::class, 'post'])->name('stripe');
-
+Route::get('/stripe', function () {
+    return redirect(route('home'));
+});
 
 Route::middleware(['auth', 'admin'])->group(function ()
 {
@@ -53,4 +55,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
 Auth::routes(['verify' => true]);
 
 // Webhooks
-Route::stripeWebhooks('stripe-webhook')->name('stripe-webhook');
+Route::stripeWebhooks('/stripe-webhook')->name('stripe-webhook');
+Route::get('/stripe-webhook', function () {
+    return redirect(route('home'));
+});
