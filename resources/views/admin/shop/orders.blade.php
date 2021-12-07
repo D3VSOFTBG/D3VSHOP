@@ -295,19 +295,27 @@
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <th>
-                                                                                            Quantity
-                                                                                        </th>
-                                                                                        <td>
-                                                                                            {{$op->quantity}}
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <th>
                                                                                             Price
                                                                                         </th>
                                                                                         <td>
                                                                                             {{$op->price}}
                                                                                             <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th>
+                                                                                            Discount
+                                                                                        </th>
+                                                                                        <td>
+                                                                                            {{$op->discount}} %
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th>
+                                                                                            Quantity
+                                                                                        </th>
+                                                                                        <td>
+                                                                                            {{$op->quantity}}
                                                                                         </td>
                                                                                     </tr>
                                                                                 </table>
