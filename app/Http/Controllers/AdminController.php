@@ -168,7 +168,6 @@ class AdminController extends Controller
             $products->discount = $request->discount;
         }
 
-        $products->discount = $request->discount;
         $products->quantity = $request->quantity;
         $products->save();
 
