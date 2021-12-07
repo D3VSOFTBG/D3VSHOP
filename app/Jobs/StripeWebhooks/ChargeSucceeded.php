@@ -46,7 +46,6 @@ class ChargeSucceeded implements ShouldQueue
 
         $order = new Order();
         $order->currency_id = get_currency_id($charge['currency']);
-        $order->customer_id = $customer->id;
         $order->customer = $charge['billing_details']['name'];
         $order->phone = $customer->phone;
         $order->email = $charge['billing_details']['email'];
@@ -60,20 +59,20 @@ class ChargeSucceeded implements ShouldQueue
         $order->save();
 
         // Get order id
-        $order_id = (int) Order::where('customer_id', $customer->id)->orderBy('id', 'DESC')->pluck('id')->first();
+        $order_id = (int) Order::where('email', $charge['billing_details']['email'])->orderBy('id', 'DESC')->pluck('id')->first();
 
         $ii_array = array();
 
-        // foreach($invoice_items['data'] as $invoice_item)
-        // {
-        //     array_push($ii_array, [
-        //         'order_id' => $order_id,
-        //         'name' => $invoice_item['description'],
-        //         'price' => $invoice_item['amount'] / 100,
-        //         'discount' => 0,
-        //         'quantity' => $invoice_item['quantity'],
-        //     ]);
-        // }
+        foreach($invoice_items['data'] as $invoice_item)
+        {
+            array_push($ii_array, [
+                'order_id' => $order_id,
+                'name' => $invoice_item['description'],
+                'price' => $invoice_item['amount'] / 100,
+                'discount' => $invoice_item['metadata']->discount,
+                'quantity' => $invoice_item['quantity'],
+            ]);
+        }
 
         // foreach($charge['data']['line_items'] as $charge)
         // {
