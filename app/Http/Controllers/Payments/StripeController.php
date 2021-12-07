@@ -41,11 +41,16 @@ class StripeController extends Controller
                         'currency' => get_currency_code((int) env('DEFAULT_CURRENCY_ID')),
                         'product_data' => [
                             'name' => $product->name,
-                            "metadata" => ['product_id' => $product->id, 'discount' => $product->discount],
+                            "metadata" => [
+                                'product_id' => $product->id,
+                                'discount' => $product->discount,
+                                'series' => $product->series,
+                                'sku' => $product->sku,
+                            ],
                         ],
                         'unit_amount' => discounted_price($product->price, $product->discount)*100,
                     ],
-                    'quantity' => $product->quantity,
+                    'quantity' => $request->quantity,
                 ],
             ],
 
