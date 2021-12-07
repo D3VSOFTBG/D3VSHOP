@@ -82,7 +82,7 @@ class ChargeSucceeded implements ShouldQueue
 
         // Log::info($invoice_items->data[0]['price']);
 
-        Log::info($invoice_items['data']);
+        // Log::info($invoice_items['data']);
 
         $stripe->invoices->delete($invoices['data'][0]['id']);
     }
