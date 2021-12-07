@@ -239,8 +239,15 @@ class AdminController extends Controller
         $request->validate([
             'shop_name' => 'required',
             'title_seperator' => 'required',
-            'default_currency_id' => 'required|integer',
             'theme_name' => 'required',
+            'default_currency_id' => 'required|integer',
+            'shipping_price' => 'required|numeric',
+            'tax_rate' => 'required|numeric',
+            'address' => 'required',
+            'code' => 'required',
+            'vat' => 'required',
+            'phone' => 'required',
+            'swift' => 'required',
         ]);
 
         if($request->shop_name != env('SHOP_NAME'))
@@ -251,13 +258,41 @@ class AdminController extends Controller
         {
             env_update('TITLE_SEPERATOR', $request->title_seperator);
         }
+        if($request->theme_name != env('THEME_NAME'))
+        {
+            env_update('THEME_NAME', $request->theme_name);
+        }
         if($request->default_currency_id != env('DEFAULT_CURRENCY_ID'))
         {
             env_update('DEFAULT_CURRENCY_ID', $request->default_currency_id);
         }
-        if($request->theme_name != env('THEME_NAME'))
+        if($request->shipping_price != env('SHIPPING_PRICE'))
         {
-            env_update('THEME_NAME', $request->theme_name);
+            env_update('SHIPPING_PRICE', $request->shipping_price);
+        }
+        if($request->tax_rate != env('TAX_RATE'))
+        {
+            env_update('TAX_RATE', $request->tax_rate);
+        }
+        if($request->address != env('ADDRESS'))
+        {
+            env_update('ADDRESS', $request->address);
+        }
+        if($request->code != env('CODE'))
+        {
+            env_update('CODE', $request->code);
+        }
+        if($request->vat != env('VAT'))
+        {
+            env_update('VAT', $request->vat);
+        }
+        if($request->phone != env('PHONE'))
+        {
+            env_update('PHONE', $request->phone);
+        }
+        if($request->swift != env('SWIFT'))
+        {
+            env_update('SWIFT', $request->swift);
         }
 
         Artisan::call('cache:clear');
