@@ -97,10 +97,41 @@
                     <div class="col-lg-4">
                         <div class="card card-warning card-outline">
                             <div class="card-header">
-                                <h5 class="m-0">Customer</h5>
+                                <h5 class="m-0">Shop</h5>
                             </div>
                             <div class="card-body">
-                                SOON
+                                <div class="form-group">
+                                    <label for="address">
+                                        <span class="text-danger">*</span>
+                                        Address</label>
+                                    <input name="address" id="address" type="text" class="form-control" placeholder="Address" value="{{env('ADDRESS')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="code">
+                                        <span class="text-danger">*</span>
+                                        Code</label>
+                                    <input name="code" id="code" type="text" class="form-control" placeholder="Code" value="{{env('CODE')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vat">
+                                        <span class="text-danger">*</span>
+                                        VAT</label>
+                                    <input name="vat" id="vat" type="text" class="form-control" placeholder="VAT" value="{{env('VAT')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">
+                                        <span class="text-danger">*</span>
+                                        Phone</label>
+                                    <input name="phone" id="phone" type="text" class="form-control"
+                                        placeholder="Phone" value="{{env('PHONE')}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="swift">
+                                        <span class="text-danger">*</span>
+                                        SWIFT</label>
+                                    <input name="swift" id="swift" type="text" class="form-control"
+                                        placeholder="Swift" value="{{env('SWIFT')}}" required>
+                                </div>
                             </div>
                         </div>
                     </div>
