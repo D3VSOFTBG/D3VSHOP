@@ -17,7 +17,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('/dist/css/adminlte.min.css')}}">
     <!-- Admin Style -->
-    <link rel="stylesheet" href="{{asset('/assets/css/admin.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/d3vsoft.css')}}">
 
     @if ($errors->any())
     <script>

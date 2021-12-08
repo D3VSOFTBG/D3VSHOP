@@ -78,6 +78,8 @@ class ChargeSucceeded implements ShouldQueue
 
         Ordered_Product::insert($ii_array);
 
+        Log::info($ii_array);
+
         // $product = $stripe->products->retrieve($invoice_items->data[0]['price']->product);
 
         // Log::info($invoice_items->data[0]['price']);
