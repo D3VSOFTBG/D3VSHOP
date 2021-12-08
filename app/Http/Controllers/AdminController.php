@@ -244,6 +244,7 @@ class AdminController extends Controller
     }
     function settings_post(Request $request)
     {
+        // General
         $request->validate([
             'shop_name' => 'required',
             'title_seperator' => 'required',
@@ -251,21 +252,7 @@ class AdminController extends Controller
             'default_currency_id' => 'required|integer',
             'shipping_price' => 'required|numeric',
             'tax_rate' => 'required|numeric',
-            'address' => 'required',
-            'code' => 'required',
-            'vat' => 'required',
-            'phone' => 'required',
-            'swift' => 'required',
-            'mail_driver' => 'required',
-            'mail_host' => 'required',
-            'mail_port' => 'required',
-            'mail_username' => 'required',
-            'mail_password' => 'required',
-            'mail_encryption' => 'required',
-            'mail_from_address' => 'required',
         ]);
-
-        // General
         if($request->shop_name != env('SHOP_NAME'))
         {
             env_update('SHOP_NAME', $request->shop_name);
@@ -291,6 +278,13 @@ class AdminController extends Controller
             env_update('TAX_RATE', $request->tax_rate);
         }
         // Shop
+        $request->validate([
+            'address' => 'required',
+            'code' => 'required',
+            'vat' => 'required',
+            'phone' => 'required',
+            'swift' => 'required',
+        ]);
         if($request->address != env('ADDRESS'))
         {
             env_update('ADDRESS', $request->address);
@@ -312,6 +306,15 @@ class AdminController extends Controller
             env_update('MAIL_DRIVER', $request->mail_driver);
         }
         // Mail
+        $request->validate([
+            'mail_driver' => 'required',
+            'mail_host' => 'required',
+            'mail_port' => 'required',
+            'mail_username' => 'required',
+            'mail_password' => 'required',
+            'mail_encryption' => 'required',
+            'mail_from_address' => 'required',
+        ]);
         if($request->mail_host != env('MAIL_HOST'))
         {
             env_update('MAIL_HOST', $request->mail_host);
