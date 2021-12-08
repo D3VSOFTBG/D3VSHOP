@@ -41,8 +41,8 @@ class InvoiceController extends Controller
         // ];
 
         $invoice = Invoice::make("Invoice $id")
-            //->series('BIG')
-            //->sequence(667)
+            ->series($order->series)
+            ->sequence($order->sku)
             //->serialNumberFormat('{SEQUENCE}/{SERIES}')
             ->currencySymbol($currency->symbol)
             ->currencyCode($currency->symbol)
@@ -50,7 +50,7 @@ class InvoiceController extends Controller
             ->taxRate($order->tax_rate)
             ->shipping($order->shipping_price)
             ->addItems($items)
-            ->logo(public_path('vendor/invoices/sample-logo.png'))
+            ->logo(public_path(env('LOGO')))
             ->filename('invoice_' . $id);
 
         return $invoice->download();
