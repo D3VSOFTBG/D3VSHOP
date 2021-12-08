@@ -40,9 +40,11 @@ class InvoiceController extends Controller
         //     (new InvoiceItem())->title("$ordered_products")->pricePerUnit(71.96)->quantity(2),
         // ];
 
+        $logo = public_path('/storage/img/shop/' . env('LOGO'));
+
         $invoice = Invoice::make("Invoice $id")
-            ->series($order->series)
-            ->sequence($order->sku)
+            ->series('BIG')
+            ->sequence(667)
             //->serialNumberFormat('{SEQUENCE}/{SERIES}')
             ->currencySymbol($currency->symbol)
             ->currencyCode($currency->symbol)
@@ -50,8 +52,12 @@ class InvoiceController extends Controller
             ->taxRate($order->tax_rate)
             ->shipping($order->shipping_price)
             ->addItems($items)
-            ->logo(public_path(env('LOGO')))
             ->filename('invoice_' . $id);
+
+        if(file_exists($logo))
+        {
+            $invoice->logo($logo);
+        }
 
         return $invoice->download();
     }

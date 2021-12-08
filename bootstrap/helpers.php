@@ -7,6 +7,7 @@ use App\Currency;
 use App\Ordered_Product;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 function user_count()
 {

@@ -166,7 +166,7 @@
                                             Favicon</label>
                                         <div class="card-body">
                                             <p class="card-text">
-                                                <img class="w-100 h-100" src="/storage/img/products/https://www.prestashop.com/sites/default/files/choose_your_design_optimized_4_0.svg" alt="Image">
+                                                <img class="w-100 h-100" src="{{asset('/storage/img/shop/' . env('FAVICON'))}}" alt="Image">
                                             </p>
                                             <input type="file" class="form-control-file" id="image" accept="image/*">
                                         </div>
@@ -178,7 +178,7 @@
                                             Logo</label>
                                         <div class="card-body">
                                             <p class="card-text">
-                                                <img class="w-100 h-100" src="/storage/img/products/https://www.prestashop.com/sites/default/files/choose_your_design_optimized_4_0.svg" alt="Image">
+                                                <img class="w-100 h-100" src="{{asset('/storage/img/shop/' . env('LOGO'))}}" alt="Image">
                                             </p>
                                             <input type="file" class="form-control-file" id="image" accept="image/*">
                                         </div>
