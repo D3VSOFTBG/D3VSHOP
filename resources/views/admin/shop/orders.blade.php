@@ -307,7 +307,7 @@
                                                                                             Discount
                                                                                         </th>
                                                                                         <td>
-                                                                                            {{$op->discount}} %
+                                                                                            {{$op->discount}} <strong>%</strong>
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
