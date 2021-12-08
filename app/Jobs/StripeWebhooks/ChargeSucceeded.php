@@ -64,7 +64,7 @@ class ChargeSucceeded implements ShouldQueue
 
         // Create array
         $ii_array = array();
-        // $quantity_subtraction_array = array();
+        $quantity_subtraction_array = array();
 
         // Get all invoice items
         foreach($invoice_items['data'] as $invoice_item)
@@ -82,7 +82,7 @@ class ChargeSucceeded implements ShouldQueue
             ]);
             array_push($quantity_subtraction_array,
             [
-                'id' => $$invoice_item['metadata']->product_id,
+                'id' => $invoice_item['metadata']->product_id,
                 'quantity' =>
                 [
                     '-',
@@ -95,25 +95,18 @@ class ChargeSucceeded implements ShouldQueue
 
         $products = new Product();
 
-        $quantity_subtraction_array = [
-            [
-                'id' => 1,
-                'quantity' => ['-', 200],
-            ],
-        ];
-
         $index = 'id';
 
-        $batch = batch()->update($products, $quantity_subtraction_array, $index);
+        batch()->update($products, $quantity_subtraction_array, $index);
 
-        Log::info($quantity_subtraction_array);
-        Log::info($batch);
+        // Log::info($quantity_subtraction_array);
+        // Log::info($batch);
 
         // $product = $stripe->products->retrieve($invoice_items->data[0]['price']->product);
 
         // Log::info($invoice_items->data[0]['price']);
 
-        // Log::info($invoice_items['data']);
+        // Log::info($quantity_subtraction_array);
 
         $stripe->invoices->delete($invoices['data'][0]['id']);
     }

@@ -84,7 +84,7 @@ class StripeController extends Controller
             "customer" => $customer['id'],
         ));
 
-        // Log::info($session);
+        Log::info($session);
 
         // Log::info($session['line_items']['data'][0]['price']->product['metadata']);
 
