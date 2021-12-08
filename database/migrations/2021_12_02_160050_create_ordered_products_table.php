@@ -21,7 +21,7 @@ class CreateOrderedProductsTable extends Migration
             $table->float('price');
             $table->unsignedBigInteger('discount')->nullable();
             $table->unsignedBigInteger('quantity');
-            $table->string('series');
+            $table->unsignedBigInteger('serial_number');
             $table->string('sku');
         });
     }

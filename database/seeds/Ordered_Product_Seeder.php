@@ -21,7 +21,7 @@ class Ordered_Product_Seeder extends Seeder
                     'price' => 2.5,
                     'discount' => 5,
                     'quantity' => 2,
-                    'series' => 'B',
+                    'serial_number' => 12332131213,
                     'sku' => '213DDFG23',
                 ],
                 [
@@ -31,7 +31,7 @@ class Ordered_Product_Seeder extends Seeder
                     'price' => 7,
                     'discount' => 6,
                     'quantity' => 5,
-                    'series' => 'A',
+                    'serial_number' => 1233213124,
                     'sku' => '513DDFG23',
                 ],
                 [
@@ -41,7 +41,7 @@ class Ordered_Product_Seeder extends Seeder
                     'price' => 5,
                     'discount' => 1,
                     'quantity' => 6,
-                    'series' => 'C',
+                    'serial_number' => 664554532432,
                     'sku' => '913DDFG23',
                 ]
             ]

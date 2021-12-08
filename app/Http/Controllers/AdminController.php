@@ -143,7 +143,7 @@ class AdminController extends Controller
             'name' => 'required',
             'price' => 'required|numeric',
             'quantity' => 'required|integer',
-            'series' => 'required',
+            'serial_number' => 'required',
             'sku' => 'required',
         ]);
 
@@ -167,7 +167,7 @@ class AdminController extends Controller
         }
 
         $products->quantity = $request->quantity;
-        $products->series = $request->series;
+        $products->serial_number = $request->serial_number;
         $products->sku = $request->sku;
         $products->save();
 
@@ -179,7 +179,7 @@ class AdminController extends Controller
             'name' => 'required',
             'price' => 'required|numeric',
             'quantity' => 'required|integer',
-            'series' => 'required',
+            'serial_number' => 'required',
             'sku' => 'required',
         ]);
 
@@ -218,7 +218,7 @@ class AdminController extends Controller
         }
 
         $products->quantity = $request->quantity;
-        $products->series = $request->series;
+        $products->serial_number = $request->serial_number;
         $products->sku = $request->sku;
         $products->save();
 

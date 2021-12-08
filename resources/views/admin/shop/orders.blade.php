@@ -320,10 +320,10 @@
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <th>
-                                                                                            Series
+                                                                                            Serial Number
                                                                                         </th>
                                                                                         <td>
-                                                                                            {{$op->series}}
+                                                                                            {{$op->serial_number}}
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>

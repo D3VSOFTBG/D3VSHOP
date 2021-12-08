@@ -82,11 +82,11 @@
                                                 placeholder="Quantity" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="series">
+                                            <label for="serial_number">
                                                 <span class="text-danger">*</span>
-                                                Series</label>
-                                            <input name="series" id="series" type="text" class="form-control"
-                                                placeholder="Series" required>
+                                                Serial Number</label>
+                                            <input name="serial_number" id="serial_number" type="text" class="form-control"
+                                                placeholder="Serial Number" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="sku">
@@ -262,12 +262,12 @@
                                                                             value="{{$product->quantity}}" required>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="series">
+                                                                        <label for="serial_number">
                                                                             <span class="text-danger">*</span>
-                                                                            Series</label>
-                                                                        <input name="series" id="series" type="text" class="form-control"
-                                                                            placeholder="Series"
-                                                                            value="{{$product->series}}" required>
+                                                                            Serial Number</label>
+                                                                        <input name="serial_number" id="serial_number" type="text" class="form-control"
+                                                                            placeholder="Serial Number"
+                                                                            value="{{$product->serial_number}}" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="sku">
