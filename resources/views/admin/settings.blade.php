@@ -37,6 +37,12 @@
                                     <input name="shop_name" id="shop_name" type="text" class="form-control" placeholder="Shop Name" value="{{env('SHOP_NAME')}}" required>
                                 </div>
                                 <div class="form-group">
+                                    <label for="app_url">
+                                        <span class="text-danger">*</span>
+                                        URL</label>
+                                    <input name="app_url" id="app_url" type="text" class="form-control" placeholder="URL" value="{{env('APP_URL')}}" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="title_seperator">
                                         <span class="text-danger">*</span>
                                         Title Seperator</label>

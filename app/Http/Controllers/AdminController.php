@@ -247,6 +247,7 @@ class AdminController extends Controller
         // General
         $request->validate([
             'shop_name' => 'required',
+            'app_url' => 'required',
             'title_seperator' => 'required',
             'theme_name' => 'required',
             'default_currency_id' => 'required|integer',
@@ -256,6 +257,10 @@ class AdminController extends Controller
         if($request->shop_name != env('SHOP_NAME'))
         {
             env_update('SHOP_NAME', $request->shop_name);
+        }
+        if($request->app_url != env('APP_URL'))
+        {
+            env_update('APP_URL', $request->app_url);
         }
         if($request->title_seperator != env('TITLE_SEPERATOR'))
         {
