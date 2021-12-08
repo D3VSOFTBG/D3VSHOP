@@ -195,7 +195,6 @@ class AdminController extends Controller
             $request->validate([
                 'image' => 'required|image|max:2048',
             ]);
-
             // image
             $new_image_name = time() . '.' . $request->image->extension();
             $request->image->move(public_path('/storage/img/products/'), $new_image_name);
@@ -346,7 +345,6 @@ class AdminController extends Controller
             $request->validate([
                 'favicon' => 'required|image|max:2048',
             ]);
-
             // image
             $new_image_name = time() . '.' . $request->favicon->extension();
             $request->favicon->move(public_path('/storage/img/global/'), $new_image_name);
