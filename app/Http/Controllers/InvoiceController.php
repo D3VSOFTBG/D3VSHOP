@@ -40,7 +40,7 @@ class InvoiceController extends Controller
         //     (new InvoiceItem())->title("$ordered_products")->pricePerUnit(71.96)->quantity(2),
         // ];
 
-        $logo = public_path('/storage/img/shop/' . env('LOGO'));
+        $logo = public_path('/storage/img/global/' . env('LOGO'));
 
         $invoice = Invoice::make("Invoice $id")
             ->series('A')

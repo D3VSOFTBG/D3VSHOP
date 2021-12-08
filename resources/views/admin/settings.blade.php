@@ -166,7 +166,7 @@
                                             Favicon</label>
                                         <div class="card-body">
                                             <p class="card-text">
-                                                <img class="w-100 h-100" src="{{asset('/storage/img/shop/' . env('FAVICON'))}}" alt="Image">
+                                                <img class="w-100 h-100" src="{{asset('/storage/img/global/' . env('FAVICON'))}}" alt="Image">
                                             </p>
                                             <input name="favicon" type="file" class="form-control-file" id="image" accept="image/*">
                                         </div>
@@ -178,7 +178,7 @@
                                             Logo</label>
                                         <div class="card-body">
                                             <p class="card-text">
-                                                <img class="w-100 h-100" src="{{asset('/storage/img/shop/' . env('LOGO'))}}" alt="Image">
+                                                <img class="w-100 h-100" src="{{asset('/storage/img/global/' . env('LOGO'))}}" alt="Image">
                                             </p>
                                             <input name="logo" type="file" class="form-control-file" id="image" accept="image/*">
                                         </div>
