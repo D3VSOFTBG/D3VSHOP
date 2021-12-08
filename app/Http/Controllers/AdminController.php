@@ -265,6 +265,7 @@ class AdminController extends Controller
             'mail_from_address' => 'required',
         ]);
 
+        // General
         if($request->shop_name != env('SHOP_NAME'))
         {
             env_update('SHOP_NAME', $request->shop_name);
@@ -289,6 +290,7 @@ class AdminController extends Controller
         {
             env_update('TAX_RATE', $request->tax_rate);
         }
+        // Shop
         if($request->address != env('ADDRESS'))
         {
             env_update('ADDRESS', $request->address);
@@ -305,9 +307,34 @@ class AdminController extends Controller
         {
             env_update('PHONE', $request->phone);
         }
-        if($request->swift != env('SWIFT'))
+        if($request->mail_driver != env('MAIL_DRIVER'))
         {
-            env_update('SWIFT', $request->swift);
+            env_update('MAIL_DRIVER', $request->mail_driver);
+        }
+        // Mail
+        if($request->mail_host != env('MAIL_HOST'))
+        {
+            env_update('MAIL_HOST', $request->mail_host);
+        }
+        if($request->mail_port != env('MAIL_PORT'))
+        {
+            env_update('MAIL_PORT', $request->mail_port);
+        }
+        if($request->mail_username != env('MAIL_USERNAME'))
+        {
+            env_update('MAIL_USERNAME', $request->mail_username);
+        }
+        if($request->mail_password != env('MAIL_PASSWORD'))
+        {
+            env_update('MAIL_PASSWORD', $request->mail_password);
+        }
+        if($request->mail_encryption != env('MAIL_ENCRYPTION'))
+        {
+            env_update('MAIL_ENCRYPTION', $request->mail_encryption);
+        }
+        if($request->mail_from_address != env('MAIL_ENCRYPTION'))
+        {
+            env_update('MAIL_FROM_ADDRESS', $request->mail_from_address);
         }
 
         Artisan::call('cache:clear');
