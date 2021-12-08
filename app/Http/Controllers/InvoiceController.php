@@ -43,8 +43,8 @@ class InvoiceController extends Controller
         $logo = public_path('/storage/img/shop/' . env('LOGO'));
 
         $invoice = Invoice::make("Invoice $id")
-            ->series('BIG')
-            ->sequence(667)
+            ->series($order->series)
+            ->sequence($order->sku)
             //->serialNumberFormat('{SEQUENCE}/{SERIES}')
             ->currencySymbol($currency->symbol)
             ->currencyCode($currency->symbol)
