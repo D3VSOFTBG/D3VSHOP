@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->float('price');
             $table->unsignedBigInteger('discount')->nullable();
-            $table->unsignedBigInteger('quantity');
+            $table->integer('quantity');
             $table->unsignedBigInteger('serial_number');
             $table->string('sku');
             $table->timestamps();
