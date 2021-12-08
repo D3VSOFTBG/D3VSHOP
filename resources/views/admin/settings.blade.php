@@ -149,6 +149,37 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card card-warning card-outline">
+                            <div class="card-header">
+                                <h5 class="m-0">Images</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <div class="card dark-mode w-100">
+                                        <label for="image" class="card-header"><span class="text-danger">*</span>
+                                            Favicon</label>
+                                        <div class="card-body">
+                                            <p class="card-text">
+                                                <img class="w-100 h-100" src="/storage/img/products/https://www.prestashop.com/sites/default/files/choose_your_design_optimized_4_0.svg" alt="Image">
+                                            </p>
+                                            <input type="file" class="form-control-file" id="image" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <div class="card dark-mode w-100">
+                                        <label for="image" class="card-header"><span class="text-danger">*</span>
+                                            Logo</label>
+                                        <div class="card-body">
+                                            <p class="card-text">
+                                                <img class="w-100 h-100" src="/storage/img/products/https://www.prestashop.com/sites/default/files/choose_your_design_optimized_4_0.svg" alt="Image">
+                                            </p>
+                                            <input type="file" class="form-control-file" id="image" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="card card-warning card-outline">
