@@ -46,7 +46,7 @@
                                 <div class="form-group">
                                     <label for="stripe_test_webhook_secret">
                                         Test Webhook Secret</label>
-                                    <input name="stripe_test_webhook_secret" id="stripe_test_webhook_secret" type="text" class="form-control" placeholder="Test Webhook Secret" value="{{env('STRIPE_TEST_WEBHOOK_SECRET')}}" required>
+                                    <input name="stripe_test_webhook_secret" id="stripe_test_webhook_secret" type="password" class="form-control" placeholder="Test Webhook Secret" value="{{env('STRIPE_TEST_WEBHOOK_SECRET')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="stripe_test_publishable_key">
@@ -56,13 +56,13 @@
                                 <div class="form-group">
                                     <label for="stripe_test_secret_key">
                                         Test Secret Key</label>
-                                    <input name="stripe_test_secret_key" id="stripe_test_secret_key" type="text" class="form-control"
+                                    <input name="stripe_test_secret_key" id="stripe_test_secret_key" type="password" class="form-control"
                                         placeholder="Test Secret Key" value="{{env('STRIPE_TEST_SECRET_KEY')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="stripe_live_webhook_secret">
                                         Live Webhook Secret</label>
-                                    <input name="stripe_live_webhook_secret" id="stripe_live_webhook_secret" type="text" class="form-control" placeholder="Live Webhook Secret" value="{{env('STRIPE_LIVE_WEBHOOK_SECRET')}}" required>
+                                    <input name="stripe_live_webhook_secret" id="stripe_live_webhook_secret" type="password" class="form-control" placeholder="Live Webhook Secret" value="{{env('STRIPE_LIVE_WEBHOOK_SECRET')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="stripe_live_publishable_key">
@@ -72,7 +72,7 @@
                                 <div class="form-group">
                                     <label for="stripe_live_secret_key">
                                         Live Secret Key</label>
-                                    <input name="stripe_live_secret_key" id="stripe_live_secret_key" type="text" class="form-control"
+                                    <input name="stripe_live_secret_key" id="stripe_live_secret_key" type="password" class="form-control"
                                         placeholder="Live Secret Key" value="{{env('STRIPE_LIVE_SECRET_KEY')}}" required>
                                 </div>
                             </div>
