@@ -341,17 +341,26 @@ class AdminController extends Controller
             env_update('MAIL_FROM_ADDRESS', $request->mail_from_address);
         }
         // Images
-        $request->validate([
-            'favicon' => 'required',
-            'logo' => 'required',
-        ]);
-        if($request->favicon != env('FAVICON'))
+        if(isset($request->favicon))
         {
-            env_update('FAVICON', $request->favicon);
+            $request->validate([
+                'favicon' => 'required|image|max:2048',
+            ]);
+
+            // image
+            $new_image_name = time() . '.' . $request->favicon->extension();
+            $request->favicon->move(public_path('/storage/img/global/'), $new_image_name);
+            env_update('FAVICON', $new_image_name);
         }
-        if($request->logo != env('LOGO'))
+        if(isset($request->logo))
         {
-            env_update('LOGO', $request->logo);
+            $request->validate([
+                'logo' => 'required|image|max:2048',
+            ]);
+            // image
+            $new_image_name = time() . '.' . $request->logo->extension();
+            $request->logo->move(public_path('/storage/img/global/'), $new_image_name);
+            env_update('LOGO', $new_image_name);
         }
 
         Artisan::call('cache:clear');
