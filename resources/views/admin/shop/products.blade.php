@@ -215,7 +215,7 @@
                                                                                     <img class="w-100 h-100" src="{{env('PRODUCTS_IMG_PATH')}}{{$product->image}}"
                                                                                         alt="Image">
                                                                                 </p>
-                                                                                <input type="file" class="form-control-file" id="image"
+                                                                                <input name="image" type="file" class="form-control-file" id="image"
                                                                                 accept="image/*">
                                                                             </div>
                                                                         </div>

@@ -340,6 +340,7 @@ class AdminController extends Controller
         {
             env_update('MAIL_FROM_ADDRESS', $request->mail_from_address);
         }
+        // Images
 
         Artisan::call('cache:clear');
 
