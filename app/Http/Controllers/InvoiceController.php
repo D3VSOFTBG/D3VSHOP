@@ -44,7 +44,7 @@ class InvoiceController extends Controller
 
         $invoice = Invoice::make("Invoice $id")
             ->series('A')
-            ->sequence(time())
+            ->sequence($id)
             // ->serialNumberFormat('{SEQUENCE}/{SERIES}')
             ->currencySymbol($currency->symbol)
             ->currencyCode($currency->symbol)
