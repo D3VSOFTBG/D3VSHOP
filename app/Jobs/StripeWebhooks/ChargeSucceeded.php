@@ -64,7 +64,7 @@ class ChargeSucceeded implements ShouldQueue
 
         // Create array
         $ii_array = array();
-        $quantity_subtraction_array = array();
+        // $quantity_subtraction_array = array();
 
         // Get all invoice items
         foreach($invoice_items['data'] as $invoice_item)
@@ -82,12 +82,10 @@ class ChargeSucceeded implements ShouldQueue
             ]);
             array_push($quantity_subtraction_array,
             [
-                'id' => $order_id,
+                'id' => $$invoice_item['metadata']->product_id,
                 'quantity' =>
                 [
                     '-',
-                ],
-                [
                     $invoice_item['quantity'],
                 ],
             ]);
@@ -96,6 +94,13 @@ class ChargeSucceeded implements ShouldQueue
         Ordered_Product::insert($ii_array);
 
         $products = new Product();
+
+        $quantity_subtraction_array = [
+            [
+                'id' => 1,
+                'quantity' => ['-', 200],
+            ],
+        ];
 
         $index = 'id';
 
