@@ -44,7 +44,7 @@ class StripeController extends Controller
                             "metadata" => [
                                 'product_id' => $product->id,
                                 'discount' => $product->discount,
-                                'series' => $product->series,
+                                'serial_number' => $product->serial_number,
                                 'sku' => $product->sku,
                             ],
                         ],

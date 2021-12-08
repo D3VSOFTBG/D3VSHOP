@@ -71,7 +71,7 @@ class ChargeSucceeded implements ShouldQueue
                 'price' => $invoice_item['unit_amount'] / 100,
                 'discount' => $invoice_item['metadata']->discount,
                 'quantity' => $invoice_item['quantity'],
-                'series' => $invoice_item['metadata']->series,
+                'serial_number' => $invoice_item['metadata']->serial_number,
                 'sku' => $invoice_item['metadata']->sku,
             ]);
         }
