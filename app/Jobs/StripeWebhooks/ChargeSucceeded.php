@@ -4,6 +4,7 @@ namespace App\Jobs\StripeWebhooks;
 
 use App\Order;
 use App\Ordered_Product;
+use App\Product;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -11,7 +12,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Spatie\WebhookClient\Models\WebhookCall;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\DB;
+use Mavinoo\Batch\Batch;
 
 class ChargeSucceeded implements ShouldQueue
 {
@@ -63,12 +64,14 @@ class ChargeSucceeded implements ShouldQueue
 
         // Create array
         $ii_array = array();
+        $quantity_subtraction_array = array();
 
         // Get all invoice items
         foreach($invoice_items['data'] as $invoice_item)
         {
             // push values to array
-            array_push($ii_array, [
+            array_push($ii_array,
+            [
                 'order_id' => $order_id,
                 'name' => $invoice_item['description'],
                 'price' => $invoice_item['unit_amount'] / 100,
@@ -77,11 +80,29 @@ class ChargeSucceeded implements ShouldQueue
                 'serial_number' => $invoice_item['metadata']->serial_number,
                 'sku' => $invoice_item['metadata']->sku,
             ]);
+            array_push($quantity_subtraction_array,
+            [
+                'id' => $order_id,
+                'quantity' =>
+                [
+                    '-',
+                ],
+                [
+                    $invoice_item['quantity'],
+                ],
+            ]);
         }
 
         Ordered_Product::insert($ii_array);
 
-        Log::info($ii_array);
+        $products = new Product();
+
+        $index = 'id';
+
+        $batch = batch()->update($products, $quantity_subtraction_array, $index);
+
+        Log::info($quantity_subtraction_array);
+        Log::info($batch);
 
         // $product = $stripe->products->retrieve($invoice_items->data[0]['price']->product);
 
