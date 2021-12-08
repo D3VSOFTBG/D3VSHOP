@@ -43,9 +43,9 @@ class InvoiceController extends Controller
         $logo = public_path('/storage/img/shop/' . env('LOGO'));
 
         $invoice = Invoice::make("Invoice $id")
-            ->series($order->series)
-            ->sequence($order->sku)
-            //->serialNumberFormat('{SEQUENCE}/{SERIES}')
+            ->series('A')
+            ->sequence(time())
+            // ->serialNumberFormat('{SEQUENCE}/{SERIES}')
             ->currencySymbol($currency->symbol)
             ->currencyCode($currency->symbol)
             ->buyer($customer)
