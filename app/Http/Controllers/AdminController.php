@@ -256,6 +256,13 @@ class AdminController extends Controller
             'vat' => 'required',
             'phone' => 'required',
             'swift' => 'required',
+            'mail_driver' => 'required',
+            'mail_host' => 'required',
+            'mail_port' => 'required',
+            'mail_username' => 'required',
+            'mail_password' => 'required',
+            'mail_encryption' => 'required',
+            'mail_from_address' => 'required',
         ]);
 
         if($request->shop_name != env('SHOP_NAME'))
