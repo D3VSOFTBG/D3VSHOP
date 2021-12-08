@@ -205,15 +205,11 @@ class AdminController extends Controller
         $products->name = $request->name;
         $products->price = $request->price;
 
-        if(!empty($request->discount))
+        if(isset($request->discount))
         {
             $request->validate([
                 'discount' => 'integer|min:0|max:100',
             ]);
-            $products->discount = $request->discount;
-        }
-        else
-        {
             $products->discount = $request->discount;
         }
 
