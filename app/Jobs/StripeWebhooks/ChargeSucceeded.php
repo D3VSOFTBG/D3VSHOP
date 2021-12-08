@@ -61,10 +61,13 @@ class ChargeSucceeded implements ShouldQueue
         // Get order id
         $order_id = (int) Order::where('email', $charge['billing_details']['email'])->orderBy('id', 'DESC')->pluck('id')->first();
 
+        // Create array
         $ii_array = array();
 
+        // Get all invoice items
         foreach($invoice_items['data'] as $invoice_item)
         {
+            // push values to array
             array_push($ii_array, [
                 'order_id' => $order_id,
                 'name' => $invoice_item['description'],
