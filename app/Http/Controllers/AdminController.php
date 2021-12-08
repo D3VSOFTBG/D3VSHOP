@@ -341,6 +341,18 @@ class AdminController extends Controller
             env_update('MAIL_FROM_ADDRESS', $request->mail_from_address);
         }
         // Images
+        $request->validate([
+            'favicon' => 'required',
+            'logo' => 'required',
+        ]);
+        if($request->favicon != env('FAVICON'))
+        {
+            env_update('FAVICON', $request->favicon);
+        }
+        if($request->logo != env('LOGO'))
+        {
+            env_update('LOGO', $request->logo);
+        }
 
         Artisan::call('cache:clear');
 
