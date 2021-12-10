@@ -13,7 +13,6 @@
     <meta name="keywords" content="{{env('SHOP_NAME')}}">
     <meta name="author" content="{{env('SHOP_NAME')}}">
 
-    <link rel="icon" href="{{asset('/themes/' . env('THEME_NAME') . '/favicon.ico')}}" type="image/x-icon">
     <script src="{{asset('/themes/' . env('THEME_NAME') . '/js/libs/jquery-1.11.1.js')}}"></script>
     <script src="{{asset('/themes/' . env('THEME_NAME') . '/js/libs/modernizr.js')}}"></script>
     <script type="text/javascript" src="{{asset('/themes/' . env('THEME_NAME') . '/js/libs/countdown/jquery.plugin.min.js')}}">
