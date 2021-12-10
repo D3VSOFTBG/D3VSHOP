@@ -60,7 +60,7 @@
                                     <label>
                                         <span class="text-danger">*</span>
                                         Env</label>
-                                    <select name="default_currency_id" class="custom-select">
+                                    <select name="app_env" class="custom-select">
                                         <option value="production" @if(env('APP_ENV') == 'production') selected @endif>Production</option>
                                         <option value="local" @if(env('APP_ENV') == 'local') selected @endif>Local</option>
                                     </select>
@@ -68,8 +68,8 @@
                                 <div class="form-group">
                                     <label>
                                         <span class="text-danger">*</span>
-                                        Env</label>
-                                    <select name="default_currency_id" class="custom-select">
+                                        Debug</label>
+                                    <select name="app_debug" class="custom-select">
                                         <option value="true" @if(env('APP_DEBUG') == 'true') selected @endif>True</option>
                                         <option value="false" @if(env('APP_DEBUG') == 'false') selected @endif>False</option>
                                     </select>

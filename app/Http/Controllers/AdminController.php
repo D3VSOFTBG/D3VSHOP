@@ -245,6 +245,8 @@ class AdminController extends Controller
             'app_url' => 'required',
             'title_seperator' => 'required',
             'theme_name' => 'required',
+            'app_env' => 'required',
+            'app_debug' => 'required',
         ]);
         if($request->shop_name != env('SHOP_NAME'))
         {
@@ -261,6 +263,14 @@ class AdminController extends Controller
         if($request->theme_name != env('THEME_NAME'))
         {
             env_update('THEME_NAME', $request->theme_name);
+        }
+        if($request->app_env != env('APP_ENV'))
+        {
+            env_update('APP_ENV', $request->app_env);
+        }
+        if($request->app_debug != env('APP_DEBUG'))
+        {
+            env_update('APP_DEBUG', $request->app_debug);
         }
         // Product
         $request->validate([
