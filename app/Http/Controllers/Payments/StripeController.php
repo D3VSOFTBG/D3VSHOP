@@ -12,6 +12,8 @@ class StripeController extends Controller
 {
     function post(Request $request)
     {
+        $product = Product::where('id', $request->product_id)->first();
+
         $request->validate([
             'country' => 'required',
             'full_name' => 'required',
@@ -27,8 +29,6 @@ class StripeController extends Controller
             'name' => $request->full_name,
             'email' => $request->email,
         ]);
-
-        $product = Product::where('id', $request->product_id)->first();
 
         $session = \Stripe\Checkout\Session::create([
             'customer' => $customer['id'],
@@ -84,7 +84,7 @@ class StripeController extends Controller
             "customer" => $customer['id'],
         ));
 
-        Log::info($session);
+        // Log::info($session);
 
         // Log::info($session['line_items']['data'][0]['price']->product['metadata']);
 
