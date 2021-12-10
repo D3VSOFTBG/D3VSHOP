@@ -65,15 +65,6 @@
                                         <option value="local" @if(env('APP_ENV') == 'local') selected @endif>Local</option>
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label>
-                                        <span class="text-danger">*</span>
-                                        Debug ({{env('D')}})</label>
-                                    <select name="app_debug" class="custom-select">
-                                        <option value="true" @if(env('APP_DEBUG') == 'true') selected @endif>True</option>
-                                        <option value="false" @if(env('APP_DEBUG') == 'false') selected @endif>False</option>
-                                    </select>
-                                </div>
                             </div>
                         </div>
                         <div class="card card-warning card-outline">
