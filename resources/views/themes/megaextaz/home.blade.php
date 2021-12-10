@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <title>{{env('SHOP_NAME')}}</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('/storage/img/global/' . env('FAVICON'))}}">
 
     <meta name="description" content="{{env('SHOP_NAME')}}">
     <meta name="keywords" content="{{env('SHOP_NAME')}}">
