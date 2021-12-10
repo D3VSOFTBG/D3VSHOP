@@ -47,7 +47,7 @@ class AdminController extends Controller
     }
     function shop_products()
     {
-        $products = Product::orderBy('id', 'DESC')->get();
+        $products = Product::orderBy('id', 'DESC')->paginate(5);
         $currencies = Currency::all();
         $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
