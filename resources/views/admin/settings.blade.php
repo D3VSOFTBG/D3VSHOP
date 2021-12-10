@@ -56,6 +56,24 @@
                                     <input name="theme_name" id="theme_name" type="text" class="form-control"
                                         placeholder="Theme Name" value="{{env('THEME_NAME')}}" required>
                                 </div>
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>
+                                        Env</label>
+                                    <select name="default_currency_id" class="custom-select">
+                                        <option value="production" @if(env('APP_ENV') == 'production') selected @endif>Production</option>
+                                        <option value="local" @if(env('APP_ENV') == 'local') selected @endif>Local</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>
+                                        Env</label>
+                                    <select name="default_currency_id" class="custom-select">
+                                        <option value="true" @if(env('APP_DEBUG') == 'true') selected @endif>True</option>
+                                        <option value="false" @if(env('APP_DEBUG') == 'false') selected @endif>False</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="card card-warning card-outline">
