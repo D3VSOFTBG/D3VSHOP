@@ -245,9 +245,6 @@ class AdminController extends Controller
             'app_url' => 'required',
             'title_seperator' => 'required',
             'theme_name' => 'required',
-            'default_currency_id' => 'required|integer',
-            'shipping_price' => 'required|numeric',
-            'tax_rate' => 'required|numeric',
         ]);
         if($request->shop_name != env('SHOP_NAME'))
         {
@@ -265,6 +262,12 @@ class AdminController extends Controller
         {
             env_update('THEME_NAME', $request->theme_name);
         }
+        // Product
+        $request->validate([
+            'default_currency_id' => 'required|integer',
+            'shipping_price' => 'required|numeric',
+            'tax_rate' => 'required|numeric',
+        ]);
         if($request->default_currency_id != env('DEFAULT_CURRENCY_ID'))
         {
             env_update('DEFAULT_CURRENCY_ID', $request->default_currency_id);
