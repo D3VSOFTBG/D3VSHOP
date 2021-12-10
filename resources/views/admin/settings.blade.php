@@ -186,7 +186,7 @@
                                             <p class="card-text">
                                                 <img class="responsive" src="{{asset('/storage/img/global/' . env('FAVICON'))}}" alt="Image">
                                             </p>
-                                            <input name="favicon" type="file" class="form-control-file" id="image" accept="image/*">
+                                            <input name="favicon" type="file" class="form-control-file" id="favicon" accept="image/*">
                                         </div>
                                     </div>
                                 </div>
@@ -198,7 +198,7 @@
                                             <p class="card-text">
                                                 <img class="responsive" src="{{asset('/storage/img/global/' . env('LOGO'))}}" alt="Image">
                                             </p>
-                                            <input name="logo" type="file" class="form-control-file" id="image" accept="image/*">
+                                            <input name="logo" type="file" class="form-control-file" id="logo" accept="image/*">
                                         </div>
                                     </div>
                                 </div>
