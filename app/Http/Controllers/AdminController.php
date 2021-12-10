@@ -61,7 +61,8 @@ class AdminController extends Controller
     }
     function shop_orders()
     {
-        $orders = DB::table('orders')->select('orders.*', DB::raw('(SELECT SUM(ordered_products.price) FROM ordered_products ordered_products WHERE ordered_products.order_id = orders.id) as total'))->get();
+        // $orders = DB::table('orders')->select('orders.*', DB::raw('(SELECT SUM(ordered_products.price) FROM ordered_products ordered_products WHERE ordered_products.order_id = orders.id) as total'))->paginate(env('PAGINATION_ADMIN'));
+        $orders = DB::table('orders')->select('orders.*', DB::raw('(SELECT IF(coalesce(sum(ordered_products.price), "") = "", "0", sum(ordered_products.price)) FROM ordered_products ordered_products WHERE ordered_products.order_id = orders.id) as total'))->paginate(env('PAGINATION_ADMIN'));
         $ordered_products = Ordered_Product::all();
         $currencies = Currency::all();
 
