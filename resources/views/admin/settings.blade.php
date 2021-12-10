@@ -68,7 +68,7 @@
                                 <div class="form-group">
                                     <label>
                                         <span class="text-danger">*</span>
-                                        Debug</label>
+                                        Debug ({{env('D')}})</label>
                                     <select name="app_debug" class="custom-select">
                                         <option value="true" @if(env('APP_DEBUG') == 'true') selected @endif>True</option>
                                         <option value="false" @if(env('APP_DEBUG') == 'false') selected @endif>False</option>
