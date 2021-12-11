@@ -205,7 +205,7 @@
             <ul class="clearfix">
                 <li class="li1">{{__('megaextaz_home.Fill the form')}} <br>{{__('megaextaz_home.order below')}}</li>
                 <li class="li2">{{__('megaextaz_home.Wait for the call from')}} <br>{{__('megaextaz_home.operator')}}</li>
-                <li class="li3">{{__('megaextaz_home.Pay shipping')}} <br>{{__('with credit card')}}</li>
+                <li class="li3">{{__('megaextaz_home.Pay shipping')}} <br>{{__('megaextaz_home.with credit card')}}</li>
             </ul>
         </div><!-- /.how_order -->
         <div class="order_wrapp">
