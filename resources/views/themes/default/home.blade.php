@@ -2,1020 +2,224 @@
 
 @include('themes.default.inc.header')
 
-		<!-- =====================================
-	    	==== Start slider -->
-		<div class="slider slider_slick stick-dots">
-		 	<!--  slide1 -->
-		    <div class="slide">
-		      <div class="slide__img section-bg" style="background-image:url(/themes/{{env('THEME_NAME')}}/assets/images/slider/home3_slider1.jpg)">
-		        <img src="" alt="" data-lazy="/themes/{{env('THEME_NAME')}}/assets/images/slider/home3_slider1.jpg" class="full-image animated" data-animation-in="zoomInImage"/>
-		      </div>
-		      <div class="slide__content">
-		      	<div class="slide__content--subheadings bg-text animated" data-animation-in="fadeInUp">layStorerim</div>
-		        <div class="slide__content--headings">
-		           <h2 class="animated bg-text" data-animation-in="fadeInUp">Costume Rim</h2>
-		        </div>
-		        <div class="slide__content--headings">
-		        	<h3 class="animated bg-text" data-animation-in="fadeInUp">Battle Quest</h3>
-		        </div>
-		        <div class="shopnow animated" data-animation-in="fadeInUp">
-			         <a href="product_grid.html" class="mt-40 btn btn-features btn-primary">Shop now</a>
-			    </div>
-		      </div>
-		    </div>
-		    <!--  slide2 -->
-		    <div class="slide">
-		      <div class="slide__img section-bg" style="background-image:url(/themes/{{env('THEME_NAME')}}/assets/images/slider/home3_slider2.jpg)">
-		        <img src="" alt="" data-lazy="/themes/{{env('THEME_NAME')}}/assets/images/slider/home3_slider2.jpg" class="full-image animated" data-animation-in="zoomInImage"/>
-		      </div>
-		      <div class="slide__content">
-		      	<div class="slide__content--subheadings bg-text animated" data-animation-in="fadeInUp">layStorerim</div>
-		        <div class="slide__content--headings">
-		           <h2 class="animated bg-text" data-animation-in="fadeInUp">Costume Rim</h2>
-		        </div>
-		        <div class="slide__content--headings">
-		        	<h3 class="animated bg-text" data-animation-in="fadeInUp">Battle Quest</h3>
-		        </div>
-		        <div class="shopnow animated" data-animation-in="fadeInUp">
-			         <a href="product_grid.html" class="mt-40 btn btn-features btn-primary">Shop now</a>
-			    </div>
-		      </div>
-		    </div>
-		     <!--  slide3 -->
-		    <div class="slide">
-		      <div class="slide__img section-bg" style="background-image:url(/themes/{{env('THEME_NAME')}}/assets/images/slider/home3_slider3.jpg)">
-		        <img src="" alt="" data-lazy="/themes/{{env('THEME_NAME')}}/assets/images/slider/home3_slider3.jpg" class="full-image animated" data-animation-in="zoomInImage"/>
-		      </div>
-		      <div class="slide__content">
-		      	<div class="slide__content--subheadings bg-text animated" data-animation-in="fadeInUp">layStorerim</div>
-		        <div class="slide__content--headings">
-		           <h2 class="animated bg-text" data-animation-in="fadeInUp">Costume Rim</h2>
-		        </div>
-		        <div class="slide__content--headings">
-		        	<h3 class="animated bg-text" data-animation-in="fadeInUp">Battle Quest</h3>
-		        </div>
-		        <div class="shopnow animated" data-animation-in="fadeInUp">
-			         <a href="product_grid.html" class="mt-40 btn btn-features btn-primary">Shop now</a>
-			    </div>
-		      </div>
-		    </div>
-		</div>
-
-		<!-- End slider ====
-	    	======================================= -->
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
-	    <!-- Start features_icon ====
-	    	======================================= -->
-		<section class="features border-bottom">
-			<div class="container">
-				<div class="row">
-		    		<div class="features_list col-md-4">
-						<div class="features-images">
-							<img src="/themes/{{env('THEME_NAME')}}/assets/images/feature/icon_feature_1.png" alt="">
-						</div>
-						<div class="features-description">
-							<h4>Free Pickup in store</h4>
-							<div>
-								Save time and mOne1y when you buy online
-								and pick up in store.
-							</div>
-						</div>
-					</div>
-					<div class="features_list col-md-4">
-						<div class="features-images">
-							<img src="/themes/{{env('THEME_NAME')}}/assets/images/feature/icon_feature_2.png" alt="">
-						</div>
-						<div class="features-description">
-							<h4>Free Shipping</h4>
-							<div>
-								on most orders of $25 or more
-							</div>
-						</div>
-					</div>
-					<div class="features_list col-md-4">
-						<div class="features-images">
-							<img src="/themes/{{env('THEME_NAME')}}/assets/images/feature/icon_feature_3.png" alt="">
-						</div>
-						<div class="features-description">
-							<h4>Bonus Points Offers</h4>
-							<div>
-								Earn loyaty points every time you shop in-store
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End slider ====
-	    ======================================= -->
 
-		<!-- =====================================
-	    	==== Start Featured Products  -->
-	    <section class="products">
-	    	<div class="container">
-		    	<div class="heading text-center">
-		    		<div class="heading__sub">Over Million part available</div>
-		    		<h2 class="heading__title">Featured Products</h2>
-		    	</div>
-		    	<ul class="columns columns-6">
-					<li class="item-product">
-						<div class="product-block">
-							<div class="product-image ">
-								<div class="product-thumbnail">
-									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_1.jpg" alt="">
-									</a>
-								</div>
-								<div class="product-actions">
-									<a href="#" data-id="" class="btn wishlist product-quick-whistlist" title="Add to whistlist">
-									<i class="fa fa-heart-o"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-view btn-quickview" title="Quickview">
-									    <i class="fa fa-eye"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-compare btn-compare" title="Compare">
-									    <i class="fa fa-retweet"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-caption">
-								<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-								<h4 class="product-title">
-									<a href="product_single.html" title="">CAfter Shave Balm, 4 fl. oz.</a>
-								</h4>
-								<div class="product-form-cart">
-									<div class="product-price">
-										<ins>
-											<span class="amout">$19.99</span>
-										</ins>
-										<del>
-											<span class="amout">$44.45</span>
-										</del>
-									</div>
-									<a href="product_single.html" class="add_to_cart_button"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</li>
-
-					<li class="item-product">
-						<div class="product-block">
-							<div class="product-image ">
-								<div class="product-thumbnail">
-									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_3.jpg" alt="">
-									</a>
-								</div>
-								<div class="product-actions">
-									<a href="#" data-id="" class="btn wishlist product-quick-whistlist" title="Add to whistlist">
-									<i class="fa fa-heart-o"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-view btn-quickview" title="Quickview">
-									    <i class="fa fa-eye"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-compare btn-compare" title="Compare">
-									    <i class="fa fa-retweet"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-caption">
-								<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-								<h4 class="product-title">
-									<a href="product_single.html" title="">Super Drinking YoungBoy</a>
-								</h4>
-								<div class="product-form-cart">
-									<div class="product-price">
-										<ins>
-											<span class="amout">$19.99</span>
-										</ins>
-										<del>
-											<span class="amout">$44.45</span>
-										</del>
-									</div>
-									<a href="product_single.html" class="add_to_cart_button"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="item-product">
-						<div class="product-block">
-							<div class="product-image ">
-								<div class="product-thumbnail">
-									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_4.jpg" alt="">
-									</a>
-								</div>
-								<div class="product-actions">
-									<a href="#" data-id="" class="btn wishlist product-quick-whistlist" title="Add to whistlist">
-									<i class="fa fa-heart-o"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-view btn-quickview" title="Quickview">
-									    <i class="fa fa-eye"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-compare btn-compare" title="Compare">
-									    <i class="fa fa-retweet"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-caption">
-								<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-								<h4 class="product-title">
-									<a href="product_single.html" title="">Burnout New Vegas Paradise</a>
-								</h4>
-								<div class="product-form-cart">
-									<div class="product-price">
-										<ins>
-											<span class="amout">$19.99</span>
-										</ins>
-										<del>
-											<span class="amout">$44.45</span>
-										</del>
-									</div>
-									<a href="product_single.html" class="add_to_cart_button"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="item-product">
-						<div class="product-block">
-							<div class="product-image ">
-								<div class="product-thumbnail">
-									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_5.jpg" alt="">
-									</a>
-								</div>
-								<div class="product-actions">
-									<a href="#" data-id="" class="btn wishlist product-quick-whistlist" title="Add to whistlist">
-									<i class="fa fa-heart-o"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-view btn-quickview" title="Quickview">
-									    <i class="fa fa-eye"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-compare btn-compare" title="Compare">
-									    <i class="fa fa-retweet"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-caption">
-								<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-								<h4 class="product-title">
-									<a href="product_single.html" title="">Burnout New Vegas Paradise</a>
-								</h4>
-								<div class="product-form-cart">
-									<div class="product-price">
-										<ins>
-											<span class="amout">$19.99</span>
-										</ins>
-										<del>
-											<span class="amout">$44.45</span>
-										</del>
-									</div>
-									<a href="product_single.html" class="add_to_cart_button"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="item-product">
-						<div class="product-block">
-							<div class="product-image ">
-								<div class="product-thumbnail">
-									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_6.jpg" alt="">
-									</a>
-								</div>
-								<div class="product-actions">
-									<a href="#" data-id="" class="btn wishlist product-quick-whistlist" title="Add to whistlist">
-									<i class="fa fa-heart-o"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-view btn-quickview" title="Quickview">
-									    <i class="fa fa-eye"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-compare btn-compare" title="Compare">
-									    <i class="fa fa-retweet"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-caption">
-								<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-								<h4 class="product-title">
-									<a href="product_single.html" title="">Homefront Modern Warfare</a>
-								</h4>
-								<div class="product-form-cart">
-									<div class="product-price">
-										<ins>
-											<span class="amout">$19.99</span>
-										</ins>
-										<del>
-											<span class="amout">$44.45</span>
-										</del>
-									</div>
-									<a href="product_single.html" class="add_to_cart_button"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="item-product">
-						<div class="product-block">
-							<div class="product-image ">
-								<div class="product-thumbnail">
-									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_2.jpg" alt="">
-									</a>
-								</div>
-								<div class="product-actions">
-									<a href="#" data-id="" class="btn wishlist product-quick-whistlist" title="Add to whistlist">
-									<i class="fa fa-heart-o"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-view btn-quickview" title="Quickview">
-									    <i class="fa fa-eye"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-compare btn-compare" title="Compare">
-									    <i class="fa fa-retweet"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-caption">
-								<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-								<h4 class="product-title">
-									<a href="product_single.html" title="">Revolution Darkside Resol</a>
-								</h4>
-								<div class="product-form-cart">
-									<div class="product-price">
-										<ins>
-											<span class="amout">$19.99</span>
-										</ins>
-										<del>
-											<span class="amout">$44.45</span>
-										</del>
-									</div>
-									<a href="product_single.html" class="add_to_cart_button"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-		    </div>
-	    </section>
-		<!-- =====================================
-	    	==== End Featured Products -->
-
-		<!-- =====================================
-	    	==== Start section-banner  -->
-        <section class="section-banner">
-        	<div class="container">
-        		<div class="row">
-        			<div class="col-md-6">
-						<div class="banner-image">
-							<div class="banner-image-inner">
-							   <img src="/themes/{{env('THEME_NAME')}}/assets/images/banner_1.jpg" alt="">
-							</div>
-							<div class="banner-meta text-white">
-								<h3 class="banner-meta__heading text-uppercase text-white">Sale off 50%</h3>
-								<p class="banner-meta__description d-none d-lg-block  text-white">Just enter<span class="color-primary">Punibor</span>as a <br/> discout code</p>
-								<a href="product_grid.html" class="btn btn-primary text-uppercase">shop now!</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="banner-image">
-							<div class="banner-image-inner">
-							   <img  src="/themes/{{env('THEME_NAME')}}/assets/images/banner_2.jpg" alt="">
-							</div>
-							<div class="banner-meta text-white">
-								<h3 class="banner-meta__heading text-uppercase text-white">Sale off</h3>
-								<h4 class="banner-meta__sale text-uppercase d-none d-lg-block text-white">35% off</h4>
-								<a href="product_grid.html" class="btn btn-primary text-uppercase">shop now!</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- =====================================
-	    	==== End section-banner -->
-
-		<!-- =====================================
-	    	==== Start Best seller  -->
-	    <section class="products">
-	    	<div class="container">
-		    	<div class="heading text-center">
-		    		<div class="heading__sub">For all Contemporary Stores</div>
-		    		<h2 class="heading__title">Best seller</h2>
-		    	</div>
-		    	<ul class="columns columns-4">
-					<li class="item-product">
-						<div class="product-block">
-							<div class="product-image ">
-								<div class="product-thumbnail">
-									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_1.jpg" alt="">
-									</a>
-								</div>
-								<div class="product-actions">
-									<a href="#" data-id="" class="btn wishlist product-quick-whistlist" title="Add to whistlist">
-									<i class="fa fa-heart-o"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-view btn-quickview" title="Quickview">
-									    <i class="fa fa-eye"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-compare btn-compare" title="Compare">
-									    <i class="fa fa-retweet"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-caption">
-								<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-								<h4 class="product-title">
-									<a href="product_single.html" title="">Costume Battle Quest</a>
-								</h4>
-								<div class="product-form-cart">
-									<div class="product-price">
-										<ins>
-											<span class="amout">$19.99</span>
-										</ins>
-										<del>
-											<span class="amout">$44.45</span>
-										</del>
-									</div>
-									<a href="product_single.html" class="add_to_cart_button"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</li>
-
-					<li class="item-product">
-						<div class="product-block">
-							<div class="product-image ">
-								<div class="product-thumbnail">
-									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_3.jpg" alt="">
-									</a>
-								</div>
-								<div class="product-actions">
-									<a href="#" data-id="" class="btn wishlist product-quick-whistlist" title="Add to whistlist">
-									<i class="fa fa-heart-o"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-view btn-quickview" title="Quickview">
-									    <i class="fa fa-eye"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-compare btn-compare" title="Compare">
-									    <i class="fa fa-retweet"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-caption">
-								<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-								<h4 class="product-title">
-									<a href="product_single.html" title="">Super Drinking YoungBoy</a>
-								</h4>
-								<div class="product-form-cart">
-									<div class="product-price">
-										<ins>
-											<span class="amout">$19.99</span>
-										</ins>
-										<del>
-											<span class="amout">$44.45</span>
-										</del>
-									</div>
-									<a href="product_single.html" class="add_to_cart_button"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="item-product">
-						<div class="product-block">
-							<div class="product-image ">
-								<div class="product-thumbnail">
-									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_4.jpg" alt="">
-									</a>
-								</div>
-								<div class="product-actions">
-									<a href="#" data-id="" class="btn wishlist product-quick-whistlist" title="Add to whistlist">
-									<i class="fa fa-heart-o"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-view btn-quickview" title="Quickview">
-									    <i class="fa fa-eye"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-compare btn-compare" title="Compare">
-									    <i class="fa fa-retweet"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-caption">
-								<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-								<h4 class="product-title">
-									<a href="product_single.html" title="">Burnout New Vegas Paradise</a>
-								</h4>
-								<div class="product-form-cart">
-									<div class="product-price">
-										<ins>
-											<span class="amout">$19.99</span>
-										</ins>
-										<del>
-											<span class="amout">$44.45</span>
-										</del>
-									</div>
-									<a href="product_single.html" class="add_to_cart_button"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="item-product">
-						<div class="product-block">
-							<div class="product-image ">
-								<div class="product-thumbnail">
-									<a href="product_single.html" title="">
-										<img class="product-featured-image" src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_5.jpg" alt="">
-									</a>
-								</div>
-								<div class="product-actions">
-									<a href="#" data-id="" class="btn wishlist product-quick-whistlist" title="Add to whistlist">
-									<i class="fa fa-heart-o"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-view btn-quickview" title="Quickview">
-									    <i class="fa fa-eye"></i>
-									</a>
-									<a href="" data-id="" class="btn product-quick-compare btn-compare" title="Compare">
-									    <i class="fa fa-retweet"></i>
-									</a>
-								</div>
-							</div>
-							<div class="product-caption">
-								<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-								<h4 class="product-title">
-									<a href="product_single.html" title="">Burnout New Vegas Paradise</a>
-								</h4>
-								<div class="product-form-cart">
-									<div class="product-price">
-										<ins>
-											<span class="amout">$19.99</span>
-										</ins>
-										<del>
-											<span class="amout">$44.45</span>
-										</del>
-									</div>
-									<a href="product_single.html" class="add_to_cart_button"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a>
-								</div>
-							</div>
-						</div>
-					</li>
+    <!-- Start Banner Hero -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="./assets/img/banner_img_01.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left align-self-center">
+                                <h1 class="h1 text-success"><b>Zay</b> eCommerce</h1>
+                                <h3 class="h2">Tiny and Perfect eCommerce Template</h3>
+                                <p>
+                                    Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1).
+                                    This template is 100% free provided by <a rel="sponsored" class="text-success" href="https://templatemo.com" target="_blank">TemplateMo</a> website.
+                                    Image credits go to <a rel="sponsored" class="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
+                                    <a rel="sponsored" class="text-success" href="https://unsplash.com/" target="_blank">Unsplash</a> and
+                                    <a rel="sponsored" class="text-success" href="https://icons8.com/" target="_blank">Icons 8</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="./assets/img/banner_img_02.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1">Proident occaecat</h1>
+                                <h3 class="h2">Aliquip ex ea commodo consequat</h3>
+                                <p>
+                                    You are permitted to use this Zay CSS template for your commercial websites.
+                                    You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="./assets/img/banner_img_03.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1">Repr in voluptate</h1>
+                                <h3 class="h2">Ullamco laboris nisi ut </h3>
+                                <p>
+                                    We bring you 100% free CSS templates for your websites.
+                                    If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    <!-- End Banner Hero -->
 
 
-				</ul>
-		    </div>
-	    </section>
-		<!-- =====================================
-	    	==== End Best seller -->
+    <!-- Start Categories of The Month -->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Categories of The Month</h1>
+                <p>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="./assets/img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Watches</h5>
+                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="./assets/img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Shoes</h2>
+                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="./assets/img/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
+                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- End Categories of The Month -->
 
-	    <!-- =====================================
-	    	==== Start products list carousel   -->
-	    <section class="products products_list">
-	    	<div class="container">
-	    		<div class="row">
-                    <div class="col-lg-4 col-md-12">
-				    	<div class="heading style_v2">
-				    		<h2 class="heading__title">Xtox One games</h2>
-				    	</div>
-				    	<div class="product-list product-block-list-carousel">
-				    		<div class="owl-carousel owl-theme" data-pagination="false" data-nav="true" data-items="1" data-large="1" data-medium="1" data-smallmedium="1" data-extrasmall="1" data-verysmall="1" data-autoplay="false">
-					            <div class="item">
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_4.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$19.99</span>
-													</ins>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_2.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$19.99</span>
-													</ins>
-													<del>
-														<span class="amout">$44.45</span>
-													</del>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_1.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$9.59</span>
-													</ins>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_2.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$19.99</span>
-													</ins>
-													<del>
-														<span class="amout">$44.45</span>
-													</del>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_1.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$10.9</span>
-													</ins>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_3.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$19.99</span>
-													</ins>
-													<del>
-														<span class="amout">$44.45</span>
-													</del>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12">
-				    	<div class="heading style_v2">
-				    		<h2 class="heading__title">PCool Stuff games</h2>
-				    	</div>
-				    	<div class="product-list product-block-list-carousel">
-				    		<div class="owl-carousel owl-theme" data-pagination="false" data-nav="true" data-items="1" data-large="1" data-medium="1" data-smallmedium="1" data-extrasmall="1" data-verysmall="1" data-autoplay="false">
-					            <div class="item">
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_8.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$19.99</span>
-													</ins>
-													<del>
-														<span class="amout">$44.45</span>
-													</del>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_7.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$39.79</span>
-													</ins>
 
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_3.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$19.99</span>
-													</ins>
-													<del>
-														<span class="amout">$44.45</span>
-													</del>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_1.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$8.99</span>
-													</ins>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_8.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$19.99</span>
-													</ins>
-													<del>
-														<span class="amout">$44.45</span>
-													</del>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_4.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$19.99</span>
-													</ins>
-
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12">
-				    	<div class="heading style_v2">
-				    		<h2 class="heading__title">laystorerim games</h2>
-				    	</div>
-				    	<div class="product-list product-block-list-carousel">
-				    		<div class="owl-carousel owl-theme" data-pagination="false" data-nav="true" data-items="1" data-large="1" data-medium="1" data-smallmedium="1" data-extrasmall="1" data-verysmall="1" data-autoplay="false">
-					            <div class="item">
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_5.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$19.99</span>
-													</ins>
-													<del>
-														<span class="amout">$44.45</span>
-													</del>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_4.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$25.2</span>
-													</ins>
-													<del>
-														<span class="amout">$44.45</span>
-													</del>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_2.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$21.99</span>
-													</ins>
-
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_4.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$7.5</span>
-													</ins>
-
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_3.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$19.99</span>
-													</ins>
-
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="product-list__item">
-										<div class="inner">
-											<a class="product-thumbnail" href="product_single.html">
-												<img src="/themes/{{env('THEME_NAME')}}/assets/images/product/product_2.jpg" alt="">
-											</a>
-											<div class="product-content">
-												<span class="posted_in"><a href="#" rel="tag">Xtox One1</a></span>
-												<h4 class="product-title">
-												<a href="product_single.html">After Shave Balm, 4 fl. oz.</a>
-												</h4>
-												<div class="product-price">
-													<ins>
-														<span class="amout">$29.99</span>
-													</ins>
-													<del>
-														<span class="amout">$34.45</span>
-													</del>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-		    </div>
-	    </section>
-		<!-- =====================================
-	    	==== End products list carousel   -->
-
-		 <!-- =====================================
-	    	==== Start testimonials  -->
-		<section class="testimonials section-bg clearfix" style="background-image:url(/themes/{{env('THEME_NAME')}}/assets/images/bg_testimonial.jpg)">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-5 col-md-12"></div>
-					<div class="col-lg-7 col-md-12 testimonials_content">
-		 				<div class="owl-carousel owl-theme" data-pagination="true" data-nav="false" data-items="1" data-large="1" data-medium="1" data-smallmedium="1" data-extrasmall="1" data-verysmall="1" data-autoplay="true">
-				            <div class="item">
-				             	<div class="testimonial_item">
-					                <cite>
-					                	Thinking of surnames can be a tedious task, whether the last name is for a character in a fictional book, game or for an alias. I am guessing you are here because you are an author and have found it difficult to think of a good surname.
-									</cite>
-					                <h3 class="testimonials__name">Norbert Wunsch</h3>
-					                <div class="testimonials__job">Developer Front-end</div>
-					            </div>
-				            </div>
-				            <div class="item">
-				             	<div class="testimonial_item">
-					                <cite>
-					                	Thinking of surnames can be a tedious task, whether the last name is for a character in a fictional book, game or for an alias. I am guessing you are here because you are an author and have found it difficult to think of a good surname.
-									</cite>
-					                <h3 class="testimonials__name">Norbert Wunsch</h3>
-					                <div class="testimonials__job">Developer Front-end</div>
-					            </div>
-				            </div>
-				            <div class="item">
-				             	<div class="testimonial_item">
-					                <cite>
-					                	Thinking of surnames can be a tedious task, whether the last name is for a character in a fictional book, game or for an alias. I am guessing you are here because you are an author and have found it difficult to think of a good surname.
-									</cite>
-					                <h3 class="testimonials__name">Norbert Wunsch</h3>
-					                <div class="testimonials__job">Developer Front-end</div>
-					            </div>
-				            </div>
-				        </div>
-		 			</div>
-				</div>
-			</div>
-		</section>
-		<!-- =====================================
-	    	==== End testimonials  -->
+    <!-- Start Featured Product -->
+    <section class="bg-light">
+        <div class="container py-5">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1">Featured Product</h1>
+                    <p>
+                        Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="shop-single.html">
+                            <img src="./assets/img/feature_prod_01.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">$240.00</li>
+                            </ul>
+                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Gym Weight</a>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
+                            </p>
+                            <p class="text-muted">Reviews (24)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="shop-single.html">
+                            <img src="./assets/img/feature_prod_02.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">$480.00</li>
+                            </ul>
+                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Cloud Nike Shoes</a>
+                            <p class="card-text">
+                                Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
+                            </p>
+                            <p class="text-muted">Reviews (48)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="shop-single.html">
+                            <img src="./assets/img/feature_prod_03.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">$360.00</li>
+                            </ul>
+                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Summer Addides Shoes</a>
+                            <p class="card-text">
+                                Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
+                            </p>
+                            <p class="text-muted">Reviews (74)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Featured Product -->
 
 @include('themes.default.inc.footer')
