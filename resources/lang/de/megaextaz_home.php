@@ -6,7 +6,7 @@ return [
     'exciting' => 'aufregend',
     'gum' => 'kaugummi',
     'now' => 'jetzt',
-    'now in Russia' => 'jetzt in Russland',
+    'now in Europe' => 'jetzt in Europa',
     'highest degree' => 'Höchster Abschluss',
     'ecstasy' => 'еkstase',
     'Leuzea' => 'Leuzea',

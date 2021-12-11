@@ -6,7 +6,7 @@ return [
     'exciting' => 'exciting',
     'gum' => 'gum',
     'now' => 'now',
-    'now in Russia' => 'now in Russia',
+    'now in Europe' => 'now in Europe',
     'highest degree' => 'highest degree',
     'ecstasy' => 'ecstasy',
     'Leuzea' => 'Leuzea',

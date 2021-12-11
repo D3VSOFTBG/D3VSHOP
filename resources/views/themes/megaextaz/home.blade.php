@@ -33,7 +33,7 @@
             <a class="logo" href="{{route('home')}}"><span>Mega Extaz</span> {{__('megaextaz_home.arousing gum')}}</a>
             <div class="left_side">
                 <h1>{{__('megaextaz_home.Unique')}} <br>{{__('megaextaz_home.exciting')}}
-                    <br>{{__('megaextaz_home.gum')}} Mega Extaz <br><b>{{__('megaextaz_home.now in Russia')}}</b></h1>
+                    <br>{{__('megaextaz_home.gum')}} Mega Extaz <br><b>{{__('megaextaz_home.now in Europe')}}</b></h1>
                 <p class="borders">{{__('megaextaz_home.highest degree')}}<br>{{__('megaextaz_home.ecstasy')}}!</p>
                 <ul class="composition">
                     <li class="li1">{{__('megaextaz_home.Leuzea')}}</li>

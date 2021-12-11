@@ -6,7 +6,7 @@ return [
     'exciting' => 'возбуждающая',
     'gum' => 'жвачка',
     'now' => 'теперь',
-    'now in Russia' => 'теперь в России',
+    'now in Europe' => 'теперь в Европа',
     'highest degree' => 'высшая степень',
     'ecstasy' => 'экстаза',
     'Leuzea' => 'Левзея',
