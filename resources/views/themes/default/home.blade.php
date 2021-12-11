@@ -19,8 +19,6 @@
         </div>
     </div>
 
-
-
     <!-- Start Banner Hero -->
     <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
