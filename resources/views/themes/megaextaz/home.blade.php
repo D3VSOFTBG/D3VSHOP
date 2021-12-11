@@ -187,7 +187,7 @@
                     <div class="faq_box">
                         <div class="faq_wrapp">
                             <h4>{{__('megaextaz_home.How to distinguish a fake?')}}</h4>
-                            <p>{{__('megaextaz_home.On the territory of Russia and the CIS, the only official supplier of Mega Extaz chewing gum is our company, you can place an order on the MEGAEXTAZ.COM website. Each product package has a unique identification code, you can check its authenticity on the website. If you find a fake, you can contact customer support, report an unscrupulous seller and exchange the fake for the original product.')}}</p>
+                            <p>{{__('megaextaz_home.On the territory of Europe and the CIS, the only official supplier of Mega Extaz chewing gum is our company, you can place an order on the MEGAEXTAZ.COM website. Each product package has a unique identification code, you can check its authenticity on the website. If you find a fake, you can contact customer support, report an unscrupulous seller and exchange the fake for the original product.')}}</p>
                             <p>{{__('megaextaz_home.If you did not find our unique CODE on the package, please contact our specialists for help!')}}</p>
                         </div>
                     </div>
