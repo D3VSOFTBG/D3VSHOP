@@ -54,7 +54,7 @@
                                         <span class="text-danger">*</span>
                                         Theme Name</label>
                                     <input name="theme_name" id="theme_name" type="text" class="form-control"
-                                        placeholder="Theme Name" value="{{env('THEME_NAME')}}" readonly required>
+                                        placeholder="Theme Name" value="{{env('THEME_NAME')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>
