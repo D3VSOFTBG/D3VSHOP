@@ -144,54 +144,49 @@
                                 <p class="text-muted"><strong>Easy Wear</strong></p>
                             </li>
                         </ul>
-
-                        <h6>Description:</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum
-                            convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <h6>Avaliable Color :</h6>
+                                <h6>SKU:</h6>
                             </li>
                             <li class="list-inline-item">
-                                <p class="text-muted"><strong>White / Black</strong></p>
+                                <p class="text-muted"><strong>{{$product->sku}}</strong></p>
                             </li>
                         </ul>
-
-                        <h6>Specification:</h6>
-                        <ul class="list-unstyled pb-3">
-                            <li>Lorem ipsum dolor sit</li>
-                            <li>Amet, consectetur</li>
-                            <li>Adipiscing elit,set</li>
-                            <li>Duis aute irure</li>
-                            <li>Ut enim ad minim</li>
-                            <li>Dolore magna aliqua</li>
-                            <li>Excepteur sint</li>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <h6>Serial number:</h6>
+                            </li>
+                            <li class="list-inline-item">
+                                <p class="text-muted"><strong>{{$product->serial_number}}</strong></p>
+                            </li>
+                        </ul>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <h6>Quantity:</h6>
+                            </li>
+                            <li class="list-inline-item">
+                                <p class="text-muted"><strong>{{$product->quantity}}</strong></p>
+                            </li>
+                        </ul>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <h6>Description:</h6>
+                            </li>
+                            <li class="list-inline-item">
+                                <p class="text-muted"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut
+                                    labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum
+                                    convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</strong></p>
+                            </li>
                         </ul>
 
                         <form action="" method="GET">
-                            <input type="hidden" name="product-title" value="Activewear">
+                            <input type="hidden" name="id" value="Activewear">
                             <div class="row">
-                                <div class="col-auto">
-                                    <ul class="list-inline pb-3">
-                                        <li class="list-inline-item">Size :
-                                            <input type="hidden" name="product-size" id="product-size" value="S">
-                                        </li>
-                                        <li class="list-inline-item"><span class="btn btn-success btn-size">S</span>
-                                        </li>
-                                        <li class="list-inline-item"><span class="btn btn-success btn-size">M</span>
-                                        </li>
-                                        <li class="list-inline-item"><span class="btn btn-success btn-size">L</span>
-                                        </li>
-                                        <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div class="col-auto">
                                     <ul class="list-inline pb-3">
                                         <li class="list-inline-item text-right">
                                             Quantity
-                                            <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                            <input type="hidden" name="quanity" id="quanity" value="1">
                                         </li>
                                         <li class="list-inline-item"><span class="btn btn-success"
                                                 id="btn-minus">-</span></li>
@@ -202,7 +197,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row pb-3">
+                            <div class="row">
                                 <div class="col d-grid">
                                     <button type="submit" class="btn btn-success btn-lg" name="submit"
                                         value="buy">Buy</button>
