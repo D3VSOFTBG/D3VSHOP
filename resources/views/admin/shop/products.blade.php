@@ -101,6 +101,10 @@
                                             <input name="brand" id="brand" type="text" class="form-control"
                                                 placeholder="Brand">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="description">Description</label>
+                                            <textarea class="form-control" id="description" rows="3" placeholder="Description"></textarea>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -289,6 +293,10 @@
                                                                         <input name="brand" id="brand" type="text" class="form-control"
                                                                             placeholder="Brand"
                                                                             value="{{$product->brand}}">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="description">Description</label>
+                                                                        <textarea class="form-control" id="description" rows="3" placeholder="Description">{{$product->description}}</textarea>
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">
