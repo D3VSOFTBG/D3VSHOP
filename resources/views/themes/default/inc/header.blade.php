@@ -35,7 +35,7 @@
                 <div>
                     <i class="fa fa-envelope mx-2"></i>
                     <a class="navbar-sm-brand text-light text-decoration-none"
-                        href="mailto:info@company.com">info@company.com</a>
+                        href="mailto:{{env('MAIL')}}">{{env('MAIL')}}</a>
                     <i class="fa fa-phone mx-2"></i>
                     <a class="navbar-sm-brand text-light text-decoration-none"
                         href="tel:{{env('PHONE')}}">{{env('PHONE')}}</a>
@@ -105,11 +105,17 @@
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                        <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
-                    </a>
+                    <div class="nav-icon position-relative text-decoration-none dropdown" href="#">
+                        <i class="fa fa-fw fa-user text-dark mr-3 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                            @if (Auth::check())
+                            <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                            @else
+                            <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
+                            <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
+                            @endif
+                        </ul>
+                    </div>
                 </div>
             </div>
 

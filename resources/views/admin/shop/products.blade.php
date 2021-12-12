@@ -151,7 +151,7 @@
                                                 {{$product->id}}
                                             </td>
                                             <td class="align-middle">
-                                                <img class="w-100 h-100" src="{{env('PRODUCTS_IMG_PATH')}}{{$product->image}}" alt="Image">
+                                                <img class="w-100 h-100" src="{{asset("/storage/img/products/$product->image")}}" alt="Image">
                                             </td>
                                             <td class="align-middle">
                                                 {{$product->name}}
@@ -218,7 +218,7 @@
                                                                                 Image</label>
                                                                             <div class="card-body">
                                                                                 <p class="card-text">
-                                                                                    <img class="w-100 h-100" src="{{env('PRODUCTS_IMG_PATH')}}{{$product->image}}"
+                                                                                    <img class="w-100 h-100" src="{{asset("/storage/img/products/$product->image")}}"
                                                                                         alt="Image">
                                                                                 </p>
                                                                                 <input name="image" type="file" class="form-control-file" id="image"
