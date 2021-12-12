@@ -1,4 +1,4 @@
-@section('page_name'){{ 'Home' }}@endsection
+@section('page_name'){{ 'Shop' }}@endsection
 
 @include('themes.default.inc.header')
 
