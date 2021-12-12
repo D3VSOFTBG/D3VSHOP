@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->unsignedBigInteger('serial_number');
             $table->string('sku');
+            $table->string('brand');
             $table->timestamps();
         });
     }

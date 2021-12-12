@@ -95,6 +95,13 @@
                                             <input name="sku" id="sku" type="text" class="form-control"
                                                 placeholder="SKU" required>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="brand">
+                                                <span class="text-danger">*</span>
+                                                Brand</label>
+                                            <input name="brand" id="brand" type="text" class="form-control"
+                                                placeholder="Brand">
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -276,6 +283,13 @@
                                                                         <input name="sku" id="sku" type="text" class="form-control"
                                                                             placeholder="SKU"
                                                                             value="{{$product->sku}}" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="brand">
+                                                                            Brand</label>
+                                                                        <input name="brand" id="brand" type="text" class="form-control"
+                                                                            placeholder="Brand"
+                                                                            value="{{$product->brand}}" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">

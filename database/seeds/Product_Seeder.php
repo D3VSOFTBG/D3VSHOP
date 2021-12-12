@@ -23,6 +23,7 @@ class Product_Seeder extends Seeder
                     'quantity' => 3,
                     'serial_number' => 123123312,
                     'sku' => 100,
+                    'brand' => 'Dell',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
@@ -35,6 +36,7 @@ class Product_Seeder extends Seeder
                     'quantity' => 8,
                     'serial_number' => 12213132132,
                     'sku' => 223,
+                    'brand' => 'Asus',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ]
