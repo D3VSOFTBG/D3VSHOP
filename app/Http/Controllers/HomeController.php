@@ -32,12 +32,27 @@ class HomeController extends Controller
     }
     public function shop()
     {
+        $products = Product::all();
+        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
         $data = [
-
+            'products' => $products,
+            'default_currency_code' => $default_currency_code,
         ];
 
         return view('themes.'.env('THEME_NAME').'.shop', $data);
+    }
+    public function product()
+    {
+        $product = Product::first();
+        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
+
+        $data = [
+            'product' => $product,
+            'default_currency_code' => $default_currency_code,
+        ];
+
+        return view('themes.'.env('THEME_NAME').'.product', $data);
     }
     public function contact()
     {
