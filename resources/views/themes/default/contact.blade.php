@@ -45,7 +45,7 @@
         }).addTo(mymap);
 
         L.marker([-23.013104, -43.394365, 13]).addTo(mymap)
-            .bindPopup("<b>Zay</b> eCommerce Template<br />Location.").openPopup();
+            .bindPopup("<b>{{env('SHOP_NAME')}}</b><br />Location.").openPopup();
 
         mymap.scrollWheelZoom.disable();
         mymap.touchZoom.disable();
