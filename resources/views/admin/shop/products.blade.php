@@ -97,7 +97,6 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="brand">
-                                                <span class="text-danger">*</span>
                                                 Brand</label>
                                             <input name="brand" id="brand" type="text" class="form-control"
                                                 placeholder="Brand">
