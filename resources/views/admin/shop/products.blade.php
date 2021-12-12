@@ -288,7 +288,7 @@
                                                                             Brand</label>
                                                                         <input name="brand" id="brand" type="text" class="form-control"
                                                                             placeholder="Brand"
-                                                                            value="{{$product->brand}}" required>
+                                                                            value="{{$product->brand}}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">

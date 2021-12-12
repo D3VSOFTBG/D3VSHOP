@@ -136,14 +136,16 @@
                             <i class="fa fa-star text-secondary"></i>
                             <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
                         </p>
+                        @if ($product->brand)
                         <ul class="list-inline">
                             <li class="list-inline-item">
                                 <h6>Brand:</h6>
                             </li>
                             <li class="list-inline-item">
-                                <p class="text-muted"><strong>Easy Wear</strong></p>
+                                <p class="text-muted"><strong>{{$product->brand}}</strong></p>
                             </li>
                         </ul>
+                        @endif
                         <ul class="list-inline">
                             <li class="list-inline-item">
                                 <h6>SKU:</h6>
