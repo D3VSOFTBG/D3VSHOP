@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('serial_number');
             $table->string('sku');
             $table->string('brand')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
