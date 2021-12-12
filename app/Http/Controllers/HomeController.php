@@ -22,6 +22,31 @@ class HomeController extends Controller
 
         return view('themes.'.env('THEME_NAME').'.home', $data);
     }
+    public function about()
+    {
+        $data = [
+
+        ];
+
+        return view('themes.'.env('THEME_NAME').'.about', $data);
+    }
+    public function shop()
+    {
+
+        $data = [
+
+        ];
+
+        return view('themes.'.env('THEME_NAME').'.shop', $data);
+    }
+    public function contact()
+    {
+        $data = [
+
+        ];
+
+        return view('themes.'.env('THEME_NAME').'.contact', $data);
+    }
     function success()
     {
         return redirect(route('home'))->with('success', 'Thanks for your order!');
