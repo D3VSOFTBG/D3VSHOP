@@ -203,6 +203,12 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
+                                    <label for="mail">
+                                        <span class="text-danger">*</span>
+                                        Mail</label>
+                                    <input name="mail" id="mail" type="text" class="form-control" placeholder="Mail" value="{{env('MAIL')}}" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="address">
                                         <span class="text-danger">*</span>
                                         Address</label>
