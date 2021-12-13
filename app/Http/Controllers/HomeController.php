@@ -72,8 +72,10 @@ class HomeController extends Controller
     }
     public function cart()
     {
-        $data = [
+        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
+        $data = [
+            'default_currency_code' => $default_currency_code,
         ];
 
         return view('themes.'.env('THEME_NAME').'.cart', $data);
@@ -93,7 +95,8 @@ class HomeController extends Controller
             $cart[$request->id] = [
                 "name" => $product->name,
                 "quantity" => $request->quantity,
-                "price" => discounted_price($product->price, $product->discount),
+                "discount" => $request->discount,
+                "price" => $product->price,
                 "image" => $product->image,
             ];
         }

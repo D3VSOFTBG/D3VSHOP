@@ -27,13 +27,20 @@
                         {{$cart['name']}}
                     </td>
                     <td>
+                        @if (if_discounted($cart['discount']))
+                        <del>{{$cart['price']}}</del>
+                        ({{discounted_price($cart['price'], $cart['discount'])}})
+                        @else
                         {{$cart['price']}}
+                        @endif
+                        <strong>{{$default_currency_code}}</strong>
                     </td>
                     <td>
                         {{$cart['quantity']}}
                     </td>
                     <td>
-                        {{$cart['price'] * $cart['quantity']}}
+                        {{discounted_price($cart['price'], $cart['discount']) * $cart['quantity']}}
+                        <strong>{{$default_currency_code}}</strong>
                     </td>
                 </tr>
                 @endforeach
