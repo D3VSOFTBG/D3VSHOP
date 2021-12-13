@@ -70,6 +70,14 @@ class HomeController extends Controller
 
         return view('themes.'.env('THEME_NAME').'.contact', $data);
     }
+    public function cart()
+    {
+        $data = [
+
+        ];
+
+        return view('themes.'.env('THEME_NAME').'.cart', $data);
+    }
     public function add_to_cart(Request $request)
     {
         $product = Product::findOrFail($request->id);
