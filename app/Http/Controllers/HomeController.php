@@ -70,6 +70,30 @@ class HomeController extends Controller
 
         return view('themes.'.env('THEME_NAME').'.contact', $data);
     }
+    public function add_to_cart($id)
+    {
+        $product = Product::findOrFail($id);
+
+        $cart = session()->get('cart', []);
+
+        if(isset($cart[$id]))
+        {
+            $cart[$id]['quantity']++;
+        }
+        else
+        {
+            $cart[$id] = [
+                "name" => $product->name,
+                "quantity" => 1,
+                "price" => $product->price,
+                "image" => $product->image,
+            ];
+        }
+
+        session()->put('cart', $cart);
+
+        return back();
+    }
     function success()
     {
         return redirect(route('home'))->with('success', 'Thanks for your order!');

@@ -134,7 +134,7 @@
                             <i class="fa fa-star text-warning"></i>
                             <i class="fa fa-star text-warning"></i>
                             <i class="fa fa-star text-secondary"></i>
-                            <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
+                            <span class="list-inline-item text-dark">Rating 4.8</span>
                         </p>
                         @if ($product->brand)
                         <ul class="list-inline">
@@ -170,16 +170,16 @@
                                 <p class="text-muted"><strong>{{$product->quantity}}</strong></p>
                             </li>
                         </ul>
+                        @if ($product->description)
                         <ul class="list-inline">
                             <li class="list-inline-item">
                                 <h6>Description:</h6>
                             </li>
                             <li class="list-inline-item">
-                                <p class="text-muted"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut
-                                    labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum
-                                    convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</strong></p>
+                                <p class="text-muted"><strong>{{$product->description}}</strong></p>
                             </li>
                         </ul>
+                        @endif
 
                         <form action="" method="GET">
                             <input type="hidden" name="id" value="Activewear">
@@ -200,10 +200,6 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col d-grid">
-                                    <button type="submit" class="btn btn-success btn-lg" name="submit"
-                                        value="buy">Buy</button>
-                                </div>
                                 <div class="col d-grid">
                                     <button type="submit" class="btn btn-success btn-lg" name="submit"
                                         value="addtocard">Add To Cart</button>
