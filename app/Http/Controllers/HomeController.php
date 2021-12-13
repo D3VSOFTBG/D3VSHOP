@@ -74,8 +74,18 @@ class HomeController extends Controller
     {
         $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
+        $prices_array = array();
+
+        foreach(session()->get('cart') as $cart)
+        {
+            array_push($prices_array, discounted_price($cart['price'], $cart['discount']) * $cart['quantity']);
+        }
+
+        $cart_total_sum = array_sum($prices_array);
+
         $data = [
             'default_currency_code' => $default_currency_code,
+            'cart_total_sum' => $cart_total_sum,
         ];
 
         return view('themes.'.env('THEME_NAME').'.cart', $data);
@@ -95,7 +105,7 @@ class HomeController extends Controller
             $cart[$request->id] = [
                 "name" => $product->name,
                 "quantity" => $request->quantity,
-                "discount" => $request->discount,
+                "discount" => $product->discount,
                 "price" => $product->price,
                 "image" => $product->image,
             ];

@@ -45,6 +45,27 @@
                 </tr>
                 @endforeach
             </table>
+
+            <table class="table table-bordered w-25" style="float:right">
+                <tr>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>
+                        {{cart_count()}}
+                    </td>
+                    <td>
+                        {{$cart_total_sum}}
+                        <strong>{{$default_currency_code}}</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button class="btn btn-primary w-100">Buy</button>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
