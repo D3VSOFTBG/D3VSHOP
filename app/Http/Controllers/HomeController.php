@@ -93,7 +93,7 @@ class HomeController extends Controller
             $cart[$request->id] = [
                 "name" => $product->name,
                 "quantity" => $request->quantity,
-                "price" => $product->price,
+                "price" => discounted_price($product->price, $product->discount),
                 "image" => $product->image,
             ];
         }
