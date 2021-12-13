@@ -181,21 +181,19 @@
                         </ul>
                         @endif
 
-                        <form action="" method="GET">
-                            <input type="hidden" name="id" value="Activewear">
+                        <form action="{{route('add_to_cart')}}" method="post">
+                            @csrf
+
+                            <input type="hidden" name="id" value="{{$product->id}}">
                             <div class="row">
                                 <div class="col-auto">
                                     <ul class="list-inline pb-3">
                                         <li class="list-inline-item text-right">
                                             Quantity
-                                            <input type="hidden" name="quanity" id="quanity" value="1">
                                         </li>
-                                        <li class="list-inline-item"><span class="btn btn-success"
-                                                id="btn-minus">-</span></li>
-                                        <li class="list-inline-item"><span class="badge bg-secondary"
-                                                id="var-value">1</span></li>
-                                        <li class="list-inline-item"><span class="btn btn-success"
-                                                id="btn-plus">+</span></li>
+                                        <li class="list-inline-item">
+                                            <input type="number" class="form-control" name="quantity" id="quantity" value="1">
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

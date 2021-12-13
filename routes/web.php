@@ -27,6 +27,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/success', [HomeController::class, 'success'])->name('success');
 Route::get('/cancel', [HomeController::class, 'cancel'])->name('cancel');
 Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
+Route::post('/cart', [HomeController::class, 'cart'])->name('cart');
 Route::post('/add_to_cart', [HomeController::class, 'add_to_cart'])->name('add_to_cart');
 Route::post('/stripe', [StripeController::class, 'post'])->name('stripe');
 Route::get('/stripe', function () {

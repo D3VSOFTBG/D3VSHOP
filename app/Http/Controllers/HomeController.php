@@ -70,21 +70,21 @@ class HomeController extends Controller
 
         return view('themes.'.env('THEME_NAME').'.contact', $data);
     }
-    public function add_to_cart($id)
+    public function add_to_cart(Request $request)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::findOrFail($request->id);
 
-        $cart = session()->get('cart', []);
+        $cart = session()->get('cart');
 
-        if(isset($cart[$id]))
+        if(isset($cart[$request->id]))
         {
-            $cart[$id]['quantity']++;
+            $cart[$request->id]['quantity'] = $cart[$request->id]['quantity'] + $request->quantity;
         }
         else
         {
-            $cart[$id] = [
+            $cart[$request->id] = [
                 "name" => $product->name,
-                "quantity" => 1,
+                "quantity" => $request->quantity,
                 "price" => $product->price,
                 "image" => $product->image,
             ];

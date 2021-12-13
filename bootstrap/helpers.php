@@ -13,6 +13,15 @@ function user_count()
 {
     return User::all('id')->count();
 }
+function cart_count()
+{
+    if(session()->has('cart'))
+    {
+        $cart = session()->get('cart');
+
+        return array_sum(array_column($cart, 'quantity'));
+    }
+}
 function gravatar($email)
 {
     return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) );
