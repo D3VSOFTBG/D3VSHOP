@@ -6,22 +6,37 @@
 <div class="container py-5">
     <div class="row">
         <div class="col">
-            <table>
+            <table class="table table-bordered">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Total
+                    </th>
+                </tr>
+                @foreach (session()->get('cart') as $cart)
                 <tr>
                     <td>
-                        asd
+                        {{$cart['name']}}
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        asd
+                        {{$cart['price']}}
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        asd
+                        {{$cart['quantity']}}
+                    </td>
+                    <td>
+                        {{$cart['price'] * $cart['quantity']}}
                     </td>
                 </tr>
+                @endforeach
             </table>
         </div>
     </div>
