@@ -21,6 +21,10 @@ function cart_count()
 
         return array_sum(array_column($cart, 'quantity'));
     }
+    else
+    {
+        return 0;
+    }
 }
 function gravatar($email)
 {

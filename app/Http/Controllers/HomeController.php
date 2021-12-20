@@ -76,9 +76,12 @@ class HomeController extends Controller
 
         $prices_array = array();
 
-        foreach(session()->get('cart') as $cart)
+        if(session()->has('cart'))
         {
-            array_push($prices_array, discounted_price($cart['price'], $cart['discount']) * $cart['quantity']);
+            foreach(session()->get('cart') as $cart)
+            {
+                array_push($prices_array, discounted_price($cart['price'], $cart['discount']) * $cart['quantity']);
+            }
         }
 
         $cart_total_sum = array_sum($prices_array);

@@ -21,29 +21,34 @@
                         Total
                     </th>
                 </tr>
-                @foreach (session()->get('cart') as $cart)
-                <tr>
-                    <td>
-                        {{$cart['name']}}
-                    </td>
-                    <td>
-                        @if (if_discounted($cart['discount']))
-                        <del>{{$cart['price']}}</del>
-                        ({{discounted_price($cart['price'], $cart['discount'])}})
-                        @else
-                        {{$cart['price']}}
-                        @endif
-                        <strong>{{$default_currency_code}}</strong>
-                    </td>
-                    <td>
-                        {{$cart['quantity']}}
-                    </td>
-                    <td>
-                        {{discounted_price($cart['price'], $cart['discount']) * $cart['quantity']}}
-                        <strong>{{$default_currency_code}}</strong>
-                    </td>
-                </tr>
-                @endforeach
+                @if (session()->has('cart'))
+                    @foreach (session()->get('cart') as $cart)
+                        <tr>
+                            <td>
+                                {{$cart['name']}}
+                            </td>
+                            <td>
+                                @if (if_discounted($cart['discount']))
+                                <del>{{$cart['price']}}</del>
+                                ({{discounted_price($cart['price'], $cart['discount'])}})
+                                @else
+                                {{$cart['price']}}
+                                @endif
+                                <strong>{{$default_currency_code}}</strong>
+                            </td>
+                            <td>
+                                {{$cart['quantity']}}
+                            </td>
+                            <td>
+                                {{discounted_price($cart['price'], $cart['discount']) * $cart['quantity']}}
+                                <strong>{{$default_currency_code}}</strong>
+                            </td>
+                        </tr>
+                    @endforeach
+                @else
+
+                @endif
+
             </table>
 
             <table class="table table-bordered w-25" style="float:right">
