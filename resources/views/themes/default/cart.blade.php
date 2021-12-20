@@ -46,9 +46,12 @@
                         </tr>
                     @endforeach
                 @else
-
+                    <tr>
+                        <td colspan="4" class="text-center">
+                            Your cart is empty.
+                        </td>
+                    </tr>
                 @endif
-
             </table>
 
             <table class="table table-bordered w-25" style="float:right">
