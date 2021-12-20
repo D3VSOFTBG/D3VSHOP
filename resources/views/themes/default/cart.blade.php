@@ -54,7 +54,7 @@
                 @endif
             </table>
 
-            <table class="table table-bordered w-25" style="float:right">
+            <table class="table table-bordered w-25 m-0" style="float:right">
                 <tr>
                     <th>Quantity</th>
                     <th>Total</th>
