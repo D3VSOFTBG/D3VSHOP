@@ -84,9 +84,9 @@
 
     <div class="w-100 bg-black py-3">
         <div class="container">
-            <div class="row pt-2">
+            <div class="row">
                 <div class="col-12">
-                    <p class="text-left text-light">
+                    <p class="text-left text-light m-0">
                         Copyright &copy; 2021 {{env('SHOP_NAME')}}
                     </p>
                 </div>
