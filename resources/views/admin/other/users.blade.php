@@ -17,7 +17,7 @@
                             </button>
                         </a>
                     </h1>
-                    <form action="{{route('admin.users.create')}}" method="post" class="d-inline">
+                    <form action="{{route('admin.other.users.create')}}" method="post" class="d-inline">
                         @csrf
                         <!-- Modal -->
                         <div class="modal fade" id="create_user" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -136,7 +136,7 @@
                                                 {{$user->created_at}}
                                             </td>
                                             <td class="align-middle">
-                                                <form action="{{route('admin.users.delete')}}" method="post"
+                                                <form action="{{route('admin.other.users.delete')}}" method="post"
                                                     class="d-inline"
                                                     onclick="if(!confirm('Delete ({{$user->name}}).')){return false;}">
                                                     @csrf
@@ -145,7 +145,7 @@
                                                         data-placement="top" title="Delete">
                                                         <i class="fas fa-trash"></i></button>
                                                 </form>
-                                                <form action="{{route('admin.users.edit')}}" method="post" class="d-inline">
+                                                <form action="{{route('admin.other.users.edit')}}" method="post" class="d-inline">
                                                     @csrf
                                                     <a data-toggle="modal" data-target="#edit_user_{{$user->id}}">
                                                         <button type="button" class="btn btn-success"

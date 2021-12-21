@@ -139,7 +139,39 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item @if (str_contains(Request::url(), 'other')) menu-open @endif">
+                            <a href="#" class="nav-link @if (str_contains(Request::url(), 'other')) active @endif">
+                                <i class="nav-icon fas fa-question-circle"></i>
+                                <p>
+                                    Other
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.other.users')}}" class="nav-link @if (Route::currentRouteName() == 'admin.other.users') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Users</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.other.settings')}}" class="nav-link @if (Route::currentRouteName() == 'admin.other.settings') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Settings</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.other.information')}}" class="nav-link @if (Route::currentRouteName() == 'admin.other.information') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Information</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+                        {{-- <li class="nav-item">
                             <a href="{{route('admin.users')}}"
                                 class="nav-link @if (Route::currentRouteName() == 'admin.users') active @endif">
                                 <i class="nav-icon fas fa-users"></i>
@@ -165,7 +197,7 @@
                                     Information
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

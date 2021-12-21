@@ -27,7 +27,7 @@ class AdminController extends Controller
             'orders' => $orders,
         ];
 
-        return view('admin.dashboard', $data);
+        return view('admin.other.dashboard', $data);
     }
     function users()
     {
@@ -39,11 +39,11 @@ class AdminController extends Controller
             'roles' => $roles,
         ];
 
-        return view('admin.users', $data);
+        return view('admin.other.users', $data);
     }
     function information()
     {
-        return view('admin.information');
+        return view('admin.other.information');
     }
     function shop_products()
     {
@@ -238,7 +238,7 @@ class AdminController extends Controller
             'default_currency_code' => $default_currency_code,
         ];
 
-        return view('admin.settings', $data);
+        return view('admin.other.settings', $data);
     }
     function settings_post(Request $request)
     {
