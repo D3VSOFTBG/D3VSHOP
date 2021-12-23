@@ -27,7 +27,7 @@ class AdminController extends Controller
             'orders' => $orders,
         ];
 
-        return view('admin.other.dashboard', $data);
+        return view('admin.dashboard', $data);
     }
     function users()
     {
