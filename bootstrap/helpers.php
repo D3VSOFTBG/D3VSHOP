@@ -4,7 +4,9 @@ use App\Role;
 use App\User;
 use App\Stripe;
 use App\Currency;
+use App\Order;
 use App\Ordered_Product;
+use App\Product;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -12,6 +14,14 @@ use Illuminate\Support\Facades\Log;
 function user_count()
 {
     return User::all('id')->count();
+}
+function product_count()
+{
+    return Product::all('id')->count();
+}
+function order_count()
+{
+    return Order::all('id')->count();
 }
 function cart_count()
 {
