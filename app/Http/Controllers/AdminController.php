@@ -142,18 +142,6 @@ class AdminController extends Controller
         Artisan::call('cache:clear');
 
         return back();
-
-        // $update_details = [
-        //     'environment' => environment($request),
-        //     'test_webhook_secret' => $request->test_webhook_secret,
-        //     'test_publishable_key' => $request->test_publishable_key,
-        //     'test_secret_key' => $request->test_secret_key,
-        //     'live_webhook_secret' => $request->live_webhook_secret,
-        //     'live_publishable_key' => $request->live_publishable_key,
-        //     'live_secret_key' => $request->live_secret_key,
-        // ];
-
-        // DB::table('stripe')->where('id', 1)->update($update_details);
     }
     function product_create(Request $request)
     {
