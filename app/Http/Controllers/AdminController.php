@@ -71,10 +71,7 @@ class AdminController extends Controller
             array_push($order_ids, $order->id);
         }
 
-        // Log::info($order_ids);
-
         $ordered_products = Ordered_Product::whereIn('order_id', $order_ids)->get();
-        // $ordered_products = Ordered_Product::all();
         $currencies = Currency::all();
 
         $data = [
