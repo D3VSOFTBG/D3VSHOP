@@ -23,12 +23,12 @@
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="info-box">
-                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+                        <span class="info-box-icon bg-info elevation-1"><i class="fab fa-php"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text">Soon</span>
+                            <span class="info-box-text">PHP</span>
                             <span class="info-box-number">
-                                N/A
+                                {{phpversion()}}
                             </span>
                         </div>
                         <!-- /.info-box-content -->
