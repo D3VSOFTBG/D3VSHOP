@@ -192,7 +192,7 @@ class AdminController extends Controller
             'sku' => 'required',
         ]);
 
-        $products = Product::find($request->id);
+        $products = Product::findOrFail($request->id);
 
         if($products->name != $request->name)
         {
@@ -231,7 +231,7 @@ class AdminController extends Controller
     }
     function product_delete(Request $request)
     {
-        Product::find($request->id)->delete();
+        Product::findOrFail($request->id)->delete();
         return back();
     }
     function settings_get()
@@ -393,12 +393,12 @@ class AdminController extends Controller
     }
     function user_delete(Request $request)
     {
-        User::find($request->id)->delete();
+        User::findOrFail($request->id)->delete();
         return back();
     }
     function user_edit(Request $request)
     {
-        $users = User::find($request->id);
+        $users = User::findOrFail($request->id);
 
         $request->validate([
             'name' => 'required',
