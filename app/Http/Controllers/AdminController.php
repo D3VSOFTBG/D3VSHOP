@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Carrier;
 use App\Currency;
 use App\Product;
 use App\Setting;
@@ -45,7 +46,7 @@ class AdminController extends Controller
     {
         return view('admin.other.information');
     }
-    function shop_products()
+    function products()
     {
         $products = Product::orderBy('id', 'DESC')->paginate(env('PAGINATION_ADMIN'));
         $currencies = Currency::all();
@@ -59,7 +60,17 @@ class AdminController extends Controller
 
         return view('admin.shop.products', $data);
     }
-    function shop_orders()
+    function carriers()
+    {
+        $carriers = Carrier::orderBy('id', 'DESC')->paginate(env('PAGINATION_ADMIN'));
+
+        $data = [
+            'carriers' => $carriers,
+        ];
+
+        return view('admin.shop.carriers', $data);
+    }
+    function orders()
     {
         $orders = DB::table('orders')->select('orders.*', DB::raw('(SELECT IF(coalesce(sum(ordered_products.price), "") = "", "0", sum(ordered_products.price)) FROM ordered_products ordered_products WHERE ordered_products.order_id = orders.id) as total'))->paginate(env('PAGINATION_ADMIN'));
 
@@ -382,14 +393,6 @@ class AdminController extends Controller
         Artisan::call('cache:clear');
 
         return back();
-
-        // DB::update(
-        //     "UPDATE settings SET value = CASE WHEN id = 1 THEN ? WHEN id = 2 THEN ? WHEN id = 3 THEN ? WHEN id = 4 THEN ? END WHERE ID IN (1, 2, 3, 4)",
-        //     [$request->shop_name, $request->title_seperator, $request->default_currency_id, $request->theme_name]
-        // );
-
-        // Delete all cache
-        //Cache::flush();
     }
     function user_delete(Request $request)
     {

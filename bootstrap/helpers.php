@@ -1,5 +1,6 @@
 <?php
 
+use App\Carrier;
 use App\Role;
 use App\User;
 use App\Stripe;
@@ -22,6 +23,10 @@ function product_count()
 function order_count()
 {
     return Order::all('id')->count();
+}
+function carrier_count()
+{
+    return Carrier::all('id')->count();
 }
 function cart_count()
 {
