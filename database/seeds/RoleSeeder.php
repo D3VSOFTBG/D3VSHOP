@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class Role_Seeder extends Seeder
+class RoleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
