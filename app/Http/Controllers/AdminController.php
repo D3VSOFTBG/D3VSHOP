@@ -154,30 +154,30 @@ class AdminController extends Controller
             'sku' => 'required',
         ]);
 
-        $products = new Product();
-        $products->slug = strtolower(trim(preg_replace('/\s+/', '-', $request->name))) . time();
+        $product = new Product();
+        $product->slug = uniqid() . '-' . strtolower(trim(preg_replace('/\s+/', '-', $request->name)));
 
         // image
-        $new_image_name = time() . '.' . $request->image->extension();
+        $new_image_name = md5(uniqid(rand(), true)) . '.' . $request->image->extension();
         $request->image->move(public_path('/storage/img/products/'), $new_image_name);
-        $products->image = $new_image_name;
+        $product->image = $new_image_name;
 
-        $products->name = $request->name;
-        $products->price = $request->price;
+        $product->name = $request->name;
+        $product->price = $request->price;
 
         if(isset($request->discount))
         {
             $request->validate([
                 'discount' => 'integer|min:0|max:100',
             ]);
-            $products->discount = $request->discount;
+            $product->discount = $request->discount;
         }
 
-        $products->quantity = $request->quantity;
-        $products->serial_number = $request->serial_number;
-        $products->sku = $request->sku;
-        $products->brand = $request->brand;
-        $products->save();
+        $product->quantity = $request->quantity;
+        $product->serial_number = $request->serial_number;
+        $product->sku = $request->sku;
+        $product->brand = $request->brand;
+        $product->save();
 
         return back();
     }
@@ -195,7 +195,7 @@ class AdminController extends Controller
 
         if($products->name != $request->name)
         {
-            $products->slug = strtolower(trim(preg_replace('/\s+/', '-', $request->name))) . time();
+            $products->slug = uniqid() . '-' . strtolower(trim(preg_replace('/\s+/', '-', $request->name)));
         }
 
         if(isset($request->image))
@@ -204,7 +204,7 @@ class AdminController extends Controller
                 'image' => 'required|image|max:2048',
             ]);
             // image
-            $new_image_name = time() . '.' . $request->image->extension();
+            $new_image_name = md5(uniqid(rand(), true)) . '.' . $request->image->extension();
             $request->image->move(public_path('/storage/img/products/'), $new_image_name);
             $products->image = $new_image_name;
         }
@@ -232,6 +232,20 @@ class AdminController extends Controller
     {
         Product::findOrFail($request->id)->delete();
         return back();
+    }
+    function carrier_create(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'logo' => 'required|image|max:2048',
+            'description' => 'required',
+            'status' => 'required',
+            'free_shipping' => 'required',
+        ]);
+
+        $carrier = new Carrier();
+
+
     }
     function settings_get()
     {
@@ -363,7 +377,7 @@ class AdminController extends Controller
                 'favicon' => 'required|image|max:2048',
             ]);
             // image
-            $new_image_name = time() . '.' . $request->favicon->extension();
+            $new_image_name = md5(uniqid(rand(), true)) . '.' . $request->favicon->extension();
             $request->favicon->move(public_path('/storage/img/global/'), $new_image_name);
             env_update('FAVICON', $new_image_name);
         }
@@ -373,7 +387,7 @@ class AdminController extends Controller
                 'logo' => 'required|image|max:2048',
             ]);
             // image
-            $new_image_name = time() . '.' . $request->logo->extension();
+            $new_image_name = md5(uniqid(rand(), true)) . '.' . $request->logo->extension();
             $request->logo->move(public_path('/storage/img/global/'), $new_image_name);
             env_update('LOGO', $new_image_name);
         }
