@@ -43,10 +43,10 @@
                                 <div class="form-group">
                                     <form action="" method="post">
                                         <div class="input-group">
-                                            <button type="submit" class="btn btn-primary">-</button>
+                                            <button type="submit" class="btn btn-primary" name="-">-</button>
                                             <input class="form-control text-center" type="number" name="quantity"
                                                 value="{{$cart['quantity']}}" readonly>
-                                            <button type="submit" class="btn btn-primary">+</button>
+                                            <button type="submit" class="btn btn-primary" name="+">+</button>
                                         </div>
                                     </form>
                                 </div>
