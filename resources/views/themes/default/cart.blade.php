@@ -39,15 +39,16 @@
                                 @endif
                                 <strong>{{$default_currency_code}}</strong>
                             </td>
-                            <td class="align-middle w-25">
+                            <td class="align-middle" style="width: 200px;">
                                 <div class="form-group">
                                     <form action="{{route('cart.update')}}" method="post">
                                         @csrf
+                                        <input type="hidden" name="id" value="{{$id}}">
                                         <div class="input-group">
-                                            <button type="submit" class="btn btn-primary" name="-">-</button>
+                                            <input type="submit" class="btn btn-primary" name="operation" value="-">
                                             <input class="form-control text-center" type="number" name="quantity"
                                                 value="{{$cart['quantity']}}" readonly>
-                                            <button type="submit" class="btn btn-primary" name="+">+</button>
+                                            <input type="submit" class="btn btn-primary" name="operation" value="+">
                                         </div>
                                     </form>
                                 </div>
