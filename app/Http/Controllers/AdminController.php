@@ -470,12 +470,13 @@ class AdminController extends Controller
         $users->name = $request->name;
         $users->email = $request->email;
 
-        if($request->role == 'NULL')
+        if($request->role == 0)
         {
             $users->role = NULL;
         }
         else
         {
+            Role::findOrFail($request->role);
             $users->role = $request->role;
         }
 
