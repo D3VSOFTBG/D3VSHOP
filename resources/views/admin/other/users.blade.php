@@ -189,7 +189,7 @@
                                                                             <span class="text-danger">*</span>
                                                                             Role</label>
                                                                         <select name="role" class="custom-select">
-                                                                            <option value="NULL" @if ($user->role == NULL) selected @endif>
+                                                                            <option value="0" @if ($user->role == NULL) selected @endif>
                                                                             Customer
                                                                             </option>
                                                                             @foreach ($roles as $role)

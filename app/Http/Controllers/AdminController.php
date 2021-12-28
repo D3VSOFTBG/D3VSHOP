@@ -245,7 +245,16 @@ class AdminController extends Controller
 
         $carrier = new Carrier();
 
+        $carrier->name = $request->name;
 
+        // logo
+        $new_logo_name = md5(uniqid(rand(), true)) . '.' . $request->logo->extension();
+        $request->logo->move(public_path('/storage/img/carriers/'), $new_logo_name);
+        $carrier->logo = $new_logo_name;
+
+        $carrier->description = $request->description;
+
+        // if()
     }
     function settings_get()
     {
@@ -407,7 +416,7 @@ class AdminController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'role' => 'required',
+            'role' => 'required|integer',
         ]);
 
         $users->name = $request->name;
@@ -420,12 +429,13 @@ class AdminController extends Controller
             $users->email = $request->email;
         }
 
-        if($request->role == 'NULL')
+        if($request->role == 0)
         {
             $users->role = NULL;
         }
         else
         {
+            Role::findOrFail($request->role);
             $users->role = $request->role;
         }
 
