@@ -286,6 +286,8 @@ class AdminController extends Controller
 
         $carrier = Carrier::findOrFail($request->id);
 
+        $carrier->name = $request->name;
+
         if(isset($request->logo))
         {
             $request->validate([
@@ -296,6 +298,29 @@ class AdminController extends Controller
             $request->logo->move(public_path('/storage/img/carriers/'), $new_logo_name);
             $carrier->logo = $new_logo_name;
         }
+
+        $carrier->description = $request->description;
+
+        if($request->status == 1)
+        {
+            $carrier->status = $request->status;
+        }
+        else
+        {
+            $carrier->status = 0;
+        }
+        if($request->free_shipping == 1)
+        {
+            $carrier->free_shipping = $request->free_shipping;
+        }
+        else
+        {
+            $carrier->free_shipping = 0;
+        }
+
+        $carrier->save();
+
+        return back();
     }
     function carrier_delete(Request $request)
     {
