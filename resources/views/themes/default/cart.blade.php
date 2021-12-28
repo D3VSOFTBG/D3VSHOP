@@ -5,29 +5,29 @@
 <!-- Start Content -->
 <div class="container py-5">
     <div class="row">
-        <div class="col">
-            <table class="table table-bordered">
+        <div class="col-lg-8">
+            <table class="table">
                 <tr>
-                    <th>
+                    <th class="align-middle">
                         Name
                     </th>
-                    <th>
+                    <th class="align-middle">
                         Price
                     </th>
-                    <th>
+                    <th class="align-middle">
                         Quantity
                     </th>
-                    <th>
+                    <th class="align-middle">
                         Total
                     </th>
                 </tr>
                 @if (session()->has('cart'))
                     @foreach (session()->get('cart') as $cart)
                         <tr>
-                            <td>
+                            <td class="align-middle">
                                 {{$cart['name']}}
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 @if (if_discounted($cart['discount']))
                                 <del>{{$cart['price']}}</del>
                                 ({{discounted_price($cart['price'], $cart['discount'])}})
@@ -36,10 +36,14 @@
                                 @endif
                                 <strong>{{$default_currency_code}}</strong>
                             </td>
-                            <td>
-                                {{$cart['quantity']}}
+                            <td class="align-middle" style="width: 0;">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input class="form-control" type="number" name="" id="" value="{{$cart['quantity']}}">
+                                    </div>
+                                </div>
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 {{discounted_price($cart['price'], $cart['discount']) * $cart['quantity']}}
                                 <strong>{{$default_currency_code}}</strong>
                             </td>
@@ -53,8 +57,9 @@
                     </tr>
                 @endif
             </table>
-
-            <table class="table table-bordered w-25 m-0" style="float:right">
+        </div>
+        <div class="col-lg-4">
+            <table class="table">
                 <tr>
                     <th>Quantity</th>
                     <th>Total</th>
@@ -66,6 +71,11 @@
                     <td>
                         {{$cart_total_sum}}
                         <strong>{{$default_currency_code}}</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button class="btn btn-primary w-100">Update</button>
                     </td>
                 </tr>
                 <tr>
