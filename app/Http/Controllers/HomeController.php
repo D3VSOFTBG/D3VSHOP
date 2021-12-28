@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Currency;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 //use Illuminate\Support\Facades\Log;
 //use Illuminate\Support\Facades\Cache;
 
@@ -117,6 +119,10 @@ class HomeController extends Controller
         session()->put('cart', $cart);
 
         return back();
+    }
+    function cart_update()
+    {
+        Log::info(session()->get('cart'));
     }
     function success()
     {
