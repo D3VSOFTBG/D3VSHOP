@@ -239,8 +239,8 @@ class AdminController extends Controller
             'name' => 'required',
             'logo' => 'required|image|max:2048',
             'description' => 'required',
-            'status' => 'required',
-            'free_shipping' => 'required',
+            'status' => 'required|integer',
+            'free_shipping' => 'required|integer',
         ]);
 
         $carrier = new Carrier();
@@ -254,7 +254,26 @@ class AdminController extends Controller
 
         $carrier->description = $request->description;
 
-        // if()
+        if($request->status == 1)
+        {
+            $carrier->status = $request->status;
+        }
+        else
+        {
+            $carrier->status = 0;
+        }
+        if($request->free_shipping == 1)
+        {
+            $carrier->free_shipping = $request->free_shipping;
+        }
+        else
+        {
+            $carrier->free_shipping = 0;
+        }
+
+        $carrier->save();
+
+        return back();
     }
     function settings_get()
     {
@@ -412,38 +431,38 @@ class AdminController extends Controller
     }
     function user_edit(Request $request)
     {
-        $users = User::findOrFail($request->id);
+        $user = User::findOrFail($request->id);
 
         $request->validate([
             'name' => 'required',
             'role' => 'required|integer',
         ]);
 
-        $users->name = $request->name;
+        $user->name = $request->name;
 
-        if($request->email != $users->email)
+        if($request->email != $user->email)
         {
             $request->validate([
                 'email' => 'required|email|unique:users',
             ]);
-            $users->email = $request->email;
+            $user->email = $request->email;
         }
 
         if($request->role == 0)
         {
-            $users->role = NULL;
+            $user->role = NULL;
         }
         else
         {
             Role::findOrFail($request->role);
-            $users->role = $request->role;
+            $user->role = $request->role;
         }
 
         if(!empty($request->password) && !empty($request->password_confirmation))
         {
             if($request->password == $request->password_confirmation)
             {
-                $users->password = Hash::make($request->password);
+                $user->password = Hash::make($request->password);
             }
             else
             {
@@ -451,7 +470,7 @@ class AdminController extends Controller
             }
         }
 
-        $users->save();
+        $user->save();
 
         return back();
     }
@@ -465,31 +484,31 @@ class AdminController extends Controller
             'password_confirmation' => 'required',
         ]);
 
-        $users = new User();
+        $user = new User();
 
-        $users->name = $request->name;
-        $users->email = $request->email;
+        $user->name = $request->name;
+        $user->email = $request->email;
 
         if($request->role == 0)
         {
-            $users->role = NULL;
+            $user->role = NULL;
         }
         else
         {
             Role::findOrFail($request->role);
-            $users->role = $request->role;
+            $user->role = $request->role;
         }
 
         if($request->password == $request->password_confirmation)
         {
-            $users->password = Hash::make($request->password);
+            $user->password = Hash::make($request->password);
         }
         else
         {
             return back()->withErrors('The passwords do not match.');
         }
 
-        $users->save();
+        $user->save();
 
         return back();
     }
