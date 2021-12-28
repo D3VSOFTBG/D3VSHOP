@@ -138,7 +138,7 @@
                                                 {{$carrier->name}}
                                             </td>
                                             <td class="align-middle">
-                                                <img class="w-100 h-100" src="{{asset("/storage/img/carriers/$carrier->image")}}" alt="Image">
+                                                <img class="w-100 h-100" src="{{asset("/storage/img/carriers/$carrier->logo")}}" alt="Logo">
                                             </td>
                                             <td class="align-middle">
                                                 {{$carrier->description}}
@@ -211,7 +211,7 @@
                                                                                 Logo</label>
                                                                             <div class="card-body">
                                                                                 <p class="card-text">
-                                                                                    <img class="w-100 h-100" src="{{asset("/storage/img/carriers/$carrier->image")}}"
+                                                                                    <img class="w-100 h-100" src="{{asset("/storage/img/carriers/$carrier->logo")}}"
                                                                                         alt="Logo">
                                                                                 </p>
                                                                                 <input name="logo" type="file" class="form-control-file" id="logo"

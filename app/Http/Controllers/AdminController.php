@@ -191,11 +191,11 @@ class AdminController extends Controller
             'sku' => 'required',
         ]);
 
-        $products = Product::findOrFail($request->id);
+        $product = Product::findOrFail($request->id);
 
-        if($products->name != $request->name)
+        if($product->name != $request->name)
         {
-            $products->slug = uniqid() . '-' . strtolower(trim(preg_replace('/\s+/', '-', $request->name)));
+            $product->slug = uniqid() . '-' . strtolower(trim(preg_replace('/\s+/', '-', $request->name)));
         }
 
         if(isset($request->image))
@@ -206,25 +206,25 @@ class AdminController extends Controller
             // image
             $new_image_name = md5(uniqid(rand(), true)) . '.' . $request->image->extension();
             $request->image->move(public_path('/storage/img/products/'), $new_image_name);
-            $products->image = $new_image_name;
+            $product->image = $new_image_name;
         }
 
-        $products->name = $request->name;
-        $products->price = $request->price;
+        $product->name = $request->name;
+        $product->price = $request->price;
 
         if(isset($request->discount))
         {
             $request->validate([
                 'discount' => 'integer|min:0|max:100',
             ]);
-            $products->discount = $request->discount;
+            $product->discount = $request->discount;
         }
 
-        $products->quantity = $request->quantity;
-        $products->serial_number = $request->serial_number;
-        $products->sku = $request->sku;
-        $products->brand = $request->brand;
-        $products->save();
+        $product->quantity = $request->quantity;
+        $product->serial_number = $request->serial_number;
+        $product->sku = $request->sku;
+        $product->brand = $request->brand;
+        $product->save();
 
         return back();
     }
@@ -273,6 +273,33 @@ class AdminController extends Controller
 
         $carrier->save();
 
+        return back();
+    }
+    function carrier_edit(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'status' => 'required|integer',
+            'free_shipping' => 'required|integer',
+        ]);
+
+        $carrier = Carrier::findOrFail($request->id);
+
+        if(isset($request->logo))
+        {
+            $request->validate([
+                'logo' => 'required|image|max:2048',
+            ]);
+            // logo
+            $new_logo_name = md5(uniqid(rand(), true)) . '.' . $request->logo->extension();
+            $request->logo->move(public_path('/storage/img/carriers/'), $new_logo_name);
+            $carrier->logo = $new_logo_name;
+        }
+    }
+    function carrier_delete(Request $request)
+    {
+        Carrier::findOrFail($request->id)->delete();
         return back();
     }
     function settings_get()
