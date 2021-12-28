@@ -28,7 +28,9 @@ Route::get('/success', [HomeController::class, 'success'])->name('success');
 Route::get('/cancel', [HomeController::class, 'cancel'])->name('cancel');
 Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
 Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
-Route::post('/add_to_cart', [HomeController::class, 'add_to_cart'])->name('add_to_cart');
+Route::post('/cart/add', [HomeController::class, 'cart_add'])->name('cart.add');
+Route::post('/cart/update', [HomeController::class, 'cart_update'])->name('cart.update');
+Route::post('/cart/delete', [HomeController::class, 'cart_delete'])->name('cart.delete');
 Route::post('/stripe', [StripeController::class, 'post'])->name('stripe');
 Route::get('/stripe', function () {
     return redirect(route('home'));

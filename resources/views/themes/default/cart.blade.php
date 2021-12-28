@@ -20,9 +20,12 @@
                     <th class="align-middle">
                         Total
                     </th>
+                    <th class="align-middle">
+                        Action
+                    </th>
                 </tr>
                 @if (session()->has('cart'))
-                    @foreach (session()->get('cart') as $cart)
+                    @foreach (session()->get('cart') as $id => $cart)
                         <tr>
                             <td class="align-middle">
                                 {{$cart['name']}}
@@ -46,6 +49,13 @@
                             <td class="align-middle">
                                 {{discounted_price($cart['price'], $cart['discount']) * $cart['quantity']}}
                                 <strong>{{$default_currency_code}}</strong>
+                            </td>
+                            <td class="align-middle">
+                                <form action="{{route('cart.delete')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{$id}}">
+                                    <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
@@ -75,12 +85,15 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button class="btn btn-primary w-100">Update</button>
+                        <form action="{{route('cart.update')}}" method="post">
+                            @csrf
+                            <button class="btn btn-primary w-100">Update</button>
+                        </form>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button class="btn btn-primary w-100">Buy</button>
+                        <button class="btn btn-success w-100">Buy</button>
                     </td>
                 </tr>
             </table>

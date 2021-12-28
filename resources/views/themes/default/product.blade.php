@@ -181,7 +181,7 @@
                         </ul>
                         @endif
 
-                        <form action="{{route('add_to_cart')}}" method="post">
+                        <form action="{{route('cart.add')}}" method="post">
                             @csrf
 
                             <input type="hidden" name="id" value="{{$product->id}}">

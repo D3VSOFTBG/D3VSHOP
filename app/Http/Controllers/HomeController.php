@@ -95,7 +95,7 @@ class HomeController extends Controller
 
         return view('themes.'.env('THEME_NAME').'.cart', $data);
     }
-    public function add_to_cart(Request $request)
+    public function cart_add(Request $request)
     {
         $product = Product::findOrFail($request->id);
 
@@ -123,6 +123,18 @@ class HomeController extends Controller
     function cart_update()
     {
         Log::info(session()->get('cart'));
+
+        $cart = session()->get('cart');
+
+
+
+        return back();
+    }
+    function cart_delete(Request $request)
+    {
+        $request->session()->forget('cart.' . $request->id);
+
+        return back();
     }
     function success()
     {
