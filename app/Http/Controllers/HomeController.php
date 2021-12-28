@@ -126,8 +126,6 @@ class HomeController extends Controller
 
         // $cart = session()->get('cart');
 
-
-
         return back();
     }
     function cart_delete(Request $request)

@@ -41,7 +41,7 @@
                             </td>
                             <td class="align-middle w-25">
                                 <div class="form-group">
-                                    <form action="" method="post">
+                                    <form action="{{route('cart.update')}}" method="post">
                                         <div class="input-group">
                                             <button type="submit" class="btn btn-primary" name="-">-</button>
                                             <input class="form-control text-center" type="number" name="quantity"
