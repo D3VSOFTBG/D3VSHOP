@@ -39,10 +39,12 @@
                                 @endif
                                 <strong>{{$default_currency_code}}</strong>
                             </td>
-                            <td class="align-middle" style="width: 0;">
+                            <td class="align-middle w-25">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input class="form-control" type="number" name="" id="" value="{{$cart['quantity']}}">
+                                        <button type="submit" class="btn btn-primary">-</button>
+                                        <input class="form-control text-center" type="number" name="quantity" value="{{$cart['quantity']}}" readonly>
+                                        <button type="submit" class="btn btn-primary">+</button>
                                     </div>
                                 </div>
                             </td>
@@ -67,6 +69,7 @@
                     </tr>
                 @endif
             </table>
+        </form>
         </div>
         <div class="col-lg-4">
             <table class="table">
@@ -81,14 +84,6 @@
                     <td>
                         {{$cart_total_sum}}
                         <strong>{{$default_currency_code}}</strong>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <form action="{{route('cart.update')}}" method="post">
-                            @csrf
-                            <button class="btn btn-primary w-100">Update</button>
-                        </form>
                     </td>
                 </tr>
                 <tr>

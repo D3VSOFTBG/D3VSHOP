@@ -120,11 +120,11 @@ class HomeController extends Controller
 
         return back();
     }
-    function cart_update()
+    function cart_update(Request $request)
     {
-        Log::info(session()->get('cart'));
+        Log::info($request);
 
-        $cart = session()->get('cart');
+        // $cart = session()->get('cart');
 
 
 
