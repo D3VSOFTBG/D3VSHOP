@@ -104,6 +104,7 @@
 <script src="{{asset('/themes/default/assets/js/templatemo.js')}}"></script>
 <script src="{{asset('/themes/default/assets/js/custom.js')}}"></script>
 <!-- End Script -->
+
 </body>
 
 </html>

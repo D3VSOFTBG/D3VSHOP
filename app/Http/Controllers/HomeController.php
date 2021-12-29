@@ -122,9 +122,22 @@ class HomeController extends Controller
     }
     function cart_update(Request $request)
     {
-        Log::info($request);
+        // Log::info($request);
 
-        // $cart = session()->get('cart');
+        $cart = session()->get('cart');
+
+        // Log::info($cart);
+
+        if($request->operation == '+')
+        {
+            $cart[$request->id]['quantity']++;
+        }
+        else
+        {
+            $cart[$request->id]['quantity']--;
+        }
+
+        session()->put('cart', $cart);
 
         return back();
     }

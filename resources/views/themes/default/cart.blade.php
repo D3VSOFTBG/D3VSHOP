@@ -45,10 +45,9 @@
                                         @csrf
                                         <input type="hidden" name="id" value="{{$id}}">
                                         <div class="input-group">
-                                            <input type="submit" class="btn btn-primary" name="operation" value="-">
-                                            <input class="form-control text-center" type="number" name="quantity"
-                                                value="{{$cart['quantity']}}" readonly>
-                                            <input type="submit" class="btn btn-primary" name="operation" value="+">
+                                            <input type="submit" class="btn btn-primary" name="operation" value="-" />
+                                            <input class="form-control text-center" type="number" value="{{$cart['quantity']}}" readonly />
+                                            <input type="submit" class="btn btn-primary" name="operation" value="+" />
                                         </div>
                                     </form>
                                 </div>
@@ -66,13 +65,15 @@
                             </td>
                         </tr>
                     @endforeach
-                @else
+                @endif
+                @if (empty(cart_count()))
                     <tr>
-                        <td colspan="4" class="text-center">
+                        <td colspan="5" class="text-center">
                             Your cart is empty.
                         </td>
                     </tr>
                 @endif
+
             </table>
         </form>
         </div>
