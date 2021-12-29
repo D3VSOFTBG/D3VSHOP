@@ -30,34 +30,18 @@
 
 <body>
     <!-- Start Top Nav -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+    <nav class="navbar bg-dark navbar-light" id="templatemo_nav_top">
         <div class="container text-light">
-            <div class="w-100 d-flex justify-content-between">
-                <div>
-                    <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none"
-                        href="mailto:{{env('MAIL')}}">{{env('MAIL')}}</a>
-                    <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none"
-                        href="tel:{{env('PHONE')}}">{{env('PHONE')}}</a>
-                </div>
-                <div>
-                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i
-                            class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i
-                            class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://twitter.com/" target="_blank"><i
-                            class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i
-                            class="fab fa-linkedin fa-sm fa-fw"></i></a>
-                </div>
+            <div class="mx-auto">
+                <a class="btn btn-outline-warning"><i class="fas fa-search"></i> Search</a>
+                <a href="{{route('cart')}}" class="btn btn-outline-warning"><i class="fas fa-shopping-cart"></i> ({{cart_count()}})</a>
             </div>
         </div>
     </nav>
     <!-- Close Top Nav -->
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow">
+    {{-- <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
             <a class="navbar-brand text-success logo h1 align-self-center m-0" href="{{route('home')}}">
@@ -126,7 +110,49 @@
             </div>
 
         </div>
-    </nav>
+    </nav> --}}
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container">
+          <a class="navbar-brand text-success logo" href="{{route('home')}}">{{env('SHOP_NAME')}}</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('home')}}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('about')}}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('shop')}}">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('contact')}}">Contact</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                    @if (Auth::check())
+                    <li>
+                        <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                    @else
+                    <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
+                    <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
+                    @endif
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     <!-- Close Header -->
 
     <!-- Modal -->
