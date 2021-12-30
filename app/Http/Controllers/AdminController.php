@@ -104,7 +104,8 @@ class AdminController extends Controller
     }
     function package_delete(Request $request)
     {
-        rmdir(package_path() . '/' . $request->name);
+        remove_directory(package_path() . '/' . $request->name);
+
         return back();
     }
     function payments_stripe_get()
