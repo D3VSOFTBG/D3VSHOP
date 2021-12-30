@@ -42,7 +42,7 @@
                                                 {{basename($package)}}
                                             </td>
                                             <td class="align-middle">
-                                                <form action="{{route('admin.other.packages.delete')}}" method="post"
+                                                <form action="{{route('admin.shop.packages.delete')}}" method="post"
                                                     class="d-inline"
                                                     onclick="if(!confirm('Delete ({{basename($package)}}).')){return false;}">
                                                     @csrf

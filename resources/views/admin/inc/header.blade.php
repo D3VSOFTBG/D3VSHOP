@@ -112,20 +112,40 @@
                                         <p>Products</p>
                                     </a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('admin.shop.orders')}}" class="nav-link @if (Route::currentRouteName() == 'admin.shop.orders') active @endif">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Orders</p>
                                     </a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('admin.shop.carriers')}}" class="nav-link @if (Route::currentRouteName() == 'admin.shop.carriers') active @endif">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Carriers</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.shop.users')}}" class="nav-link @if (Route::currentRouteName() == 'admin.shop.users') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Users</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.shop.settings')}}" class="nav-link @if (Route::currentRouteName() == 'admin.shop.settings') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Settings</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.shop.information')}}" class="nav-link @if (Route::currentRouteName() == 'admin.shop.information') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Information</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.shop.packages')}}" class="nav-link @if (Route::currentRouteName() == 'admin.shop.packages') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Packages</p>
                                     </a>
                                 </li>
                             </ul>
@@ -157,27 +177,9 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('admin.other.users')}}" class="nav-link @if (Route::currentRouteName() == 'admin.other.users') active @endif">
+                                    <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Users</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('admin.other.settings')}}" class="nav-link @if (Route::currentRouteName() == 'admin.other.settings') active @endif">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Settings</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('admin.other.information')}}" class="nav-link @if (Route::currentRouteName() == 'admin.other.information') active @endif">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Information</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('admin.other.packages')}}" class="nav-link @if (Route::currentRouteName() == 'admin.other.packages') active @endif">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Packages</p>
+                                        <p>Example</p>
                                     </a>
                                 </li>
                             </ul>

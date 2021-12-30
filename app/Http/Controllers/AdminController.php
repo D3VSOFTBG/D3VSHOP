@@ -10,7 +10,7 @@ use App\Stripe;
 use App\Role;
 use App\User;
 use App\Order;
-use App\Ordered_Product;
+use App\OrderedProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -40,11 +40,11 @@ class AdminController extends Controller
             'roles' => $roles,
         ];
 
-        return view('admin.other.users', $data);
+        return view('admin.shop.users', $data);
     }
     function information()
     {
-        return view('admin.other.information');
+        return view('admin.shop.information');
     }
     function products()
     {
@@ -81,7 +81,7 @@ class AdminController extends Controller
             array_push($order_ids, $order->id);
         }
 
-        $ordered_products = Ordered_Product::whereIn('order_id', $order_ids)->get();
+        $ordered_products = OrderedProduct::whereIn('order_id', $order_ids)->get();
         $currencies = Currency::all();
 
         $data = [
@@ -100,7 +100,7 @@ class AdminController extends Controller
             'packages' => $packages,
         ];
 
-        return view('admin.other.packages', $data);
+        return view('admin.shop.packages', $data);
     }
     function package_delete(Request $request)
     {
@@ -354,7 +354,7 @@ class AdminController extends Controller
             'default_currency_code' => $default_currency_code,
         ];
 
-        return view('admin.other.settings', $data);
+        return view('admin.shop.settings', $data);
     }
     function settings_post(Request $request)
     {

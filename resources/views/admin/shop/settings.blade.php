@@ -4,7 +4,7 @@
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <form action="{{route('admin.other.settings')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('admin.shop.settings')}}" method="post" enctype="multipart/form-data">
         @csrf
         <!-- Content Header (Page header) -->
         <div class="content-header">
