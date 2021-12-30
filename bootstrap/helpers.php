@@ -138,3 +138,7 @@ function discounted_price($price, $discount)
 {
     return round($price - (($price / 100) * $discount), 2);
 }
+function package_path()
+{
+    return base_path() . '/packages';
+}

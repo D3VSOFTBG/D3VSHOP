@@ -92,6 +92,23 @@ class AdminController extends Controller
 
         return view('admin.shop.orders', $data);
     }
+    function packages()
+    {
+        $packages = glob(package_path() . '/*' , GLOB_ONLYDIR);
+
+        // print_r($packages);
+
+        $data = [
+            'packages' => $packages,
+        ];
+
+        return view('admin.other.packages', $data);
+    }
+    function package_delete(Request $request)
+    {
+        rmdir(package_path() . '/' . $request->name);
+        return back();
+    }
     function payments_stripe_get()
     {
         $data = [];

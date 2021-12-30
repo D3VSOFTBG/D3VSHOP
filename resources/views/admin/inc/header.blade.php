@@ -174,38 +174,14 @@
                                         <p>Information</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.other.packages')}}" class="nav-link @if (Route::currentRouteName() == 'admin.other.packages') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Packages</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-
-
-
-                        {{-- <li class="nav-item">
-                            <a href="{{route('admin.users')}}"
-                                class="nav-link @if (Route::currentRouteName() == 'admin.users') active @endif">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>
-                                    Users
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('admin.settings')}}"
-                                class="nav-link @if (Route::currentRouteName() == 'admin.settings') active @endif">
-                                <i class="nav-icon fas fa-cog"></i>
-                                <p>
-                                    Settings
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('admin.information')}}"
-                                class="nav-link @if (Route::currentRouteName() == 'admin.information') active @endif">
-                                <i class="nav-icon fas fa-info"></i>
-                                <p>
-                                    Information
-                                </p>
-                            </a>
-                        </li> --}}
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

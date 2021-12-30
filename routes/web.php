@@ -43,6 +43,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::get('/admin/other/users', [AdminController::class, 'users'])->name('admin.other.users');
     Route::get('/admin/other/information', [AdminController::class, 'information'])->name('admin.other.information');
     Route::get('/admin/other/settings', [AdminController::class, 'settings_get'])->name('admin.other.settings');
+    Route::get('/admin/other/packages', [AdminController::class, 'packages'])->name('admin.other.packages');
     Route::get('/admin/shop/products', [AdminController::class, 'products'])->name('admin.shop.products');
     Route::get('/admin/shop/orders', [AdminController::class, 'orders'])->name('admin.shop.orders');
     Route::get('/admin/shop/carriers', [AdminController::class, 'carriers'])->name('admin.shop.carriers');
@@ -51,14 +52,13 @@ Route::middleware(['auth', 'admin'])->group(function ()
 
     // POST
     Route::post('/admin/other/settings', [AdminController::class, 'settings_post'])->name('admin.other.settings');
+    Route::post('/admin/other/packages/delete', [AdminController::class, 'package_delete'])->name('admin.other.packages.delete');
     Route::post('/admin/shop/products/delete', [AdminController::class, 'product_delete'])->name('admin.shop.products.delete');
     Route::post('/admin/shop/products/edit', [AdminController::class, 'product_edit'])->name('admin.shop.products.edit');
     Route::post('/admin/shop/products/create', [AdminController::class, 'product_create'])->name('admin.shop.products.create');
-
     Route::post('/admin/shop/carriers/delete', [AdminController::class, 'carrier_delete'])->name('admin.shop.carriers.delete');
     Route::post('/admin/shop/carriers/edit', [AdminController::class, 'carrier_edit'])->name('admin.shop.carriers.edit');
     Route::post('/admin/shop/carriers/create', [AdminController::class, 'carrier_create'])->name('admin.shop.carriers.create');
-
     Route::post('/admin/other/users/delete', [AdminController::class, 'user_delete'])->name('admin.other.users.delete');
     Route::post('/admin/other/users/edit', [AdminController::class, 'user_edit'])->name('admin.other.users.edit');
     Route::post('/admin/other/users/create', [AdminController::class, 'user_create'])->name('admin.other.users.create');
