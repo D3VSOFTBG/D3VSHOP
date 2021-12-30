@@ -96,8 +96,6 @@ class AdminController extends Controller
     {
         $packages = glob(package_path() . '/*' , GLOB_ONLYDIR);
 
-        // print_r($packages);
-
         $data = [
             'packages' => $packages,
         ];
