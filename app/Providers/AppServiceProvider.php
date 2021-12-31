@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if(str_contains(Request::url(), '/admin/'))
+        if(str_contains(Request::url(), '/admin'))
         {
             $adminMenus = AdminMenu::all();
             View::share('adminMenus', $adminMenus);
