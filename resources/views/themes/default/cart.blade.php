@@ -45,7 +45,7 @@
                                         @csrf
                                         <input type="hidden" name="id" value="{{$id}}">
                                         <div class="input-group">
-                                            <input type="submit" class="btn btn-primary" name="operation" value="-" />
+                                            <input type="submit" class="btn btn-primary" name="operation" value="-" @if ($cart['quantity'] <= 1) disabled @endif />
                                             <input class="form-control text-center" type="number" value="{{$cart['quantity']}}" readonly />
                                             <input type="submit" class="btn btn-primary" name="operation" value="+" />
                                         </div>

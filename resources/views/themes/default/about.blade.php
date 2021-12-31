@@ -65,6 +65,4 @@
 </section>
 <!-- End Section -->
 
-@include('themes.default.inc.brands')
-
 @include('themes.default.inc.footer')

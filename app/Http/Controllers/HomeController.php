@@ -7,9 +7,6 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-//use Illuminate\Support\Facades\Log;
-//use Illuminate\Support\Facades\Cache;
-
 class HomeController extends Controller
 {
     public function home()
@@ -134,7 +131,10 @@ class HomeController extends Controller
         }
         else
         {
-            $cart[$request->id]['quantity']--;
+            if($cart[$request->id]['quantity'] > 1)
+            {
+                $cart[$request->id]['quantity']--;
+            }
         }
 
         session()->put('cart', $cart);

@@ -148,6 +148,4 @@
 </div>
 <!-- End Content -->
 
-@include('themes.default.inc.brands')
-
 @include('themes.default.inc.footer')
