@@ -2,14 +2,11 @@
 
 namespace App\Providers;
 
-// use Illuminate\Support\Facades\DB;
-// use Illuminate\Support\Facades\View;
-// use Illuminate\Contracts\Cache\Factory;
-// use Illuminate\Contracts\Cache\Repository;
-//use App\Setting;
-//use App\Currency;
+use App\AdminMenu;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,15 +27,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //env_update('ebanie', 10);
-        // if(!Cache::has('shop_name'))
-        // {
-        //     $settings = Setting::all();
-        //     $default_currency = Currency::where('id', $settings[2]['value'])->pluck('code')->first();
-        //     Cache::forever('shop_name', $settings[0]['value']);
-        //     Cache::forever('title_seperator', $settings[1]['value']);
-        //     Cache::forever('default_currency', $default_currency);
-        //     Cache::forever('theme_name', $settings[3]['value']);
-        // }
+        if(str_contains(Request::url(), '/admin/'))
+        {
+            $adminMenus = AdminMenu::all();
+            View::share('adminMenus', $adminMenus);
+        }
     }
 }

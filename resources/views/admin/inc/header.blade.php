@@ -176,12 +176,14 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
+                                @foreach ($adminMenus as $adminMenu)
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{url($adminMenu->link)}}" class="nav-link @if (str_contains(Request::url(), $adminMenu->link)) active @endif">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Example</p>
+                                        <p>{{$adminMenu->name}}</p>
                                     </a>
                                 </li>
+                                @endforeach
                             </ul>
                         </li>
                     </ul>

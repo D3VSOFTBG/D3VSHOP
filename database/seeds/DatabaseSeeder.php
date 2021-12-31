@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(OrderedProductSeeder::class);
         $this->call(CurrencySeeder::class);
         $this->call(CarrierSeeder::class);
+        $this->call(AdminMenuSeeder::class);
     }
 }

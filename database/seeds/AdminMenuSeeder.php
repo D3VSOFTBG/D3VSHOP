@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class AdminMenuSeeder extends Seeder
 {
@@ -11,6 +12,13 @@ class AdminMenuSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('admin_menus')->insert(
+            [
+                [
+                    'name' => 'Test',
+                    'link' => '/admin/shop/settings',
+                ],
+            ]
+        );
     }
 }
