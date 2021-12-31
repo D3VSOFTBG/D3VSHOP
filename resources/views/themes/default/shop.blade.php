@@ -77,7 +77,10 @@
                             <img class="card-img rounded-0 img-fluid"
                                 src='{{asset("/storage/img/products/$product->image")}}'>
                             @else
-                            NA
+                            <svg class="card-img rounded-0 img-fluid" height="250">
+                                <rect width="100%" height="100%" fill="gray"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white">404</text>
+                            </svg>
                             @endif
 
                             <div
@@ -93,40 +96,41 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href='{{url("/shop/$product->slug")}}'
-                                class="h3 text-decoration-none">{{$product->name}}</a>
-                            <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                <li>test</li>
-                                <li class="pt-2">
-                                    <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                                    <span
-                                        class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                                    <span
-                                        class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                                    <span
-                                        class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                                    <span
-                                        class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                                </li>
-                            </ul>
-                            <ul class="list-unstyled d-flex justify-content-center mb-1">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                            </ul>
-                            <p class="text-center mb-0">
-                                @if (if_discounted($product->discount))
-                                <del>{{$product->price}}</del>
-                                ({{discounted_price($product->price, $product->discount)}})
-                                @else
-                                {{$product->price}}
-                                @endif
-                                <strong>{{$default_currency_code}}</strong>
-                            </p>
+                            <div class="text-center">
+                                <a href='{{url("/shop/$product->slug")}}' class="text-decoration-none h3">{{$product->name}}</a>
+                                <ul class="w-100 list-unstyled d-flex justify-content-center mb-0">
+                                    <li class="text-muted"><small>{{Str::limit($product->description, 25)}}</small></li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span
+                                            class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <p class="text-center mb-0">
+                                    @if (if_discounted($product->discount))
+                                    <del>{{$product->price}}</del>
+                                    ({{discounted_price($product->price, $product->discount)}})
+                                    @else
+                                    {{$product->price}}
+                                    @endif
+                                    <strong>{{$default_currency_code}}</strong>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
