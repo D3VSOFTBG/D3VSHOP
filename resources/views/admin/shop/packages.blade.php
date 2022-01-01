@@ -52,7 +52,6 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer clearfix">
-                            {{-- {{$users->links()}} --}}
                         </div>
                     </div><!-- /.container-fluid -->
                 </div>

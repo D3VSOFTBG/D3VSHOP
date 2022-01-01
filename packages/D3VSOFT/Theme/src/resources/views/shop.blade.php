@@ -73,13 +73,13 @@
                 <div class="col-md-4">
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
-                            @if (is_file(asset("/storage/img/products/$product->image")))
-                            <img class="card-img rounded-0 img-fluid"
+                            @if (is_file(public_path("/storage/img/products/$product->image")))
+                            <img class="card-img rounded-0 img-fluid" style="height: 250px;"
                                 src='{{asset("/storage/img/products/$product->image")}}'>
                             @else
                             <svg class="card-img rounded-0 img-fluid" height="250">
-                                <rect width="100%" height="100%" fill="gray"/>
-                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white">404</text>
+                                <rect width="100%" height="100%" fill="transparent"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">404</text>
                             </svg>
                             @endif
 

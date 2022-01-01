@@ -16,7 +16,14 @@
             <div class="container">
                 <div class="row p-5">
                     <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img class="img-fluid" src="{{asset("$theme_path/assets/img/banner_img_01.jpg")}}" alt="">
+                        @if (is_file(public_path("$theme_path/assets/img/banner_img_01.jpg")))
+                        <img class="img-fluid" src="{{asset("$theme_path/assets/img/banner_img_01.jpg")}}">
+                        @else
+                        <svg class="img-fluid" height="800" width="800">
+                            <rect width="100%" height="100%" fill="transparent"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">404</text>
+                        </svg>
+                        @endif
                     </div>
                     <div class="col-lg-6 mb-0 d-flex align-items-center">
                         <div class="text-align-left align-self-center">
@@ -34,7 +41,14 @@
             <div class="container">
                 <div class="row p-5">
                     <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img class="img-fluid" src="{{asset("$theme_path/assets/img/banner_img_02.jpg")}}" alt="">
+                        @if (is_file(public_path("$theme_path/assets/img/banner_img_02.jpg")))
+                        <img class="img-fluid" src="{{asset("$theme_path/assets/img/banner_img_02.jpg")}}">
+                        @else
+                        <svg class="img-fluid" height="800" width="800">
+                            <rect width="100%" height="100%" fill="transparent"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">404</text>
+                        </svg>
+                        @endif
                     </div>
                     <div class="col-lg-6 mb-0 d-flex align-items-center">
                         <div class="text-align-left">
@@ -52,7 +66,14 @@
             <div class="container">
                 <div class="row p-5">
                     <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        <img class="img-fluid" src="{{asset("$theme_path/assets/img/banner_img_03.jpg")}}" alt="">
+                        @if (is_file(public_path("$theme_path/assets/img/banner_img_03.jpg")))
+                        <img class="img-fluid" src="{{asset("$theme_path/assets/img/banner_img_03.jpg")}}">
+                        @else
+                        <svg class="img-fluid" height="800" width="800">
+                            <rect width="100%" height="100%" fill="transparent"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">404</text>
+                        </svg>
+                        @endif
                     </div>
                     <div class="col-lg-6 mb-0 d-flex align-items-center">
                         <div class="text-align-left">
