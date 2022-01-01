@@ -94,7 +94,19 @@ class AdminController extends Controller
     }
     function packages()
     {
-        $packages = glob(package_path() . '/*' , GLOB_ONLYDIR);
+        $vendors = glob(package_path() . '/*' , GLOB_ONLYDIR);
+
+        $packages = [];
+
+        foreach($vendors as $vendor)
+        {
+            $package = [
+                'vendor' => basename($vendor),
+                'package' => basename(glob($vendor . '/*' , GLOB_ONLYDIR)[0]),
+            ];
+
+            array_push($packages, $package);
+        }
 
         $data = [
             'packages' => $packages,

@@ -32,25 +32,17 @@
                                     <thead>
                                         <tr>
                                             <th class="align-middle">Name</th>
-                                            <th class="align-middle">Actions</th>
+                                            <th class="align-middle">Vendor</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($packages as $package)
                                         <tr>
                                             <td class="align-middle">
-                                                {{basename($package)}}
+                                                {{$package['package']}}
                                             </td>
                                             <td class="align-middle">
-                                                <form action="{{route('admin.shop.packages.delete')}}" method="post"
-                                                    class="d-inline"
-                                                    onclick="if(!confirm('Delete ({{basename($package)}}).')){return false;}">
-                                                    @csrf
-                                                    <input type="hidden" name="name" value="{{basename($package)}}">
-                                                    <button class="btn btn-danger" data-toggle="tooltip"
-                                                        data-placement="top" title="Delete">
-                                                        <i class="fas fa-trash"></i></button>
-                                                </form>
+                                                {{$package['vendor']}}
                                             </td>
                                         </tr>
                                         @endforeach
