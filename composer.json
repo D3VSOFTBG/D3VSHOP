@@ -40,7 +40,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "D3VSOFT\\Theme\\": "packages/D3VSOFT/Theme/src"
         },
         "classmap": [
             "database/seeds",

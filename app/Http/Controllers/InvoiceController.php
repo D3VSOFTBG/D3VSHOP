@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Currency;
 use App\Order;
-use App\Ordered_Product;
+use App\OrderedProduct;
 use Illuminate\Http\Request;
 use LaravelDaily\Invoices\Invoice;
 use LaravelDaily\Invoices\Classes\Buyer;
@@ -25,7 +25,7 @@ class InvoiceController extends Controller
             ],
         ]);
 
-        $ordered_products = Ordered_Product::where('order_id', $id)->get();
+        $ordered_products = OrderedProduct::where('order_id', $id)->get();
 
         //Log::info($order);
 
