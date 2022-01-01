@@ -14,7 +14,7 @@
                 </p>
             </div>
             <div class="col-md-4">
-                <img src="{{asset('/themes/default/assets/img/about-hero.svg')}}" alt="About Hero">
+                <img src="{{asset("$theme_path/assets/img/about-hero.svg")}}" alt="About Hero">
             </div>
         </div>
     </div>
