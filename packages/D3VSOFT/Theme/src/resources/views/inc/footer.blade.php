@@ -98,11 +98,11 @@
 <!-- End Footer -->
 
 <!-- Start Script -->
-<script src="{{asset('/themes/default/assets/js/jquery-1.11.0.min.js')}}"></script>
-<script src="{{asset('/themes/default/assets/js/jquery-migrate-1.2.1.min.js')}}"></script>
-<script src="{{asset('/themes/default/assets/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('/themes/default/assets/js/templatemo.js')}}"></script>
-<script src="{{asset('/themes/default/assets/js/custom.js')}}"></script>
+<script src="{{asset("$theme_path/assets/js/jquery-1.11.0.min.js")}}"></script>
+<script src="{{asset("$theme_path/assets/js/jquery-migrate-1.2.1.min.js")}}"></script>
+<script src="{{asset("$theme_path/assets/js/bootstrap.bundle.min.js")}}"></script>
+<script src="{{asset("$theme_path/assets/js/templatemo.js")}}"></script>
+<script src="{{asset("$theme_path/assets/js/custom.js")}}"></script>
 <!-- End Script -->
 
 </body>

@@ -54,7 +54,7 @@ class HomeController extends Controller
                 'default_currency_code' => $default_currency_code,
             ];
 
-            return view('themes.'.env('THEME_NAME').'.product', $data);
+            return view('theme::product', $data);
         }
         else
         {

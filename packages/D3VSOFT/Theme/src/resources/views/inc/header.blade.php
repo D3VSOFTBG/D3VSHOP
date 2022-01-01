@@ -7,16 +7,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('/themes/default/assets/img/favicon.ico')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset("$theme_path/assets/img/favicon.ico")}}">
 
-    <link rel="stylesheet" href="{{asset('/themes/default/assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('/themes/default/assets/css/templatemo.min.css')}}">
-    <link rel="stylesheet" href="{{asset('/themes/default/assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset("$theme_path/assets/css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("$theme_path/assets/css/templatemo.min.css")}}">
+    <link rel="stylesheet" href="{{asset("$theme_path/assets/css/custom.css")}}">
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="{{asset('/themes/default/assets/css/fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset("$theme_path/assets/css/fontawesome.min.css")}}">
 
     <!-- Load map styles -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -24,8 +24,8 @@
         crossorigin="" />
 
     <!-- Slick -->
-    <link rel="stylesheet" type="text/css" href="{{asset('/themes/default/assets/css/slick.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/themes/default/assets/css/slick-theme.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("$theme_path/assets/css/slick.min.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("$theme_path/assets/css/slick-theme.css")}}">
 </head>
 
 <body>
