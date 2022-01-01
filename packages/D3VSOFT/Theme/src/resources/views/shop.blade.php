@@ -1,6 +1,6 @@
 @section('page_name'){{ 'Shop' }}@endsection
 
-@include('themes.default.inc.header')
+@include('theme::inc.header')
 
 <!-- Start Content -->
 <div class="container py-5">
@@ -157,4 +157,4 @@
 </div>
 <!-- End Content -->
 
-@include('themes.default.inc.footer')
+@include('theme::inc.footer')

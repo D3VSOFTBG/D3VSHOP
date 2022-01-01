@@ -1,6 +1,6 @@
 @section('page_name'){{ 'Contact' }}@endsection
 
-@include('themes.default.inc.header')
+@include('theme::inc.header')
 
 <!-- Start Content Page -->
 <div class="container-fluid bg-light py-5">
@@ -72,4 +72,4 @@
 </div>
 <!-- End Contact -->
 
-@include('themes.default.inc.footer')
+@include('theme::inc.footer')

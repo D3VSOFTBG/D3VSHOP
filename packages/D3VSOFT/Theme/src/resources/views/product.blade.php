@@ -1,6 +1,6 @@
 @section('page_name'){{ 'Product' }}@endsection
 
-@include('themes.default.inc.header')
+@include('theme::inc.header')
 
 <!-- Open Content -->
 <section class="bg-light">
@@ -213,4 +213,4 @@
 </section>
 <!-- Close Content -->
 
-@include('themes.default.inc.footer')
+@include('theme::inc.footer')

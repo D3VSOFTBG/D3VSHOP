@@ -26,5 +26,9 @@ class ThemeServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'theme');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'theme');
+
+        $this->publishes([
+            __DIR__.'/../public' => public_path('/d3vsoft/theme'),
+        ]);
     }
 }
