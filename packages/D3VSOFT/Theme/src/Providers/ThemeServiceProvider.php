@@ -30,5 +30,9 @@ class ThemeServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../public' => public_path('/d3vsoft/theme'),
         ]);
+
+        $theme_path = '/d3vsoft/theme';
+
+        view()->share('theme_path', $theme_path);
     }
 }
