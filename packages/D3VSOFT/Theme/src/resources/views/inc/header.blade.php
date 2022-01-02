@@ -94,7 +94,10 @@
                                     <div class="bottom">
                                         <div class="total">
                                             <span>Total</span>
-                                            <span class="total-amount">{{$cart_total_sum}}</span>
+                                            <span class="total-amount">
+                                                {{$cart_total_sum}}
+                                                <strong>{{$default_currency_code}}</strong>
+                                            </span>
                                         </div>
                                         <div class="button">
                                             <a href="checkout.html" class="btn animate">Checkout</a>
