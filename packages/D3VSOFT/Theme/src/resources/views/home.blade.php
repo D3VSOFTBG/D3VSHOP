@@ -1,102 +1,118 @@
-@section('page_name'){{ 'Home' }}@endsection
-
 @include('theme::inc.header')
 
-{{-- {{print_r(session()->get('cart', []))}} --}}
+<section class="home section">
+    <div class="container">
+    <div class="row align-items-center">
+    <div class="col-12">
+        <h1 class="mb-4">{{env('SHOP_NAME')}}.</h1>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus
+        pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut
+        accumsan leo. Morbi vitae est eget dolor consequat aliquam eget quis dolor. Mauris rutrum
+        fermentum erat, at euismod lorem pharetra nec. Duis erat lectus, ultrices euismod sagittis.
+        </p>
+    </div>
+    </div>
+    </div>
+    </section>
 
-<!-- Start Banner Hero -->
-<div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
-        <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        @if (is_file(public_path("$theme_path/assets/img/banner_img_01.jpg")))
-                        <img class="img-fluid" src="{{asset("$theme_path/assets/img/banner_img_01.jpg")}}">
-                        @else
-                        <svg class="img-fluid" height="800" width="800">
-                            <rect width="100%" height="100%" fill="transparent"/>
-                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">404</text>
-                        </svg>
-                        @endif
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left align-self-center">
-                            <h1 class="h1 text-success">1</h1>
-                            <h3 class="h2">2</h3>
-                            <p>
-                                3
-                            </p>
-                        </div>
+<section id="contact-us" class="contact-us section">
+    <div class="container">
+        <div class="contact-head">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Contact Us</h2>
+                        <p>There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered alteration in some form.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        @if (is_file(public_path("$theme_path/assets/img/banner_img_02.jpg")))
-                        <img class="img-fluid" src="{{asset("$theme_path/assets/img/banner_img_02.jpg")}}">
-                        @else
-                        <svg class="img-fluid" height="800" width="800">
-                            <rect width="100%" height="100%" fill="transparent"/>
-                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">404</text>
-                        </svg>
-                        @endif
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left">
-                            <h1 class="h1">1</h1>
-                            <h3 class="h2">2</h3>
-                            <p>
-                                3
-                            </p>
+            <div class="contact-info">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-12">
+                        <div class="single-info-head">
+
+                            <div class="single-info">
+                                <i class="lni lni-map"></i>
+                                <h3>Address</h3>
+                                <ul>
+                                    <li>{{env('ADDRESS')}}</li>
+                                </ul>
+                            </div>
+
+
+                            <div class="single-info">
+                                <i class="lni lni-phone"></i>
+                                <h3>Phone</h3>
+                                <ul>
+                                    <li>
+                                        <a href="tel:{{env('PHONE')}}">{{env('PHONE')}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="single-info">
+                                <i class="lni lni-envelope"></i>
+                                <h3>Mail</h3>
+                                <ul>
+                                    <li>
+                                        <a href="tel:{{env('MAIL')}}">{{env('MAIL')}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row p-5">
-                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                        @if (is_file(public_path("$theme_path/assets/img/banner_img_03.jpg")))
-                        <img class="img-fluid" src="{{asset("$theme_path/assets/img/banner_img_03.jpg")}}">
-                        @else
-                        <svg class="img-fluid" height="800" width="800">
-                            <rect width="100%" height="100%" fill="transparent"/>
-                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">404</text>
-                        </svg>
-                        @endif
-                    </div>
-                    <div class="col-lg-6 mb-0 d-flex align-items-center">
-                        <div class="text-align-left">
-                            <h1 class="h1">1</h1>
-                            <h3 class="h2">2</h3>
-                            <p>
-                                3
-                            </p>
+                    <div class="col-lg-8 col-md-12 col-12">
+                        <div class="contact-form-head">
+                            <div class="form-main">
+                                <form class="form" method="post" action="assets/mail/mail.php">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input name="name" type="text" placeholder="Your Name"
+                                                    required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input name="subject" type="text" placeholder="Your Subject"
+                                                    required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input name="email" type="email" placeholder="Your Email"
+                                                    required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input name="phone" type="text" placeholder="Your Phone"
+                                                    required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group message">
+                                                <textarea name="message" placeholder="Your Message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group button">
+                                                <button type="submit" class="btn ">Submit Message</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel"
-        role="button" data-bs-slide="prev">
-        <i class="fas fa-chevron-left"></i>
-    </a>
-    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel"
-        role="button" data-bs-slide="next">
-        <i class="fas fa-chevron-right"></i>
-    </a>
-</div>
-<!-- End Banner Hero -->
+</section>
 
 @include('theme::inc.footer')

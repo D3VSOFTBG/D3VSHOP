@@ -71,26 +71,7 @@ class HomeController extends Controller
     }
     public function cart()
     {
-        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
-
-        $prices_array = array();
-
-        if(session()->has('cart'))
-        {
-            foreach(session()->get('cart') as $cart)
-            {
-                array_push($prices_array, discounted_price($cart['price'], $cart['discount']) * $cart['quantity']);
-            }
-        }
-
-        $cart_total_sum = array_sum($prices_array);
-
-        $data = [
-            'default_currency_code' => $default_currency_code,
-            'cart_total_sum' => $cart_total_sum,
-        ];
-
-        return view('theme::cart', $data);
+        return view('theme::cart');
     }
     public function cart_add(Request $request)
     {
