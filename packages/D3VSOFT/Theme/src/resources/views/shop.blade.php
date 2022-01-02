@@ -82,7 +82,6 @@
                                 <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">404</text>
                             </svg>
                             @endif
-
                             <div
                                 class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
