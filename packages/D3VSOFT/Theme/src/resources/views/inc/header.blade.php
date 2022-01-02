@@ -75,7 +75,9 @@
                                                 <div class="content">
                                                     <h4><a href="#">
                                                         {{$cart['name']}}</a></h4>
-                                                    <p class="quantity">1x -
+                                                    <p class="quantity">
+                                                        {{$cart['quantity']}}
+                                                        -
                                                         <span class="amount">
                                                             @if (if_discounted($cart['discount']))
                                                             <del>{{$cart['price']}}</del>
