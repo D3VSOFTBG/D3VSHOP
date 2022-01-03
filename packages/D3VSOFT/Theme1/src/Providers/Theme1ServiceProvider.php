@@ -1,10 +1,10 @@
 <?php
 
-namespace D3VSOFT\Theme\Providers;
+namespace D3VSOFT\Theme1\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class ThemeServiceProvider extends ServiceProvider
+class Theme1ServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -24,14 +24,14 @@ class ThemeServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'theme');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'theme');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'theme1');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'theme1');
 
         $this->publishes([
-            __DIR__.'/../public' => public_path('/d3vsoft/theme'),
+            __DIR__.'/../public' => public_path('/d3vsoft/theme1'),
         ]);
 
-        $theme_path = '/d3vsoft/theme';
+        $theme_path = '/d3vsoft/theme1';
 
         view()->share('theme_path', $theme_path);
     }

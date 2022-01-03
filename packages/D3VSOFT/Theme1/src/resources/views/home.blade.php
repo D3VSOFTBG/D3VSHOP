@@ -1,3 +1,5 @@
+@section('page_name'){{ 'Home' }}@endsection
+
 @include('theme::inc.header')
 
 <section class="home section">

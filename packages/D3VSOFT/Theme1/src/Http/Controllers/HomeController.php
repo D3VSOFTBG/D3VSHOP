@@ -1,6 +1,6 @@
 <?php
 
-namespace D3VSOFT\Theme\Http\Controllers;
+namespace D3VSOFT\Theme1\Http\Controllers;
 
 use App\Currency;
 use App\Product;
@@ -19,7 +19,7 @@ class HomeController extends Controller
             'default_currency_code' => $default_currency_code,
         ];
 
-        return view('theme::home', $data);
+        return view('theme1::home', $data);
     }
     public function about()
     {
@@ -27,23 +27,23 @@ class HomeController extends Controller
 
         ];
 
-        return view('theme::about', $data);
+        return view('theme1::about', $data);
     }
     public function shop()
     {
         $products = Product::all();
-        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
+        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->firstOrFail();
 
         $data = [
             'products' => $products,
             'default_currency_code' => $default_currency_code,
         ];
 
-        return view('theme::shop', $data);
+        return view('theme1::shop', $data);
     }
     public function product($slug)
     {
-        $product = Product::where('slug', $slug)->first();
+        $product = Product::where('slug', $slug)->firstOrFail();
 
         if(!empty($product))
         {
@@ -54,11 +54,7 @@ class HomeController extends Controller
                 'default_currency_code' => $default_currency_code,
             ];
 
-            return view('theme::product', $data);
-        }
-        else
-        {
-            return view('errors.404');
+            return view('theme1::product', $data);
         }
     }
     public function contact()
@@ -67,11 +63,11 @@ class HomeController extends Controller
 
         ];
 
-        return view('theme::contact', $data);
+        return view('theme1::contact', $data);
     }
     public function cart()
     {
-        return view('theme::cart');
+        return view('theme1::cart');
     }
     public function cart_add(Request $request)
     {
