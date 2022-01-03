@@ -1,6 +1,6 @@
 @section('page_name'){{ 'Home' }}@endsection
 
-@include('theme::inc.header')
+@include('theme1::inc.header')
 
 {{-- {{print_r(session()->get('cart', []))}} --}}
 
@@ -99,4 +99,4 @@
 </div>
 <!-- End Banner Hero -->
 
-@include('theme::inc.footer')
+@include('theme1::inc.footer')

@@ -1,6 +1,6 @@
 @section('page_name'){{ 'About' }}@endsection
 
-@include('theme::inc.header')
+@include('theme1::inc.header')
 
 <section class="bg-success py-5">
     <div class="container">
@@ -65,4 +65,4 @@
 </section>
 <!-- End Section -->
 
-@include('theme::inc.footer')
+@include('theme1::inc.footer')

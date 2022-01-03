@@ -1,6 +1,6 @@
 @section('page_name'){{ 'Cart' }}@endsection
 
-@include('theme::inc.header')
+@include('theme1::inc.header')
 
 <!-- Start Content -->
 <div class="container py-5">
@@ -102,4 +102,4 @@
     </div>
 </div>
 
-@include('theme::inc.footer')
+@include('theme1::inc.footer')

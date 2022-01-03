@@ -1,6 +1,6 @@
 @section('page_name'){{ 'Home' }}@endsection
 
-@include('theme::inc.header')
+@include('theme1::inc.header')
 
 <section class="home section">
     <div class="container">
@@ -117,4 +117,4 @@
     </div>
 </section>
 
-@include('theme::inc.footer')
+@include('theme1::inc.footer')
