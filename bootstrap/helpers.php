@@ -114,7 +114,21 @@ function get_default_currency_code()
         Cache::forever('get_default_currency_code', $code);
         return Cache::get('get_default_currency_code');
     }
+}
+function get_cart_total_sum()
+{
+    $prices_array = array();
 
+    if(session()->has('cart'))
+    {
+        foreach(session()->get('cart') as $cart)
+        {
+            array_push($prices_array, discounted_price($cart['price'], $cart['discount']) * $cart['quantity']);
+        }
+    }
+
+    $get_cart_total_sum = array_sum($prices_array);
+    return $get_cart_total_sum;
 }
 function env_update($key, $value)
 {

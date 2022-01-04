@@ -33,21 +33,5 @@ class AppServiceProvider extends ServiceProvider
             $adminMenus = AdminMenu::all();
             View::share('adminMenus', $adminMenus);
         }
-        else
-        {
-            $prices_array = array();
-
-            if(session()->has('cart'))
-            {
-                foreach(session()->get('cart') as $cart)
-                {
-                    array_push($prices_array, discounted_price($cart['price'], $cart['discount']) * $cart['quantity']);
-                }
-            }
-
-            $cart_total_sum = array_sum($prices_array);
-
-            view()->share('cart_total_sum', $cart_total_sum);
-        }
     }
 }
