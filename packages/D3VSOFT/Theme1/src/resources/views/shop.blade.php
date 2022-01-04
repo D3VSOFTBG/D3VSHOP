@@ -34,13 +34,13 @@
                                     @if (is_file(public_path("/storage/img/products/$product->image")))
                                     <img style="max-height: 288px;" src="{{asset("/storage/img/products/$product->image")}}" alt="#">
                                     @else
-                                    <svg>
+                                    <svg width="100%" height="100%">
                                         <rect width="100%" height="100%" fill="transparent"/>
                                         <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">404</text>
                                     </svg>
                                     @endif
                                     <div class="button">
-                                        <a href="product-details.html" class="btn"><i class="lni lni-cart"></i>
+                                        <a href="#" class="btn"><i class="lni lni-cart"></i>
                                             Add to Cart</a>
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                                {{$products->links()}}
+                            {{$products->links()}}
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,7 @@ use App\Order;
 use App\Ordered_Product;
 use App\Product;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -100,6 +101,20 @@ function get_currency_code(int $id)
 function get_currency_id(string $code)
 {
     return Currency::where('code', $code)->pluck('id')->first();
+}
+function get_default_currency_code()
+{
+    if(Cache::has('get_default_currency_code'))
+    {
+        return Cache::get('get_default_currency_code');
+    }
+    else
+    {
+        $code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
+        Cache::forever('get_default_currency_code', $code);
+        return Cache::get('get_default_currency_code');
+    }
+
 }
 function env_update($key, $value)
 {

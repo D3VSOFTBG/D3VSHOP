@@ -35,8 +35,6 @@ class AppServiceProvider extends ServiceProvider
         }
         else
         {
-            $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
-
             $prices_array = array();
 
             if(session()->has('cart'))
@@ -49,9 +47,7 @@ class AppServiceProvider extends ServiceProvider
 
             $cart_total_sum = array_sum($prices_array);
 
-            view()->share('cart_count', cart_count());
             view()->share('cart_total_sum', $cart_total_sum);
-            view()->share('default_currency_code', $default_currency_code);
         }
     }
 }

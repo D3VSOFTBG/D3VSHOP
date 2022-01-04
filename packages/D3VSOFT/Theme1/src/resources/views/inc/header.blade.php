@@ -46,7 +46,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-6">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{{route('home')}}">
                             {{env('SHOP_NAME')}}
                         </a>
                     </div>
@@ -55,37 +55,46 @@
                             <div class="cart-items">
                                 <a href="javascript:void(0)" class="btn btn-primary">
                                     <i class="lni lni-cart"></i>
-                                    <span class="total-items">({{$cart_count}})</span>
+                                    <span class="total-items">({{cart_count()}})</span>
                                 </a>
                                 <div class="shopping-item">
                                     <div class="dropdown-cart-header">
-                                        <span>{{$cart_count}} Items</span>
+                                        <span>{{cart_count()}} Items</span>
                                         <a href="{{route('cart')}}">View Cart</a>
                                     </div>
                                     <ul class="shopping-list">
                                         @if (session()->has('cart'))
                                             @foreach (session()->get('cart') as $id => $cart)
                                             <li>
-                                                <a href="javascript:void(0)" class="remove" title="Remove this item"><i
-                                                    class="lni lni-close"></i></a>
+                                                <form action="{{route('cart.delete')}}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="id" value="{{$id}}">
+                                                    <button type="submit" href="#" class="remove" title="Remove this item"><i
+                                                        class="lni lni-close"></i></button>
+                                                </form>
                                                 <div class="cart-img-head">
-                                                    <a class="cart-img" href="#"><img
-                                                        src="assets/images/header/cart-items/item1.jpg" alt="#"></a>
+                                                    <a class="cart-img" href="{{url("/shop/" . $cart['slug'])}}">
+                                                        @if (is_file(public_path("/storage/img/products/" . $cart['image'])))
+                                                        <img src="{{asset("/storage/img/products/" . $cart['image'])}}" alt="#">
+                                                        @else
+                                                        <svg width="100%" height="100%">
+                                                            <rect width="100%" height="100%" fill="transparent" />
+                                                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+                                                                fill="black">404</text>
+                                                        </svg>
+                                                        @endif
+                                                    </a>
                                                 </div>
                                                 <div class="content">
-                                                    <h4><a href="#">
-                                                        {{$cart['name']}}</a></h4>
+                                                    <h4>
+                                                        <a href="{{url("/shop/" . $cart['slug'])}}">
+                                                        {{$cart['name']}}</a>
+                                                    </h4>
                                                     <p class="quantity">
                                                         {{$cart['quantity']}}
-                                                        -
+                                                        *
                                                         <span class="amount">
-                                                            @if (if_discounted($cart['discount']))
-                                                            <del>{{$cart['price']}}</del>
-                                                            ({{discounted_price($cart['price'], $cart['discount'])}})
-                                                            @else
-                                                            {{$cart['price']}}
-                                                            @endif
-                                                            <strong>{{$default_currency_code}}</strong>
+                                                            {{discounted_price($cart['price'], $cart['discount'])}}&nbsp;<strong>{{get_default_currency_code()}}</strong>
                                                         </span>
                                                     </p>
                                                 </div>
@@ -98,7 +107,7 @@
                                             <span>Total</span>
                                             <span class="total-amount">
                                                 {{$cart_total_sum}}
-                                                <strong>{{$default_currency_code}}</strong>
+                                                <strong>{{get_default_currency_code()}}</strong>
                                             </span>
                                         </div>
                                         <div class="button">
@@ -127,7 +136,7 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="{{route('home')}}" class="active">Home</a>
+                                        <a href="{{route('home')}}">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{route('shop')}}">Shop</a>
