@@ -7825,6 +7825,10 @@ blockquote span {
     color: #d6d6d6
 }
 
+.footer .single-footer.f-contact .mail {
+    color: #d6d6d6
+}
+
 .footer .single-footer.f-contact ul {
     margin: 10px 0
 }
@@ -7852,6 +7856,14 @@ blockquote span {
 }
 
 .footer .single-footer.f-contact .mail a:hover {
+    color: #0167f3
+}
+
+.footer .single-footer.f-contact .phone a {
+    color: #d6d6d6
+}
+
+.footer .single-footer.f-contact .phone a:hover {
     color: #0167f3
 }
 

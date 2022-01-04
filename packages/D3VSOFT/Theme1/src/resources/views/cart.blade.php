@@ -5,7 +5,7 @@
 <section class="shopping-cart section">
     <div class="container">
         <div class="table-responsive">
-            <table class="m-0 table" style="background-color: #fff;">
+            <table class="m-0 table rounded" style="background-color: #fff;">
                 <tr>
                     <th class="text-center">
                         <p>Name</p>
@@ -63,43 +63,33 @@
                 </tr>
                 @endif
             </table>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-
-                <div class="total-amount">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-6 col-12">
-                            <div class="left">
-                                <div class="coupon">
-                                    <form action="#" target="_blank">
-                                        <input name="Coupon" placeholder="Enter Your Coupon">
-                                        <div class="button">
-                                            <button class="btn">Apply Coupon</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+            <br/>
+            <table class="m-0 table rounded" style="background-color: #fff;">
+                <tr>
+                    <th class="align-middle text-center">
+                        Quantity
+                    </th>
+                    <th class="align-middle text-center">
+                        Total
+                    </th>
+                </tr>
+                <tr>
+                    <td class="align-middle text-center">
+                        {{cart_count()}}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{get_cart_total_sum()}}
+                        <strong>{{get_default_currency_code()}}</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="button">
+                            <a href="checkout.html" class="btn w-100">Checkout</a>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="right">
-                                <ul>
-                                    <li>Cart Subtotal<span>$2560.00</span></li>
-                                    <li>Shipping<span>Free</span></li>
-                                    <li>You Save<span>$29.00</span></li>
-                                    <li class="last">You Pay<span>$2531.00</span></li>
-                                </ul>
-                                <div class="button">
-                                    <a href="checkout.html" class="btn">Checkout</a>
-                                    <a href="product-grids.html" class="btn btn-alt">Continue shopping</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </section>

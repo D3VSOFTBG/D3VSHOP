@@ -42,7 +42,7 @@
                                     <form action="{{route('cart.add')}}" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$product->id}}">
-
+                                        <input type="hidden" name="quantity" value="1">
                                         <div class="button">
                                             <button class="btn" type="submit"><i class="lni lni-cart"></i>Add to Cart</button>
                                         </div>

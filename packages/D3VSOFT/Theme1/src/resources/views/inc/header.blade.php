@@ -146,6 +146,26 @@
                                     <li class="nav-item">
                                         <a href="{{route('shop')}}">Shop</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+                                            data-bs-target="#account" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">Account</a>
+                                        <ul class="sub-menu collapse" id="account">
+                                            @if (Auth::check())
+                                            <li class="nav-item">
+                                                <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </li>
+                                            @else
+                                            <li class="nav-item">
+                                                <a href="{{route('login')}}">Login</a>
+                                                <a href="{{route('register')}}">Register</a>
+                                            </li>
+                                            @endif
+                                        </ul>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
