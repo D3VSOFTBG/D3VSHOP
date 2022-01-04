@@ -106,7 +106,7 @@
                                         <div class="total">
                                             <span>Total</span>
                                             <span class="total-amount">
-                                                {{$cart_total_sum}}
+                                                {{get_cart_total_sum()}}
                                                 <strong>{{get_default_currency_code()}}</strong>
                                             </span>
                                         </div>
