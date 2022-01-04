@@ -33,10 +33,6 @@
                         <div class="single-footer f-contact">
                             <h3>Get In Touch With Us</h3>
                             <p class="phone">Phone: <a href="tel:{{env('PHONE')}}">{{env('PHONE')}}</a></p>
-                            <ul>
-                                <li><span>Monday-Friday: </span> 9.00 am - 8.00 pm</li>
-                                <li><span>Saturday: </span> 10.00 am - 6.00 pm</li>
-                            </ul>
                             <p class="mail">Mail: <a href="mailto:{{env('MAIL')}}">{{env('MAIL')}}</a></p>
                         </div>
                     </div>
@@ -65,11 +61,8 @@
                         <div class="single-footer f-link">
                             <h3>Information</h3>
                             <ul>
-                                <li><a href="javascript:void(0)">About Us</a></li>
-                                <li><a href="javascript:void(0)">Contact Us</a></li>
-                                <li><a href="javascript:void(0)">Downloads</a></li>
-                                <li><a href="javascript:void(0)">Sitemap</a></li>
-                                <li><a href="javascript:void(0)">FAQs Page</a></li>
+                                <li><a href="javascript:void(0)">TOS</a></li>
+                                <li><a href="javascript:void(0)">Privacy Policy</a></li>
                             </ul>
                         </div>
                     </div>
