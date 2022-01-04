@@ -3,10 +3,8 @@
 namespace App\Providers;
 
 use App\AdminMenu;
-use App\Currency;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Request;
 
 class AppServiceProvider extends ServiceProvider
