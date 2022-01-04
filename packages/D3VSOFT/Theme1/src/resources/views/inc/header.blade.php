@@ -94,7 +94,12 @@
                                                         {{$cart['quantity']}}
                                                         *
                                                         <span class="amount">
+                                                            @if (if_discounted($cart['discount']))
+                                                            <del>{{$cart['price']}}&nbsp;<strong>{{get_default_currency_code()}}</strong></del>
                                                             {{discounted_price($cart['price'], $cart['discount'])}}&nbsp;<strong>{{get_default_currency_code()}}</strong>
+                                                            @else
+                                                            {{$cart['price']}}&nbsp;<strong>{{get_default_currency_code()}}</strong>
+                                                            @endif
                                                         </span>
                                                     </p>
                                                 </div>

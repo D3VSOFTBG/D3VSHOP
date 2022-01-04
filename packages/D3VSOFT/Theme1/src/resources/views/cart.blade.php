@@ -4,69 +4,58 @@
 
 <section class="shopping-cart section">
     <div class="container">
-        <div class="cart-list-head">
-
-            <div class="cart-list-title">
-                <div class="row">
-                    <div class="col-lg-1 col-md-1 col-12">
-                    </div>
-                    <div class="col-lg-4 col-md-3 col-12">
-                        <p>Product Name</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-12">
+        <div class="table-responsive">
+            <table class="m-0 table" style="background-color: #fff;">
+                <tr>
+                    <th class="text-center">
+                        <p>Name</p>
+                    </th>
+                    <th class="text-center">
                         <p>Quantity</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-12">
-                        <p>Subtotal</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-12">
-                        <p>Discount</p>
-                    </div>
-                    <div class="col-lg-1 col-md-2 col-12">
-                        <p>Remove</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="cart-single-list">
-
-                <div class="row align-items-center">
-                    <div class="col-lg-1 col-md-1 col-12">
-                        <a href="product-details.html"><img src="assets/images/cart/01.jpg" alt="#"></a>
-                    </div>
-                    <div class="col-lg-4 col-md-3 col-12">
-                        <h5 class="product-name"><a href="product-details.html">
-                                Canon EOS M50 Mirrorless Camera</a></h5>
-                        <p class="product-des">
-                            <span><em>Type:</em> Mirrorless</span>
-                            <span><em>Color:</em> Black</span>
-                        </p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-12">
-                        <div class="count-input">
-                            <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+                @if (session()->has('cart'))
+                @foreach (session()->get('cart') as $id => $cart)
+                <tr>
+                    <td class="align-middle text-center">
+                        <h5 class="product-name">
+                            <a href="{{url("/shop/" . $cart['slug'])}}">
+                                {{$cart['name']}}
+                            </a>
+                            <p>
+                                @if (if_discounted($cart['discount']))
+                                <del>{{$cart['price']}}&nbsp;<strong>{{get_default_currency_code()}}</strong></del>
+                                {{discounted_price($cart['price'], $cart['discount'])}}&nbsp;<strong>{{get_default_currency_code()}}</strong>
+                                @else
+                                {{$cart['price']}}&nbsp;<strong>{{get_default_currency_code()}}</strong>
+                                @endif
+                            </p>
+                        </h5>
+                    </td>
+                    <td class="align-middle text-center" style="width: 200px;">
+                        <div class="form-group">
+                            <form action="{{route('cart.update')}}" method="post">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$id}}">
+                                <div class="input-group">
+                                    <input type="submit" class="btn btn-primary" name="operation" value="-" @if ($cart['quantity'] <= 1) disabled @endif />
+                                    <input class="form-control text-center" type="number" value="{{$cart['quantity']}}" readonly />
+                                    <input type="submit" class="btn btn-primary" name="operation" value="+" />
+                                </div>
+                            </form>
                         </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-12">
-                        <p>$910.00</p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-12">
-                        <p>$29.00</p>
-                    </div>
-                    <div class="col-lg-1 col-md-2 col-12">
-                        <a class="remove-item" href="javascript:void(0)"><i class="lni lni-close"></i></a>
-                    </div>
-                </div>
-            </div>
-
+                    </td>
+                    <td class="align-middle text-center">
+                        <button class="btn btn-danger" href="javascript:void(0)"><i class="lni lni-close"></i></button>
+                    </td>
+                </tr>
+                @endforeach
+                @endif
+            </table>
         </div>
+
         <div class="row">
             <div class="col-12">
 
