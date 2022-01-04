@@ -31,8 +31,8 @@ class HomeController extends Controller
     }
     public function shop()
     {
-        $products = Product::all();
-        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->firstOrFail();
+        $products = Product::paginate(env('PAGINATION_ADMIN'));
+        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
         $data = [
             'products' => $products,
