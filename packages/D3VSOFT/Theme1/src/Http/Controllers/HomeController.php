@@ -81,14 +81,17 @@ class HomeController extends Controller
         }
         else
         {
-            $cart[$request->id] = [
-                "name" => $product->name,
-                "slug" => $product->slug,
-                "quantity" => $request->quantity,
-                "discount" => $product->discount,
-                "price" => $product->price,
-                "image" => $product->image,
-            ];
+            if($request->quantity > 0)
+            {
+                $cart[$request->id] = [
+                    "name" => $product->name,
+                    "slug" => $product->slug,
+                    "quantity" => $request->quantity,
+                    "discount" => $product->discount,
+                    "price" => $product->price,
+                    "image" => $product->image,
+                ];
+            }
         }
 
         session()->put('cart', $cart);

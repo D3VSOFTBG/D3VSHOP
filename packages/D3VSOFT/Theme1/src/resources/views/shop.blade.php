@@ -39,10 +39,14 @@
                                         <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">404</text>
                                     </svg>
                                     @endif
-                                    <div class="button">
-                                        <a href="#" class="btn"><i class="lni lni-cart"></i>
-                                            Add to Cart</a>
-                                    </div>
+                                    <form action="{{route('cart.add')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{$product->id}}">
+
+                                        <div class="button">
+                                            <button class="btn" type="submit"><i class="lni lni-cart"></i>Add to Cart</button>
+                                        </div>
+                                    </form>
                                 </div>
                                 <div class="product-info">
                                     <h4 class="title">

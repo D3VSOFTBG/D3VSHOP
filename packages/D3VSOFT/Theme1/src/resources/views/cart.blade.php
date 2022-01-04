@@ -17,41 +17,50 @@
                     </th>
                 </tr>
                 @if (session()->has('cart'))
-                @foreach (session()->get('cart') as $id => $cart)
+                    @foreach (session()->get('cart') as $id => $cart)
+                    <tr>
+                        <td class="align-middle text-center">
+                            <h5 class="product-name">
+                                <a href="{{url("/shop/" . $cart['slug'])}}">
+                                    {{$cart['name']}}
+                                </a>
+                                <p>
+                                    @if (if_discounted($cart['discount']))
+                                    <del>{{$cart['price']}}&nbsp;<strong>{{get_default_currency_code()}}</strong></del>
+                                    {{discounted_price($cart['price'], $cart['discount'])}}&nbsp;<strong>{{get_default_currency_code()}}</strong>
+                                    @else
+                                    {{$cart['price']}}&nbsp;<strong>{{get_default_currency_code()}}</strong>
+                                    @endif
+                                </p>
+                            </h5>
+                        </td>
+                        <td class="align-middle text-center" style="width: 200px;">
+                            <div class="form-group">
+                                <form action="{{route('cart.update')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{$id}}">
+                                    <div class="input-group">
+                                        <input type="submit" class="btn btn-primary" name="operation" value="-" @if ($cart['quantity'] <=1) disabled @endif />
+                                        <input class="form-control text-center" type="number"
+                                            value="{{$cart['quantity']}}" readonly />
+                                        <input type="submit" class="btn btn-primary" name="operation" value="+" />
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
+                        <td class="align-middle text-center">
+                            <button class="btn btn-danger" href="javascript:void(0)"><i
+                                    class="lni lni-close"></i></button>
+                        </td>
+                    </tr>
+                    @endforeach
+                @endif
+                @if (empty(cart_count()))
                 <tr>
-                    <td class="align-middle text-center">
-                        <h5 class="product-name">
-                            <a href="{{url("/shop/" . $cart['slug'])}}">
-                                {{$cart['name']}}
-                            </a>
-                            <p>
-                                @if (if_discounted($cart['discount']))
-                                <del>{{$cart['price']}}&nbsp;<strong>{{get_default_currency_code()}}</strong></del>
-                                {{discounted_price($cart['price'], $cart['discount'])}}&nbsp;<strong>{{get_default_currency_code()}}</strong>
-                                @else
-                                {{$cart['price']}}&nbsp;<strong>{{get_default_currency_code()}}</strong>
-                                @endif
-                            </p>
-                        </h5>
-                    </td>
-                    <td class="align-middle text-center" style="width: 200px;">
-                        <div class="form-group">
-                            <form action="{{route('cart.update')}}" method="post">
-                                @csrf
-                                <input type="hidden" name="id" value="{{$id}}">
-                                <div class="input-group">
-                                    <input type="submit" class="btn btn-primary" name="operation" value="-" @if ($cart['quantity'] <= 1) disabled @endif />
-                                    <input class="form-control text-center" type="number" value="{{$cart['quantity']}}" readonly />
-                                    <input type="submit" class="btn btn-primary" name="operation" value="+" />
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                    <td class="align-middle text-center">
-                        <button class="btn btn-danger" href="javascript:void(0)"><i class="lni lni-close"></i></button>
+                    <td colspan="5" class="text-center">
+                        Your cart is empty.
                     </td>
                 </tr>
-                @endforeach
                 @endif
             </table>
         </div>
