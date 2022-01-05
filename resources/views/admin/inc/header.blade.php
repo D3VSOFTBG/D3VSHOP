@@ -16,8 +16,19 @@
     <link rel="stylesheet" href="{{asset('/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('/dist/css/adminlte.min.css')}}">
+      <!-- summernote -->
+    <link rel="stylesheet" href="{{asset('/plugins/summernote/summernote-bs4.min.css')}}">
     <!-- Admin Style -->
     <link rel="stylesheet" href="{{asset('/assets/css/d3vsoft.css')}}">
+
+    @if (str_contains(Request::url(), 'info'))
+    <style>
+        .card {
+            background-color: white !important;
+            color: black !important;
+        }
+    </style>
+    @endif
 
     @if ($errors->any())
     <script>
@@ -137,9 +148,9 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('admin.shop.information')}}" class="nav-link @if (Route::currentRouteName() == 'admin.shop.information') active @endif">
+                                    <a href="{{route('admin.shop.details')}}" class="nav-link @if (Route::currentRouteName() == 'admin.shop.details') active @endif">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Information</p>
+                                        <p>Details</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -163,6 +174,39 @@
                                     <a href="{{route('admin.payments.stripe')}}" class="nav-link @if (Route::currentRouteName() == 'admin.payments.stripe') active @endif">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Stripe</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item @if (str_contains(Request::url(), 'info')) menu-open @endif">
+                            <a href="#" class="nav-link @if (str_contains(Request::url(), 'info')) active @endif">
+                                <i class="nav-icon fas fa-info"></i>
+                                <p>
+                                    Info
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.info.about')}}" class="nav-link @if (Route::currentRouteName() == 'admin.info.about') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>About</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.info.privacy-policy')}}" class="nav-link @if (Route::currentRouteName() == 'admin.info.privacy-policy') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Privacy Policy</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.info.tos')}}" class="nav-link @if (Route::currentRouteName() == 'admin.info.tos') active @endif">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>TOS</p>
                                     </a>
                                 </li>
                             </ul>

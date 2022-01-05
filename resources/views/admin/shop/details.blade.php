@@ -1,4 +1,4 @@
-@section('page_name'){{ 'Information' }}@endsection
+@section('page_name'){{ 'Details' }}@endsection
 
 @include('admin.inc.header')
 

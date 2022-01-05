@@ -32,11 +32,14 @@
 <script src="{{asset('/plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{asset('/plugins/chart.js/Chart.min.js')}}"></script>
-
-<!-- AdminLTE for demo purposes -->
-<!-- <script src="/dist/js/demo.js"></script> -->
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<!-- <script src="/dist/js/pages/dashboard2.js"></script> -->
+<!-- Summernote -->
+<script src="{{asset('/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script>
+    $(function () {
+        // Summernote
+        $('#summernote').summernote()
+    })
+</script>
 </body>
 
 </html>

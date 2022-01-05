@@ -5,6 +5,7 @@ use App\Role;
 use App\User;
 use App\Stripe;
 use App\Currency;
+use App\Info;
 use App\Order;
 use App\Ordered_Product;
 use App\Product;
@@ -192,4 +193,43 @@ function remove_directory($path)
     }
 
     rmdir($path);
+}
+function about()
+{
+    if(Cache::has('about'))
+    {
+        return Cache::get('about');
+    }
+    else
+    {
+        $info = Info::where('id', 1)->pluck('text')->first();
+        Cache::forever('about', $info);
+        return Cache::get('about');
+    }
+}
+function privacy_policy()
+{
+    if(Cache::has('privacy_policy'))
+    {
+        return Cache::get('privacy_policy');
+    }
+    else
+    {
+        $info = Info::where('id', 2)->pluck('text')->first();
+        Cache::forever('privacy_policy', $info);
+        return Cache::get('privacy_policy');
+    }
+}
+function tos()
+{
+    if(Cache::has('tos'))
+    {
+        return Cache::get('tos');
+    }
+    else
+    {
+        $info = Info::where('id', 3)->pluck('text')->first();
+        Cache::forever('tos', $info);
+        return Cache::get('tos');
+    }
 }

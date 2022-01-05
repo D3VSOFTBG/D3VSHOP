@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Carrier;
 use App\Currency;
+use App\Info;
 use App\Product;
 use App\Setting;
 use App\Stripe;
@@ -42,9 +43,9 @@ class AdminController extends Controller
 
         return view('admin.shop.users', $data);
     }
-    function information()
+    function details()
     {
-        return view('admin.shop.information');
+        return view('admin.shop.details');
     }
     function products()
     {
@@ -590,6 +591,67 @@ class AdminController extends Controller
         }
 
         $user->save();
+
+        return back();
+    }
+    function about_get()
+    {
+        $info = Info::where('id', 1)->pluck('text')->first();
+
+        $data = [
+            'info' => $info,
+        ];
+
+        return view('admin.info.about', $data);
+    }
+    function privacy_policy_get()
+    {
+        $info = Info::where('id', 2)->pluck('text')->first();
+
+        $data = [
+            'info' => $info,
+        ];
+
+        return view('admin.info.privacy-policy', $data);
+    }
+    function tos_get()
+    {
+        $info = Info::where('id', 3)->pluck('text')->first();
+
+        $data = [
+            'info' => $info,
+        ];
+
+        return view('admin.info.tos', $data);
+    }
+    function about_post(Request $request)
+    {
+        $info = Info::findOrFail(1);
+        $info->text = $request->text;
+        $info->save();
+
+        Cache::flush();
+
+        return back();
+    }
+    function privacy_policy_post(Request $request)
+    {
+        $info = Info::findOrFail(2);
+        $info->text = $request->text;
+        $info->save();
+
+        Cache::flush();
+
+        return back();
+    }
+
+    function tos_post(Request $request)
+    {
+        $info = Info::findOrFail(3);
+        $info->text = $request->text;
+        $info->save();
+
+        Cache::flush();
 
         return back();
     }

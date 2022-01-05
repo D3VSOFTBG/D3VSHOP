@@ -29,12 +29,15 @@ Route::middleware(['auth', 'admin'])->group(function ()
     // GET
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin');
     Route::get('/admin/shop/users', [AdminController::class, 'users'])->name('admin.shop.users');
-    Route::get('/admin/shop/information', [AdminController::class, 'information'])->name('admin.shop.information');
+    Route::get('/admin/shop/details', [AdminController::class, 'details'])->name('admin.shop.details');
     Route::get('/admin/shop/settings', [AdminController::class, 'settings_get'])->name('admin.shop.settings');
     Route::get('/admin/shop/packages', [AdminController::class, 'packages'])->name('admin.shop.packages');
     Route::get('/admin/shop/products', [AdminController::class, 'products'])->name('admin.shop.products');
     Route::get('/admin/shop/orders', [AdminController::class, 'orders'])->name('admin.shop.orders');
     Route::get('/admin/shop/carriers', [AdminController::class, 'carriers'])->name('admin.shop.carriers');
+    Route::get('/admin/info/about', [AdminController::class, 'about_get'])->name('admin.info.about');
+    Route::get('/admin/info/tos', [AdminController::class, 'tos_get'])->name('admin.info.tos');
+    Route::get('/admin/info/privacy-policy', [AdminController::class, 'privacy_policy_get'])->name('admin.info.privacy-policy');
     Route::get('/admin/payments/stripe', [AdminController::class, 'payments_stripe_get'])->name('admin.payments.stripe');
     Route::get('/invoice/{id}', [InvoiceController::class, 'download']);
 
@@ -50,6 +53,9 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::post('/admin/shop/users/delete', [AdminController::class, 'user_delete'])->name('admin.shop.users.delete');
     Route::post('/admin/shop/users/edit', [AdminController::class, 'user_edit'])->name('admin.shop.users.edit');
     Route::post('/admin/shop/users/create', [AdminController::class, 'user_create'])->name('admin.shop.users.create');
+    Route::post('/admin/info/about', [AdminController::class, 'about_post'])->name('admin.info.about');
+    Route::post('/admin/info/tos', [AdminController::class, 'tos_post'])->name('admin.info.tos');
+    Route::post('/admin/info/privacy-policy', [AdminController::class, 'privacy_policy_post'])->name('admin.info.privacy-policy');
     Route::post('/admin/payments/stripe', [AdminController::class, 'payments_stripe_post'])->name('admin.payments.stripe');
 });
 
