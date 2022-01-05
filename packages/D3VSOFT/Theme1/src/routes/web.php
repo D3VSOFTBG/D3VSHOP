@@ -12,6 +12,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/success', [HomeController::class, 'success'])->name('success');
     Route::get('/cancel', [HomeController::class, 'cancel'])->name('cancel');
     Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
+    Route::get('/account/profile', [HomeController::class, 'profile'])->name('profile');
     Route::post('/cart/add', [HomeController::class, 'cart_add'])->name('cart.add');
     Route::post('/cart/update', [HomeController::class, 'cart_update'])->name('cart.update');
     Route::post('/cart/delete', [HomeController::class, 'cart_delete'])->name('cart.delete');
