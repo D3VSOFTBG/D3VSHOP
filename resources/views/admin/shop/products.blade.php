@@ -162,12 +162,11 @@
                                             </td>
                                             <td class="align-middle">
                                                 @if (if_discounted($product->discount))
-                                                <del>{{$product->price}}</del>
-                                                ({{discounted_price($product->price, $product->discount)}})
+                                                <del>{{$product->price}}&nbsp;<strong>{{$default_currency_code}}</strong></del>
+                                                {{discounted_price($product->price, $product->discount)}}&nbsp;<strong>{{$default_currency_code}}</strong>
                                                 @else
-                                                {{$product->price}}
+                                                {{$product->price}}&nbsp;<strong>{{$default_currency_code}}</strong>
                                                 @endif
-                                                <strong>{{$default_currency_code}}</strong>
                                             </td>
                                             <td class="align-middle">
                                                 {{if_null($product->discount)}} <strong>%</strong>

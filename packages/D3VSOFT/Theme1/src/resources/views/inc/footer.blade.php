@@ -40,8 +40,75 @@
                         <div class="single-footer f-link">
                             <h3>Information</h3>
                             <ul>
-                                <li><a href="javascript:void(0)">TOS</a></li>
-                                <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                                <li>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#about">About</a>
+
+                                    <div class="modal fade" id="about" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">About</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {{about()}}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#privacy_policy">Privacy Policy</a>
+
+                                    <div class="modal fade" id="privacy_policy" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Privacy Policy</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {{privacy_policy()}}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#tos">TOS</a>
+
+                                    <div class="modal fade" id="tos" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">TOS</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {{tos()}}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
