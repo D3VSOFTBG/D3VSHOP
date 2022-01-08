@@ -1,6 +1,6 @@
 <?php
 
-namespace D3VSOFT\Theme1\Http\Controllers;
+namespace D3VSOFT\Main\Http\Controllers;
 
 use App\Currency;
 use App\Product;
@@ -19,7 +19,7 @@ class HomeController extends Controller
             'default_currency_code' => $default_currency_code,
         ];
 
-        return view('theme1::home', $data);
+        return view('main::home', $data);
     }
     public function about()
     {
@@ -27,7 +27,7 @@ class HomeController extends Controller
 
         ];
 
-        return view('theme1::about', $data);
+        return view('main::about', $data);
     }
     public function shop()
     {
@@ -39,7 +39,7 @@ class HomeController extends Controller
             'default_currency_code' => $default_currency_code,
         ];
 
-        return view('theme1::shop', $data);
+        return view('main::shop', $data);
     }
     public function product($slug)
     {
@@ -54,7 +54,7 @@ class HomeController extends Controller
                 'default_currency_code' => $default_currency_code,
             ];
 
-            return view('theme1::product', $data);
+            return view('main::product', $data);
         }
     }
     public function contact()
@@ -63,11 +63,11 @@ class HomeController extends Controller
 
         ];
 
-        return view('theme1::contact', $data);
+        return view('main::contact', $data);
     }
     public function cart()
     {
-        return view('theme1::cart');
+        return view('main::cart');
     }
     public function cart_add(Request $request)
     {

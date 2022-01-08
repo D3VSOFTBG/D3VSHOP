@@ -1,6 +1,6 @@
 @section('page_name'){{ 'Shop' }}@endsection
 
-@include('theme1::inc.header')
+@include('main::inc.header')
 
 <section class="product-grids section">
     <div class="container">
@@ -74,4 +74,4 @@
     </div>
 </section>
 
-@include('theme1::inc.footer')
+@include('main::inc.footer')

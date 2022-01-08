@@ -1,6 +1,6 @@
 @section('page_name'){{ 'Cart' }}@endsection
 
-@include('theme1::inc.header')
+@include('main::inc.header')
 
 <section class="shopping-cart section">
     <div class="container">
@@ -94,4 +94,4 @@
     </div>
 </section>
 
-@include('theme1::inc.footer')
+@include('main::inc.footer')

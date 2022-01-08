@@ -1,6 +1,6 @@
 @section('page_name'){{ 'Product' }}@endsection
 
-@include('theme1::inc.header')
+@include('main::inc.header')
 
 <section class="item-details section">
     <div class="container">
@@ -119,4 +119,4 @@
     </div>
 </section>
 
-@include('theme1::inc.footer')
+@include('main::inc.footer')
