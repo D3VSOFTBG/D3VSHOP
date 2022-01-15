@@ -196,9 +196,9 @@
                             </ul>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('admin.info.privacy-policy')}}" class="nav-link @if (Route::currentRouteName() == 'admin.info.privacy-policy') active @endif">
+                                    <a href="{{route('admin.info.privacy')}}" class="nav-link @if (Route::currentRouteName() == 'admin.info.privacy') active @endif">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Privacy Policy</p>
+                                        <p>Privacy</p>
                                     </a>
                                 </li>
                             </ul>

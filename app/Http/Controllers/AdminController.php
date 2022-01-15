@@ -77,25 +77,5 @@ class AdminController extends Controller
     }
 
 
-    function privacy_policy_get()
-    {
-        $info = Info::where('id', 2)->pluck('text')->first();
 
-        $data = [
-            'info' => $info,
-        ];
-
-        return view('admin.info.privacy-policy', $data);
-    }
-
-    function privacy_policy_post(Request $request)
-    {
-        $info = Info::findOrFail(2);
-        $info->text = $request->text;
-        $info->save();
-
-        Cache::flush();
-
-        return back();
-    }
 }

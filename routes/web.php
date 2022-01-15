@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DetailsController;
 use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Admin\PackagesController;
+use App\Http\Controllers\Admin\PrivacyController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\TosController;
@@ -47,7 +48,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::get('/admin/shop/carriers', [CarriersController::class, 'carriers'])->name('admin.shop.carriers');
     Route::get('/admin/info/about', [AboutController::class, 'get'])->name('admin.info.about');
     Route::get('/admin/info/tos', [TosController::class, 'get'])->name('admin.info.tos');
-    Route::get('/admin/info/privacy-policy', [AdminController::class, 'privacy_policy_get'])->name('admin.info.privacy-policy');
+    Route::get('/admin/info/privacy', [PrivacyController::class, 'get'])->name('admin.info.privacy');
     Route::get('/admin/payments/stripe', [AdminController::class, 'payments_stripe_get'])->name('admin.payments.stripe');
     Route::get('/invoice/{id}', [InvoiceController::class, 'download']);
 
@@ -64,7 +65,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::post('/admin/shop/users/create', [UsersController::class, 'create'])->name('admin.shop.users.create');
     Route::post('/admin/info/about', [AboutController::class, 'post'])->name('admin.info.about');
     Route::post('/admin/info/tos', [TosController::class, 'post'])->name('admin.info.tos');
-    Route::post('/admin/info/privacy-policy', [AdminController::class, 'privacy_policy_post'])->name('admin.info.privacy-policy');
+    Route::post('/admin/info/privacy', [PrivacyController::class, 'post'])->name('admin.info.privacy');
     Route::post('/admin/payments/stripe', [AdminController::class, 'payments_stripe_post'])->name('admin.payments.stripe');
 });
 
