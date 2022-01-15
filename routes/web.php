@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceController;
@@ -27,8 +29,8 @@ Route::get('/stripe', function () {
 Route::middleware(['auth', 'admin'])->group(function ()
 {
     // GET
-    Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin');
-    Route::get('/admin/shop/users', [AdminController::class, 'users'])->name('admin.shop.users');
+    Route::get('/admin', [DashboardController::class, 'dashboard'])->name('admin');
+    Route::get('/admin/shop/users', [UsersController::class, 'users'])->name('admin.shop.users');
     Route::get('/admin/shop/details', [AdminController::class, 'details'])->name('admin.shop.details');
     Route::get('/admin/shop/settings', [AdminController::class, 'settings_get'])->name('admin.shop.settings');
     Route::get('/admin/shop/packages', [AdminController::class, 'packages'])->name('admin.shop.packages');
@@ -50,9 +52,9 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::post('/admin/shop/carriers/delete', [AdminController::class, 'carrier_delete'])->name('admin.shop.carriers.delete');
     Route::post('/admin/shop/carriers/edit', [AdminController::class, 'carrier_edit'])->name('admin.shop.carriers.edit');
     Route::post('/admin/shop/carriers/create', [AdminController::class, 'carrier_create'])->name('admin.shop.carriers.create');
-    Route::post('/admin/shop/users/delete', [AdminController::class, 'user_delete'])->name('admin.shop.users.delete');
-    Route::post('/admin/shop/users/edit', [AdminController::class, 'user_edit'])->name('admin.shop.users.edit');
-    Route::post('/admin/shop/users/create', [AdminController::class, 'user_create'])->name('admin.shop.users.create');
+    Route::post('/admin/shop/users/delete', [UsersController::class, 'delete'])->name('admin.shop.users.delete');
+    Route::post('/admin/shop/users/edit', [UsersController::class, 'edit'])->name('admin.shop.users.edit');
+    Route::post('/admin/shop/users/create', [UsersController::class, 'create'])->name('admin.shop.users.create');
     Route::post('/admin/info/about', [AdminController::class, 'about_post'])->name('admin.info.about');
     Route::post('/admin/info/tos', [AdminController::class, 'tos_post'])->name('admin.info.tos');
     Route::post('/admin/info/privacy-policy', [AdminController::class, 'privacy_policy_post'])->name('admin.info.privacy-policy');

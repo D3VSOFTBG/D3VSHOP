@@ -21,16 +21,6 @@ use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
-    function dashboard()
-    {
-        $orders = Order::all('id');
-
-        $data = [
-            'orders' => $orders,
-        ];
-
-        return view('admin.dashboard', $data);
-    }
     function users()
     {
         $users = User::orderBy('id', 'DESC')->paginate(env('PAGINATION_ADMIN'));
