@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CarriersController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DetailsController;
@@ -44,7 +45,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::get('/admin/shop/products', [ProductsController::class, 'products'])->name('admin.shop.products');
     Route::get('/admin/shop/orders', [OrdersController::class, 'orders'])->name('admin.shop.orders');
     Route::get('/admin/shop/carriers', [CarriersController::class, 'carriers'])->name('admin.shop.carriers');
-    Route::get('/admin/info/about', [AdminController::class, 'about_get'])->name('admin.info.about');
+    Route::get('/admin/info/about', [AboutController::class, 'get'])->name('admin.info.about');
     Route::get('/admin/info/tos', [TosController::class, 'get'])->name('admin.info.tos');
     Route::get('/admin/info/privacy-policy', [AdminController::class, 'privacy_policy_get'])->name('admin.info.privacy-policy');
     Route::get('/admin/payments/stripe', [AdminController::class, 'payments_stripe_get'])->name('admin.payments.stripe');
@@ -61,7 +62,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::post('/admin/shop/users/delete', [UsersController::class, 'delete'])->name('admin.shop.users.delete');
     Route::post('/admin/shop/users/edit', [UsersController::class, 'edit'])->name('admin.shop.users.edit');
     Route::post('/admin/shop/users/create', [UsersController::class, 'create'])->name('admin.shop.users.create');
-    Route::post('/admin/info/about', [AdminController::class, 'about_post'])->name('admin.info.about');
+    Route::post('/admin/info/about', [AboutController::class, 'post'])->name('admin.info.about');
     Route::post('/admin/info/tos', [TosController::class, 'post'])->name('admin.info.tos');
     Route::post('/admin/info/privacy-policy', [AdminController::class, 'privacy_policy_post'])->name('admin.info.privacy-policy');
     Route::post('/admin/payments/stripe', [AdminController::class, 'payments_stripe_post'])->name('admin.payments.stripe');
