@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>D3V.SHOP {{env('TITLE_SEPERATOR')}} @yield('page_name')</title>
+    <title>D3VSHOP {{env('TITLE_SEPERATOR')}} @yield('page_name')</title>
     <link rel="icon" type="image/x-icon" href="{{asset('/storage/img/global/' . env('FAVICON'))}}">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -87,7 +87,7 @@
             <a href="{{route('admin')}}" class="brand-link">
                 <img src="{{asset('/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">D3V.SHOP</span>
+                <span class="brand-text font-weight-light">D3VSHOP</span>
             </a>
 
             <!-- Sidebar -->
