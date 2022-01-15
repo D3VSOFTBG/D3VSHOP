@@ -233,3 +233,7 @@ function tos()
         return Cache::get('tos');
     }
 }
+function d3vshop_version()
+{
+    return 1;
+}
