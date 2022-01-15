@@ -23,7 +23,7 @@ class ProductsController extends Controller
 
         return view('admin.shop.products', $data);
     }
-    function product_create(Request $request)
+    function create(Request $request)
     {
         $request->validate([
             'image' => 'required|image|max:2048',
@@ -47,6 +47,7 @@ class ProductsController extends Controller
 
         if(isset($request->discount))
         {
+            // SHTE SE SLOJI GORE I SHTE PROMENQME IMETO NA DISCOUNT_BY_PERCENT
             $request->validate([
                 'discount' => 'integer|min:0|max:100',
             ]);
