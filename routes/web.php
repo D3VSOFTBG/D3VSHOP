@@ -9,13 +9,13 @@ use App\Http\Controllers\Admin\PackagesController;
 use App\Http\Controllers\Admin\PrivacyController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\StripeController;
 use App\Http\Controllers\Admin\TosController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\LocalizationController;
-use App\Http\Controllers\Payments\StripeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 Route::get('/lang/{locale}', [LocalizationController::class, 'index']);
-Route::post('/stripe', [StripeController::class, 'post'])->name('stripe');
+Route::post('/stripe', [StripeController::class, 'pay'])->name('stripe');
 Route::get('/stripe', function () {
     return redirect(route('home'));
 });
@@ -49,7 +49,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::get('/admin/info/about', [AboutController::class, 'get'])->name('admin.info.about');
     Route::get('/admin/info/tos', [TosController::class, 'get'])->name('admin.info.tos');
     Route::get('/admin/info/privacy', [PrivacyController::class, 'get'])->name('admin.info.privacy');
-    Route::get('/admin/payments/stripe', [AdminController::class, 'payments_stripe_get'])->name('admin.payments.stripe');
+    Route::get('/admin/payments/stripe', [StripeController::class, 'admin_get'])->name('admin.payments.stripe');
     Route::get('/invoice/{id}', [InvoiceController::class, 'download']);
 
     // POST
@@ -66,7 +66,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
     Route::post('/admin/info/about', [AboutController::class, 'post'])->name('admin.info.about');
     Route::post('/admin/info/tos', [TosController::class, 'post'])->name('admin.info.tos');
     Route::post('/admin/info/privacy', [PrivacyController::class, 'post'])->name('admin.info.privacy');
-    Route::post('/admin/payments/stripe', [AdminController::class, 'payments_stripe_post'])->name('admin.payments.stripe');
+    Route::post('/admin/payments/stripe', [StripeController::class, 'admin_post'])->name('admin.payments.stripe');
 });
 
 Auth::routes(['verify' => true]);

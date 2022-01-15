@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Payments;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Product;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Stripe;
 
 class StripeController extends Controller
 {
-    function post(Request $request)
+    function pay(Request $request)
     {
         $request->validate([
             'country' => 'required',
@@ -91,5 +91,56 @@ class StripeController extends Controller
         // Log::info(json_decode(json_encode($session['line_items']['data'][0]['price']->product['metadata']), true));
 
         return redirect($session->url)->withStatus(303);
+    }
+    function admin_get()
+    {
+        $data = [];
+
+        return view('admin.payments.stripe', $data);
+    }
+    function admin_post(Request $request)
+    {
+        $request->validate([
+            'stripe_environment' => 'required',
+            'stripe_test_webhook_secret' => 'required',
+            'stripe_test_publishable_key' => 'required',
+            'stripe_test_secret_key' => 'required',
+            'stripe_live_webhook_secret' => 'required',
+            'stripe_live_publishable_key' => 'required',
+            'stripe_live_secret_key' => 'required',
+        ]);
+
+        if($request->stripe_environment != env('STRIPE_ENVIRONMENT'))
+        {
+            env_update('STRIPE_ENVIRONMENT', $request->stripe_environment);
+        }
+        if($request->stripe_test_webhook_secret != env('STRIPE_TEST_WEBHOOK_SECRET'))
+        {
+            env_update('STRIPE_TEST_WEBHOOK_SECRET', $request->stripe_test_webhook_secret);
+        }
+        if($request->stripe_test_publishable_key != env('STRIPE_TEST_PUBLISHABLE_KEY'))
+        {
+            env_update('STRIPE_TEST_PUBLISHABLE_KEY', $request->stripe_test_publishable_key);
+        }
+        if($request->stripe_test_secret_key != env('STRIPE_TEST_SECRET_KEY'))
+        {
+            env_update('STRIPE_TEST_SECRET_KEY', $request->stripe_test_secret_key);
+        }
+        if($request->stripe_live_webhook_secret != env('STRIPE_LIVE_WEBHOOK_SECRET'))
+        {
+            env_update('STRIPE_LIVE_WEBHOOK_SECRET', $request->stripe_live_webhook_secret);
+        }
+        if($request->stripe_live_publishable_key != env('STRIPE_LIVE_PUBLISHABLE_KEY'))
+        {
+            env_update('STRIPE_LIVE_PUBLISHABLE_KEY', $request->stripe_live_publishable_key);
+        }
+        if($request->stripe_live_secret_key != env('STRIPE_LIVE_SECRET_KEY'))
+        {
+            env_update('STRIPE_LIVE_SECRET_KEY', $request->stripe_live_secret_key);
+        }
+
+        Artisan::call('cache:clear');
+
+        return back();
     }
 }
