@@ -24,7 +24,7 @@ class CreateOrdersTable extends Migration
             $table->string('address_1');
             $table->string('address_2');
             $table->string('postal_code');
-            $table->unsignedBigInteger('tax_rate');
+            $table->unsignedBigInteger('tax_percent');
             $table->float('shipping_price');
             $table->timestamps();
         });

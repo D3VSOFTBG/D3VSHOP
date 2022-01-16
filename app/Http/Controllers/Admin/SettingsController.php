@@ -14,6 +14,15 @@ class SettingsController extends Controller
 {
     function get()
     {
+        $settings_old = Setting::all();
+
+        $settings = [];
+
+        foreach($settings_old as $setting)
+        {
+            $settings[$setting['name']] = $setting['value'];
+        }
+
         $currencies = Currency::all();
 
         $default_currency_code = Currency::where('id', (int) setting('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
@@ -21,6 +30,7 @@ class SettingsController extends Controller
         $data = [
             'currencies' => $currencies,
             'default_currency_code' => $default_currency_code,
+            'settings' => $settings,
         ];
 
         return view('admin.shop.settings', $data);
@@ -31,6 +41,9 @@ class SettingsController extends Controller
         $request->validate([
             'title' => 'required',
             'title_seperator' => 'required',
+            'default_currency_id' => 'required|integer',
+            'shipping_price' => 'required|numeric',
+            'tax_percent' => 'required|integer|min:0|max:100',
         ]);
 
         $setting = new Setting();
@@ -50,12 +63,7 @@ class SettingsController extends Controller
 
         batch()->update($setting, $setting_values, $setting_index);
 
-        // Product
-        $request->validate([
-            'default_currency_id' => 'required|integer',
-            'shipping_price' => 'required|numeric',
-            'tax_rate' => 'required|numeric',
-        ]);
+
         if($request->default_currency_id != env('DEFAULT_CURRENCY_ID'))
         {
             env_update('DEFAULT_CURRENCY_ID', $request->default_currency_id);
@@ -64,9 +72,9 @@ class SettingsController extends Controller
         {
             env_update('SHIPPING_PRICE', $request->shipping_price);
         }
-        if($request->tax_rate != env('TAX_RATE'))
+        if($request->tax_percent != env('TAX_PERCENT'))
         {
-            env_update('TAX_RATE', $request->tax_rate);
+            env_update('TAX_PERCENT', $request->tax_percent);
         }
         // Shop
         $request->validate([

@@ -185,6 +185,23 @@
                                                                             </tr>
                                                                             <tr>
                                                                                 <th>
+                                                                                    Shipping Price
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->shipping_price}}
+                                                                                    <strong>{{$currencies[$order->currency_id - 1]['code']}}</strong>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    Tax Percent
+                                                                                </th>
+                                                                                <td>
+                                                                                    {{$order->tax_percent}}%
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>
                                                                                     Created
                                                                                 </th>
                                                                                 <td>

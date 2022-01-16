@@ -33,7 +33,7 @@ class InvoiceController extends Controller
 
         foreach($ordered_products as $op)
         {
-            array_push($items, (new InvoiceItem())->title($op->name)->pricePerUnit($op->price)->quantity($op->quantity)->discountByPercent($op->discount));
+            array_push($items, (new InvoiceItem())->title($op->name)->pricePerUnit($op->price)->quantity($op->quantity)->discountByPercent($op->discount_by_percent));
         }
 
         // $items = [
@@ -49,7 +49,7 @@ class InvoiceController extends Controller
             ->currencySymbol($currency->symbol)
             ->currencyCode($currency->symbol)
             ->buyer($customer)
-            ->taxRate($order->tax_rate)
+            ->taxRate($order->tax_percent)
             ->shipping($order->shipping_price)
             ->addItems($items)
             ->filename('invoice_' . $id);

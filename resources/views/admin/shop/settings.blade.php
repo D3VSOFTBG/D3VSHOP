@@ -105,7 +105,7 @@
                                     <label for="mail_from_address">
                                         <span class="text-danger">*</span>
                                         Mail From Address</label>
-                                    <input name="mail_from_address" id="mail_from_address" type="text" class="form-control"
+                                    <input name="mail_from_address" id="mail_from_address" type="email" class="form-control"
                                         placeholder="Mail From Address" value="{{env('MAIL_FROM_ADDRESS')}}" required>
                                 </div>
                             </div>
@@ -123,23 +123,23 @@
                                         Default Currency</label>
                                     <select name="default_currency_id" class="custom-select">
                                         @foreach ($currencies as $currency)
-                                        <option value="{{$currency->id}}" @if(env('DEFAULT_CURRENCY_ID') == $currency->id) selected @endif>{{$currency->code}} ({{$currency->symbol}})</option>
+                                        <option value="{{$currency->id}}" @if(setting('DEFAULT_CURRENCY_ID') == $currency->id) selected @endif>{{$currency->code}} ({{$currency->symbol}})</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="tax_rate">
+                                    <label for="tax_percent">
                                         <span class="text-danger">*</span>
-                                        Tax Rate</label>
+                                        Tax Percent</label>
                                     <div class="input-group">
-                                        <input name="tax_rate" id="tax_rate" type="text" class="form-control" placeholder="Tax Rate" value="{{env('TAX_RATE')}}" required>
+                                        <input name="tax_percent" id="tax_percent" type="text" class="form-control" placeholder="Tax Percent" value="{{env('TAX_RATE')}}" required>
                                         <div class="input-group-append">
                                             <span class="input-group-text"> % </span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="price">
+                                    <label for="shipping_price">
                                         <span class="text-danger">*</span>
                                         Shipping Price</label>
                                     <div class="input-group">
