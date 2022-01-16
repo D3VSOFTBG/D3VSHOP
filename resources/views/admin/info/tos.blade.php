@@ -25,8 +25,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col">
+                        <input type="hidden" name="id" value="{{$info->id}}">
                         <textarea name="text" id="summernote">
-                            {{$info}}
+                            {{$info->text}}
                         </textarea>
                     </div>
                 </div>

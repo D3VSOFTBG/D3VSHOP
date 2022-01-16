@@ -11,7 +11,7 @@ class TosController extends Controller
 {
     function get()
     {
-        $info = Info::where('id', 3)->pluck('text')->first();
+        $info = Info::where('name', 'TOS')->first();
 
         $data = [
             'info' => $info,
@@ -21,7 +21,7 @@ class TosController extends Controller
     }
     function post(Request $request)
     {
-        $info = Info::findOrFail(3);
+        $info = Info::findOrFail($request->id);
         $info->text = $request->text;
         $info->save();
 

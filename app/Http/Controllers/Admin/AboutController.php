@@ -11,7 +11,7 @@ class AboutController extends Controller
 {
     function get()
     {
-        $info = Info::where('id', 1)->pluck('text')->first();
+        $info = Info::where('name', 'ABOUT')->first();
 
         $data = [
             'info' => $info,
@@ -21,7 +21,7 @@ class AboutController extends Controller
     }
     function post(Request $request)
     {
-        $info = Info::findOrFail(1);
+        $info = Info::findOrFail($request->id);
         $info->text = $request->text;
         $info->save();
 

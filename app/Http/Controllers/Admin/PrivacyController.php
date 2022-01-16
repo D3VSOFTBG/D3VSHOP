@@ -11,7 +11,7 @@ class PrivacyController extends Controller
 {
     function get()
     {
-        $info = Info::where('id', 2)->pluck('text')->first();
+        $info = Info::where('name', 'PRIVACY')->first();
 
         $data = [
             'info' => $info,
@@ -22,7 +22,7 @@ class PrivacyController extends Controller
 
     function post(Request $request)
     {
-        $info = Info::findOrFail(2);
+        $info = Info::findOrFail($request->id);
         $info->text = $request->text;
         $info->save();
 
