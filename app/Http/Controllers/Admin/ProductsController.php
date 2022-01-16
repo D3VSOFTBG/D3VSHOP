@@ -29,6 +29,7 @@ class ProductsController extends Controller
             'image' => 'required|image|max:2048',
             'name' => 'required',
             'price' => 'required|numeric',
+            'discount' => 'required|integer|min:0|max:100',
             'quantity' => 'required|integer',
             'serial_number' => 'required',
             'sku' => 'required',
@@ -39,21 +40,12 @@ class ProductsController extends Controller
 
         // image
         $new_image_name = md5(uniqid(rand(), true)) . '.' . $request->image->extension();
-        $request->image->move(public_path('/storage/img/products/'), $new_image_name);
+        $request->image->move(storage_path('/app/public/img/products/'), $new_image_name);
         $product->image = $new_image_name;
 
         $product->name = $request->name;
         $product->price = $request->price;
-
-        if(isset($request->discount))
-        {
-            // SHTE SE SLOJI GORE I SHTE PROMENQME IMETO NA DISCOUNT_BY_PERCENT
-            $request->validate([
-                'discount' => 'integer|min:0|max:100',
-            ]);
-            $product->discount = $request->discount;
-        }
-
+        $product->discount = $request->discount;
         $product->quantity = $request->quantity;
         $product->serial_number = $request->serial_number;
         $product->sku = $request->sku;
@@ -67,6 +59,7 @@ class ProductsController extends Controller
         $request->validate([
             'name' => 'required',
             'price' => 'required|numeric',
+            'discount' => 'required|integer|min:0|max:100',
             'quantity' => 'required|integer',
             'serial_number' => 'required',
             'sku' => 'required',
@@ -86,21 +79,13 @@ class ProductsController extends Controller
             ]);
             // image
             $new_image_name = md5(uniqid(rand(), true)) . '.' . $request->image->extension();
-            $request->image->move(public_path('/storage/img/products/'), $new_image_name);
+            $request->image->move(storage_path('/app/public/img/products/'), $new_image_name);
             $product->image = $new_image_name;
         }
 
         $product->name = $request->name;
         $product->price = $request->price;
-
-        if(isset($request->discount))
-        {
-            $request->validate([
-                'discount' => 'integer|min:0|max:100',
-            ]);
-            $product->discount = $request->discount;
-        }
-
+        $product->discount = $request->discount;
         $product->quantity = $request->quantity;
         $product->serial_number = $request->serial_number;
         $product->sku = $request->sku;
