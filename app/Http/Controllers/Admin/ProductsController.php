@@ -11,9 +11,9 @@ class ProductsController extends Controller
 {
     function products()
     {
-        $products = Product::orderBy('id', 'DESC')->paginate(env('PAGINATION_ADMIN'));
+        $products = Product::orderBy('id', 'DESC')->paginate(setting('PAGINATION_ADMIN'));
         $currencies = Currency::all();
-        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
+        $default_currency_code = Currency::where('id', (int) setting('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
         $data = [
             'products' => $products,

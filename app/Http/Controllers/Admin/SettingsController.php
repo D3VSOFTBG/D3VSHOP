@@ -15,7 +15,7 @@ class SettingsController extends Controller
     {
         $currencies = Currency::all();
 
-        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
+        $default_currency_code = Currency::where('id', (int) setting('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
         $data = [
             'currencies' => $currencies,
@@ -137,7 +137,7 @@ class SettingsController extends Controller
             ]);
             // image
             $new_image_name = md5(uniqid(rand(), true)) . '.' . $request->favicon->extension();
-            $request->favicon->move(public_path('/storage/img/global/'), $new_image_name);
+            $request->favicon->move(storage_path('/app/public/img/global/'), $new_image_name);
             env_update('FAVICON', $new_image_name);
         }
         if(isset($request->logo))
@@ -147,7 +147,7 @@ class SettingsController extends Controller
             ]);
             // image
             $new_image_name = md5(uniqid(rand(), true)) . '.' . $request->logo->extension();
-            $request->logo->move(public_path('/storage/img/global/'), $new_image_name);
+            $request->logo->move(storage_path('/app/public/img/global/'), $new_image_name);
             env_update('LOGO', $new_image_name);
         }
 

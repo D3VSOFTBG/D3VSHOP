@@ -23,12 +23,10 @@
                 <div class="col-12">
                     <div class="card card-warning card-outline">
                         <div class="card-header">
-                            <h5 class="m-0">{{env('SHOP_NAME')}}</h5>
+                            <h5 class="m-0">@yield('page_name')</h5>
                         </div>
                         <div class="card-body">
                             <p class="card-text">
-                                <strong>URL:</strong> {{env('APP_URL')}}
-                                <br/>
                                 <strong>Broadcast Driver:</strong> {{env('BROADCAST_DRIVER')}}
                                 <br/>
                                 <strong>Cache Driver:</strong> {{env('CACHE_DRIVER')}}
