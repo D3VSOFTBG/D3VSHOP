@@ -37,7 +37,7 @@ class CarriersController extends Controller
 
         // logo
         $new_logo_name = md5(uniqid(rand(), true)) . '.' . $request->logo->extension();
-        $request->logo->move(public_path('/storage/img/carriers/'), $new_logo_name);
+        $request->logo->move(storage_path('/app/public/img/carriers/'), $new_logo_name);
         $carrier->logo = $new_logo_name;
 
         $carrier->description = $request->description;
@@ -83,7 +83,7 @@ class CarriersController extends Controller
             ]);
             // logo
             $new_logo_name = md5(uniqid(rand(), true)) . '.' . $request->logo->extension();
-            $request->logo->move(public_path('/storage/img/carriers/'), $new_logo_name);
+            $request->logo->move(storage_path('/app/public/img/carriers/'), $new_logo_name);
             $carrier->logo = $new_logo_name;
         }
 
