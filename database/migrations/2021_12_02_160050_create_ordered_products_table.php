@@ -19,7 +19,7 @@ class CreateOrderedProductsTable extends Migration
             $table->foreign('order_id')->references('id')->on('orders');
             $table->string('name');
             $table->float('price');
-            $table->unsignedBigInteger('discount')->nullable();
+            $table->unsignedBigInteger('discount_by_percent');
             $table->integer('quantity');
             $table->unsignedBigInteger('serial_number');
             $table->string('sku');

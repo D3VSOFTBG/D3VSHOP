@@ -4,6 +4,7 @@ namespace App\Jobs\StripeWebhooks;
 
 use App\Order;
 use App\Ordered_Product;
+use App\OrderedProduct;
 use App\Product;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -91,7 +92,7 @@ class ChargeSucceeded implements ShouldQueue
             ]);
         }
 
-        Ordered_Product::insert($ii_array);
+        OrderedProduct::insert($ii_array);
 
         $products = new Product();
 

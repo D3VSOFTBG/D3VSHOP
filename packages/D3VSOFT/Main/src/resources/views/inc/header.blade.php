@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>{{env('SHOP_NAME')}} {{env('TITLE_SEPERATOR')}} @yield('page_name')</title>
+    <title>{{setting('TITLE')}} {{setting('TITLE_SEPERATOR')}} @yield('page_name')</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
@@ -34,7 +34,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 text-center">
-                        <span class="text-white">Welcome to {{env('SHOP_NAME')}}.</span>
+                        <span class="text-white">Welcome to {{setting('TITLE')}}.</span>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                 <div class="row align-items-center">
                     <div class="col-6">
                         <a class="navbar-brand" href="{{route('home')}}">
-                            {{env('SHOP_NAME')}}
+                            {{setting('SHOP_NAME')}}
                         </a>
                     </div>
                     <div class="col-6">

@@ -234,10 +234,10 @@
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <th>
-                                                                                            Discount
+                                                                                            Discount By Percent
                                                                                         </th>
                                                                                         <td>
-                                                                                            {{$op->discount}} <strong>%</strong>
+                                                                                            {{$op->discount_by_percent}} <strong>%</strong>
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>

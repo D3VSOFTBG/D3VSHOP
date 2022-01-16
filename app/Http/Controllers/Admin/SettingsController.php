@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Currency;
 use App\Http\Controllers\Controller;
+use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
@@ -27,32 +28,27 @@ class SettingsController extends Controller
     {
         // General
         $request->validate([
-            'shop_name' => 'required',
-            'app_url' => 'required',
+            'title' => 'required',
             'title_seperator' => 'required',
-            'theme_name' => 'required',
-            'app_env' => 'required',
         ]);
-        if($request->shop_name != env('SHOP_NAME'))
-        {
-            env_update('SHOP_NAME', $request->shop_name);
-        }
-        if($request->app_url != env('APP_URL'))
-        {
-            env_update('APP_URL', $request->app_url);
-        }
-        if($request->title_seperator != env('TITLE_SEPERATOR'))
-        {
-            env_update('TITLE_SEPERATOR', $request->title_seperator);
-        }
-        if($request->theme_name != env('THEME_NAME'))
-        {
-            env_update('THEME_NAME', $request->theme_name);
-        }
-        if($request->app_env != env('APP_ENV'))
-        {
-            env_update('APP_ENV', $request->app_env);
-        }
+
+        $setting = new Setting();
+
+        $setting_values = [
+            [
+                'name' => 'TITLE',
+                'value' => $request->title,
+            ],
+            [
+                'name' => 'TITLE_SEPERATOR',
+                'value' => $request->title_seperator,
+            ],
+        ];
+
+        $setting_index = 'name';
+
+        batch()->update($setting, $setting_values, $setting_index);
+
         // Product
         $request->validate([
             'default_currency_id' => 'required|integer',
@@ -154,6 +150,7 @@ class SettingsController extends Controller
             $request->logo->move(public_path('/storage/img/global/'), $new_image_name);
             env_update('LOGO', $new_image_name);
         }
+
 
         Artisan::call('cache:clear');
         Cache::flush();

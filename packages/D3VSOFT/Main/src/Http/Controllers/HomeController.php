@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function home()
     {
         $product = Product::first();
-        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
+        $default_currency_code = Currency::where('id', (int) setting('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
         $data = [
             'product' => $product,
@@ -32,7 +32,7 @@ class HomeController extends Controller
     public function shop()
     {
         $products = Product::paginate(env('PAGINATION_ADMIN'));
-        $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
+        $default_currency_code = Currency::where('id', (int) setting('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
         $data = [
             'products' => $products,
@@ -47,7 +47,7 @@ class HomeController extends Controller
 
         if(!empty($product))
         {
-            $default_currency_code = Currency::where('id', (int) env('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
+            $default_currency_code = Currency::where('id', (int) setting('DEFAULT_CURRENCY_ID'))->pluck('code')->first();
 
             $data = [
                 'product' => $product,

@@ -31,16 +31,10 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="shop_name">
+                                    <label for="title">
                                         <span class="text-danger">*</span>
-                                        Shop Name</label>
-                                    <input name="shop_name" id="shop_name" type="text" class="form-control" placeholder="Shop Name" value="{{env('SHOP_NAME')}}" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="app_url">
-                                        <span class="text-danger">*</span>
-                                        URL</label>
-                                    <input name="app_url" id="app_url" type="text" class="form-control" placeholder="URL" value="{{env('APP_URL')}}" required>
+                                        Title</label>
+                                    <input name="title" id="title" type="text" class="form-control" placeholder="Shop Name" value="{{env('SHOP_NAME')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="title_seperator">
@@ -48,13 +42,6 @@
                                         Title Seperator</label>
                                     <input name="title_seperator" id="title_seperator" type="text" class="form-control"
                                         placeholder="Title Seperator" value="{{env('TITLE_SEPERATOR')}}" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="theme_name">
-                                        <span class="text-danger">*</span>
-                                        Theme Name</label>
-                                    <input name="theme_name" id="theme_name" type="text" class="form-control"
-                                        placeholder="Theme Name" value="{{env('THEME_NAME')}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label>

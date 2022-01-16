@@ -6,7 +6,7 @@
     <div class="container">
     <div class="row align-items-center">
     <div class="col-12">
-        <h1 class="mb-4">{{env('SHOP_NAME')}}.</h1>
+        <h1 class="mb-4">{{env('TITLE')}}.</h1>
         <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus at risus
         pellentesque faucibus a quis eros. In eu fermentum leo. Integer ut eros lacus. Proin ut
