@@ -4,8 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AdminMenu extends Model
+class Setting extends Model
 {
-    protected $table = 'admin_menus';
     public $timestamps = false;
 }
