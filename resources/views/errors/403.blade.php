@@ -1,4 +1,4 @@
-@section('page_name'){{ '404' }}@endsection
+@section('page_name'){{ '403' }}@endsection
 
 @include('errors.inc.header')
 
@@ -7,16 +7,16 @@
         <td>
             <!-- Main content -->
             <section class="content text-center">
-                <h1 class="text-warning" style="font-size: 100px;"> @yield('page_name')</h1>
-                <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! Page not found.</h3>
+                <h1 class="text-danger" style="font-size: 100px;">@yield('page_name')</h1>
+                <h3><i class="fas fa-exclamation-triangle text-danger"></i> Oops! Forbidden.</h3>
 
-                <p class="text-center">We could not find the page you were looking for. Meanwhile, you may
+                <p class="text-center">This page is forbidden. Meanwhile, you may
                     @if (str_contains(Request::url(), 'admin'))
                     <a href="{{route('admin')}}">return to dashboard</a>.
                     @else
                     <a href="{{route('home')}}">return to home</a>.
                     @endif
-                </p>
+                    </p>
             </section>
             <!-- /.content -->
         </td>

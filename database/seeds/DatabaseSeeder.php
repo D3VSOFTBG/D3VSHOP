@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CarrierSeeder::class);
         $this->call(AdminMenuSeeder::class);
         $this->call(InfoSeeder::class);
+        $this->call(SettingSeeder::class);
     }
 }

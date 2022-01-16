@@ -9,6 +9,7 @@ use App\Info;
 use App\Order;
 use App\Ordered_Product;
 use App\Product;
+use App\Setting;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
@@ -236,4 +237,16 @@ function tos()
 function d3vshop_version()
 {
     return 1;
+}
+function setting($name)
+{
+    if (Cache::has($name))
+    {
+        return Cache::get($name);
+    }
+    else
+    {
+        Cache::forever($name, Setting::where('name', $name)->pluck('value')->first());
+        return Cache::get($name);
+    }
 }
