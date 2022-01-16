@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Currency;
 use App\Http\Controllers\Controller;
+use App\Rules\Banned;
 use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
@@ -97,13 +98,34 @@ class SettingsController extends Controller
         }
         // Mail
         $request->validate([
-            'mail_driver' => 'required',
-            'mail_host' => 'required',
-            'mail_port' => 'required',
-            'mail_username' => 'required',
-            'mail_password' => 'required',
-            'mail_encryption' => 'required',
-            'mail_from_address' => 'required',
+            'mail_driver' => [
+                'required',
+                new Banned,
+            ],
+            'mail_host' => [
+                'required',
+                new Banned,
+            ],
+            'mail_port' => [
+                'required',
+                new Banned,
+            ],
+            'mail_username' => [
+                'required',
+                new Banned,
+            ],
+            'mail_password' => [
+                'required',
+                new Banned,
+            ],
+            'mail_encryption' => [
+                'required',
+                new Banned,
+            ],
+            'mail_from_address' => [
+                'required',
+                new Banned,
+            ],
         ]);
         if($request->mail_host != env('MAIL_HOST'))
         {
