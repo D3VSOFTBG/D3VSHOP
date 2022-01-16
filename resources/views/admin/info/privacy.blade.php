@@ -1,4 +1,4 @@
-@section('page_name'){{ 'Privacy Policy' }}@endsection
+@section('page_name'){{ 'Privacy' }}@endsection
 
 @include('admin.inc.header')
 
