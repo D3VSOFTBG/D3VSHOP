@@ -29,7 +29,7 @@ class ProductsController extends Controller
             'image' => 'required|image|max:2048',
             'name' => 'required',
             'price' => 'required|numeric',
-            'discount' => 'required|integer|min:0|max:100',
+            'discount_by_percent' => 'required|integer|min:0|max:100',
             'quantity' => 'required|integer',
             'serial_number' => 'required',
             'sku' => 'required',
@@ -45,7 +45,7 @@ class ProductsController extends Controller
 
         $product->name = $request->name;
         $product->price = $request->price;
-        $product->discount = $request->discount;
+        $product->discount_by_percent = $request->discount_by_percent;
         $product->quantity = $request->quantity;
         $product->serial_number = $request->serial_number;
         $product->sku = $request->sku;
@@ -59,7 +59,7 @@ class ProductsController extends Controller
         $request->validate([
             'name' => 'required',
             'price' => 'required|numeric',
-            'discount' => 'required|integer|min:0|max:100',
+            'discount_by_percent' => 'required|integer|min:0|max:100',
             'quantity' => 'required|integer',
             'serial_number' => 'required',
             'sku' => 'required',
@@ -85,7 +85,7 @@ class ProductsController extends Controller
 
         $product->name = $request->name;
         $product->price = $request->price;
-        $product->discount = $request->discount;
+        $product->discount_by_percent = $request->discount_by_percent;
         $product->quantity = $request->quantity;
         $product->serial_number = $request->serial_number;
         $product->sku = $request->sku;

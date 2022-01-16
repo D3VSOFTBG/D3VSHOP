@@ -64,11 +64,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="discount">
-                                                Discount <small>(Optional)</small></label>
+                                            <label for="discount_by_percent">Discount By Percent</label>
                                             <div class="input-group">
-                                                <input name="discount" id="discount" type="number"
-                                                    class="form-control" placeholder="Discount" min="0" max="100">
+                                                <input name="discount_by_percent" id="discount_by_percent" type="number"
+                                                    class="form-control" placeholder="Discount By Percent" min="0" max="100">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text"> % </span>
                                                 </div>
@@ -141,7 +140,7 @@
                                             <th class="align-middle" style="width: 0;">Image</th>
                                             <th class="align-middle">Name</th>
                                             <th class="align-middle">Price</th>
-                                            <th class="align-middle">Discount</th>
+                                            <th class="align-middle">Discount By Percent</th>
                                             <th class="align-middle">Quantity</th>
                                             <th class="align-middle">Created</th>
                                             <th class="align-middle">Updated</th>
@@ -161,15 +160,15 @@
                                                 {{$product->name}}
                                             </td>
                                             <td class="align-middle">
-                                                @if (if_discounted($product->discount))
+                                                @if (if_discounted($product->discount_by_percent))
                                                 <del>{{$product->price}}&nbsp;<strong>{{$default_currency_code}}</strong></del>
-                                                {{discounted_price($product->price, $product->discount)}}&nbsp;<strong>{{$default_currency_code}}</strong>
+                                                {{discounted_price($product->price, $product->discount_by_percent)}}&nbsp;<strong>{{$default_currency_code}}</strong>
                                                 @else
                                                 {{$product->price}}&nbsp;<strong>{{$default_currency_code}}</strong>
                                                 @endif
                                             </td>
                                             <td class="align-middle">
-                                                {{if_null($product->discount)}} <strong>%</strong>
+                                                {{if_null($product->discount_by_percent)}} <strong>%</strong>
                                             </td>
                                             <td class="align-middle">
                                                 {{$product->quantity}}
@@ -252,11 +251,12 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="discount">
-                                                                            Discount <small>(Optional)</small></label>
+                                                                        <label for="discount_by_percent">
+                                                                            <span class="text-danger">*</span>
+                                                                            Discount By Percent</label>
                                                                         <div class="input-group">
-                                                                            <input name="discount" id="discount" type="number"
-                                                                                class="form-control" placeholder="Discount" value="{{$product->discount}}" min="0" max="100">
+                                                                            <input name="discount_by_percent" id="discount_by_percent" type="number"
+                                                                                class="form-control" placeholder="Discount By Percent" value="{{$product->discount_by_percent}}" min="0" max="100" required>
                                                                             <div class="input-group-append">
                                                                                 <span class="input-group-text"> % </span>
                                                                             </div>
